@@ -16,12 +16,12 @@ ms.assetid: 9a5a8166-bcbe-4680-916c-26276253eafa
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-2016||=azuresqldb-mi-current'
-ms.openlocfilehash: 58b68bdf2996446ed08a37297e0c9776c2274832
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 515010fc6727a64607402316b4c8911fd7f22fb0
+ms.sourcegitcommit: 62c7b972db0ac28e3ae457ce44a4566ebd3bbdee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97483664"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103231510"
 ---
 # <a name="filestream-sql-server"></a>FILESTREAM (SQL Server)
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only.md)]
@@ -148,6 +148,62 @@ FILESTREAM では、トランザクションのコミット時に、ファイル
 FILESTREAM データへのリモート ファイル システム アクセスは、サーバー メッセージ ブロック (SMB) プロトコルによって実現されます。 クライアントがリモート クライアントの場合は、書き込み操作がクライアント側でキャッシュされず、 常にサーバーに送信されます。 サーバー側でデータをキャッシュできます。 リモート クライアントで実行されるアプリケーションでは、小さな書き込み操作を統合して、大きなデータ サイズを使用して書き込み操作を減らすことをお勧めします。  
 
 FILESTREAM ハンドルを使用してメモリ マップ表示 (メモリ マップ I/O) を作成することはできません。 FILESTREAM データに対してメモリ マッピングを使用すると、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] でデータの一貫性および持続性やデータベースの整合性を保証できなくなります。  
+
+## <a name="recommendations-and-guidelines-for-improving-filestream-performance"></a>FILESTREAM のパフォーマンスを向上させるための推奨事項とガイドライン
+
+SQL Server FILESTREAM 機能を使用すると、varbinary (max) バイナリ ラージ オブジェクト データをファイル システムのファイルとして格納できます。 FILESTREAM 列と FileTable の両方の基になるストレージである FILESTREAM コンテナーに多数の行がある場合、ファイル システム ボリュームに多数のファイルが含まれることになります。 データベースおよびファイル システムから統合されたデータを処理するときに最高のパフォーマンスを実現するには、ファイル システムが最適にチューニングされるようにすることが重要です。 ファイル システムの観点から使用できるチューニング オプションの一部を次に示します。
+
+- SQL Server FILESTREAM フィルター ドライバーの高度チェック (例: rsfx0100.sys)。 FILESTREAM 機能がファイルを格納するボリュームに関連付けられているストレージ スタック用に読み込まれたすべてのフィルター ドライバーを評価し、rsfx ドライバーがスタックの一番下に配置されていることを確認します。 FLTMC.EXE コントロール プログラムを使用して、特定のボリュームのフィルター ドライバーを列挙できます。 FLTMC ユーティリティからは `C:\Windows\System32>fltMC.exe` フィルターなどが出力されます
+
+    |フィルター名|インスタンスの数|高度|フレーム|
+    |---|---|---|---|
+    |Sftredir|1|406000|0|
+    |MpFilter|9|328000|0|
+    |luafv|1|135000|0|
+    |FileInfo|9|45000|0|
+    |RsFx0103|1|41001.03|0|
+    ||||
+
+- サーバーのファイルに対して "last access time" プロパティが無効になっていることを確認します。 このファイル システム属性はレジストリに保持されます。  
+キー名: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem`  
+Name: NtfsDisableLastAccessUpdate  
+次のように入力します。REG_DWORD  
+値:1
+
+- サーバーで 8.3 の名前付けが無効になっていることを確認します。 このファイル システム属性はレジストリに保持されます。  
+キー名: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem`  
+Name: NtfsDisable8dot3NameCreation  
+次のように入力します。REG_DWORD  
+値:1
+
+- FILESTREAM ディレクトリ コンテナーでファイル システムの暗号化またはファイル システムの圧縮が有効になっていないことを確認してください。これらのファイルにアクセスすると、このようなレベルのオーバーヘッドが発生する可能性があります。
+
+- 管理者特権でのコマンド プロンプトで fltmc インスタンスを実行し、復元しようとしているボリュームにフィルター ドライバーがアタッチされていないことを確認します。
+
+- FILESTREAM ディレクトリ コンテナーに 30 万個を超えるファイルがないことを確認してください。 `sys.database_files` カタログ ビューの情報を使用して、どのファイル システムのディレクトリに `FILESTREAM-related` ファイルが格納されているかを調べることができます。 これは、複数のコンテナーを持つことで防止できます。 (詳細については、次の箇条書き項目を参照してください。)
+
+- FILESTREAM ファイル グループを 1 つだけ使用すると、すべてのデータ ファイルが同じフォルダーに作成されます。 作成されるファイルの数が多すぎると、大きな NTFS インデックスによる影響を受ける可能性があり、断片化されることもあります。
+
+  - 通常、複数のファイル グループがあると、これを解決できます (アプリケーションでパーティション分割が使用されるか、複数のテーブルが含まれ、それぞれが独自のファイル グループに移動します)。
+
+  - SQL Server 2012 以降のバージョンでは、FILESTREAM ファイル グループに複数のコンテナーまたはファイルを含めることができ、ラウンドロビン割り当てスキームが適用されます。 そのため、ディレクトリごとの NTFS ファイルの数が少なくなります。
+
+- コンテナーを格納する複数のボリュームが使用されている場合、複数の FILESTREAM コンテナーによってバックアップと復元がより高速になる可能性があります。
+
+    SQL Server 2012 では、ファイル グループごとに複数のコンテナーがサポートされているため、これがさらに簡単になります。 多数のファイルを管理するために、複雑なパーティション構成は必要ありません。
+
+- NTFS MFT が断片化され、パフォーマンスの問題が発生する可能性があります。 MFT で予約されているサイズはボリュームのサイズによって異なるため、これが発生する場合も、しない場合もあります。
+
+  - MFT の断片化がないかを確認するには、`defrag /A /V C:` を使用します (C: は実際のボリューム名に変更してください)。
+
+  - Fsutil behavior set mftzone 2 を使用して、より多くの MFT 領域を予約できます。
+
+  - FILESTREAM データ ファイルは、ウイルス対策ソフトウェアのスキャンから除外する必要があります。
+
+    > [!NOTE]
+    > Windows Server 2016 では、Windows Defender が自動的に有効になります。 Filestream ファイルを除外するように Windows Defender が構成されていることを確認します。 これを行わないと、バックアップと復元操作のパフォーマンスが低下する可能性があります。
+  
+    詳細については、「[Windows Defender ウイルス対策スキャンの除外を構成および検証する](/windows/security/threat-protection/microsoft-defender-antivirus/configure-exclusions-microsoft-defender-antivirus)」を参照してください。
 
 ## <a name="related-tasks"></a>Related Tasks
 

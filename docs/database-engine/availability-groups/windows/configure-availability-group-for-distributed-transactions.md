@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: c05da95541e728d981745d43f4da864c2e8b07a8
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: da3071f14be97a4bbbd9ac909926f210c49504d4
+ms.sourcegitcommit: 62c7b972db0ac28e3ae457ce44a4566ebd3bbdee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100343549"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103231520"
 ---
 # <a name="configure-distributed-transactions-for-an-always-on-availability-group"></a>Always On 可用性グループ用に分散トランザクションを構成する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -39,9 +39,9 @@ ms.locfileid: "100343549"
 
 可用性グループが分散トランザクション用に構成されていない場合であっても、[!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] は可用性グループ内のデータベースに対する分散トランザクションを妨げません。 ただし、可用性グループが分散トランザクション対応に構成されていない場合は、一部の状況でフェールオーバーが失敗する可能性があります。 具体的には、新しいプライマリ レプリカの [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] インスタンスが、DTC からトランザクションの結果を取得できない場合があります。 [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] インスタンスがフェールオーバー後に DTC から未確定トランザクションの結果を取得できるようにするには、可用性グループを分散トランザクション対応に構成します。 
 
-データベースがフェールオーバー クラスターのメンバーでもある場合を除き、DTC は可用性グループの処理には関与しません。 可用性グループ内では、可用性グループのロジックによってレプリカ間の整合性が維持されます。永続的なストレージにログ レコードが永続化されたことをセカンダリが確認して初めて、プライマリはコミットを完了し、呼び出し元へのコミットを確認します。 その後で初めて、プライマリはトランザクションの完了を宣言します。 非同期モードでは、セカンダリからの肯定応答を待たないため、少量のデータが失われる可能性が明示的に存在します。
+データベースがフェールオーバー クラスターのメンバーでもある場合を除き、DTC は可用性グループの処理には関与しません。 可用性グループ内では、レプリカ間の整合性は可用性グループのロジックによって維持されます。プライマリはコミットを完了せず、セカンダリが永続的なストレージにログ レコードを保持していることを確認するまで、呼び出し元に対するコミットを承認します。 その後で初めて、プライマリはトランザクションの完了を宣言します。 非同期モードでは、セカンダリからの肯定応答を待たないため、少量のデータが失われる可能性が明示的に存在します。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>[前提条件]
 
 分散トランザクションをサポートするように可用性グループを構成するには、次の前提条件が満たされている必要があります。
 
@@ -133,7 +133,7 @@ ALTER AVAILABILITY GROUP MyaAG
 
 分散トランザクションに参加している各エンティティは、リソース マネージャーと呼ばれます。 リソース マネージャーの例を次に示します。
 
-* [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] インスタンス。 
+* [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] のインスタンス。 
 * 分散トランザクション対応に構成されている可用性グループのデータベース。
 * DTC サービスもトランザクション マネージャーになることができます。
 * その他のデータ ソース。 
@@ -141,6 +141,11 @@ ALTER AVAILABILITY GROUP MyaAG
 分散トランザクションに参加するため、[!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] のインスタンスは DTC に登録します。 通常、[!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] のインスタンスはローカル サーバー上の DTC に登録します。 [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] の各インスタンスは、一意のリソース マネージャー ID (RMID) でリソース マネージャーを作成し、それを DTC に登録します。 既定の構成では、[!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] のインスタンスのすべてのデータベースが同じ RMID を使います。 
 
 データベースが可用性グループ内にある場合、データベースの読み取り/書き込みコピー (プライマリ レプリカ) は、[!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] の異なるインスタンスに移動できます。 この移動中に分散トランザクションをサポートするためには、各データベースが独立したリソース マネージャーとして機能し、一意の RMID を持っている必要があります。 可用性グループで `DTC_SUPPORT = PER_DB` が指定されていると、[!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] はデータベースごとにリソース マネージャーを作成し、一意の RMID を使って DTC に登録します。 この構成では、データベースは DTC トランザクションのリソース マネージャーになります。
+
+>[!IMPORTANT]
+>DTC では、分散トランザクションあたりの登録が 32 に制限されていることに注意してください。 可用性グループ内の各データベースでは、DTC に個別に登録されるため、トランザクションに 32 を超えるデータベースが含まれている場合は、[!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] が 33 番目のデータベースを登録しようとすると、次のエラーが発生することがあります。
+>
+>`Enlist operation failed: 0x8004d101(XACT_E_TOOMANY_ENLISTMENTS). SQL Server could not register with Microsoft Distributed Transaction Coordinator (MS DTC) as a resource manager for this transaction. The transaction may have been stopped by the client or the resource manager.`
 
 [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] での分散トランザクションについて詳しくは、「[分散トランザクション](#distTran)」をご覧ください。
 
@@ -205,4 +210,4 @@ following the guideline for Troubleshooting DTC Transactions.
 
 [XA トランザクションのサポート](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753563(v=ws.10))
 
-[動作方法:DTC トランザクションのセッション/SPID (-2)](/archive/blogs/bobsql/how-it-works-sessionspid-2-for-dtc-transactions)
+[動作のしくみ: DTC トランザクションのセッション/SPID (-2)](/archive/blogs/bobsql/how-it-works-sessionspid-2-for-dtc-transactions)
