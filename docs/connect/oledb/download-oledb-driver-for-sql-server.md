@@ -7,16 +7,16 @@ ms.technology: connectivity
 ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 4d0f619fbdba59a902a1db379f65ebd131e5e4df
-ms.sourcegitcommit: cad737d30e5a80033f3b021cc3f0d47c00756a6b
+ms.openlocfilehash: 0e5e8a8b084c6762e732c0b866a0e4866e9d2707
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96614484"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575322"
 ---
 # <a name="download-microsoft-ole-db-driver-for-sql-server"></a>Microsoft OLE DB Driver for SQL Server のダウンロード
 
-[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 OLE DB Driver for SQL Server はスタンドアロンのデータ アクセス アプリケーション プログラミング インターフェイス (API) で、OLE DB に使用されます。 OLE DB Driver for SQL Server は Windows 上で利用でき、SQL OLE DB ドライバーが 1 つのダイナミック リンク ライブラリ (DLL) で提供されます。
 
@@ -35,7 +35,7 @@ Microsoft OLE DB Driver 18.5 for SQL Server は、最新の一般提供 (GA) バ
 - リリース日:2020 年 12 月 1 日
 
 > [!Note]
-> 英語以外のバージョンからこのページにアクセスしていて、最新の内容を見たい場合は、[サイトの英語 (米国) 版]()をご覧ください。 [使用できる言語](#available-languages)を選択して、英語 (米国) 版のサイトから別の言語をダウンロードできます。ます。
+> 英語以外のバージョンからこのページにアクセスしていて、最新の内容を見たい場合は、[サイトの英語 (米国) 版](https://aka.ms/downloadmsoledbsqlusenglish)をご覧ください。 [使用できる言語](#available-languages)を選択して、英語 (米国) 版のサイトから別の言語をダウンロードできます。ます。
 
 ## <a name="available-languages"></a>使用できる言語
 

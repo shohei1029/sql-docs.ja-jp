@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: b971b540-1ac2-435b-b191-24399eb88265
 author: pmasl
 ms.author: pelopes
-ms.openlocfilehash: e2c384a012603af0fd8875071b33813050218c65
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.openlocfilehash: 75e886c1aa389dfa220a64d42bcf85366ab0d4ec
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622738"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575260"
 ---
 # <a name="dbcc-traceon---trace-flags-transact-sql"></a>DBCC TRACEON - トレース フラグ (Transact-SQL)
 
@@ -99,8 +99,8 @@ ms.locfileid: "102622738"
 |**1448**|非同期セカンダリで変更の受信が確認されていない場合でもレプリケーション ログ リーダーが前へ移動できるようにします。 このトレース フラグが有効でも、ログ リーダーは常に同期セカンダリを待機します。 ログ リーダーは同期セカンダリの最小 ack を超えることはありません。 このトレース フラグは、可用性グループ、可用性データベース、またはログ リーダー インスタンスだけでなく、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスにも適用されます。 再起動しなくてもすぐに有効になります。 このトレース フラグは、事前にアクティブにすることも、非同期セカンダリが失敗したときにアクティブにすることもできます。 詳しくは、こちらの [Microsoft サポート技術情報](https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/937041)をご覧ください。<br /><br />**スコープ**: グローバルのみ|   
 |**1462**|非同期可用性グループのログ ストリーム圧縮を無効にします。 ネットワーク帯域幅を最適化するため、非同期可用性グループではこの機能は既定で有効にされています。 詳細については、「 [Tune compression for availability group](../../database-engine/availability-groups/windows/tune-compression-for-availability-group.md)」(可用性グループの圧縮を調整する) を参照してください。<br /><br />**スコープ**: グローバルのみ| 
 |**1800**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Always On 環境およびログ配布環境では、プライマリとセカンダリのレプリカ ログ ファイルで異なるセクター サイズのディスクが使われているときは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の最適化を有効にします。 このトレース フラグは、セクター サイズが 512 バイトのディスクにトランザクション ログ ファイルが存在する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスでのみ、有効にする必要があります。 セクター サイズが 4 K のディスクでは、有効にする必要は **ありません**。 詳しくは、こちらの [Microsoft サポート技術情報](https://support.microsoft.com/kb/3009974)をご覧ください。<br /><br />**注:** このトレース フラグは、[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 CU13、[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP2 CU3、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] RTM CU5、およびそれ以降のビルドに適用されます。<br /><br />**スコープ**: グローバルのみ|
-| **1819**| Azure ブロック BLOB にアクセスするときに、[URL へのバックアップ](../../relational-databases/backup-restore/sql-server-backup-to-url.md)でプロキシ サーバーを利用できるようにします。 このトレース フラグに加えて、次のいずれかの方法を使用して、サーバーで WinHTTP プロキシ構成を設定する必要があります。 <br /><br />- Windows XP または Windows Server 2003 以前の場合は [proxycfg.exe](/windows/win32/winhttp/proxycfg-exe--a-proxy-configuration-tool) ユーティリティ。 <br /> - Windows Vista および Windows Server 2008 以降の場合は [netsh.exe](/windows/win32/winsock/netsh-exe) ユーティリティ。 <br /><br />**スコープ**: グローバル、セッション、クエリ (QUERYTRACEON) |
 |**1802**|データベースのアタッチまたはデタッチの操作中の、ACL の変更および偽装アクセスの検証を無効にします。 これは、データベースをアタッチするときに、エラー 5120 などのアクセス権限エラーが発生する場合に役立ちます。<br /><br />**スコープ**: グローバルのみ| 
+| **1819**| Azure ブロック BLOB にアクセスするときに、[URL へのバックアップ](../../relational-databases/backup-restore/sql-server-backup-to-url.md)でプロキシ サーバーを利用できるようにします。 このトレース フラグに加えて、次のいずれかの方法を使用して、サーバーで WinHTTP プロキシ構成を設定する必要があります。 <br /><br />- Windows XP または Windows Server 2003 以前の場合は [proxycfg.exe](/windows/win32/winhttp/proxycfg-exe--a-proxy-configuration-tool) ユーティリティ。 <br /> - Windows Vista および Windows Server 2008 以降の場合は [netsh.exe](/windows/win32/winsock/netsh-exe) ユーティリティ。 <br /><br />**スコープ**: グローバル、セッション、クエリ (QUERYTRACEON) |
 |**2301**|意思決定支援クエリに固有の高度な意思決定支援の最適化を有効にします。 このオプションは、大規模なデータ セットの意思決定支援処理に適用されます。<br /><br />**スコープ**: グローバル、セッション、クエリ (QUERYTRACEON) |
 |**2312**|データベースの互換性レベルに応じて、クエリ オプティマイザーのカーディナリティ推定モデルを [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降のバージョンに設定します。<br /><br />**注:** データベースの互換性レベルが 120 未満の場合、トレース フラグ 2312 を有効にすることにより [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] (120) のカーディナリティ推定モデルが使用されます。 詳しくは、[Microsoft サポート技術情報](https://support.microsoft.com/kb/2801413)をご覧ください。<br /><br />[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] SP1 以降、クエリ レベルでこれを行うには、このトレース フラグの代わりに、USE HINT 'FORCE_DEFAULT_CARDINALITY_ESTIMATION' [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md)を追加します。<br /><br />**スコープ**: グローバル、セッション、クエリ (QUERYTRACEON)| 
 |**2335**|[max server memory サーバー構成](../../database-engine/configure-windows/server-memory-server-configuration-options.md)が非常に高く設定されていて、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で特定のクエリに対して非効率なプランが生成されるようなシナリオでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がクエリ最適化中に固定量のメモリがあるものと想定するようになります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がクエリ実行に許可するメモリを制限することはありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 用に構成されたメモリは、やはり、データ キャッシュ、クエリ実行、その他のコンシューマーによって使われます。<br /><br />**注:** このオプションは、運用環境に展開する前に十分にテストしてください。<br /><br />**スコープ**: グローバル、セッション、クエリ (QUERYTRACEON)|
