@@ -4920,6 +4920,8 @@ items:
     items:
       - name: 移行に関するドキュメント
         href: sql-server/migrate/index.yml
+      - name: 移行ツールの比較
+        href: sql-server/migrate/dma-azure-migrate-compare-migration-tools.md
       - name: SQL Server Integration Services (SSIS) >
         href: ./integration-services/sql-server-integration-services.md
       - name: 一括コピー ユーティリティ (bcp)
@@ -4929,8 +4931,16 @@ items:
         href: /azure/dms/dms-overview
       - name: 移行ガイド
         items:
+          - name: Access から
+            href: sql-server/migrate/guides/access-to-sql-server.md
           - name: DB2 から
             href: sql-server/migrate/guides/db2-to-sql-server.md
+          - name: MySQL から
+            href: sql-server/migrate/guides/mysql-to-sql-server.md
+          - name: Oracle から
+            href: sql-server/migrate/guides/oracle-to-sql-server.md
+          - name: SAP ASE から
+            href: sql-server/migrate/guides/sap-ase-to-sql-server.md
       - name: Data Quality Services (DQS)
         items:
           - name: 概要

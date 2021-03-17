@@ -23,13 +23,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
-ms.date: 12/17/2020
-ms.openlocfilehash: d88ccb88da94ba714904658fba034639c6ec2cd4
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 3/16/2021
+ms.openlocfilehash: 8656f414608fc6c1c088b0142265d27fcbd70044
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100351684"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575329"
 ---
 # <a name="download-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のダウンロード
 
@@ -38,6 +38,9 @@ ms.locfileid: "100351684"
 SQL Server Management Studio (SSMS) は、SQL Server から Azure SQL Database まで、SQL インフラストラクチャを管理するための統合環境です。 SSMS には、SQL Server とデータベースのインスタンスを構成、監視、および管理するためのツールが備わっています。 SSMS を使用して、ご利用のアプリケーションで使われるデータ層コンポーネントを配置、監視、アップグレードしたり、クエリとスクリプトを作成したりすることができます。
 
 SSMS を使用すると、データベースとデータ ウェアハウスがローカル コンピューターやクラウドなど、どこにあっても、クエリ、設計、および管理ができます。
+
+> [!NOTE]
+> 次のフィードバック アンケートを完了して、使用している Azure SQL 製品の未来を形成します: https://aka.ms/AzureSQLSurvey
 
 ## <a name="download-ssms"></a>SSMS のダウンロード
 
@@ -57,8 +60,6 @@ SSMS 18.x のインストールでは、17.x 以前のバージョンの SSMS �
 
 コンピューターに SSMS のサイド バイ サイドのインストールが含まれている場合は、特定のニーズに応じて適切なバージョンを起動してください。 最新バージョンには、**Microsoft SQL Server Management Studio 18** というラベルが付いています。
 
-> [!Note]
-> 英語以外のバージョンからこのページにアクセスしていて、最新の内容を見たい場合は、[サイトの英語 (米国) 版]()をご覧ください。 [使用できる言語](#available-languages)を選択して、英語 (米国) 版のサイトから別の言語をダウンロードできます。ます。
 
 ## <a name="available-languages"></a>使用できる言語
 
@@ -66,6 +67,10 @@ SSMS の今回のリリースは、次の言語でインストールできます
 
 SQL Server Management Studio 18.8:  
 [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40a)
+
+
+> [!TIP]
+> 英語以外のバージョンからこのページにアクセスしていて、最新の内容を見たい場合は、[サイトの英語 (米国) 版](https://aka.ms/downloadssmsusenglish)をご覧ください。 [使用できる言語](#available-languages)を選択して、英語 (米国) 版のサイトから別の言語をダウンロードできます。ます。
 
 > [!NOTE]
 > SQL Server PowerShell モジュールは、PowerShell ギャラリーで入手できる独立したインストールです。 詳細については、「[SQL Server PowerShell モジュールのダウンロード](../powershell/download-sql-server-ps-module.md)」を参照してください。
