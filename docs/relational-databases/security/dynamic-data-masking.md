@@ -11,12 +11,12 @@ ms.assetid: a62f4ff9-2953-42ca-b7d8-1f8f527c4d66
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9169f451bdbbc0c8e28eac19543ab7ca6092fb16
-ms.sourcegitcommit: e2d25f265556af92afcc0acde662929e654bf841
+ms.openlocfilehash: 61e964106acc57899b334e21592e3c6a3f57192b
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/16/2021
-ms.locfileid: "103490064"
+ms.locfileid: "103575048"
 ---
 # <a name="dynamic-data-masking"></a>動的なデータ マスキング
 [!INCLUDE [SQL Server 2016 ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -127,11 +127,11 @@ GO
 
 -- table with masked columns
 CREATE TABLE Data.Membership(
-    MemberID            int IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
-    FirstName           varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
-    LastName            varchar(100) NOT NULL,
-    Phone               varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
-    Email               varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
+    MemberID        int IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
+    FirstName       varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
+    LastName        varchar(100) NOT NULL,
+    Phone           varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
+    Email           varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
     DiscountCode    smallint MASKED WITH (FUNCTION = 'random(1, 100)') NULL
     )
 
@@ -162,11 +162,11 @@ REVERT;
   
  次のようにデータが変更された結果によって、マスクが示されます。  
   
- `1    Roberto     Tamburello    555.123.4567    RTamburello@contoso.com`    10  
+ `1    Roberto     Tamburello    555.123.4567    RTamburello@contoso.com    10`  
   
- into  
+ 変更前:  
   
- `1    Rxxxxxo    Tamburello    xxxx            RXXX@XXXX.com`            91
+ `1    Rxxxxxo    Tamburello    xxxx            RXXX@XXXX.com            91`
  
  DiscountCode の番号は、すべてのクエリ結果に対してランダムになります
   
