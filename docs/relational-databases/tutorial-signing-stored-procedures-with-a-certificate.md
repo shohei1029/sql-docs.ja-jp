@@ -14,12 +14,12 @@ ms.assetid: a4b0f23b-bdc8-425f-b0b9-e0621894f47e
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 07be01325e1940c0915fc4e6b198c06631e61a8d
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 91bbdaacd4765639d056fe4ccf54da4c1e0dd371
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474593"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610942"
 ---
 # <a name="tutorial-signing-stored-procedures-with-a-certificate"></a>チュートリアル : 証明書を使用したストアド プロシージャへの署名
 [!INCLUDE [SQL Server Azure SQL Database SQL Managed Instance](../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -46,7 +46,7 @@ master データベースに証明書を作成し、サーバーレベルの権�
 SQL Server Management Studio でデータベースを復元する手順については、[データベースの復元](./backup-restore/restore-a-database-backup-using-ssms.md)に関するページを参照してください。   
   
 ## <a name="1-configure-the-environment"></a>1.環境を構成する  
-この例の初期コンテキストを設定するには、[!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] で新しいクエリを開き、次のコードを実行して Adventureworks2017 データベースを開きます。 このコードにより、データベース コンテキストが `AdventureWorks2012` に変更され、新しいサーバー ログインとデータベース ユーザー アカウント (`TestCreditRatingUser`) が作成されます。ログインにはパスワードが設定されます。  
+この例の初期コンテキストを設定するには、[!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] で新しいクエリを開き、次のコードを実行して Adventureworks2017 データベースを開きます。 このコードにより、データベース コンテキストが `AdventureWorks2017` に変更され、新しいサーバー ログインとデータベース ユーザー アカウント (`TestCreditRatingUser`) が作成されます。ログインにはパスワードが設定されます。  
   
 ```sql  
 USE AdventureWorks2017;  
@@ -71,7 +71,7 @@ CREATE USER ステートメントの詳細については、[「CREATE USER (Tra
 CREATE CERTIFICATE TestCreditRatingCer  
    ENCRYPTION BY PASSWORD = 'pGFD4bb925DGvbd2439587y'  
       WITH SUBJECT = 'Credit Rating Records Access',   
-      EXPIRY_DATE = '12/05/2020';  -- Error 3701 will occur if this date is not in the future
+      EXPIRY_DATE = '12/31/2021';  -- Error 3701 will occur if this date is not in the future
 GO  
 ```  
   
@@ -205,11 +205,11 @@ CREATE USER TestCreditRatingUser
 FOR LOGIN TestCreditRatingUser;  
 GO  
   
-/* Step 2 - Create a certificate in the AdventureWorks2012 database */  
+/* Step 2 - Create a certificate in the AdventureWorks2017 database */  
 CREATE CERTIFICATE TestCreditRatingCer  
    ENCRYPTION BY PASSWORD = 'pGFD4bb925DGvbd2439587y'  
       WITH SUBJECT = 'Credit Rating Records Access',   
-      EXPIRY_DATE = '12/05/2020';   -- Error 3701 will occur if this date is not in the future
+      EXPIRY_DATE = '12/31/2021';   -- Error 3701 will occur if this date is not in the future
 GO  
   
 /* Step 3 - Create a stored procedure and  
@@ -239,7 +239,7 @@ GO
   
 /* Step 4 - Create a database user for the certificate.   
 This user has the ownership chain associated with it. */  
-USE AdventureWorks2012;  
+USE AdventureWorks2017;  
 GO  
 CREATE USER TestCreditRatingcertificateAccount  
    FROM CERTIFICATE TestCreditRatingCer;  

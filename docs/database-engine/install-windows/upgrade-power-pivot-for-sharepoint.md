@@ -12,12 +12,12 @@ author: Minewiskan
 ms.author: owend
 monikerRange: '>=sql-server-2016'
 manager: erikre
-ms.openlocfilehash: 2f034ac2223b15a3b66883a3ce3dbc434bcf07db
-ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
+ms.openlocfilehash: 971c23cfe9b49ad052c3808deca6e6221acb38e5
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98813247"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610935"
 ---
 # <a name="upgrade-power-pivot-for-sharepoint"></a>Power Pivot for SharePoint のアップグレード
 
@@ -68,20 +68,20 @@ ms.locfileid: "98813247"
   
  **SQL Server:**  
   
--   [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] の既存のインストールが [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] の場合、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] にアップグレードするには [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] Service Pack 2 (SP2) が必要です。  
+-   [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] の既存のインストールが [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] の場合、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] にアップグレードするには [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] Service Pack 2 (SP2) が必要です。  
   
--   [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] の既存のインストールが [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] の場合、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] にアップグレードするには [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] Service Pack 1 (SP1) が必要です。  
+-   [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] の既存のインストールが [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] の場合、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] にアップグレードするには [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] Service Pack 1 (SP1) が必要です。  
   
  **SharePoint 2010:**  
   
--   既存のインストールで SharePoint 2010 が実行されている場合は、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)][!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)]。 詳細については、「 [Microsoft SharePoint 2010 Service Pack 2](https://www.microsoft.com/download/details.aspx?id=39672)」を参照してください。 バージョンを確認するには、PowerShell コマンド `(Get-SPfarm).BuildVersion.ToString()` を使用します。 リリース日でビルド バージョンを参照するには、「 [SharePoint 2010 のビルド番号](https://www.toddklindt.com/blog/Lists/Posts/Post.aspx?ID=224)」を参照してください。  
+-   既存のインストールで SharePoint 2010 が実行されている場合は、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)][!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)]。 詳細については、「 [Microsoft SharePoint 2010 Service Pack 2](https://www.microsoft.com/download/details.aspx?id=39672)」を参照してください。 バージョンを確認するには、PowerShell コマンド `(Get-SPfarm).BuildVersion.ToString()` を使用します。 リリース日でビルド バージョンを参照するには、「 [SharePoint 2010 のビルド番号](https://www.toddklindt.com/blog/Lists/Posts/Post.aspx?ID=224)」を参照してください。  
   
 ##  <a name="upgrade-an-existing-sharepoint-2013-farm"></a><a name="bkmk_uprgade_sharepoint2013"></a> 既存の SharePoint 2013 ファームのアップグレード  
  SharePoint 2013 に配置された [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] をアップグレードするには、次の手順を実行します。  
   
  ![PowerPivot for SharePoint 2013 アップグレード](../../database-engine/install-windows/media/as-powepivot-upgrade-flow-sharepoint2013.png "PowerPivot for SharePoint 2013 アップグレード")  
   
-1.  SharePoint モードで [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] を実行するバックエンド サーバー上で [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] セットアップを実行します。 サーバーで [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]の複数のインスタンスがホストされている場合は、少なくとも **POWERPIVOT** インスタンスをアップグレードします。 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] のアップグレードに関連するセットアップ ウィザードの手順の概要を次に示します。  
+1.  SharePoint モードで [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] を実行するバックエンド サーバー上で [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] セットアップを実行します。 サーバーで [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]の複数のインスタンスがホストされている場合は、少なくとも **POWERPIVOT** インスタンスをアップグレードします。 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] のアップグレードに関連するセットアップ ウィザードの手順の概要を次に示します。  
   
     1.  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セットアップ ウィザードで、 **[インストール]** をクリックします。  
   
@@ -165,7 +165,7 @@ ms.locfileid: "98813247"
     Get-Service | where {$_.displayname -like "*powerpivot*"}  
     ```  
   
-5.  **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** Windows サービスを実行する最初の SharePoint アプリケーション サーバーで、 **[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] セットアップを実行** して、POWERPIVOT インスタンスをアップグレードします。 SQL Server セットアップ ウィザードの [インストール] ページで、アップグレード オプションを選択します。 詳細については、「 [インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)」を参照してください。  
+5.  **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** Windows サービスを実行する最初の SharePoint アプリケーション サーバーで、 **[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] セットアップを実行** して、POWERPIVOT インスタンスをアップグレードします。 SQL Server セットアップ ウィザードの [インストール] ページで、アップグレード オプションを選択します。 詳細については、「 [インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)」を参照してください。  
   
 6.  構成ツールを実行する前に **サーバーを再起動します** 。 これにより、SQLServer セットアップによってインストールされた更新プログラムや必須コンポーネントがシステムで完全に構成されます。  
   
@@ -248,7 +248,7 @@ ms.locfileid: "98813247"
 Get-PowerPivotSystemService  
 ```  
   
- **CurrentSolutionVersion** を確認します。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のバージョンは 13.0.\<major build>.\<minor build> です  
+ **CurrentSolutionVersion** を確認します。 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のバージョンは 13.0.\<major build>.\<minor build> です  
   
 ### <a name="verify-the-version-of-the-analysis-services-windows-service"></a>Analysis Services Windows サービスのバージョン確認  
  SharePoint 2010 ファーム内の [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] サーバーの一部のみをアップグレードした場合は、アップグレードされていないサーバー上の [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] インスタンスがファームで想定されるバージョンより古くなります。 すべてのサーバーを同じバージョンにアップグレードする必要があります。 各コンピューターの SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]) Windows サービスのバージョンを確認するには、次のいずれかの方法を使用します。  
@@ -261,7 +261,7 @@ Get-PowerPivotSystemService
   
 3.  **[詳細]** をクリックします。  
   
-4.  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] ファイルのバージョンは 13.00.\<major build>.\<minor build> になります。  
+4.  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] ファイルのバージョンは 13.00.\<major build>.\<minor build> になります。  
   
 5.  この数値が [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ソリューションおよびシステム サービスのバージョンと同じであることを確認します。  
   

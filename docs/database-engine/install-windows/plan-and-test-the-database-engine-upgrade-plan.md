@@ -11,12 +11,12 @@ ms.assetid: 19c5b725-7400-4881-af8f-fd232ca28234
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 7a6311f79aa87d93ee980cf4d0c8d00352b14687
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 38044ef31208fa5a84c7aa4335c48408425b45a4
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353052"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610948"
 ---
 # <a name="plan-and-test-the-database-engine-upgrade-plan"></a>データベース エンジンのアップグレード計画の策定およびテスト
 
@@ -49,24 +49,21 @@ ms.locfileid: "100353052"
   
        -   TLS セキュリティ更新プログラム  
 
-   >[!NOTE]
-   >上記のリストは [!INCLUDE[sscurrent](../../includes/sscurrent-md.md)] にも適用されます。
-  
 -   **サードパーティ コンポーネント:** 統合バックアップなどのサードパーティ製のコンポーネントの互換性を確認します。  
   
 -   **ターゲット環境:** ターゲット環境がハードウェアとソフトウェアの要件を満たしていることと、元のシステム要件をサポートできることを確認します。 たとえば、アップグレードでは、複数の SQL Server インスタンスを 1 つの新しい [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] インスタンスに統合すること、または [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 環境をプライベートまたはパブリック クラウドに対して仮想化することが必要な場合があります。  
   
--   **エディション:** アップグレードで必要な [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] の適切なエディションを決定し、アップグレードのための有効なアップグレード パスを決定します。 詳細については、「 [Supported Version and Edition Upgrades](../../database-engine/install-windows/supported-version-and-edition-upgrades.md)」をご覧ください。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のいずれかのエディションから別のエディションへアップグレードする前に、現在使用している機能がアップグレード先のエディションでサポートされているかどうかを確認します。  
+-   **エディション:** アップグレードで必要な [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の適切なエディションを決定し、アップグレードのための有効なアップグレード パスを決定します。 詳細については、「 [Supported Version and Edition Upgrades](../../database-engine/install-windows/supported-version-and-edition-upgrades.md)」をご覧ください。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のいずれかのエディションから別のエディションへアップグレードする前に、現在使用している機能がアップグレード先のエディションでサポートされているかどうかを確認します。  
   
     > [!NOTE]  
-    >  [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] を前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise エディションからアップグレードする場合は、Enterprise エディションとコアベース ライセンスの Enterprise エディションのいずれかを選ぶことができます。 これらの Enterprise エディションは、ライセンス モードのみが異なります。 詳細については、「 [Compute Capacity Limits by Edition of SQL Server](../../sql-server/compute-capacity-limits-by-edition-of-sql-server.md)」を参照してください。  
+    >  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] を前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise エディションからアップグレードする場合は、Enterprise エディションとコアベース ライセンスの Enterprise エディションのいずれかを選ぶことができます。 これらの Enterprise エディションは、ライセンス モードのみが異なります。 詳細については、「 [Compute Capacity Limits by Edition of SQL Server](../../sql-server/compute-capacity-limits-by-edition-of-sql-server.md)」を参照してください。  
   
--   **下位互換性:** [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] データベース エンジンの下位互換性に関する記事を参照して、[!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] とアップグレード対象の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バージョンとの間の動作の違いについて確認します。 「 [SQL Server Database Engine Backward Compatibility](../discontinued-database-engine-functionality-in-sql-server.md)」を参照してください。  
+-   **下位互換性:** [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データベース エンジンの下位互換性に関する記事を参照して、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] とアップグレード対象の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バージョンとの間の動作の違いについて確認します。 「 [SQL Server Database Engine Backward Compatibility](../discontinued-database-engine-functionality-in-sql-server.md)」を参照してください。  
   
 -   **Data Migration Assistant:** アップグレード プロセスを妨げるおそれのある問題、あるいは既存のスクリプトまたはアプリケーションを修正しなければならない可能性がある重大な変更については、Data Migration Assistant を実行して診断を行うことができます。
     Data Migration Assistant は[ここ](https://aka.ms/get-dma)からダウンロードできます。  
   
--   **システム構成チェッカー:** アップグレードをスケジュールする前に、[!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] システム構成チェッカー (SCC) を実行して、SQL Server セットアップ プログラムでセットアップに支障をきたす問題が検出されていないか判定します。 詳細については、「 [Check Parameters for the System Configuration Checker](../../database-engine/install-windows/check-parameters-for-the-system-configuration-checker.md)」を参照してください。  
+-   **システム構成チェッカー:** アップグレードをスケジュールする前に、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] システム構成チェッカー (SCC) を実行して、SQL Server セットアップ プログラムでセットアップに支障をきたす問題が検出されていないか判定します。 詳細については、「 [Check Parameters for the System Configuration Checker](../../database-engine/install-windows/check-parameters-for-the-system-configuration-checker.md)」を参照してください。  
   
 -   **メモリ最適化テーブルのアップグレード:** メモリ最適化テーブルを含む SQL Server 2014 データベース インスタンスを SQL Server 2016 にアップグレードする場合、アップグレード プロセスでは、メモリ最適化テーブルをディスク上の新しいフォーマットに変換するために余分な時間が必要になります (これらの手順が実行されている間、データベースはオフラインになります)。   所要時間は、メモリ最適化テーブルのサイズと、I/O サブシステムの速度によって異なります。 インプレース アップグレードと新規インストール アップグレードの場合は、3 種類のデータ操作が必要です (ローリング アップグレードでは手順 1 は不要、手順 2 と手順 3 は必要です)。  
   

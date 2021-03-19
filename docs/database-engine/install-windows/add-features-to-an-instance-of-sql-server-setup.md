@@ -14,12 +14,12 @@ ms.reviewer: ''
 ms.custom: ''
 ms.date: 02/05/2021
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 40f6618c8564f0d264076316038274b401fb650a
-ms.sourcegitcommit: 765262cdc6352a5325148afc22fa4f1499fe1aa3
+ms.openlocfilehash: 70ca3fb64d5672cd4b734b49ac124f1e4e333f32
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102514899"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611011"
 ---
 # <a name="add-features-to-an-instance-of-sql-server-setup"></a>SQL Server のインスタンスへの機能の追加 (セットアップ)
 
@@ -40,15 +40,15 @@ ms.locfileid: "102514899"
 > ローカル インストールの場合は、セットアップを管理者として実行する必要があります。 SQL Server をリモート共有からインストールする場合は、そのリモート共有に対する読み取り権限を持つドメイン アカウントを使用する必要があります。  
   
 > [!NOTE]
-> [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のインスタンスに機能を追加する場合、新しく追加した機能には既存の使用状況レポートの設定が適用されます。 これらの設定を変更するには、SQL Server の **[構成ツール]** メニューにある **[SQL Server エラーと使用状況レポート]** ツールを使用します。
+> [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のインスタンスに機能を追加する場合、新しく追加した機能には既存の使用状況レポートの設定が適用されます。 これらの設定を変更するには、SQL Server の **[構成ツール]** メニューにある **[SQL Server エラーと使用状況レポート]** ツールを使用します。
 
 ## <a name="procedures"></a>手順
 
-#### <a name="to-add-features-to-an-instance-of-sscurrent"></a>コマンド プロンプトから [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]
+#### <a name="to-add-features-to-an-instance-of-ssnoversion"></a>コマンド プロンプトから [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]
 
-1. SQL Server のインストール メディアを挿入します。 ルート フォルダーの setup.exe をダブルクリックします。 ネットワーク共有からインストールするには、ネットワーク共有上のルート フォルダーに移動し、setup.exe をダブルクリックします。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の [セットアップ] ダイアログ ボックスが表示されたら、必要なものをインストールする場合は **[OK]** をクリックし、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のインストールを終了する場合は **[キャンセル]** をクリックします。  
+1. SQL Server のインストール メディアを挿入します。 ルート フォルダーの setup.exe をダブルクリックします。 ネットワーク共有からインストールするには、ネットワーク共有上のルート フォルダーに移動し、setup.exe をダブルクリックします。 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の [セットアップ] ダイアログ ボックスが表示されたら、必要なものをインストールする場合は **[OK]** をクリックし、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のインストールを終了する場合は **[キャンセル]** をクリックします。  
 
-2. インストール ウィザードによって SQL Server インストール センターが起動されます。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の既存のインスタンスに新しい機能を追加するには、左側のナビゲーション領域の **[インストール]** を選択し、 **[SQL Server の新規スタンドアロン インストールを実行するか、既存のインストールに機能を追加]** をクリックします。
+2. インストール ウィザードによって SQL Server インストール センターが起動されます。 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の既存のインスタンスに新しい機能を追加するには、左側のナビゲーション領域の **[インストール]** を選択し、 **[SQL Server の新規スタンドアロン インストールを実行するか、既存のインストールに機能を追加]** をクリックします。
 
 3. システム構成チェッカーにより、コンピューターで検出処理が実行されます。 検証の詳細を表示するには、 **[詳細の表示]** をクリックします。 続行するには、 **[OK]** を選択します。
 
@@ -58,7 +58,7 @@ ms.locfileid: "102514899"
 
 6. セットアップを続行する前に、システム構成チェッカーによってコンピューターのシステムの状態が確認されます。  
 
-7. [インストールの種類] ページで、 **[既存の [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] インスタンスに機能を追加する]** オプションを選択し、更新するインスタンスを選択します。
+7. [インストールの種類] ページで、 **[既存の [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] インスタンスに機能を追加する]** オプションを選択し、更新するインスタンスを選択します。
 
 8. [機能の選択] ページで、インストールするコンポーネントを選択します。 機能名を選択すると、右側のウィンドウに各コンポーネント グループの説明が表示されます。 チェック ボックスはいくつでもオンにできます。 詳細については、「[SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)」および [SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md) に関するページを参照してください。 SQL Server の特定のインスタンスに各コンポーネントをインストールできるのは、一度だけです。 複数のコンポーネントをインストールするには、SQL Server の追加のインスタンスをインストールする必要があります。
 

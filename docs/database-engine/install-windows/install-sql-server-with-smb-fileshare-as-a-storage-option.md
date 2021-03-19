@@ -11,12 +11,12 @@ ms.assetid: 8b7810b2-637e-46a3-9fe1-d055898ba639
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 91e51eeb0f2f3b39eba6c183c04f144d42e49579
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5f7bbccc12c8d3f522703421542ba6188e826ea1
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353134"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610971"
 ---
 # <a name="install-sql-server-with-smb-fileshare-storage"></a>SMB ファイル共有ストレージを使用して SQL Server をインストールする
 
@@ -79,10 +79,10 @@ ms.locfileid: "100353134"
     setup.exe /q /ACTION=InstallFailoverCluster /InstanceName=MSSQLSERVER /INDICATEPROGRESS /ASSYSADMINACCOUNTS="<DomainName\UserName>" /ASDATADIR=<Drive>:\OLAP\Data /ASLOGDIR=<Drive>:\OLAP\Log /ASBACKUPDIR=<Drive>:\OLAP\Backup /ASCONFIGDIR=<Drive>:\OLAP\Config /ASTEMPDIR=<Drive>:\OLAP\Temp /FAILOVERCLUSTERDISKS="<Cluster Disk Resource Name - for example, 'Disk S:'" /FAILOVERCLUSTERNETWORKNAME="<Insert Network Name>" /FAILOVERCLUSTERIPADDRESSES="IPv4;xx.xxx.xx.xx;Cluster Network;xxx.xxx.xxx.x" /FAILOVERCLUSTERGROUP="MSSQLSERVER" /Features=AS,SQL /ASSVCACCOUNT="<DomainName\UserName>" /ASSVCPASSWORD="xxxxxxxxxxx" /AGTSVCACCOUNT="<DomainName\UserName>" /AGTSVCPASSWORD="xxxxxxxxxxx" /INSTALLSQLDATADIR="\\FileServer\Share1\" /SQLCOLLATION="SQL_Latin1_General_CP1_CS_AS" /SQLSVCACCOUNT="<DomainName\UserName>" /SQLSVCPASSWORD="xxxxxxxxxxx" /SQLSYSADMINACCOUNTS="<DomainName\UserName> /IACCEPTSQLSERVERLICENSETERMS  
     ```  
   
-     [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]におけるさまざまなコマンド ライン パラメーター オプションの使用方法については、「 [コマンド プロンプトからの SQL Server 2016 のインストール](./install-sql-server-from-the-command-prompt.md)」を参照してください。  
+     [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]におけるさまざまなコマンド ライン パラメーター オプションの使用方法については、「 [コマンド プロンプトからの SQL Server 2016 のインストール](./install-sql-server-from-the-command-prompt.md)」を参照してください。  
   
 ## <a name="operating-system-considerations-smb-protocol-vs-ssnoversion"></a>オペレーティング システムに関する注意事項 (SMB プロトコルと [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)])  
- Windows オペレーティング システムのバージョンによって SMB プロトコルのバージョンも異なりますが、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]は、どのバージョンの SMB プロトコルにも対応します。 SMB プロトコルの各バージョンによって、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]に対するメリットも異なります。  
+ Windows オペレーティング システムのバージョンによって SMB プロトコルのバージョンも異なりますが、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]は、どのバージョンの SMB プロトコルにも対応します。 SMB プロトコルの各バージョンによって、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]に対するメリットも異なります。  
   
 |オペレーティング システム|SMB2 プロトコルのバージョン|に対するメリット [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
 |----------------------|---------------------------|-------------------------------------------|  
@@ -111,7 +111,7 @@ ms.locfileid: "100353134"
   
 ## <a name="known-issues"></a>既知の問題  
   
--   ネットワークにアタッチされたストレージ上に存在する [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] データベースをデタッチした後で、その [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースを再アタッチしようとすると、データベース権限の問題が発生する場合があります。 詳細については、[エラー 5120](../../relational-databases/errors-events/mssqlserver-5120-database-engine-error.md) を参照してください。
+-   ネットワークにアタッチされたストレージ上に存在する [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データベースをデタッチした後で、その [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースを再アタッチしようとすると、データベース権限の問題が発生する場合があります。 詳細については、[エラー 5120](../../relational-databases/errors-events/mssqlserver-5120-database-engine-error.md) を参照してください。
   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のクラスター化されたインスタンスのストレージ オプションとして SMB ファイル共有が使用されている場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Resource DLL にはこのファイル共有に対する読み取り/書き込み権限がないため、既定では、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] フェールオーバー クラスター診断ログをファイル共有に書き込むことができません。 この問題を解決するには、次のいずれかの方法を試してください。  
   

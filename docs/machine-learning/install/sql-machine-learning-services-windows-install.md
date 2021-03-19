@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2017'
-ms.openlocfilehash: 44993ae527e99d615a9be620e3d930aa520c8980
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: d209daa0932068b41974c7e3597980b15657b1b2
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839512"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611212"
 ---
 # <a name="install-sql-server-machine-learning-services-python-and-r-on-windows"></a>Windows に SQL Server Machine Learning Services (Python と R) をインストールする
 
@@ -294,7 +294,7 @@ Machine Learning Services をデータベース エンジンと同じバージ�
  
    *Microsoft SQL Server 2019 (RTM-CU8-GDR) (KB4583459) - 15.0.4083.2 (X64)   Nov  2 2020 18:35:09   Copyright (C) 2019 Microsoft Corporation  Developer Edition (64-bit) on Windows 10 Enterprise 10.0 <X64> (Build 19042: ) (Hypervisor)*
 
-   詳細については、「[SQL Server とそのコンポーネントのバージョン、エディション、更新レベルを確認する](https://docs.microsoft.com/troubleshoot/sql/general/determine-version-edition-update-level#machine-learning-services)」を参照してください。
+   詳細については、「[SQL Server とそのコンポーネントのバージョン、エディション、更新レベルを確認する](/troubleshoot/sql/general/determine-version-edition-update-level#machine-learning-services)」を参照してください。
 
 1. データベース エンジンにインストールした[累積的な更新プログラム (CU)](../../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md) をダウンロードします。
 

@@ -9,12 +9,12 @@ ms.prod_service: sql-tools
 ms.topic: conceptual
 author: dzsquared
 ms.author: drskwier
-ms.openlocfilehash: 661230edf4deea3d62ceef7d8b400cdb951330a5
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.openlocfilehash: 500d946c036041481094292720744e7896d64622
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622909"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611022"
 ---
 # <a name="sqlpackage-for-azure-synapse-analytics"></a>Azure Synapse Analytics の SqlPackage
 
@@ -43,5 +43,5 @@ Azure Blob Storage の dacpac からスキーマを[公開](sqlpackage-publish.m
 ## <a name="next-steps"></a>次の手順
 - [抽出](sqlpackage-extract.md)の詳細情報
 - [公開](sqlpackage-publish.md)の詳細情報
-- [Azure Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) の詳細情報
-- [Azure ストレージ アカウント キー](https://docs.microsoft.com/azure/storage/common/storage-account-keys-manage)の詳細
+- [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) の詳細情報
+- [Azure ストレージ アカウント キー](/azure/storage/common/storage-account-keys-manage)の詳細

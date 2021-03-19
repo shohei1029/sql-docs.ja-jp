@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d53950d277b245b405420af2c28fa7666ba653dd
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 29e59beaf30a3de548da2c0ed591cd0223e65dc4
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100044123"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610990"
 ---
 # <a name="use-a-python-script-to-deploy-a-sql-server-big-data-cluster-on-azure-red-hat-openshift-aro"></a>python スクリプトを使用して SQL Server ビッグ データ クラスターを Azure Red Hat OpenShift (ARO) に展開する
 
@@ -187,8 +187,10 @@ executeCmd (command)
 command = "oc apply -f bdc-scc.yaml"
 executeCmd (command)
 #
-#Adding the custom scc to BDC namespace
-command = "oc adm policy add-scc-to-group bdc-scc system:serviceaccounts:" + CLUSTER_NAME
+#Bind the custom scc with service accounts in the BDC namespace
+command = "oc create clusterrole bdc-role --verb=use --resource=scc --resource-name=bdc-scc -n " + CLUSTER_NAME
+executeCmd (command)
+command = "oc create rolebinding bdc-rbac --clusterrole=bdc-role --group=system:serviceaccounts:" + CLUSTER_NAME
 executeCmd (command)
 #
 # Deploy big data cluster

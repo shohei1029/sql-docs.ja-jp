@@ -11,12 +11,12 @@ ms.assetid: 1dd294cc-5b69-4d0c-9005-3e307b75678b
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 205de7d5b4f1edce2dcc31bd8a1f362c2cc674ef
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5ceba605fc11adad95a720be8122bf995ec458f1
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348378"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611082"
 ---
 # <a name="install-sql-server-on-server-core"></a>Server Core への SQL Server のインストール
 
@@ -40,7 +40,7 @@ Server Core インストール オプションでは、特定のサーバー ロ
 ##  <a name="supported-features"></a><a name="BK_SupportedFeatures"></a> サポートされている機能  
  Server Core インストールの [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] でサポートされている機能については、次の表を参照してください。  
   
-|特徴量|サポートされています|追加情報|  
+|機能|サポートされています|追加情報|  
 |-------------|---------------|----------------------------|  
 |[!INCLUDE[ssDE](../../includes/ssde-md.md)] サービス|はい||  
 |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] レプリケーション|はい||  
@@ -59,16 +59,16 @@ Server Core インストール オプションでは、特定のサーバー ロ
 |分散再生コントローラー|いいえ||  
 |分散再生クライアント|リモートのみ|Server Core へのこれらの機能のインストールはサポートされていません。 これらのコンポーネントは、Server Core ではない別のサーバーにインストールし、Server Core にインストールされている [!INCLUDE[ssDE](../../includes/ssde-md.md)] サービスに接続できます。|  
 |SQL クライアント接続 SDK|はい||  
-|Microsoft Sync Framework|はい|Microsoft Sync Framework は、 [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] インストール パッケージに含まれていません。 適切なバージョンの Sync Framework は、この [Microsoft ダウンロード センター ページ](https://go.microsoft.com/fwlink/?LinkId=221788) (https://go.microsoft.com/fwlink/?LinkId=221788) からダウンロードして、Server Core を実行しているコンピューターにインストールできます。|  
+|Microsoft Sync Framework|はい|Microsoft Sync Framework は、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] インストール パッケージに含まれていません。 適切なバージョンの Sync Framework は、この [Microsoft ダウンロード センター ページ](https://go.microsoft.com/fwlink/?LinkId=221788) (https://go.microsoft.com/fwlink/?LinkId=221788) からダウンロードして、Server Core を実行しているコンピューターにインストールできます。|  
 |[!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)]|いいえ||  
 |[!INCLUDE[ssDQSnoversion](../../includes/ssdqsnoversion-md.md)]|いいえ||  
   
 ## <a name="supported-scenarios"></a>サポートされるシナリオ  
- 次の表では、Server Core に [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] をインストールする場合のサポートされるシナリオのマトリックスを示します。  
+ 次の表では、Server Core に [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] をインストールする場合のサポートされるシナリオのマトリックスを示します。  
   
 | インストール | 有効なターゲット |  
 |-|-|  
-|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のエディション|すべての [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] 64 ビット エディション |  
+|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のエディション|すべての [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] 64 ビット エディション |  
 |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の言語|すべての言語|  
 |OS の言語とロケール (組み合わせ) での[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の言語|JPN (日本語) Windows への ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br /> GER (ドイツ語) Windows への ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br /> CHS (中国語 - 中国) Windows への ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br /> ARA (アラビア語 (SA)) Windows への ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br /> THA (タイ語) Windows への ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br /> TRK (トルコ語) Windows への ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br /> pt-PT (ポルトガル語 - ポルトガル) Windows への ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br /> ENG (英語) Windows への ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
 |Windows のエディション|Windows Server 2019 Datacenter <br/><br/> Windows Server 2019 Standard <br /><br />  [!INCLUDE[winserver2016_datacenter_md](../../includes/winserver2016-datacenter-md.md)]<br/><br/>[!INCLUDE[winserver2016_standard_md](../../includes/winserver2016-standard-md.md)]<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] R2 Datacenter<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] R2 Standard<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] R2 Essentials<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] R2 Foundation<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] Datacenter<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] Standard<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] Essentials<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] Foundation|  
@@ -77,7 +77,7 @@ Server Core インストール オプションでは、特定のサーバー ロ
  Server Core インストールでは、 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] から [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] へのアップグレードがサポートされています。  
   
 ## <a name="install"></a>インストール  
- [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] では、Server Core オペレーティング システムでのインストール ウィザードを使用したセットアップはサポートされていません。 Server Core にインストールする場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セットアップでは、/Q パラメーターを使用した非表示モード、または /QS パラメーターを使用した簡易非表示モードがサポートされます。 詳細については、「 [コマンド プロンプトからの SQL Server のインストール](./install-sql-server-from-the-command-prompt.md)」を参照してください。  
+ [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、Server Core オペレーティング システムでのインストール ウィザードを使用したセットアップはサポートされていません。 Server Core にインストールする場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セットアップでは、/Q パラメーターを使用した非表示モード、または /QS パラメーターを使用した簡易非表示モードがサポートされます。 詳細については、「 [コマンド プロンプトからの SQL Server のインストール](./install-sql-server-from-the-command-prompt.md)」を参照してください。  
   
  どのインストール方法を使用するかにかかわらず、個人として、または組織を代表して、ソフトウェア ライセンス条項に同意するかどうかを確認する必要があります。ただし、ソフトウェアの使用に別の契約 ( [!INCLUDE[msCoName](../../includes/msconame-md.md)] ボリューム ライセンス契約、ISV や OEM とのサード パーティ契約など) が適用される場合を除きます。  
   
@@ -113,7 +113,7 @@ Server Core インストール オプションでは、特定のサーバー ロ
 
   
 ### <a name="installation-options"></a>インストール オプション  
- Server Core オペレーティング システムへの [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] のインストール中に、セットアップで次のインストール オプションをサポートします。  
+ Server Core オペレーティング システムへの [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のインストール中に、セットアップで次のインストール オプションをサポートします。  
   
 1.  **コマンド ラインからのインストール**  
   
@@ -187,7 +187,7 @@ Server Core インストール オプションでは、特定のサーバー ロ
   
     -   サポートされるすべての機能のインストール  
   
-        次の例では、 [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] のサポートされる全機能を Server Core にインストールする方法を示します。  
+        次の例では、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のサポートされる全機能を Server Core にインストールする方法を示します。  
   
         ```console
         ; SQL Server Configuration File  
@@ -260,7 +260,7 @@ Server Core インストール オプションでは、特定のサーバー ロ
          DefaultSetup.ini ファイルが存在しない場合は、作成し、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ソース メディアのルート レベルの \x86 および \x64 フォルダーにコピーできます。  
   
 ## <a name="configure-remote-access-of-ssnoversion-on-server-core"></a>Server Core で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のリモート アクセスを構成する  
- Server Core で実行している [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] インスタンスのリモート アクセスを構成するには、以下で説明する操作を実行します。  
+ Server Core で実行している [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] インスタンスのリモート アクセスを構成するには、以下で説明する操作を実行します。  
   
 ### <a name="enable-remote-connections-on-the-instance-of-ssnoversion"></a>のインスタンスでリモート接続を有効にする [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]  
 
@@ -305,7 +305,7 @@ $Tcp
   
 ## <a name="uninstall"></a>アンインストール
 
- Server Core を実行しているコンピューターにログオンした後は、管理者コマンド プロンプトのデスクトップ環境に制限されます。 [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] のアンインストールを起動するときに、このコマンド プロンプトを使用できます。 [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)]のインスタンスをアンインストールするには、/Q パラメーターを使用した非表示モード、または /QS パラメーターを使用した簡易非表示モードで、コマンド プロンプトからアンインストールを起動します。 /QS パラメーターを指定すると、UI に進捗状況が表示されますが、入力は受け付けられません。 /Q は、ユーザー インターフェイスのない非表示モードで実行します。  
+ Server Core を実行しているコンピューターにログオンした後は、管理者コマンド プロンプトのデスクトップ環境に制限されます。 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のアンインストールを起動するときに、このコマンド プロンプトを使用できます。 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]のインスタンスをアンインストールするには、/Q パラメーターを使用した非表示モード、または /QS パラメーターを使用した簡易非表示モードで、コマンド プロンプトからアンインストールを起動します。 /QS パラメーターを指定すると、UI に進捗状況が表示されますが、入力は受け付けられません。 /Q は、ユーザー インターフェイスのない非表示モードで実行します。  
   
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の既存のインスタンスをアンインストールするには、次のコマンドを実行します。  
   

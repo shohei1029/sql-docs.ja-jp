@@ -22,12 +22,12 @@ ms.assetid: 44c7b67e-74c7-4bb9-93a4-7a3016bd2feb
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 105aca59bbcd707e644a19dcb44aaff0c4784aa3
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: a25b533bdd1e2d216d34aa17abe6a17a56f6ecb4
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99191938"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610982"
 ---
 # <a name="nullif-transact-sql"></a>NULLIF (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -78,7 +78,7 @@ INSERT budgets VALUES(300000, 250000);
 GO    
 SET NOCOUNT OFF;  
 SELECT AVG(NULLIF(COALESCE(current_year,  
-   previous_year), 0.00)) AS 'Average Budget'  
+   previous_year), 0.00)) AS [Average Budget]  
 FROM budgets;  
 GO  
 ```  
@@ -99,12 +99,12 @@ GO
 USE AdventureWorks2012;  
 GO  
 SELECT ProductID, MakeFlag, FinishedGoodsFlag,   
-   NULLIF(MakeFlag,FinishedGoodsFlag) AS 'Null if Equal'  
+   NULLIF(MakeFlag,FinishedGoodsFlag) AS [Null if Equal]  
 FROM Production.Product  
 WHERE ProductID < 10;  
 GO  
   
-SELECT ProductID, MakeFlag, FinishedGoodsFlag,'Null if Equal' =  
+SELECT ProductID, MakeFlag, FinishedGoodsFlag, [Null if Equal] =  
    CASE  
        WHEN MakeFlag = FinishedGoodsFlag THEN NULL  
        ELSE MakeFlag  

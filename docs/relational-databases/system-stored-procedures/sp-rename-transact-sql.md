@@ -22,12 +22,12 @@ ms.assetid: bc3548f0-143f-404e-a2e9-0a15960fc8ed
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
-ms.openlocfilehash: a9aabbb180e01dcfec95d87861fc43dd0a1aca51
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 2e24d74b8c2d2d3e661ab5169ae800e99af42f68
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99125939"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610843"
 ---
 # <a name="sp_rename-transact-sql"></a>sp_rename (Transact-sql)
 [!INCLUDE [sql-asdb-asa](../../includes/applies-to-version/sql-asdb-asa.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "99125939"
   現在のデータベース内のユーザーが作成したオブジェクトの名前を変更します。 このオブジェクトには、テーブル、インデックス、列、別名データ型、または [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] 共通言語ランタイム (CLR) ユーザー定義型を使用できます。  
   
 > [!NOTE]
-> で [!INCLUDE[ssazuresynapse](../../includes/ssazuresynapse_md.md)] は、sp_rename は **プレビュー** 段階であり、ユーザーオブジェクト内の列の名前を変更する場合にのみ使用できます。
+> で [!INCLUDE[ssazuresynapse](../../includes/ssazuresynapse_md.md)] は、sp_rename は **プレビュー** 段階であり、 **dbo** スキーマ内のユーザーオブジェクトの列の名前を変更する場合にのみ使用できます。
 
 > [!CAUTION]  
 >  オブジェクト名の一部または全部を変更すると、スクリプトおよびストアド プロシージャが壊れる可能性があります。 ストアド プロシージャ、トリガー、ユーザー定義関数、またはビューの名前を変更する場合は、このステートメントを使用しないことをお勧めします。代わりに、オブジェクトを削除して新しい名前で再作成してください。  
@@ -86,7 +86,7 @@ sp_rename [ @objname = ] 'object_name' , [ @newname = ] 'new_name'
 ## <a name="return-code-values"></a>リターン コードの値  
  0 (成功) または0以外の数値 (失敗)  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
 **適用対象** SQL Server (サポートされているすべてのバージョン) と Azure SQL Database  
  sp_rename では、PRIMARY KEY (主キー) または UNIQUE (一意) 制約の名前を変更した場合、関連するインデックスの名前も自動的に変更されます。 名前を変更したインデックスが PRIMARY KEY 制約に関連付けられている場合、PRIMARY KEY 制約も sp_rename によって自動的に名前が変更されます。  
 
@@ -223,7 +223,10 @@ sp_rename 'Person.Person.ContactMail1', 'NewContact','Statistics';
 
 ## <a name="examples-sssdwfull"></a>例: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)]
 ### <a name="g-renaming-a-column"></a>G. 列の名前を変更する  
- 次の例では、テーブルの列の名前 `c1` `table1` をに変更 `col1` します。  
+ 次の例では、テーブルの列の名前 `c1` `table1` をに変更 `col1` します。 
+
+> [!NOTE]
+> この [!INCLUDE[ssazuresynapse](../../includes/ssazuresynapse_md.md)] 機能はまだプレビュー段階であり、現在は **dbo** スキーマ内のオブジェクトに対してのみ使用できます。 
   
 ```sql  
 CREATE TABLE table1 (c1 INT, c2 INT);

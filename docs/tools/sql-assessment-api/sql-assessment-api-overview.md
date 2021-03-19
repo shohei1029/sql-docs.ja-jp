@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: ''
 ms.date: 3/10/2021
-ms.openlocfilehash: 34a7ff8c9380a88bb285a6d2e51e57e652f0310d
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.openlocfilehash: 998e410eba1da7dcac3071170671c192f809a89c
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622841"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611047"
 ---
 # <a name="sql-assessment-api"></a>SQL Assessment API
 
@@ -37,7 +37,7 @@ SQL Assessment API は、使用する SQL Server の構成が、推奨される�
 この API は、Azure Data Studio (ADS) の SQL Server 評価拡張機能でも使用されます。
 
 >[!NOTE]
->SQL Assessment API によってさまざまな領域に対する評価が提供されますが、セキュリティに関しては詳細に調べられません。 [SQL 脆弱性評価](https://docs.microsoft.com/sql/relational-databases/security/sql-vulnerability-assessment)を使用して、データベースのセキュリティを予防的に向上させることをお勧めします。
+>SQL Assessment API によってさまざまな領域に対する評価が提供されますが、セキュリティに関しては詳細に調べられません。 [SQL 脆弱性評価](../../relational-databases/security/sql-vulnerability-assessment.md)を使用して、データベースのセキュリティを予防的に向上させることをお勧めします。
 
 ## <a name="rules"></a>ルール
 
@@ -168,4 +168,4 @@ SQL Assessment API の呼び出しにパラメーターとして 1 つ以上の 
 
 * [SQL Server 管理オブジェクト (SMO)](../../relational-databases/server-management-objects-smo/overview-smo.md)
 * [PowerShell](../../powershell/download-sql-server-ps-module.md)
-* [SQL 脆弱性評価](https://docs.microsoft.com/sql/relational-databases/security/sql-vulnerability-assessment)
+* [SQL 脆弱性評価](../../relational-databases/security/sql-vulnerability-assessment.md)

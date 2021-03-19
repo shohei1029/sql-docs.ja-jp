@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8c222f98-7392-4faf-b7ad-5fb60ffa237e
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 7b7c6a5df1bcef7e8438c01910233c2c3a38d070
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: dfc19004d430ad70abaadbb33fd337a587e68d0d
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100337937"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611202"
 ---
 # <a name="troubleshoot-always-on-availability-groups-configuration-sql-server"></a>Always On 可用性グループの構成のトラブルシューティング (SQL Server)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -41,11 +41,11 @@ ms.locfileid: "100337937"
 |[エンドポイント アクセス (SQLServer エラー 1418)](#Msg1418)|この [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] エラー メッセージに関する情報が含まれます。|  
 |[データベースの参加の失敗 (SQL Server エラー 35250)](#JoinDbFails)|プライマリ レプリカへの接続がアクティブでないためにセカンダリ データベースを可用性グループに参加させることができない問題について、考え得る原因と解決策について説明します。|  
 |[読み取り専用ルーティングが正常に動作しない](#ROR)||  
-|[関連タスク](#RelatedTasks)|[!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] オンライン ブックの中の、可用性グループ構成のトラブルシューティングに特に関連するタスク指向のトピックの一覧が含まれます。|  
+|[関連タスク](#RelatedTasks)|[!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] オンライン ブックの中の、可用性グループ構成のトラブルシューティングに特に関連するタスク指向のトピックの一覧が含まれます。|  
 |[関連コンテンツ](#RelatedContent)|[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] オンライン ブックの外部にある関連したリソースの一覧が含まれます。|  
   
 ##  <a name="always-on-availability-groups-is-not-enabled"></a><a name="IsHadrEnabled"></a> Always On 可用性グループが有効になっていない  
- [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] 機能は、 [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]の各インスタンスで有効になっている必要があります。 詳細については、「[Always On 可用性グループの有効化と無効化 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/enable-and-disable-always-on-availability-groups-sql-server.md)」を参照してください。  
+ [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] 機能は、 [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]の各インスタンスで有効になっている必要があります。 詳細については、「[Always On 可用性グループの有効化と無効化 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/enable-and-disable-always-on-availability-groups-sql-server.md)」を参照してください。  
   
 ##  <a name="accounts"></a><a name="Accounts"></a> Accounts  
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の実行に使用するアカウントは、正しく構成されている必要があります。  

@@ -11,12 +11,12 @@ ms.assetid: 11f4ed8a-aaa9-417b-bdd5-204f551c6bb6
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 8bbb1d668efb9a8531d6a93b084a7315e99072ff
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 385c1efc0dd11813b2aeb94fa087891b1496cffd
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348312"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610997"
 ---
 # <a name="install-sql-server-with-sysprep"></a>SysPrep を使用して SQL Server をインストールする
 
@@ -104,7 +104,7 @@ ms.locfileid: "100348312"
   
     |インストール|コンポーネント|  
     |-|-|  
-    |[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] SysPrep|[!INCLUDE[ssDE](../../includes/ssde-md.md)]<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] レプリケーション<br /><br /> フルテキスト機能<br /><br /> Data Quality Services<br /><br /> [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] ネイティブ モード<br /><br /> [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]<br /><br /> 再頒布可能な機能<br /><br /> 共有機能|  
+    |[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] SysPrep|[!INCLUDE[ssDE](../../includes/ssde-md.md)]<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] レプリケーション<br /><br /> フルテキスト機能<br /><br /> Data Quality Services<br /><br /> [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] ネイティブ モード<br /><br /> [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]<br /><br /> 再頒布可能な機能<br /><br /> 共有機能|  
   
      機能名を強調表示すると、右側のペインに各コンポーネント グループの説明が表示されます。 チェック ボックスはいくつでもオンにできます。 詳細については、「[SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)」および [SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md) に関するページを参照してください。
   
@@ -296,7 +296,7 @@ ms.locfileid: "100348312"
   
 9. **[完了]** ページで、処理の完了状態を確認できます。 **[閉じる]** をクリックして、インストール ウィザードを終了します。 
   
-10. すべての [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] コンポーネントが削除されるまで、手順 1. ～ 9. を繰り返します。 
+10. すべての [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] コンポーネントが削除されるまで、手順 1. ～ 9. を繰り返します。 
   
 ##  <a name="modifying-or-uninstalling-a-completed-instance-of-ssnoversion"></a><a name="bk_Modifying_Uninstalling"></a>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の完了したインスタンスの変更またはアンインストール 
  機能の追加や削除、または完了した [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスのアンインストールを行う処理は、インストールされた [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスに対して行う処理に似ています。 詳細については、次の記事を参照してください。  

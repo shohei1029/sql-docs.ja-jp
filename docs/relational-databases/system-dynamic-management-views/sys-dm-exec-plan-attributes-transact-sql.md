@@ -1,8 +1,8 @@
 ---
 description: sys.dm_exec_plan_attributes (Transact-SQL)
-title: sys.dm_exec_plan_attributes (Transact-sql) |Microsoft Docs
+title: sys.dm_exec_plan_attributes (Transact-SQL)
 ms.custom: ''
-ms.date: 10/20/2017
+ms.date: 02/24/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
@@ -16,15 +16,14 @@ dev_langs:
 - TSQL
 helpviewer_keywords:
 - sys.dm_exec_plan_attributes dynamic management function
-ms.assetid: dacf3ab3-f214-482e-aab5-0dab9f0a3648
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: fad7df36aabbebf6ad41752c741069465adafac4
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 7ac93d0225cde8b2b24647f6de672fcfeba2f31f
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839292"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611043"
 ---
 # <a name="sysdm_exec_plan_attributes-transact-sql"></a>sys.dm_exec_plan_attributes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +34,7 @@ ms.locfileid: "101839292"
 >  この関数によって返される一部の情報は、 [sys.syscacheobjects](../../relational-databases/system-compatibility-views/sys-syscacheobjects-transact-sql.md) の下位互換性ビューにマップされます。
 
 ## <a name="syntax"></a>構文  
-```  
+```syntaxsql
 sys.dm_exec_plan_attributes ( plan_handle )  
 ```  
   
@@ -63,9 +62,17 @@ sys.dm_exec_plan_attributes ( plan_handle )
 |language_id|**smallint**|キャッシュオブジェクトを作成した接続の言語の ID。 詳細については、「 [sys.sys言語 &#40;transact-sql&#41;](../../relational-databases/system-compatibility-views/sys-syslanguages-transact-sql.md)」を参照してください。|  
 |date_format|**smallint**|キャッシュオブジェクトを作成した接続の日付形式。 詳しくは、「[SET DATEFORMAT &#40;Transact-SQL&#41;](../../t-sql/statements/set-dateformat-transact-sql.md)」をご覧ください。|  
 |date_first|**tinyint**|日付の最初の値。 詳しくは、「[SET DATEFIRST &#40;Transact-SQL&#41;](../../t-sql/statements/set-datefirst-transact-sql.md)」をご覧ください。|  
+|compat_level|**tinyint**|クエリプランがコンパイルされたコンテキストを持つデータベースで設定された互換性レベルを表します。 返される互換性レベルは、アドホックステートメントの現在のデータベースコンテキストの互換性レベルであり、 [QUERY_OPTIMIZER_COMPATIBILITY_LEVEL_n](../../t-sql/queries/hints-transact-sql-query.md)クエリヒントの影響を受けません。 ストアドプロシージャまたは関数に含まれているステートメントでは、ストアドプロシージャまたは関数が作成されたデータベースの互換性レベルに対応しています。| 
 |status|**int**|キャッシュ参照キーの一部である内部ステータス ビットです。|  
 |required_cursor_options|**int**|カーソルの種類など、ユーザーによって指定されたカーソルオプション。|  
 |acceptable_cursor_options|**int**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がステートメントの実行をサポートするために暗黙的に変換できるカーソル オプションです。 たとえば、ユーザーは動的カーソルを指定することができますが、クエリオプティマイザーでは、このカーソルの種類を静的カーソルに変換することが許可されています。|  
+|merge_action_type|**smallint**|MERGE ステートメントの結果として使用されるトリガー実行プランの種類です。<br /><br /> 0は、非トリガープラン、MERGE ステートメントの結果として実行されないトリガープラン、または DELETE アクションのみを指定する MERGE ステートメントの結果として実行されるトリガープランを示します。<br /><br /> 1は、MERGE ステートメントの結果として実行される INSERT トリガープランを示します。<br /><br /> 2 は、MERGE ステートメントの結果として実行される UPDATE トリガー プランを示します。<br /><br /> 3 は、対応する INSERT アクションまたは UPDATE アクションを含む MERGE ステートメントの結果として実行される DELETE トリガー プランを示します。<br /><br /> 連鎖アクションによって実行される入れ子になったトリガーの場合、この値は cascade の原因となった MERGE ステートメントのアクションです。|  
+|is_replication_specific|**int**|このプランがコンパイルされたセッションは、ドキュメント化されていない接続プロパティを使用して SQL Server のインスタンスに接続されたセッションであり、サーバーがレプリケーションコンポーネントによって作成されたものとしてセッションを識別できるようにします| 
+|optional_spid|**smallint**|再コンパイルの回数を減らすために、接続 session_id (spid) がキャッシュキーの一部になります。 これにより、動的にバインドされていない一時テーブルを含む、1つのセッションでのプランの再コンパイルを防止できます。|
+|optional_clr_trigger_dbid|**int**|CLR DML トリガーの場合にのみ設定されます。 エンティティを含むデータベースの ID。 <BR><BR>他の種類のオブジェクトの場合、は0を返します。 | 
+|optional_clr_trigger_objid|**int** |CLR DML トリガーの場合にのみ設定されます。 [Sys. オブジェクト](../../relational-databases/system-catalog-views/sys-objects-transact-sql.md)に格納されているオブジェクト ID。<BR><BR>他の種類のオブジェクトの場合、は0を返します。| 
+|parent_plan_handle|**varbinary(64)**|常に NULL です。| 
+|is_azure_user_plan|**tinyint** | 1 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] ユーザーによって開始されたセッションからで実行されるクエリの場合は1。 <BR><BR>0。エンドユーザーによって開始されていないセッションから実行されたクエリについては、テレメトリの収集または管理タスクの実行を目的としてクエリを発行する Azure インフラストラクチャ内から実行されているアプリケーションによって発生します。 Is_azure_user_plan = 0 のクエリで消費されるリソースに対しては課金されません。<BR><BR>**[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]** 専用.|
 |inuse_exec_context|**int**|クエリプランを使用している現在実行中のバッチの数。|  
 |free_exec_context|**int**|現在使用されていないクエリプランのキャッシュされた実行コンテキストの数。|  
 |hits_exec_context|**int**|実行コンテキストがプランキャッシュから取得され再利用された回数。これにより、SQL ステートメントを再コンパイルするオーバーヘッドが削減されます。 この値は、これまでのすべてのバッチ実行の集計です。|  
@@ -77,12 +84,12 @@ sys.dm_exec_plan_attributes ( plan_handle )
 |misses_cursors|**int**|非アクティブなカーソルがキャッシュ内に見つからなかった回数。|  
 |removed_cursors|**int**|キャッシュされたプランのメモリが不足しているために削除されたカーソルの数。|  
 |sql_handle|**varbinary**(64)|バッチの SQL ハンドルです。|  
-|merge_action_type|**smallint**|MERGE ステートメントの結果として使用されるトリガー実行プランの種類です。<br /><br /> 0は、非トリガープラン、MERGE ステートメントの結果として実行されないトリガープラン、または DELETE アクションのみを指定する MERGE ステートメントの結果として実行されるトリガープランを示します。<br /><br /> 1は、MERGE ステートメントの結果として実行される INSERT トリガープランを示します。<br /><br /> 2 は、MERGE ステートメントの結果として実行される UPDATE トリガー プランを示します。<br /><br /> 3 は、対応する INSERT アクションまたは UPDATE アクションを含む MERGE ステートメントの結果として実行される DELETE トリガー プランを示します。<br /><br /> 連鎖アクションによって実行される入れ子になったトリガーの場合、この値は cascade の原因となった MERGE ステートメントのアクションです。|  
-  
+
 ## <a name="permissions"></a>アクセス許可  
 
-で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
-SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
+で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。
+
+Azure SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
 
 ## <a name="remarks"></a>解説  
   
@@ -148,7 +155,7 @@ SQL Database Basic、S0、S1 のサービス目標、およびエラスティッ
 SELECT plan_handle, refcounts, usecounts, size_in_bytes, cacheobjtype, objtype   
 FROM sys.dm_exec_cached_plans;  
 GO  
-SELECT attribute, value, is_cache_key  
+SELECT attribute, [value], is_cache_key  
 FROM sys.dm_exec_plan_attributes(<plan_handle>);  
 GO  
 ```  

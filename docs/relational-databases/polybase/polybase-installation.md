@@ -11,12 +11,12 @@ author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>= sql-server-2016'
-ms.openlocfilehash: ca5c7911444dcc5cdd87787a80ee0d9e572797ef
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 6a8f7bffd47e5159c0a048a3783f3ea6647bc097
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101838096"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610925"
 ---
 # <a name="install-polybase-on-windows"></a>Windows への PolyBase のインストール
 
@@ -166,7 +166,7 @@ RECONFIGURE;
 PolyBase は、DWConfiguration、DWDiagnostics、および DWQueue の 3 つのユーザー データベースをインストールします。 これらのデータベースは PolyBase で使用されます。 変更したり削除しないでください。  
 
 > [!CAUTION]
-> SQL Server の既存のインストールに PolyBase を追加すると、インストール メディアのバージョン レベルで機能がインストールされ、それは SQL Server の他の機能のバージョン レベルより古いものである可能性があります。 これにより、予期しない動作やエラーが発生する可能性があります。 常に、新しい機能を同じバージョン レベルにすることにより、PolyBase 機能のインストールを維持します。 必要に応じて、Service Pack (SP)、累積的な更新プログラム (CU)、一般配布リリース (GDR) をインストールします。 PolyBase のバージョンを確認するには、「[SQL Server とそのコンポーネントのバージョン、エディション、更新レベルを確認する](https://docs.microsoft.com/troubleshoot/sql/general/determine-version-edition-update-level#polybase)」を参照してください。
+> SQL Server の既存のインストールに PolyBase を追加すると、インストール メディアのバージョン レベルで機能がインストールされ、それは SQL Server の他の機能のバージョン レベルより古いものである可能性があります。 これにより、予期しない動作やエラーが発生する可能性があります。 常に、新しい機能を同じバージョン レベルにすることにより、PolyBase 機能のインストールを維持します。 必要に応じて、Service Pack (SP)、累積的な更新プログラム (CU)、一般配布リリース (GDR) をインストールします。 PolyBase のバージョンを確認するには、「[SQL Server とそのコンポーネントのバージョン、エディション、更新レベルを確認する](/troubleshoot/sql/general/determine-version-edition-update-level#polybase)」を参照してください。
    
 ### <a name="how-to-confirm-installation"></a><a id="confirminstall"></a> インストールの確認方法  
 

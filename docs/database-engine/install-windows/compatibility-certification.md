@@ -19,12 +19,12 @@ ms.assetid: 3c036813-36cf-4415-a0c9-248d0a433856
 author: pmasl
 ms.author: pelopes
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: c9a4b07a3e6db3da84845f4689ecd373b30e7306
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 8921ce4bc3ba2317e2d8ed5324d26d1dfba52b3e
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353843"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611125"
 ---
 # <a name="compatibility-certification"></a>互換性証明書
 
@@ -37,7 +37,7 @@ ms.locfileid: "100353843"
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が新しくリリースされるたびに、既定の互換性レベルが [!INCLUDE[ssDE](../../includes/ssde-md.md)] のバージョンに設定されます。 ただし、以前のバージョンの互換性レベルが維持され、既存のアプリケーションの互換性が残ります。 この互換性マトリックスは[こちら](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#supported-dbcompats)で確認できます。
 そのため、特定の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バージョンで動作することが認定されているアプリケーションは、**実際にはそのバージョンの既定の互換性レベルで動作することが認定されていました**。
 
-たとえば、データベース互換性レベル 130 は [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] の既定でした。 互換性レベルは [!INCLUDE[tsql](../../includes/tsql-md.md)] の特定の機能およびクエリ最適化動作を強制するものであるため、 **[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] で動作することが認定されたデータベースはデータベース互換性レベル 130 で暗黙的に認定されていました**。 このデータベースは、データベース互換性レベルが 130 で維持される限り、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] など) と [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] の最近のバージョンで現状のまま動作できます。 
+たとえば、データベース互換性レベル 130 は [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] の既定でした。 互換性レベルは [!INCLUDE[tsql](../../includes/tsql-md.md)] の特定の機能およびクエリ最適化動作を強制するものであるため、 **[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] で動作することが認定されたデータベースはデータベース互換性レベル 130 で暗黙的に認定されていました**。 このデータベースは、データベース互換性レベルが 130 で維持される限り、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] など) と [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] の最近のバージョンで現状のまま動作できます。
 
 これは [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 継続的インテグレーション運用モデルの基本原則です。 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] は Azure で継続的に改善され、アップグレードされますが、既存のデータベースで現行の互換性レベルが維持されるため、基礎となる [!INCLUDE[ssde_md](../../includes/ssde_md.md)] にアップグレードされた後でも、引き続き設計どおりに動作します。 
 
@@ -95,7 +95,7 @@ ms.locfileid: "100353843"
 これは、[Microsoft Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595) ツール (DMA) を使用して簡単に行うことができます。 DMA ツールの出力でエラーが見つからなければ、あるいは機能性に不足や非互換性がなければ、新しいターゲット バージョンでアプリケーションの機能が退化することはありません。 データベースが新しいバージョンで動作することを保証するために変更が必要な場合は、DMA を使用して、変更が必要な箇所と使用できる回避策を特定できます。 詳細については、「[Data Migration Assistant の概要](../../dma/dma-overview.md)」を参照してください。   
 
 > [!TIP]
-> この機能検証は、レガシ バージョン ([!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] や [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] など) から新しいバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] または [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] にデータベースを移動する場合に特に重要です。データベース互換性レベルで保護されていない、廃止された [!INCLUDE[tsql](../../includes/tsql-md.md)] がアプリケーション コードで使用される可能性があるためです。 ただし、より新しいバージョン ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] など) から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] または [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] に移行する場合は、廃止された [!INCLUDE[tsql](../../includes/tsql-md.md)] について心配する必要はありません。 廃止された [!INCLUDE[tsql](../../includes/tsql-md.md)] の詳細については、「[旧バージョンとの互換性を維持するための互換性レベルの使用](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#backwardCompat)」を参照してください。
+> この機能検証は、レガシ バージョン ([!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] や [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] など) から新しいバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] または [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] にデータベースを移動する場合に特に重要です。データベース互換性レベルで保護されていない、廃止された [!INCLUDE[tsql](../../includes/tsql-md.md)] がアプリケーション コードで使用される可能性があるためです。 ただし、より新しいバージョン ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] など) から [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] または [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] に移行する場合は、廃止された [!INCLUDE[tsql](../../includes/tsql-md.md)] について心配する必要はありません。 廃止された [!INCLUDE[tsql](../../includes/tsql-md.md)] の詳細については、「[旧バージョンとの互換性を維持するための互換性レベルの使用](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#backwardCompat)」を参照してください。
 
 > [!NOTE]
 > DMA は、レベル 100 以降のデータベース互換性レベルに対応しています。 ソース バージョンとしての [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] は除外されます。   

@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: d18019dd-f8dc-4492-b035-b1a639369b65
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: ee24a962698e2a661b4859c846a748a5b8517e7d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b8973b883ebdfe205ff0e9017e746c8ac65ebf58
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100354159"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610907"
 ---
 # <a name="sysdm_hadr_availability_group_states-transact-sql"></a>sys.dm_hadr_availability_group_states (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "100354159"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**group_id**|**uniqueidentifier**|可用性グループの一意識別子。|  
-|**primary_replica**|**varchar(128)**|現在のプライマリ レプリカをホストしているサーバー インスタンスの名前。<br /><br /> NULL = プライマリ レプリカでないか、WSFC フェールオーバー クラスターと通信できません。|  
+|**primary_replica**|**varchar(128)**|現在のプライマリ レプリカをホストしているサーバー インスタンスの名前。<br /><br /> NULL = プライマリレプリカではなく、WSFC フェールオーバークラスターと通信できません。|  
 |**primary_recovery_health**|**tinyint**|プライマリ レプリカの復旧の正常性状態を示します。次のいずれかになります。<br /><br /> 0 = 実行中<br /><br /> 1 = オンライン<br /><br /> NULL<br /><br /> セカンダリレプリカでは、 **primary_recovery_health** 列が NULL になります。|  
 |**primary_recovery_health_desc**|**nvarchar(60)**|**Primary_replica_health** の説明。次のいずれかになります。<br /><br /> ONLINE_IN_PROGRESS<br /><br /> ONLINE<br /><br /> NULL|  
 |**secondary_recovery_health**|**tinyint**|セカンダリレプリカレプリカの回復の正常性を示します。次のいずれかになります。<br /><br /> 0 = 実行中<br /><br /> 1 = オンライン<br /><br /> NULL<br /><br /> プライマリレプリカで、 **secondary_recovery_health** 列が NULL になっています。|  
