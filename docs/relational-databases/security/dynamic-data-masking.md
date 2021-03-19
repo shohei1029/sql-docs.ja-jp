@@ -11,12 +11,12 @@ ms.assetid: a62f4ff9-2953-42ca-b7d8-1f8f527c4d66
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 0a05c7af0bc8b8846e3b4ab5c1e3472249350e7b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9169f451bdbbc0c8e28eac19543ab7ca6092fb16
+ms.sourcegitcommit: e2d25f265556af92afcc0acde662929e654bf841
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100344391"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490064"
 ---
 # <a name="dynamic-data-masking"></a>動的なデータ マスキング
 [!INCLUDE [SQL Server 2016 ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -120,73 +120,93 @@ WHERE Salary > 99999 and Salary < 100001;
  次の例では、3 種類の動的データ マスクでテーブルを作成します。 この例ではテーブルを作成し、結果を表示するように選びます。  
   
 ```sql
-CREATE TABLE Membership  
-  (MemberID int IDENTITY PRIMARY KEY,  
-   FirstName varchar(100) MASKED WITH (FUNCTION = 'partial(1,"XXXXXXX",0)') NULL,  
-   LastName varchar(100) NOT NULL,  
-   Phone varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,  
-   Email varchar(100) MASKED WITH (FUNCTION = 'email()') NULL);  
-  
-INSERT Membership (FirstName, LastName, Phone, Email) VALUES   
-('Roberto', 'Tamburello', '555.123.4567', 'RTamburello@contoso.com'),  
-('Janice', 'Galvin', '555.123.4568', 'JGalvin@contoso.com.co'),  
-('Zheng', 'Mu', '555.123.4569', 'ZMu@contoso.net');  
-SELECT * FROM Membership;  
+
+-- schema to contain user tables
+CREATE SCHEMA Data
+GO
+
+-- table with masked columns
+CREATE TABLE Data.Membership(
+    MemberID            int IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
+    FirstName           varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
+    LastName            varchar(100) NOT NULL,
+    Phone               varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
+    Email               varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
+    DiscountCode    smallint MASKED WITH (FUNCTION = 'random(1, 100)') NULL
+    )
+
+-- inserting sample data
+INSERT INTO Data.Membership (FirstName, LastName, Phone, Email, DiscountCode)
+VALUES   
+('Roberto', 'Tamburello', '555.123.4567', 'RTamburello@contoso.com', 10),  
+('Janice', 'Galvin', '555.123.4568', 'JGalvin@contoso.com.co', 5),  
+('Shakti', 'Menon', '555.123.4570', 'SMenon@contoso.net', 50),  
+('Zheng', 'Mu', '555.123.4569', 'ZMu@contoso.net', 40);  
+
 ```  
   
- 新しいユーザーが作成され、テーブルに対する **SELECT** アクセス許可が付与されました。 `TestUser` ビューのマスクされたデータとして、クエリが実行されます。  
+ 新しいユーザーが作成され、テーブルが属しているスキーマに対する **SELECT** アクセス許可が付与されます。 `MaskingTestUser` ビューのマスクされたデータとして、クエリが実行されます。  
   
 ```sql 
-CREATE USER TestUser WITHOUT LOGIN;  
-GRANT SELECT ON Membership TO TestUser;  
+CREATE USER MaskingTestUser WITHOUT LOGIN;  
+
+GRANT SELECT ON SCHEMA::Data TO MaskingTestUser;  
   
-EXECUTE AS USER = 'TestUser';  
-SELECT * FROM Membership;  
+  -- impersonate for testing:
+EXECUTE AS USER = 'MaskingTestUser';  
+
+SELECT * FROM Data.Membership;  
+
 REVERT;  
 ```  
   
  次のようにデータが変更された結果によって、マスクが示されます。  
   
- `1    Roberto     Tamburello    555.123.4567    RTamburello@contoso.com`  
+ `1    Roberto     Tamburello    555.123.4567    RTamburello@contoso.com`    10  
   
- 変更前:  
+ into  
   
- `1    RXXXXXXX    Tamburello    xxxx            RXXX@XXXX.com`  
+ `1    Rxxxxxo    Tamburello    xxxx            RXXX@XXXX.com`            91
+ 
+ DiscountCode の番号は、すべてのクエリ結果に対してランダムになります
   
 ### <a name="adding-or-editing-a-mask-on-an-existing-column"></a>既存の列のマスクを追加または編集する  
  **ALTER TABLE** ステートメントを使用して、テーブル内の既存の列にマスクを追加したり、その列のマスクを編集したりします。  
 次の例では、`LastName` 列にマスク関数を追加します。  
   
 ```sql  
-ALTER TABLE Membership  
-ALTER COLUMN LastName ADD MASKED WITH (FUNCTION = 'partial(2,"XXX",0)');  
+ALTER TABLE Data.Membership  
+ALTER COLUMN LastName ADD MASKED WITH (FUNCTION = 'partial(2,"xxxx",0)');  
 ```  
   
  次の例では、 `LastName` 列のマスク関数を変更します。  
 
 ```sql  
-ALTER TABLE Membership  
+ALTER TABLE Data.Membership  
 ALTER COLUMN LastName varchar(100) MASKED WITH (FUNCTION = 'default()');  
 ```  
   
 ### <a name="granting-permissions-to-view-unmasked-data"></a>アクセス許可を付与して、マスクが解除されたデータを表示する  
- **UNMASK** アクセス許可が付与されると、 `TestUser` は、マスクが解除されたデータを閲覧できるようになります。  
+ **UNMASK** アクセス許可が付与されると、 `MaskingTestUser` は、マスクが解除されたデータを閲覧できるようになります。  
   
 ```sql
-GRANT UNMASK TO TestUser;  
-EXECUTE AS USER = 'TestUser';  
-SELECT * FROM Membership;  
-REVERT;   
+GRANT UNMASK TO MaskingTestUser;  
+
+EXECUTE AS USER = 'MaskingTestUser';  
+
+SELECT * FROM Data.Membership;  
+
+REVERT;    
   
 -- Removing the UNMASK permission  
-REVOKE UNMASK TO TestUser;  
+REVOKE UNMASK TO MaskingTestUser;  
 ```  
   
 ### <a name="dropping-a-dynamic-data-mask"></a>動的データ マスクをドロップする  
  次のステートメントは、先ほどの例で作成された `LastName` 列のマスクをドロップします。  
   
 ```sql  
-ALTER TABLE Membership   
+ALTER TABLE Data.Membership   
 ALTER COLUMN LastName DROP MASKED;  
 ```  
   

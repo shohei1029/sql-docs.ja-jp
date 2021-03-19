@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 0b8d3ddc-38c0-4241-b7bb-ee654a5081aa
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 238940e3e6519be1b4758e794cf391869f057986
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 021cea9426fd6fb1c6e14c450fa37e69ef0048a6
+ms.sourcegitcommit: 2cc2e4e17ce88ef47cda32a60a02d929e617738e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99177726"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103473216"
 ---
 # <a name="deny-object-permissions-transact-sql"></a>DENY (オブジェクトの権限の拒否) (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -76,7 +76,7 @@ PRIVILEGES
  権限を拒否するテーブル、ビュー、またはテーブル値関数内の列の名前を指定します。 かっこ **( )** で囲む必要があります。 列で拒否できるのは、SELECT、REFERENCES、および UPDATE の各権限だけです。 *column* は permission 句内、またはセキュリティ保護可能なリソースの名前の後に指定できます。  
   
 > [!CAUTION]  
->  テーブル レベルの DENY は列レベルの GRANT ステートメントよりも優先されません。 この動作は権限の階層内で一貫していませんが、旧バージョンとの互換性のために保持されています。  
+>  テーブル レベルの DENY は列レベルの GRANT ステートメントよりも優先されません。 この動作は権限の階層内で一貫していませんが、旧バージョンとの互換性のために保持されています。 SQL Server では、[Common Criteria Compliance Enabled サーバー構成](/../../database-engine/configure-windows/common-criteria-compliance-enabled-server-configuration-option.md)で実行するようにサーバーが構成されている場合、この動作は異なります。 ただし、一般的な方法としてではなく、通常は慎重に使用する必要があります。
   
  ON [ OBJECT **::** ] [ *schema_name* ] **.** *object_name*  
  権限を拒否するオブジェクトを指定します。 OBJECT 句は、*schema_name* を指定する場合は省略可能です。 OBJECT 句を使用する場合は、スコープ修飾子 ( **::** ) が必要です。 *schema_name* が指定されていない場合、既定のスキーマが使用されます。 *schema_name* が指定されている場合、スキーマのスコープ修飾子 ( **.** ) が必要です。  

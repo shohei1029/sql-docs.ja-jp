@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 0544da48-0ca3-4a01-ba4c-940e23dc315b
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: c62f35df2ea567bda36eb1ae126d9e461194f670
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: dfa2c988670df2c2b7b9176cbde4057c4b125c75
+ms.sourcegitcommit: 2cc2e4e17ce88ef47cda32a60a02d929e617738e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99192739"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103473206"
 ---
 # <a name="create-database-audit-specification-transact-sql"></a>CREATE DATABASE AUDIT SPECIFICATION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -96,7 +96,7 @@ CREATE DATABASE AUDIT SPECIFICATION audit_specification_name
 ## <a name="examples"></a>例
 
 ### <a name="a-audit-select-and-insert-on-a-table-for-any-database-principal"></a>A. 任意のデータベース プリンシパルについてテーブルで SELECT と INSERT を監査する 
- 次の例では、`Payrole_Security_Audit` というサーバー監査を作成した後、`Payrole_Security_Audit` データベースの `SELECT` テーブルで `INSERT` ユーザーによる `dbo` ステートメントと `HumanResources.EmployeePayHistory` ステートメントを監査する、`AdventureWorks2012` というデータベース監査仕様を作成します。  
+ 次の例では、`Payrole_Security_Audit` というサーバー監査を作成した後、`AdventureWorks2012` データベースの `HumanResources.EmployeePayHistory` テーブルで、`public` データベース ロールのすべてのメンバーによる `SELECT` ステートメントと `INSERT` ステートメントを監査する、`Payrole_Security_Audit` というデータベース監査仕様を作成します。 これにより、すべてのユーザーが監査されるようになります。すべてのユーザーは常に `public` ロールのメンバーであるからです。
   
 ```sql  
 USE master ;  
@@ -104,7 +104,7 @@ GO
 -- Create the server audit.  
 CREATE SERVER AUDIT Payrole_Security_Audit  
     TO FILE ( FILEPATH =   
-'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA' ) ;  
+'D:\SQLAudit\' ) ;  -- make sure this path exists
 GO  
 -- Enable the server audit.  
 ALTER SERVER AUDIT Payrole_Security_Audit   
@@ -117,7 +117,7 @@ GO
 CREATE DATABASE AUDIT SPECIFICATION Audit_Pay_Tables  
 FOR SERVER AUDIT Payrole_Security_Audit  
 ADD (SELECT , INSERT  
-     ON HumanResources.EmployeePayHistory BY dbo )  
+     ON HumanResources.EmployeePayHistory BY public )  
 WITH (STATE = ON) ;  
 GO  
 ``` 
@@ -132,7 +132,7 @@ GO
 -- Change the path to a path that the SQLServer Service has access to. 
 CREATE SERVER AUDIT DataModification_Security_Audit  
     TO FILE ( FILEPATH = 
-'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA' ) ; 
+'D:\SQLAudit\' ) ;  -- make sure this path exists
 GO  
 -- Enable the server audit.  
 ALTER SERVER AUDIT DataModification_Security_Audit   

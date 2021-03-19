@@ -26,12 +26,12 @@ ms.assetid: c17996d6-56a6-482f-80d8-086a3423eecc
 author: XiaoyuMSFT
 ms.author: XiaoyuL
 monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 ||  azure-sqldw-latest
-ms.openlocfilehash: c7b388649cf7ca535d5d81eb2d05cf4f0a27d373
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 96461f56445562b444ca775b24320d3c34661687
+ms.sourcegitcommit: e2d25f265556af92afcc0acde662929e654bf841
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101838964"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103489765"
 ---
 # <a name="merge-transact-sql"></a>MERGE (Transact-SQL)
 
@@ -233,7 +233,7 @@ DEFAULT VALUES
 
 \<graph search pattern>  
 グラフの一致パターンを指定します。 この句の引数の詳細については、「[MATCH &#40;Transact-SQL&#41;](../../t-sql/queries/match-sql-graph.md)」を参照してください
-  
+   
 ## <a name="remarks"></a>解説
 >[!NOTE]
 > Azure Synapse Analytics での MERGE コマンド (プレビュー) は、SQL サーバーや Azure SQL データベースと比べて次のような違いがあります。  
@@ -248,15 +248,18 @@ DEFAULT VALUES
 >|**NOT MATCHED BY SOURCE**|すべての分散タイプ|すべての分散タイプ|||  
 
 >[!IMPORTANT]
-> 現在、Azure Synapse Analytics の MERGE コマンドはプレビュー段階にあり、特定の条件下では、対象テーブルが不整合な状態のままになり、行が間違った分散に配置され、後のクエリで誤った結果が返される可能性があります。 この問題は、次の 2 つの条件が満たされた場合に発生する可能性があります。
+> プレビュー機能はテストのみを目的としているため、運用インスタンスや運用データでは使用しないでください。 また、データが重要な場合は、テスト データのコピーも保持してください。
 >
-> - MERGE T-SQL ステートメントが、Azure Synapse SQL データベースのハッシュ分散ターゲット テーブルで実行された。
+> Azure Synapse Analytics では、MERGE コマンド (現在プレビュー段階) を使用すると、特定の条件下でターゲット テーブルが不整合な状態のままになり、行が間違った分散に配置され、後のクエリで誤った結果が返される可能性があります。 この問題は、次の 2 つの条件が満たされた場合に発生する可能性があります。
+>
+> - MERGE T-SQL ステートメントが、Azure Synapse SQL データベースのハッシュ分散ターゲット テーブルで実行された。および
 > - マージの TARGET テーブルに、セカンダリ インデックスまたは UNIQUE 制約がある。
 >
-> 修正を利用できるようになるまでは、セカンダリ インデックスまたは UNIQUE 制約があるハッシュ分散ターゲット テーブルで MERGE コマンドを使用しないようにしてください。  UNIQUE 制約またはセカンダリ インデックスを持つハッシュ分散テーブルのあるデータベースでの MERGE 機能のサポートが、一時的に無効にされる可能性もあります。      
->
-> 重要な注意事項として、プレビュー機能はテストのみを目的としているので、運用インスタンスや運用データでは使用しないでください。 また、データが重要な場合は、テスト データのコピーも保持してください。
-> 
+> この問題は、Synapse SQL バージョン ***10.0.15563.0*** 以降で修正されています。    
+> - 確認するには、SQL Server Management Studio (SSMS) を介して Synapse SQL データベースに接続し、```SELECT @@VERSION``` を実行します。  修正プログラムが適用されていない場合は、Synapse SQL プールを手動で一時停止して再開し、修正プログラムを取得します。 
+> - Synapse SQL プールに修正プログラムが適用されていることを確認するまでは、セカンダリ インデックスまたは UNIQUE 制約があるハッシュ分散ターゲット テーブルで MERGE コマンドを使用しないでください。
+> - この修正プログラムによって、MERGE に関する問題の影響を既に受けているテーブルが修復されることはありません。  以下のスクリプトを使用して、影響を受けたテーブルを手動で特定して修復します。
+
 > この問題が原因で MERGE 操作を使用できない、データベース内のハッシュ分散テーブルを確認するには、次のステートメントを実行します。
 >```sql
 > select a.name, c.distribution_policy_desc, b.type from sys.tables a join sys.indexes b
