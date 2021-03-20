@@ -4,7 +4,7 @@ title: CREATE EXTERNAL FILE FORMAT (Transact-SQL)
 ms.custom: ''
 ms.date: 02/23/2021
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, pdw, sql-database
+ms.prod_service: synapse-analytics, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -20,12 +20,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
-ms.openlocfilehash: 458641983730dbec51055c7f610b7775acd09ac8
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 82bd61e91a36b2e8e71061be770dd70c64430270
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837724"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750192"
 ---
 # <a name="create-external-file-format-transact-sql"></a>CREATE EXTERNAL FILE FORMAT (Transact-SQL)
 [!INCLUDE [sqlserver2016-asa-pdw](../../includes/applies-to-version/sqlserver2016-asa-pdw.md)]

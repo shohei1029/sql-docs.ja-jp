@@ -4,7 +4,7 @@ title: テーブルからの列の削除 | Microsoft Docs
 ms.custom: ''
 ms.date: 04/11/2017
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -17,12 +17,12 @@ ms.assetid: 0d8f6e4f-bc71-4fa3-8615-74249c8e072d
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8fb537c503ec66c368c6c7e12e4740d9db1224aa
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 31ed97bd88c560d884d51569af7d3278bc9c6f89
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99160274"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104743332"
 ---
 # <a name="delete-columns-from-a-table"></a>テーブルからの列の削除
 

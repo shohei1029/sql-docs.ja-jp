@@ -4,7 +4,7 @@ title: sp_fulltext_column (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: a84cc45d-1b50-44af-85df-2ea033b8a6a9
 author: markingmyname
 ms.author: maghan
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4203f4ce8d603bd8715047b8a3f0ffb93e6b1e8b
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: a3f8b83ec0ad778269e677144912ef7e82480aad
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99185407"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749982"
 ---
 # <a name="sp_fulltext_column-transact-sql"></a>sp_fulltext_column (Transact-sql)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-asdw-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-xxx-md.md)]
@@ -60,7 +60,7 @@ sp_fulltext_column [ @tabname= ] 'qualified_table_name' ,
 |値|説明|  
 |-----------|-----------------|  
 |**add**|テーブルの非アクティブなフルテキストインデックスに *qualified_table_name* の *column_name* を追加します。 この操作により、列でフルテキストインデックスを作成できるようになります。|  
-|**drop**|テーブルの非アクティブなフルテキストインデックスから *qualified_table_name* の *column_name* を削除します。|  
+|**」**|テーブルの非アクティブなフルテキストインデックスから *qualified_table_name* の *column_name* を削除します。|  
   
 `[ @language = ] 'language_term'` 列に格納されているデータの言語を示します。 に含まれる言語の一覧につい [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ては、「 [Sys.fulltext_languages &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-fulltext-languages-transact-sql.md)」を参照してください。  
   
@@ -80,7 +80,7 @@ sp_fulltext_column [ @tabname= ] 'qualified_table_name' ,
   
  変更の追跡がオンになっていて、インデックスを保持しながら列をフルテキストインデックスから追加または削除する必要がある場合は、テーブルを非アクティブ化し、必要な列を追加または削除する必要があります。 この操作では、インデックスは変化しません。 作成を開始することが実用的な場合は、テーブルを後でアクティブにすることができます。  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  ユーザーは、 **db_ddladmin** 固定データベースロールのメンバーであるか、 **db_owner** 固定データベースロールのメンバーであるか、テーブルの所有者である必要があります。  
   
 ## <a name="examples"></a>例  

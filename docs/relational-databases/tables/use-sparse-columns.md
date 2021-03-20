@@ -4,7 +4,7 @@ title: スパース列の使用 | Microsoft Docs
 ms.custom: ''
 ms.date: 03/22/2016
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -16,12 +16,12 @@ ms.assetid: ea7ddb87-f50b-46b6-9f5a-acab222a2ede
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2b2d569c3f37370bd132485e843da005b1769b17
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: e8e5fd6a1e7d6a67295dcbce634bbff5761caff7
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99211534"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755802"
 ---
 # <a name="use-sparse-columns"></a>スパース列の使用
 

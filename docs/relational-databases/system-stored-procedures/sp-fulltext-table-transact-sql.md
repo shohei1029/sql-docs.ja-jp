@@ -4,7 +4,7 @@ title: sp_fulltext_table (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: a765f311-07fc-4af3-b74c-e9a027fbecce
 author: markingmyname
 ms.author: maghan
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 18f807181005e20e94a15a8c4c95b43e82ecbb44
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 7184d4d9fae78821c0558ae193e7a830f6f28f28
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99211332"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749962"
 ---
 # <a name="sp_fulltext_table-transact-sql"></a>sp_fulltext_table (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-asdw-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-xxx-md.md)]
@@ -59,7 +59,7 @@ sp_fulltext_table
 |**作成**|*Qualified_table_name* によって参照されるテーブルのフルテキストインデックスのメタデータを作成し、このテーブルのフルテキストインデックスデータが *fulltext_catalog_name* に存在する必要があることを指定します。 この操作では、フルテキストキー列として *unique_index_name* を使用することも指定します。 この一意なインデックスは既に存在していて、テーブル内の列に定義しておく必要があります。<br /><br /> フルテキストカタログが設定されるまで、このテーブルに対してフルテキスト検索を実行することはできません。|  
 |**」**|*Qualified_table_name* のフルテキストインデックスのメタデータを削除します。 フルテキストインデックスがアクティブな場合は、自動的に非アクティブ化されてから削除されます。 フルテキスト インデックスを削除する前に、列を削除する必要はありません。|  
 |**アクティブ化**|非アクティブ化された後、 *qualified_table_name* に対してフルテキストインデックスデータを収集する機能をアクティブにします。 フルテキスト インデックスをアクティブにするには、フルテキスト インデックスの対象となる列が少なくとも 1 つ必要です。<br /><br /> フルテキスト インデックスは、インデックス作成用の最初の列が追加されるとすぐに自動的にアクティブになり、作成を開始できるようになります。 最後の列がインデックスから削除されると、インデックスは非アクティブになります。 変更の追跡がオンの場合、非アクティブなインデックスをアクティブにすると、新しく作成が開始されます。<br /><br /> この方法では、実際にフルテキストインデックスが設定されるわけではありませんが、次のフルテキストインデックスの作成時に *qualified_table_name* の行を取得できるように、ファイルシステムのフルテキストカタログにテーブルを登録するだけです。|  
-|**非アクティブ化**|*Qualified_table_name* のフルテキストインデックスを非アクティブ化して、 *qualified_table_name* に対してフルテキストインデックスデータを収集できないようにします。 フルテキスト インデックス メタデータはそのまま残り、テーブルは再びアクティブにできます。<br /><br /> 変更の追跡がオンになっている場合、アクティブなインデックスを非アクティブにすると、インデックス作成は停止します。つまり、実行中の作成操作は停止し、インデックスは変更されなくなります。|  
+|**非**|*Qualified_table_name* のフルテキストインデックスを非アクティブ化して、 *qualified_table_name* に対してフルテキストインデックスデータを収集できないようにします。 フルテキスト インデックス メタデータはそのまま残り、テーブルは再びアクティブにできます。<br /><br /> 変更の追跡がオンになっている場合、アクティブなインデックスを非アクティブにすると、インデックス作成は停止します。つまり、実行中の作成操作は停止し、インデックスは変更されなくなります。|  
 |**start_change_tracking**|フルテキストインデックスの増分作成を開始します。 テーブルが timestamp 型でない場合は、フルテキスト インデックスの完全作成を開始します。 テーブルに対する変更の追跡を開始します。<br /><br /> フルテキスト変更の追跡では、 **image**、 **text**、または **ntext** 型のフルテキストインデックス列に対して実行される WRITETEXT または UPDATETEXT 操作は追跡されません。|  
 |**stop_change_tracking**|テーブルに対する変更の追跡を停止します。|  
 |**update_index**|現在の追跡された変更のセットをフルテキストインデックスに反映します。|  
@@ -88,7 +88,7 @@ sp_fulltext_table
   
  フルテキストキー列は900バイト以下で定義する必要があります。 パフォーマンス上の理由から、キー列のサイズはできる限り小さくすることをお勧めします。  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  **Sysadmin** 固定サーバーロール、 **db_owner** および **db_ddladmin** 固定データベースロールのメンバー、またはフルテキストカタログに対する参照権限を持つユーザーだけが **sp_fulltext_table** を実行できます。  
   
 ## <a name="examples"></a>例  

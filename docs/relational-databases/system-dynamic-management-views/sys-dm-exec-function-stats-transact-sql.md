@@ -4,7 +4,7 @@ title: sys.dm_exec_function_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 02/10/2021
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: conceptual
@@ -19,12 +19,12 @@ ms.assetid: 4c3d6a02-08e4-414b-90be-36b89a0e5a3a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 6acd8d9cdc09bcffc9e5ef95f6d3e7ed700ffafb
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 33865ecc3a5c00ea9635d80387eb37608108460a
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836623"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749762"
 ---
 # <a name="sysdm_exec_function_stats-transact-sql"></a>sys.dm_exec_function_stats (Transact-sql)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -73,7 +73,7 @@ ms.locfileid: "101836623"
 |**min_page_server_reads**|**bigint**|この関数が1回の実行で行われたページサーバーの読み取りの最小数。<br /><br /> **適用対象:** Azure SQL Database ハイパースケール。|  
 |**max_page_server_reads**|**bigint**|この関数が1回の実行で行われたページサーバー読み取りの最大数。<br /><br /> **適用対象:** Azure SQL Database ハイパースケール。|
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   

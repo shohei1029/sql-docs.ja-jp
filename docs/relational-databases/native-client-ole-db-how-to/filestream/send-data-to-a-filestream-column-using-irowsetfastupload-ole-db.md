@@ -4,7 +4,7 @@ title: データ FILESTREAM、IRowsetFastUpload (OLE DB)
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -12,12 +12,12 @@ ms.assetid: fdb47319-83bc-4ff2-b46d-8d8ccfeb5bab
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4ff7c4dcbf486f963da5cebf2cf507ce406f9737
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 146e5ad0c229ce508d32c818df6a43e31fd37773
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464883"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104737172"
 ---
 # <a name="send-data-to-a-filestream-column-using-irowsetfastupload-sql-server-native-client-ole-db"></a>IRowsetFastUpload SQL Server Native Client (OLE DB) を使用して FILESTREAM 列にデータを送信する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

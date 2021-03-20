@@ -4,7 +4,7 @@ title: sp_fkeys (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 09/08/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: 18110444-d38d-4cff-90d2-d1fc6236668b
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 11cd43abf45386f8bfd1a7b897bc9ad0e09893ae
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: b8bc206b830331d8abacd9cf155d68db1444419a
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189580"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750022"
 ---
 # <a name="sp_fkeys-transact-sql"></a>sp_fkeys (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -90,7 +90,7 @@ sp_fkeys [ @pktable_name = ] 'pktable_name'
   
  返される結果は、FKTABLE_QUALIFIER、FKTABLE_OWNER、FKTABLE_NAME、KEY_SEQ の順序に従って並べ替えられます。  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  無効な外部キーを含むテーブルを含むアプリケーションのコーディングは、次の方法で実装できます。  
   
 -   そのテーブルで作業している間は、一時的に制約チェックを無効にして (ALTER TABLE NOCHECK または CREATE TABLE NOT FOR REPLICATION)、その後再び有効にします。  
@@ -101,7 +101,7 @@ sp_fkeys [ @pktable_name = ] 'pktable_name'
   
 sp_fkeys ストアド プロシージャは、ODBC の SQLForeignKeys に相当します。  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  `SELECT`スキーマに対する権限が必要です。  
   
 ## <a name="examples"></a>例  

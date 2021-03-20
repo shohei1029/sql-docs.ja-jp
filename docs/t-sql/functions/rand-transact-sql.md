@@ -4,7 +4,7 @@ title: RAND (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, database-engine, sql-database
+ms.prod_service: synapse-analytics, database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 363c84d6-b9fa-49ba-9a75-e44f27535ff6
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 344408b9cdaafe14954764a3715a44c8d4cd9bd5
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b2c52b05ec9c3429088a276a14ff2fe69ed6bbee
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345293"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755982"
 ---
 # <a name="rand-transact-sql"></a>RAND (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]

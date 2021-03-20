@@ -4,7 +4,7 @@ title: sys.database_permissions (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/11/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: c1e261f8-6cb0-4759-b5f1-5ec233602655
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a488dcf39ecf3ab0fa6e82264245d38f163f8ed6
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 4896a671fd9dd0cf28829b57a1ec7a4f85ad2a1f
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99209474"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750062"
 ---
 # <a name="sysdatabase_permissions-transact-sql"></a>sys.database_permissions (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "99209474"
 |**grantor_principal_id**|**int**|これらのアクセス許可の権限の許可のあるデータベースプリンシパル ID。|  
 |**type**|**char (4)**|データベース権限の種類。 権限の種類の一覧については、次の表を参照してください。|  
 |**permission_name**|**nvarchar(128)**|アクセス許可の名前。|  
-|**state**|**char(1)**|アクセス許可の状態:<br /><br /> D = 拒否<br /><br /> R = 取り消し<br /><br /> G = 許可<br /><br /> W = 許可の許可オプション|  
+|**状態**|**char(1)**|アクセス許可の状態:<br /><br /> D = 拒否<br /><br /> R = 取り消し<br /><br /> G = 許可<br /><br /> W = 許可の許可オプション|  
 |**state_desc**|**nvarchar(60)**|権限の状態の説明。<br /><br /> DENY<br /><br /> REVOKE<br /><br /> GRANT<br /><br /> GRANT_WITH_GRANT_OPTION|  
 
 ## <a name="database-permissions"></a>データベース権限   
@@ -129,7 +129,7 @@ ms.locfileid: "99209474"
 |VWCT|VIEW CHANGE TRACKING|テーブル、スキーマ|  
 |VWDS|VIEW DATABASE STATE|DATABASE|  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  すべてのユーザーは自分の権限を参照できます。 他のユーザーの権限を表示するには、VIEW DEFINITION、ALTER ANY USER、またはユーザーに対する権限が必要です。 ユーザー定義ロールを表示するには、ALTER ANY ROLE、またはロールのメンバーシップ (public など) が必要です。  
   
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  

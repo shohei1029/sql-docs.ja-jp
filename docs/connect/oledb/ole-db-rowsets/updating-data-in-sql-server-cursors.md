@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server コンシューマー アプリケー�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -17,12 +17,12 @@ helpviewer_keywords:
 - data updates [SQL Server], OLE DB
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: eae7b9119803615a2d18fe4710ff1eda2b91ac5b
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 53096897b248205f36dc0a479db0d6750ff4069f
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88859925"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755752"
 ---
 # <a name="updating-data-in-sql-server-cursors"></a>SQL Server カーソルでのデータ更新
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

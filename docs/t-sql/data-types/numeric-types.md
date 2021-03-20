@@ -4,7 +4,7 @@ title: 数値型 | Microsoft Docs
 ms.custom: ''
 ms.date: 07/22/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -14,12 +14,12 @@ ms.assetid: c11686eb-80b9-444c-bf1b-36ebad653df1
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 10ef8a52b0d9d62278adaecedd44a71c0f76b1a8
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 7ef68ca4821d8d6c96d6a00a97fa4f2c8959eced
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99187873"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104736982"
 ---
 # <a name="numeric-types"></a>数値型
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -4,7 +4,7 @@ title: sys. databases (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/08/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 46c288c1-3410-4d68-a027-3bbf33239289
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 86f0ce3ae5b77678a096ca0b394d8deeb44177dd
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: e3b9701423440c97c1728223dd6d4df68b164459
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100339469"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750052"
 ---
 # <a name="sysdatabases-transact-sql"></a>sys.databases (Transact-SQL)
 
@@ -125,7 +125,7 @@ ms.locfileid: "100339469"
 |**is_stale_page_detection_on**|**bit**|古いページ検出が有効になっているかどうかを示します。<br />1 = 古いページ検出が有効になっている<br />0 = 古いページ検出は無効になっています<br />**適用対象**: [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] Gen2。 この機能はすべてのリージョンにロールアウトされていますが、ご使用のインスタンスにデプロイされているバージョンと、利用可能な機能については、最新の [Azure Synapse リリースノート](/azure/synapse-analytics/sql-data-warehouse/release-notes-10-0-10106-0) と [Gen2 アップグレードスケジュール](/azure/synapse-analytics/sql-data-warehouse/gen2-migration-schedule) をご確認ください。|
 |**is_memory_optimized_enabled**|**bit**|[ハイブリッドバッファープール](../../database-engine/configure-windows/hybrid-buffer-pool.md)などの特定の In-Memory 機能がデータベースに対して有効かどうかを示します。 [インメモリ OLTP](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)の可用性または構成の状態は反映されません。 <br />1 = メモリ最適化機能が有効になっている<br />0 = メモリ最適化機能は無効です。<br />**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 以降) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|
   
-## <a name="permissions"></a>アクセス許可
+## <a name="permissions"></a>権限
 
  の呼び出し元 `sys.databases` がデータベースの所有者ではなく、データベースがまたはではない場合、 `master` 対応する行を `tempdb` 表示するために必要な最低限の権限は、 `ALTER ANY DATABASE` または `VIEW ANY DATABASE` `CREATE DATABASE` データベース内のサーバーレベルの権限、または権限です `master` 。 呼び出し元が接続されているデータベースは、常にで表示でき `sys.databases` ます。  
   

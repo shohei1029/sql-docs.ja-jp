@@ -4,7 +4,7 @@ description: SQL Server データベース エンジンのさまざまなオブ�
 ms.custom: ''
 ms.date: 01/03/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: security
 ms.topic: conceptual
@@ -15,12 +15,12 @@ ms.assetid: 273ea09d-60ee-47f5-8828-8bdc7a3c3529
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3852c804ce8ab919072d8a2dbe23b4e0f11b8768
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 61378302f1ce2b49487cabb63f9580cd82f51409
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97463133"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755672"
 ---
 # <a name="determining-effective-database-engine-permissions"></a>データベース エンジンの有効なアクセス許可の決定
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
