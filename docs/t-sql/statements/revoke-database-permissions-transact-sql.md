@@ -4,7 +4,7 @@ title: REVOKE (データベースの権限の取り消し) (Transact-SQL) | Micr
 ms.custom: ''
 ms.date: 08/10/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -18,12 +18,12 @@ ms.assetid: 442acfc6-af97-40a3-b546-91cd485ee2be
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 23a419631ac1490d7434aef23ad8ea1c8d92efd2
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: f954a7ddaf26dc7ada01c3e88df53c2b7ea41e4d
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "100350000"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739072"
 ---
 # <a name="revoke-database-permissions-transact-sql"></a>REVOKE (データベースの権限の取り消し) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

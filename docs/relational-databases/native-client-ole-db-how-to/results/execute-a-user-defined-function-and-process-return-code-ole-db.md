@@ -4,7 +4,7 @@ title: User-Defined 関数、リターンコード (OLE DB)
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -14,12 +14,12 @@ ms.assetid: d96c33fd-ed17-4713-8921-bf2dc3347f78
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6135873485afc025b51610b503fd8896e9dbb08e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 77f44a74c695aac1ddd6b67abc2c1c7b82e5e71c
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481073"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751992"
 ---
 # <a name="execute-a-sql-server-native-client-user-defined-function-and-process-return-code-ole-db"></a>関数 User-Defined SQL Server Native Client を実行し、リターンコードを処理します (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

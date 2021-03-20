@@ -4,7 +4,7 @@ title: SQL 認証のユーザーパスワード (OLE DB)
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -12,12 +12,12 @@ ms.assetid: 1ed37ded-5671-46a4-b609-eea886dfae20
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 02c1f9f589bad29c702ecd624772658d4bfdcaea
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 4b284b513ede3e9d4c45882034c37aedd8eb8cac
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97476133"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104738432"
 ---
 # <a name="change-a-sql-server-native-client-authentication-user-password-ole-db"></a>SQL Server Native Client 認証のユーザーパスワードを変更する (OLE DB)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

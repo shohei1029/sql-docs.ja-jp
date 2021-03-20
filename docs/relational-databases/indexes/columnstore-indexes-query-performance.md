@@ -4,7 +4,7 @@ title: 列ストア インデックス - クエリ パフォーマンス | Micro
 ms.custom: ''
 ms.date: 01/11/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.assetid: 83acbcc4-c51e-439e-ac48-6d4048eba189
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6501f3148ab906c8ac719407a489db6a4be1e62b
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: f2fa166f15ebe07ad476a845af35b759b0d30bde
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99236704"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104744282"
 ---
 # <a name="columnstore-indexes---query-performance"></a>列ストア インデックス - クエリ パフォーマンス
 
@@ -112,10 +112,10 @@ ms.locfileid: "99236704"
 |Merge Join||no|no|no||    
 |マルチ スレッド クエリ||はい|はい|はい||    
 |入れ子になったループ||no|no|no||    
-|MAXDOP 1 で実行されるシングル スレッド クエリ||no|Ｘ|はい||    
-|直列クエリ プランを持つシングル スレッド クエリ||no|Ｘ|はい||    
-|sort|列ストア インデックスを持つ SCAN 上の ORDER BY 句|no|Ｘ|はい||    
-|Top Sort||no|Ｘ|はい||    
+|MAXDOP 1 で実行されるシングル スレッド クエリ||no|no|はい||    
+|直列クエリ プランを持つシングル スレッド クエリ||no|no|はい||    
+|sort|列ストア インデックスを持つ SCAN 上の ORDER BY 句|no|no|はい||    
+|Top Sort||no|no|はい||    
 |Window Aggregates||NA|NA|はい|[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] の新しいオペレーター。|    
     
 <sup>1</sup>[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] Premium 層、Standard 層 - S3 以上、およびすべての仮想コア層と [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] に適用されます。    

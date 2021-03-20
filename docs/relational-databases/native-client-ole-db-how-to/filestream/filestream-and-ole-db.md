@@ -4,7 +4,7 @@ title: Filestream と OLE DB (Native Client OLE DB プロバイダー) |Microsof
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -12,12 +12,12 @@ ms.assetid: 8801f091-2241-4085-87b7-33e031328c9c
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5c52125db68c8652ebf21c6649b568d135df9373
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: da7ad1f8d8a05075e40e5d6e091d7c39b983302a
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464913"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104738232"
 ---
 # <a name="filestream-and-ole-db-native-client-ole-db-provider"></a>Filestream と OLE DB (Native Client OLE DB プロバイダー)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

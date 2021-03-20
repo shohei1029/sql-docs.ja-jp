@@ -4,7 +4,7 @@ title: テーブル名の変更 (データベース エンジン) | Microsoft Do
 ms.custom: ''
 ms.date: 02/23/2018
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -16,12 +16,12 @@ helpviewer_keywords:
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a26a851196e5357e04f3f31b405a3fb6738a49de
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c1f38616cf33ee2a759ada71b7873d1a0c0e3c20
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440523"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752382"
 ---
 # <a name="rename-tables-database-engine"></a>テーブル名の変更 (データベース エンジン)
 

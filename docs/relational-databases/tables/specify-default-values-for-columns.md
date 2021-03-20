@@ -4,7 +4,7 @@ title: 列の既定値の指定 | Microsoft Docs
 ms.custom: ''
 ms.date: 03/17/2020
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -15,12 +15,12 @@ ms.assetid: 64514aed-b846-407b-992e-cf813f9a1a91
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4ef2e6eebd15d2d88d9bed1290614d67b5596b87
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: dc4f26877483a1213b1c5ecd3363dd1ba0c75fee
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474603"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104738102"
 ---
 # <a name="specify-default-values-for-columns"></a>列の既定値の指定
 

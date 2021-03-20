@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server でデータが変更されたとき�
 ms.custom: ''
 ms.date: 06/12/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -21,12 +21,12 @@ helpviewer_keywords:
 - consumer notification for rowset changes [OLE DB Driver for SQL Server]
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 83dc1ddc2aed6852a36bc2d32b94564451d8a08e
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 3b21f3a8b17c5174c4e9f8b037aa891bdfcc6d10
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861447"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751072"
 ---
 # <a name="working-with-query-notifications"></a>クエリ通知の操作
 
@@ -79,7 +79,7 @@ OLE DB Driver for SQL Server では、行セットが変更されたときのコ
 
 OLE DB によるクエリ通知をサポートするために、次の新しいプロパティが OLE DB Driver for SQL Server の `DBPROPSET_SQLSERVERROWSET` プロパティ セットに追加されました。
 
-|Name|種類|説明|
+|Name|Type|説明|
 |----------|----------|-----------------|
 |SSPROP_QP_NOTIFICATION_TIMEOUT|VT_UI4|クエリ通知をアクティブのままにしておく秒数。<br /><br /> 既定値は 432,000 秒 (5 日) です。 最小値は 1 秒であり、最大値は 2^31-1 秒です。|
 |SSPROP_QP_NOTIFICATION_MSGTEXT|VT_BSTR|通知のメッセージ テキスト。 このテキストはユーザーが定義するため、定義済みの書式はありません。<br /><br /> 既定では、文字列は空です。 1 から 2000 文字を使用してメッセージを指定します。|

@@ -4,18 +4,18 @@ description: IColumnsRowset::GetColumnRowset の DBCOLUMN_BASETABLEINSTANCE 列�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 040052f04cdee697a616aa7ced6d790601d0c829
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 7453fa75c29537a4609af618f09b8a234b96484b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99191813"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752642"
 ---
 # <a name="icolumnsrowset"></a>IColumnsRowset
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

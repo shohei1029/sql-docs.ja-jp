@@ -4,7 +4,7 @@ description: SQL Server でデータベースを設計する場合、そのサ�
 ms.custom: ''
 ms.date: 03/01/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: supportability
 ms.topic: conceptual
@@ -21,12 +21,12 @@ ms.assetid: 5b240161-eba4-44b0-946c-61a8fc00fc8c
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0645fdf69d5d1cc2859388c20e6170e3a152c0d9
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: fe30965dc7ee00e99c185cb427c422f23f882a9e
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474133"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751032"
 ---
 # <a name="estimate-the-size-of-a-database"></a>データベース サイズの見積もり
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -4,7 +4,7 @@ title: sp_spaceused (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: c6253b48-29f5-4371-bfcd-3ef404060621
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 480b61493dc38ea91679e590f3abe63bde3a48c0
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 97a2050e9b4c4486f8dbf6e64fde08fdc0e88678
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189310"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104745372"
 ---
 # <a name="sp_spaceused-transact-sql"></a>sp_spaceused (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -166,7 +166,7 @@ sp_spaceused [[ @objname = ] 'objname' ]
 |**xtp_used**|**varchar (18)**|構築中、アクティブ、およびマージターゲットの状態を持つチェックポイントファイルの合計サイズ (KB 単位)。 これは、メモリ最適化テーブルのデータに対してアクティブに使用されるディスク領域です。 データベースに少なくとも1つのコンテナーを含む memory_optimized_data ファイルグループがない場合は、NULL を返します。 *この列は、 @include_total_xtp_storage = 1 の場合にのみ含ま* れます。| 
 |**xtp_pending_truncation**|**varchar (18)**|状態 WAITING_FOR_LOG_TRUNCATION のチェックポイントファイルの合計サイズ (KB 単位)。 これは、ログの切り捨てが行われると、クリーンアップを待機しているチェックポイントファイルに使用されるディスク領域です。 データベースに少なくとも1つのコンテナーを含む memory_optimized_data ファイルグループがない場合は、NULL を返します。 この列は、の場合にのみ含まれ `@include_total_xtp_storage=1` ます。|
 
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  **database_size** は  +  ログファイルのサイズが含まれていますが、**予約済み** で **unallocated_space** データページのみを考慮しているため、通常は予約済みの **未割り当て領域** の合計より大きくなります。 Azure Synapse Analytics では、このステートメントが true でない場合があります。 
   
  XML インデックスとフルテキストインデックスによって使用されるページは、両方の結果セットの **index_size** に含まれています。 *Objname* を指定すると、オブジェクトの XML インデックスとフルテキストインデックスのページも、**予約** された結果と **index_size** の結果の合計にカウントされます。  
@@ -178,7 +178,7 @@ sp_spaceused [[ @objname = ] 'objname' ]
 > [!NOTE]  
 >  大きなインデックスを削除または再構築したり、大きなテーブルを削除したり切り捨てたりすると、では、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] トランザクションがコミットされるまで、実際のページの割り当て解除とそれに関連付けられているロックが延期されます。 遅延削除操作では、割り当てられた領域はすぐに解放されません。 このため、大きなオブジェクトを削除または切り捨てた直後に **sp_spaceused** によって返された値は、実際に使用可能なディスク領域を反映していない可能性があります。  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  **sp_spaceused** の実行権限は、 **public** ロールに与えられています。 **\@updateusage** パラメーターを指定できるのは、**db_owner** 固定データベース ロールのメンバーだけです。  
   
 ## <a name="examples"></a>例  

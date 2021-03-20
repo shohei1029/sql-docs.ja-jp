@@ -2,7 +2,7 @@
 title: Table-Valued パラメーターのデータ転送
 description: Table-Valued パラメーターのデータ転送について説明します
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.technology: native-client
 ms.topic: reference
 ms.assetid: 0a2ea462-d613-42b6-870f-c7fa086a6b42
@@ -12,12 +12,12 @@ ms.reviewer: ''
 ms.custom: ''
 ms.date: 07/01/2020
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 19a7f22cd26ea4988364d51ff70300cdbf42d365
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 0a7a3ea0c3448de104a2742f7255c026946b405b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97436158"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752432"
 ---
 # <a name="binding-and-data-transfer-of-table-valued-parameters-and-column-values"></a>テーブル値パラメーターおよび列の値のバインドとデータ転送
 
