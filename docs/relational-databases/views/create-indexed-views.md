@@ -4,7 +4,7 @@ title: インデックス付きビューの作成 | Microsoft Docs
 ms.custom: ''
 ms.date: 11/19/2018
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -19,12 +19,12 @@ ms.assetid: f86dd29f-52dd-44a9-91ac-1eb305c1ca8d
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8c4b69dd5f196cf44f7fedfefbe45df6714aba20
-ms.sourcegitcommit: be74dc0966930f28b03d0429aed22b1f0a296d3b
+ms.openlocfilehash: 875d634fd1fc867d59b58872db5ba5dd96dfd52a
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103421995"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753192"
 ---
 # <a name="create-indexed-views"></a>インデックス付きビューの作成
 

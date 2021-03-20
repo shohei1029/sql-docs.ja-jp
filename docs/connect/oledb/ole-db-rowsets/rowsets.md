@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server のセッションで行セットを�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - rowsets [OLE DB]
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 55100932092abeb81da7fa1c156ccb5a61fc193c
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: e41444c601eac8829ce502e46aa96b784df8b799
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88859946"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104746082"
 ---
 # <a name="rowsets"></a>行セット
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -4,7 +4,7 @@ description: SQL Server の資格情報について説明します。 SQL Server
 ms.custom: ''
 ms.date: 06/27/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: security
 ms.topic: conceptual
@@ -23,12 +23,12 @@ ms.assetid: c8df6022-e0b4-46b8-9670-3f86938d3177
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9bc63a0a3bf2482ea84f1a2f80febb5865892a6d
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 605b9373f21a7a1a0776f154851b03cad2caac1c
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97406078"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753272"
 ---
 # <a name="credentials-database-engine"></a>資格情報 (データベース エンジン)
 

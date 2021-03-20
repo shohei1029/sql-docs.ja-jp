@@ -4,7 +4,7 @@ title: NEWID (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 07/29/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, sql-database
+ms.prod_service: synapse-analytics, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -20,12 +20,12 @@ ms.assetid: f7014e60-96d5-457e-afc3-72b60ba20c0f
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 85ef57b23e4e23c34f63a219c760ddb9c865aac2
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a79dada161166bbc7975176fe3a727f17455a2b0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100341651"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104734946"
 ---
 # <a name="newid-transact-sql"></a>NEWID (Transact-SQL)
 

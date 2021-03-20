@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 10/02/2019
 ms.prod: sql
-ms.prod_service: polybase, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 monikerRange: '>= sql-server-2016'
-ms.openlocfilehash: c1957724f028283c2e3aa6377604726f0c307add
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 21b5f1b82a1ae15b6eaecf47c9a2480844d193cb
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101838051"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753762"
 ---
 # <a name="troubleshoot-polybase-kerberos-connectivity"></a>PolyBase Kerberos の接続性のトラブルシューティング
 
