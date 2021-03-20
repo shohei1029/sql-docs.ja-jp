@@ -1,8 +1,8 @@
 ---
 description: sys.dm_tran_active_transactions (Transact-SQL)
-title: sys.dm_tran_active_transactions (Transact-sql) |Microsoft Docs
+title: 'sys.dm_tran_active_transactions (Transact-SQL) '
 ms.custom: ''
-ms.date: 03/30/2017
+ms.date: 03/18/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -17,16 +17,15 @@ dev_langs:
 - TSQL
 helpviewer_keywords:
 - sys.dm_tran_active_transactions dynamic management view
-ms.assetid: 154ad6ae-5455-4ed2-b014-e443abe2c6ee
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7fb50e96cba3ff7cf9dfc3ab98c1808f1569f051
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: 0be6bf11c6cff757cab4d948b1882a02c609e3a2
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/19/2021
-ms.locfileid: "104610904"
+ms.locfileid: "104673996"
 ---
 # <a name="sysdm_tran_active_transactions-transact-sql"></a>sys.dm_tran_active_transactions (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -52,7 +51,7 @@ ms.locfileid: "104610904"
 |filestream_transaction_id|**varbinary (128)**|**適用対象**: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] (最初のリリースから [現在のリリース](/previous-versions/azure/ee336279(v=azure.100))まで)。<br /><br /> [!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
 |pdw_node_id|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。|  
   
-## <a name="permissions"></a>アクセス許可
+## <a name="permissions"></a>権限
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
@@ -64,17 +63,20 @@ SQL Database Basic、S0、S1 のサービス目標、およびエラスティッ
  次の例は、システム上のアクティブなトランザクションを示しています。また、トランザクション、ユーザーセッション、送信されたアプリケーション、それを開始したクエリなどの詳細情報を提供します。  
   
 ```sql  
-select
-  getdate() as now,
+SELECT
+  GETDATE() as now,
   DATEDIFF(SECOND, transaction_begin_time, GETDATE()) as tran_elapsed_time_seconds,
+  st.session_id,
+  txt.text, 
   *
 FROM
   sys.dm_tran_active_transactions at
-  JOIN sys.dm_tran_session_transactions st ON st.transaction_id = at.transaction_id
-  INNER JOIN sys.sysprocesses sp ON st.session_id = sp.spid 
-    CROSS APPLY sys.dm_exec_sql_text(sql_handle) txt
-order by
-  tran_elapsed_time_seconds desc
+  INNER JOIN sys.dm_tran_session_transactions st ON st.transaction_id = at.transaction_id
+  LEFT OUTER JOIN sys.dm_exec_sessions sess ON st.session_id = sess.session_id
+  LEFT OUTER JOIN sys.dm_exec_connections conn ON conn.session_id = sess.session_id
+    OUTER APPLY sys.dm_exec_sql_text(conn.most_recent_sql_handle)  AS txt
+ORDER BY
+  tran_elapsed_time_seconds DESC;
 ```
 
 
