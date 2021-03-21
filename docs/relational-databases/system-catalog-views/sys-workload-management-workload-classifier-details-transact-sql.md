@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 11/05/2019
 ms.prod: sql
 ms.technology: system-objects
-ms.prod_service: sql-data-warehouse
+ms.prod_service: synapse-analytics
 ms.reviewer: jrasnick
 ms.topic: reference
 dev_langs:
@@ -13,12 +13,12 @@ dev_langs:
 author: ronortloff
 ms.author: rortloff
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: b758ec142d3627c545b2e4f98c7787b1dd195685
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: b8b2a43c84f2aaa294fd68931472f0cf1f7d5339
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99207152"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104747802"
 ---
 # <a name="sysworkload_management_workload_classifier_details-transact-sql"></a>sys.workload_management_workload_classifier_details (Transact-sql)
 

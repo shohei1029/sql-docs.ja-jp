@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server のインストールとアンイン�
 ms.custom: ''
 ms.date: 02/12/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -21,12 +21,12 @@ helpviewer_keywords:
 - removing OLE DB Driver for SQL Server
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 43b91e08726ed548d24ba3461f45164eb97bb6b7
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: f3fa22e03525119a5aa1b66fa81f11c6dc6e9023
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727373"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104746372"
 ---
 # <a name="installing-ole-db-driver-for-sql-server"></a>OLE DB Driver for SQL Server のインストール
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

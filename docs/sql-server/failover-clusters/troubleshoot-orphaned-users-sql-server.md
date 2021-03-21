@@ -4,7 +4,7 @@ description: データベース ユーザー ログインがマスター デー�
 ms.custom: seo-lt-2019
 ms.date: 07/14/2016
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: high-availability
 ms.topic: troubleshooting
@@ -20,12 +20,12 @@ ms.assetid: 11eefa97-a31f-4359-ba5b-e92328224133
 author: cawrites
 ms.author: chadam
 monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016'
-ms.openlocfilehash: 2583e238295c87b555c43f25b7fd68b03f3647c6
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3067428c780c675b7601f66abc023a07b056eabe
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100354034"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753202"
 ---
 # <a name="troubleshoot-orphaned-users-sql-server"></a>孤立したユーザーのトラブルシューティング (SQL Server)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

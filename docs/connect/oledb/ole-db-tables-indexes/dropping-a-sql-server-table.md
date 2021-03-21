@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server の ITableDefinition::DropTable 関数
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - dropping tables
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: c3bdcc2b2b96c2cd1d9af0bbf7d31457eed71381
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: d1527835952024f2a10807f98749db85a8244f3a
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88859409"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754252"
 ---
 # <a name="dropping-a-sql-server-table"></a>SQL Server テーブルの削除
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

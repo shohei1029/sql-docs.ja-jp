@@ -4,7 +4,7 @@ title: DB-Library から ODBC 一括コピーへの変換 |Microsoft Docs
 ms.custom: ''
 ms.date: 03/16/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -18,12 +18,12 @@ ms.assetid: 0bc15bdb-f19f-4537-ac6c-f249f42cf07f
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 488f3f1583a58431c5606fade81e9eb3f56bd076
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bbaf14c98f20b5d070d1679da894d97429098dcc
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465033"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754742"
 ---
 # <a name="converting-from-db-library-to-odbc-bulk-copy"></a>DB-Library から ODBC への一括コピーの変換
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "97465033"
     |-------------------------|--------------------------------|-------------------------|  
     |NULL 値が指定された場合|0|-1 (SQL_NULL_DATA)|  
     |可変長のデータが指定された場合|-1|-10 (SQL_VARLEN_DATA)|  
-    |長さが 0 の文字列またはバイナリ文字列の場合|N/A|0|  
+    |長さが 0 の文字列またはバイナリ文字列の場合|NA|0|  
   
      DB-LIBRARY では、 *varlen* 値-1 は、可変長データが指定されていることを示します。これは、ODBC *CBDATA* で、NULL 値のみが指定されていることを意味します。 -1 のすべての DB-Library *varlen* *仕様を* SQL_VARLEN_DATA に変更し、0を SQL_NULL_DATA に設定します。  
   

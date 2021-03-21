@@ -3,7 +3,7 @@ title: DATEDIFF (Transact-SQL) | Microsoft Docs
 description: DATEDIFF 関数の Transact-SQL リファレンス。 datepart に基づき、開始と終了日付の間の数値的な差が返されます。
 ms.date: 07/18/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -31,12 +31,12 @@ ms.assetid: eba979f2-1a8d-4cce-9d75-b74f9b519b37
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 202134aeb21010a666eeb3b33fa54ee0143e3b63
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9a8ad83b30d62b2b5c6b7348eed99e013259081f
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100341660"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754602"
 ---
 # <a name="datediff-transact-sql"></a>DATEDIFF (Transact-SQL)
 

@@ -4,7 +4,7 @@ title: DROP EXTERNAL FILE FORMAT (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/07/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, pdw, sql-database
+ms.prod_service: synapse-analytics, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -14,12 +14,12 @@ ms.assetid: 8cf9009b-59f9-4aac-bef1-dcf2cf0708b2
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bf9c9eb5c1396e8b391dd0edca78f35f95369e30
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 29f1a3ec286185c46e6f1166030c16ace467d0ab
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99185943"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752882"
 ---
 # <a name="drop-external-file-format-transact-sql"></a>DROP EXTERNAL FILE FORMAT (Transact-SQL)
 [!INCLUDE [sqlserver2016-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdbmi-asa-pdw.md)]
@@ -40,14 +40,14 @@ DROP EXTERNAL FILE FORMAT external_file_format_name
  *external_file_format_name*  
  削除する外部ファイル形式の名前です。  
   
-## <a name="metadata"></a>メタデータ  
+## <a name="metadata"></a>Metadata  
  外部ファイル形式の一覧を表示するには、[sys.external_file_formats &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-external-file-formats-transact-sql.md) システム ビューを使用します。  
   
 ```sql  
 SELECT * FROM sys.external_file_formats;  
 ```  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  ALTER ANY EXTERNAL FILE FORMAT が必須です。  
   
 ## <a name="general-remarks"></a>全般的な解説  
