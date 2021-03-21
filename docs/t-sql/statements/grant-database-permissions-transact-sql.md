@@ -4,7 +4,7 @@ title: GRANT (データベースの権限の許可) (Transact-SQL) | Microsoft D
 ms.custom: ''
 ms.date: 05/22/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 499e5ed6-945c-4791-ab45-68dec0b9c289
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 185e4f53346d61ec3d53462fec3797b50f20d4c5
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a5873dd851bbb0b56dd1cab27794ea7052f45f44
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338763"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750662"
 ---
 # <a name="grant-database-permissions-transact-sql"></a>GRANT (データベースの権限の許可) (Transact-SQL)
 

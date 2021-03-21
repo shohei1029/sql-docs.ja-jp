@@ -4,7 +4,7 @@ title: カーソルトランザクション分離レベル |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -18,12 +18,12 @@ ms.assetid: 0c6663a4-5a25-44aa-8fe4-e35af9bf4a83
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 475ad9fd8965cd74cb46691117df05815d0d2e84
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 77c7f10faed8bacefe20cd46b5375b85cae3f6f7
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97473703"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104756352"
 ---
 # <a name="cursor-transaction-isolation-level"></a>カーソルのトランザクション分離レベル
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

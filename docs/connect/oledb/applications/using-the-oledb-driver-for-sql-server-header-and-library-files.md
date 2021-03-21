@@ -4,7 +4,7 @@ description: 開発環境で OLE DB Driver for SQL Server のヘッダー ファ
 ms.custom: ''
 ms.date: 02/12/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -20,12 +20,12 @@ helpviewer_keywords:
 - MSOLEDBSQL, library files
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 66870fbbc20d22067f00a8ced721cb63c331eb2f
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 9126ef09a59a04fe54c29050839de35afca84ca5
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861643"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104742952"
 ---
 # <a name="using-the-ole-db-driver-for-sql-server-header-and-library-files"></a>SQL Server ヘッダーとライブラリ ファイルでの OLE DB ドライバーの使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

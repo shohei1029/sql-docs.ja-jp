@@ -4,7 +4,7 @@ title: sys.dm_tran_locks (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: f0d3b95a-8a00-471b-9da4-14cb8f5b045f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 95dfd0be129d7f6116ef92fbe54d7869af45fca1
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 92852653bb3be257d66a202c671a9d65e4ae3efd
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837969"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753792"
 ---
 # <a name="sysdm_tran_locks-transact-sql"></a>sys.dm_tran_locks (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "101837969"
 |**lock_owner_address**|**varbinary (8)**|要求を追跡するときに使用される内部データ構造のメモリ アドレス。 この列は **sys.dm_os_waiting_tasks** の **resource_address** 列と結合できます。|  
 |**pdw_node_id**|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。|  
   
-## <a name="permissions"></a>アクセス許可
+## <a name="permissions"></a>権限
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
  
@@ -99,7 +99,7 @@ SQL Database Basic、S0、S1 のサービス目標、およびエラスティッ
 |リソースの種類|リソースの説明|Resource_associated_entity_id|  
 |-------------------|--------------------------|--------------------------------------|  
 |DATABASE|データベースを示します。|適用なし|  
-|FILE|データベース ファイルを示します。 このファイルは、データまたはログ ファイルのいずれかになります。|適用なし|  
+|ファイル|データベース ファイルを示します。 このファイルは、データまたはログ ファイルのいずれかになります。|適用なし|  
 |OBJECT|データベース オブジェクトを示します。 このオブジェクトは、データ テーブル、ビュー、ストアド プロシージャ、拡張ストアド プロシージャ、またはオブジェクト ID 付きのオブジェクトのいずれかになります。|オブジェクト ID|  
 |PAGE|データ ファイル内の 1 ページを示します。|HoBt ID。 この値は **sys.partitions.hobt_id** に対応します。 PAGE リソースに対し常に HoBt ID が使用できるとは限りません。HoBt ID は呼び出し元から提供される追加情報であり、呼び出し元によってはこの情報を提供できないことがあります。|  
 |KEY|インデックス内の行を示します。|HoBt ID。 この値は **sys.partitions.hobt_id** に対応します。|  
@@ -201,7 +201,7 @@ SQL Database Basic、S0、S1 のサービス目標、およびエラスティッ
 |リソース|Format|説明|  
 |--------------|------------|-----------------|  
 |DATABASE|適用なし|データベース ID は **resource_database_id** 列で既に使用可能になっています。|  
-|FILE|<file_id>|このリソースが示すファイルの ID。|  
+|ファイル|<file_id>|このリソースが示すファイルの ID。|  
 |OBJECT|<object_id>|このリソースが示すオブジェクトの ID。 テーブルだけでなく、**sys.objects** に一覧表示されるあらゆるオブジェクトが対象になります。|  
 |PAGE|<file_id>:<page_in_file>|このリソースが示すページの、ファイルおよびページ ID。|  
 |KEY|<hash_value>|このリソースが示す行のキー列のハッシュ。|  

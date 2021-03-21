@@ -4,7 +4,7 @@ title: テーブル列のプロパティ (SQL Server Management Studio) | Micros
 ms.custom: ''
 ms.date: 08/08/2016
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -16,12 +16,12 @@ ms.assetid: 09830897-cc10-46b8-95f5-e0e9681b668c
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 38e9460d8efe8c5fb33285bf4c6eeaada0203dcf
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: ea67d013f122ed4d539221cbe81a1955f30ac444
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97472633"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104738022"
 ---
 # <a name="table-column-properties-sql-server-management-studio"></a>テーブル列のプロパティ (SQL Server Management Studio)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]

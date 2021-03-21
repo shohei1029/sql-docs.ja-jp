@@ -4,7 +4,7 @@ title: CUME_DIST (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 07/24/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, database-engine, sql-database
+ms.prod_service: synapse-analytics, database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -20,12 +20,12 @@ ms.assetid: 491b07f3-9ffd-4cdd-93e5-5abb636fc5ef
 author: cawrites
 ms.author: chadam
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2f28c7c8039602d5892430b1c59a4f39e026a954
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 82a9847d9903cb6f0f4c7faab22ce27247c09bd6
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99184191"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751942"
 ---
 # <a name="cume_dist-transact-sql"></a>CUME_DIST (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]

@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server. の使用時にプロバイダー固�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - OLE DB Driver for SQL Server, OLE DB
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 8062bb05cfb4caa7112c000356508b9232446be9
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: dfb0ef4dd0bd3261fe1787fda04af73ed19c3918
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99204613"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753132"
 ---
 # <a name="ole-db-driver-for-sql-server-ole-db-interfaces"></a>OLE DB Driver for SQL Server (OLE DB) のインターフェイス
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

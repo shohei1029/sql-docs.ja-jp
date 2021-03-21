@@ -4,7 +4,7 @@ title: 'sys.dm_tran_active_transactions (Transact-SQL) '
 ms.custom: ''
 ms.date: 03/18/2021
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -20,12 +20,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0be6bf11c6cff757cab4d948b1882a02c609e3a2
-ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
+ms.openlocfilehash: 2d826f396758c9b6fdffffdec89ef9d0bbf1538b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104673996"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104756432"
 ---
 # <a name="sysdm_tran_active_transactions-transact-sql"></a>sys.dm_tran_active_transactions (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

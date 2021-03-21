@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server で IBCPSession2::BCPSetBulkMode メ�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - BCPSetBulkMode function
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: a29e4de3d4c0cdd3572b1ce9f8f257bad65e57e7
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: f8992509c176de3875f3ff416897876906c32fe5
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99192064"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753342"
 ---
 # <a name="ibcpsession2bcpsetbulkmode"></a>IBCPSession2::BCPSetBulkMode
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

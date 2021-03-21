@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server の COLUMNS 行セットと PROCEDURE_
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - date/time [OLE DB], schema rowsets
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 44b3959b72d07cb12d6523e063a0ddfa75b59c97
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: ab9b7d99c472b3cef932ed2f275000aa8f41695e
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88862015"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104742072"
 ---
 # <a name="metadata---date-and-time-and-schema-rowsets"></a>メタデータ - 日付、時刻、スキーマ行セット
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

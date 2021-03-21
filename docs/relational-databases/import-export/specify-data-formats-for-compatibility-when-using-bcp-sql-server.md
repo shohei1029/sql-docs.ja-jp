@@ -3,7 +3,7 @@ title: bcp で互換性データ形式を指定する
 description: bcp を使用した SQL Server での一括エクスポートでは、データ形式が想定されるレイアウトと互換性がない可能性があります。 XML 以外のフォーマット ファイルでは、互換性データ形式を指定します。
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: data-movement
 ms.topic: conceptual
@@ -18,12 +18,12 @@ author: MashaMSFT
 ms.author: mathoma
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
 ms.custom: seo-lt-2019
-ms.openlocfilehash: afdaa7a7243c87876b55cb79155e652ae029c495
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 41f983239a2cf946bb46e04315cff69ba3b2abc2
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100351314"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751022"
 ---
 # <a name="specify-compatibility-data-formats-when-using-bcp-sql-server"></a>bcp を使用して互換性データ形式を指定する (SQL Server)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

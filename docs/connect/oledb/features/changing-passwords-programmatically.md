@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server では、OLE DB ドライバーのプ�
 ms.custom: ''
 ms.date: 06/12/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -20,12 +20,12 @@ helpviewer_keywords:
 - modifying passwords
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 61134cf281a5e3aa7eab8c2404f2d3dbfac13972
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: ca8bfec9c9404f2912d288cb434aa064200fea45
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727326"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104742852"
 ---
 # <a name="changing-passwords-programmatically"></a>プログラムによるパスワードの変更
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

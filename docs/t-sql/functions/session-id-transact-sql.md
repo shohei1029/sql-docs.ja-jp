@@ -4,7 +4,7 @@ title: SESSION_ID (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 02/23/2018
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, pdw
+ms.prod_service: synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -13,12 +13,12 @@ dev_langs:
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
-ms.openlocfilehash: 5cee88bc442c5671b4e2d94aa42b20092018ae09
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 732badac9c998d59b015029d6c917f9f0cbe2574
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99212192"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104746382"
 ---
 # <a name="session_id-transact-sql"></a>SESSION_ID (Transact-SQL)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]

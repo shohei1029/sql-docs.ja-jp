@@ -4,7 +4,7 @@ title: ODBC カーソルライブラリ |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -20,12 +20,12 @@ ms.assetid: 3c610d3d-6e06-49cf-9a40-05b6a1c83a32
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ee3d3a71520f11d2e611c2b71eb6588e20cfdbb6
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: b38644e7d4ef2eb1d0e5b53166366bd116c1639e
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438645"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104756262"
 ---
 # <a name="odbc-cursor-library"></a>ODBC カーソル ライブラリ
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

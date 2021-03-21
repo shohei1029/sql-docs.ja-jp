@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server で、OLE DB で定義されるデー�
 ms.custom: ''
 ms.date: 02/21/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -21,12 +21,12 @@ helpviewer_keywords:
 - OLE DB, data types
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: cbe23a1e1edce96997968bf40075b2fc3b13db49
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 466e379b2ce809f72fb39c4d7594a85ce85ebad5
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861608"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749162"
 ---
 # <a name="data-type-mapping-in-rowsets-and-parameters"></a>行セットとパラメーターでのデータ型マッピング
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -93,7 +93,7 @@ ms.locfileid: "88861608"
   
 |プロパティ|説明|  
 |-|-|  
-|SSPROP_ALLOWNATIVEVARIANT|型: VT_BOOL<br /><br /> R/W:読み取り/書き込み<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明:データを DBTYPE_VARIANT と DBTYPE_SQLVARIANT のどちらとしてフェッチするかを決定します。<br /><br /> VARIANT_TRUE:列の型は DBTYPE_SQLVARIANT として返され、バッファーには SSVARIANT 構造体が保持されます。<br /><br /> VARIANT_FALSE:列の型は DBTYPE_VARIANT として返され、バッファーには VARIANT 構造体が保持されます。|  
+|SSPROP_ALLOWNATIVEVARIANT|型: VT_BOOL<br /><br /> R/W:読み取り/書き込み<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明 : データを DBTYPE_VARIANT と DBTYPE_SQLVARIANT のどちらとしてフェッチするかを決定します。<br /><br /> VARIANT_TRUE: 列の型は DBTYPE_SQLVARIANT として返され、バッファーには SSVARIANT 構造体が保持されます。<br /><br /> VARIANT_FALSE:列の型は DBTYPE_VARIANT として返され、バッファーには VARIANT 構造体が保持されます。|  
   
 ## <a name="see-also"></a>参照  
  [データ型 &#40;OLE DB&#41;](../../oledb/ole-db-data-types/data-types-ole-db.md)  

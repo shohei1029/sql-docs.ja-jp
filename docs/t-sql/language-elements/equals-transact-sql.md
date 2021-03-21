@@ -4,7 +4,7 @@ title: = (等しい) (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 12/06/2016
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -22,12 +22,12 @@ ms.assetid: 18885245-5f55-4831-8f0b-7f2a3e82e246
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 020cfd62f480d5ad5adfe89328831be6ef6bbf3b
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 18a340261b64acb70721df88a0b459846fff2dd7
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99117936"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104736562"
 ---
 # <a name="-equals-transact-sql"></a>= (等しい) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
