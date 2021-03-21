@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.assetid: 53b09784-bb9d-4fd4-99d3-0492b3308ac4
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: b0f215b387cb772220fb56e504e1a5a8c19daa7d
-ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
+ms.openlocfilehash: c74f1d0d42b339a51254e582023d15a69d9891af
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102770550"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575306"
 ---
 # <a name="download-odbc-driver-for-sql-server"></a>ODBC Driver for SQL Server のダウンロード
 
-[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 Microsoft ODBC Driver for SQL Server は、ネイティブ コード API を使用して SQL Server に接続するアプリケーション用のランタイム サポートが含まれる単一のダイナミックリンク ライブラリ (DLL) です。 Microsoft ODBC Driver 17 for SQL Server は、新しいアプリケーションを作成したり、SQL Server の新機能を利用する必要のある既存のアプリケーションを拡張したりする場合に使用します。
 
@@ -38,7 +38,7 @@ Microsoft ODBC Driver 17 for SQL Server の再頒布可能インストーラー�
 - リリース日: 2021 年 3 月 10 日
 
 > [!Note]
-> 英語以外のバージョンからこのページにアクセスしていて、最新の内容を見たい場合は、[サイトの英語 (米国) 版]()をご覧ください。 [使用できる言語](#available-languages)を選択して、英語 (米国) 版のサイトから別の言語をダウンロードできます。ます。
+> 英語以外のバージョンからこのページにアクセスしていて、最新の内容を見たい場合は、[サイトの英語 (米国) 版](https://aka.ms/downloadmsodbcsqlenglish)をご覧ください。 [使用できる言語](#available-languages)を選択して、英語 (米国) 版のサイトから別の言語をダウンロードできます。ます。
 
 ## <a name="available-languages"></a>使用できる言語
 
@@ -85,11 +85,11 @@ Microsoft ODBC Driver for SQL Server は、関連するインストール手順�
 - [Debian 8 .deb パッケージ](https://packages.microsoft.com/debian/8/prod/pool/main/m/msodbcsql17/)
 - [Debian 8 .deb パッケージ (msodbcsql 13.x)](https://packages.microsoft.com/debian/8/prod/pool/main/m/msodbcsql/)
 
-### <a name="redhat"></a>RedHat
+### <a name="red-hat"></a>Red Hat
 
-- [RedHat 8 .rpm パッケージ](https://packages.microsoft.com/rhel/8/prod/)
-- [RedHat 7 .rpm パッケージ](https://packages.microsoft.com/rhel/7/prod/)
-- [RedHat 6 .rpm パッケージ](https://packages.microsoft.com/rhel/6/prod/)
+- [Red Hat 8 .rpm パッケージ](https://packages.microsoft.com/rhel/8/prod/)
+- [Red Hat 7 .rpm パッケージ](https://packages.microsoft.com/rhel/7/prod/)
+- [Red Hat 6 .rpm パッケージ](https://packages.microsoft.com/rhel/6/prod/)
 
 ### <a name="suse"></a>Suse
 

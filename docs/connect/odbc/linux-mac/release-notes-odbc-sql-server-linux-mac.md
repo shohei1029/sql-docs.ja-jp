@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: v-chojas
 ms.author: v-chojas
 manager: kenvh
-ms.openlocfilehash: 655e35042c8b9cfd4d99f88fe8caea98ffbc7978
-ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
+ms.openlocfilehash: 3dbd2571eb468f0fcc5806a80b81828d803f2244
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102770530"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575248"
 ---
 # <a name="release-notes-for-the-microsoft-odbc-driver-for-sql-server-on-linux-and-macos"></a>Linux および macOS 上の Microsoft ODBC Driver for SQL Server のリリース ノートです
 
@@ -180,7 +180,7 @@ ODBC Driver 13.1 for [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)
 
 **新しいディストリビューションのサポート**:OS X 10.11 および macOS 10.12 は、macOS 上の ODBC ドライバーの最初のリリースでサポートされています。 Red Hat 6、7、SUSE 12 に加え、Ubuntu 16.10 のサポートも追加されました。 各プラットフォームには、インストールと構成が容易になるプラットフォーム関連パッケージ (RPM または DEB) があります。 詳細については、[Linux](../../../connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server.md) と [macOS](../../../connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos.md) での ODBC ドライバーのインストール手順を参照してください。
 
-**unixODBC Driver Manager 2.3.1 のサポートの変更**:ODBC ドライバーは、(RedHat 6 を除き) unixODBC Driver Manager のカスタム パッケージに依存しなくなり、代わりにディストリビューション パッケージ マネージャーを利用してディストリビューションのリポジトリの UnixODBC の依存関係を解決するようになりました。
+**unixODBC Driver Manager 2.3.1 のサポートの変更**: ODBC ドライバーは、(Red Hat 6 を除き) unixODBC Driver Manager のカスタム パッケージに依存しなくなり、代わりにディストリビューション パッケージ マネージャーを利用してディストリビューションのリポジトリの UnixODBC の依存関係を解決するようになりました。
 
 **BCP API のサポート**:Linux および macOS ODBC ドライバーは [BCP API 関数 (**bcp_init** など)](../../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md) の使用をサポートするようになりました。
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 91cca3d2-ba99-4a6d-b0de-beb9699cb3f8
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 0df2acfa00507f42d3ee03a0a65ff2ae25aafbd1
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: c6960778fcbd7eb707b50e18ce4a0c70e477ff28
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837186"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575239"
 ---
 # <a name="release-notes-for-the-microsoft-drivers-for-php-for-sql-server"></a>Microsoft SQL Server 用 Drivers for PHP のリリース ノート
 
@@ -60,7 +60,7 @@ Thanks a lot.  2019-03-28  (DevO= 1467988)
 | macOS Big Sur、Ubuntu 20.04、Ubuntu 20.10 および Alpine 3.12 のサポートが追加されました。 | ODBC Driver 17.5 以降が必要になるものもあります。 |
 | macOS High Sierra、Debian 8、および Ubuntu 19.10 のサポートを終了しました。 | &nbsp; |
 | GB18030 ロケールのサポート。 | &nbsp; |
-| 追加の odbc メッセージ (使用可能な場合) を含めるために PDO errorinfo が拡張されました。 | &nbsp; |
+| 追加の ODBC メッセージ (使用可能な場合) を含めるために PDO `errorinfo` が拡張されました。 | &nbsp; |
 | 順位情報を使用したデータ分類のサポート。 | SQL Server 2019 および ODBC Driver 17.4.2 以降が必要になります。 |
 | Azure Active Directory サービス プリンシパル認証のサポートが追加されました。 | ODBC ドライバー 17.7 以降が必要です。 |
 | 入力または出力として 10 進数を処理するときのパフォーマンスが向上し、数値の不要な変換が行われないようになりました。 | &nbsp; |
@@ -247,7 +247,7 @@ Thanks a lot.  2019-03-28  (DevO= 1467988)
 
 - PHP 7.0 のサポート  
 - 完全な 64 ビットのサポート
-- Ubuntu 15.04、Ubuntu 16.04、および RedHat 7 のサポート
+- Ubuntu 15.04、Ubuntu 16.04、および Red Hat 7 のサポート
 
 ## <a name="32"></a>3.2
 

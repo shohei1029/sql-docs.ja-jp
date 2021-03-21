@@ -1,8 +1,8 @@
 ---
 title: 移行ガイド:DB2 から SQL Server
-description: このガイドに従って、DB2 サーバーを SQL Server に移行します。
+description: 'このガイドでは、SQL Server Migration Assistant for DB2 (SSMA for DB2) を使用して、DB2 データベースを Microsoft SQL Server に移行する方法について説明します。 '
 ms.custom: ''
-ms.date: 08/17/2020
+ms.date: 03/19/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: migration-guide
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - maximum number of processors supported
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 8f07ae68309e78316ad7dc310ea5a0118e734f0c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 390ef29255ecda2876fe3e4abb35d1c23b1e1cba
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100341647"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575284"
 ---
 # <a name="migration-guide-db2-to-sql-server"></a>移行ガイド:DB2 から SQL Server
 [!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
@@ -146,9 +146,6 @@ SQL Server Migration Assistant (SSMA) を使用して評価を作成します。
 1. **検証テストを実行する**: ソースとターゲットに対して検証テストを実行してから、結果を分析します。
 1. **パフォーマンス テストを実行する**: ソースとターゲットに対してパフォーマンス テストを実行し、結果を分析して比較します。
 
-   > [!NOTE]
-   > 移行後の検証テストの開発と実行を支援するために、パートナーの [QuerySurge](https://www.querysurge.com/company/partners/microsoft) から入手できる Data Quality Solution を検討してください。 
-
 ## <a name="migration-assets"></a>移行資産 
 
 詳細については、次のリソースを参照してください。これらは、実際の移行プロジェクトの取り組みをサポートするために開発されました。
@@ -171,5 +168,4 @@ SQL Server Migration Assistant (SSMA) を使用して評価を作成します。
 その他の移行ガイドについては、[データベースの移行](https://datamigration.microsoft.com/)に関するページを参照してください。 
 
 ビデオ コンテンツについては、以下をご覧ください。
-- [データベース移行ガイドを使用する方法](https://azure.microsoft.com/resources/videos/how-to-use-the-azure-database-migration-guide/)
 - [移行の過程の概要](https://azure.microsoft.com/resources/videos/overview-of-migration-and-recommended-tools-services/)
