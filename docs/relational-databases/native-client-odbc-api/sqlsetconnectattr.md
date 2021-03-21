@@ -4,7 +4,7 @@ description: SQLSetConnectAttr の接続属性について説明します。こ�
 ms.custom: ''
 ms.date: 01/09/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -15,12 +15,12 @@ ms.assetid: d21b5cf1-3724-43f7-bc96-5097df0677b4
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3b3c006da487774a8de01ccf9a9b8cd12d9ca15f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 30893a308be9cb7634f3c0ceb755572e0e5b274b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465123"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754832"
 ---
 # <a name="sqlsetconnectattr"></a>SQLSetConnectAttr
 
@@ -50,22 +50,22 @@ ms.locfileid: "97465123"
 |SQL_COPT_SS_BROWSE_CONNECT|以前|  
 |SQL_COPT_SS_BROWSE_SERVER|以前|  
 |SQL_COPT_SS_CONCAT_NULL|以前|  
-|SQL_COPT_SS_CONNECTION_DEAD|これらの手順の完了後、|  
+|SQL_COPT_SS_CONNECTION_DEAD|After|  
 |SQL_COPT_SS_ENCRYPT|以前|  
-|SQL_COPT_SS_ENLIST_IN_DTC|これらの手順の完了後、|  
-|SQL_COPT_SS_ENLIST_IN_XA|これらの手順の完了後、|  
+|SQL_COPT_SS_ENLIST_IN_DTC|After|  
+|SQL_COPT_SS_ENLIST_IN_XA|After|  
 |SQL_COPT_SS_FALLBACK_CONNECT|以前|  
 |SQL_COPT_SS_FAILOVER_PARTNER|以前|  
 |SQL_COPT_SS_INTEGRATED_SECURITY|以前|  
 |SQL_COPT_SS_MARS_ENABLED|以前|  
 |SQL_COPT_SS_MULTISUBNET_FAILOVER|以前|  
 |SQL_COPT_SS_OLDPWD|以前|  
-|SQL_COPT_SS_PERF_DATA|これらの手順の完了後、|  
-|SQL_COPT_SS_PERF_DATA_LOG|これらの手順の完了後、|  
-|SQL_COPT_SS_PERF_DATA_LOG_NOW|これらの手順の完了後、|  
-|SQL_COPT_SS_PERF_QUERY|これらの手順の完了後、|  
-|SQL_COPT_SS_PERF_QUERY_INTERVAL|これらの手順の完了後、|  
-|SQL_COPT_SS_PERF_QUERY_LOG|これらの手順の完了後、|  
+|SQL_COPT_SS_PERF_DATA|After|  
+|SQL_COPT_SS_PERF_DATA_LOG|After|  
+|SQL_COPT_SS_PERF_DATA_LOG_NOW|After|  
+|SQL_COPT_SS_PERF_QUERY|After|  
+|SQL_COPT_SS_PERF_QUERY_INTERVAL|After|  
+|SQL_COPT_SS_PERF_QUERY_LOG|After|  
 |SQL_COPT_SS_PRESERVE_CURSORS|以前|  
 |SQL_COPT_SS_QUOTED_IDENT|接続前/接続後|  
 |SQL_COPT_SS_TRANSLATE|接続前/接続後|  
@@ -75,7 +75,7 @@ ms.locfileid: "97465123"
 |SQL_COPT_SS_USER_DATA|接続前/接続後|  
 |SQL_COPT_SS_WARN_ON_CP_ERROR|以前|  
   
- 同じセッション、データベース、または [!INCLUDE[tsql](../../includes/tsql-md.md)] の状態に対して接続前の属性および同等の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コマンドを使用すると、予期しない動作が発生する場合があります。 たとえば、  
+ 同じセッション、データベース、または [!INCLUDE[tsql](../../includes/tsql-md.md)] の状態に対して接続前の属性および同等の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コマンドを使用すると、予期しない動作が発生する場合があります。 たとえば、次のように入力します。  
   
 ```  
 SQLSetConnectAttr(SQL_COPT_SS_QUOTED_IDENT, SQL_QI_ON) // turn ON via attribute  
@@ -158,7 +158,7 @@ SQLSetConnectAttr(hdbc, SQL_COPT_SS_APPLICATION_INTENT, TEXT("Readonly"), SQL_NT
 |値|説明|  
 |-----------|-----------------|  
 |SQL_EN_ON|接続が暗号化されます。|  
-|SQL_EN_OFF|接続は暗号化されません。 既定値です。|  
+|SQL_EN_OFF|接続は暗号化されません。 これは既定値です。|  
 
 <a name="sqlcoptssenlistindtc"></a>
 ## <a name="sql_copt_ss_enlist_in_dtc"></a>SQL_COPT_SS_ENLIST_IN_DTC  

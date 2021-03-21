@@ -4,7 +4,7 @@ title: GRANT (Transact-SQL)
 ms.custom: ''
 ms.date: 06/12/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -26,12 +26,12 @@ ms.assetid: a760c16a-4d2d-43f2-be81-ae9315f38185
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: cb24af4f9740f5471a05e17898969a9f39624822
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: efdce09afb69773f068735356c83b88d5f61508d
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99180197"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104740082"
 ---
 # <a name="grant-transact-sql"></a>GRANT (Transact-SQL)
 

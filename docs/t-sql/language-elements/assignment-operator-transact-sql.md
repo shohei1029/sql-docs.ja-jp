@@ -4,7 +4,7 @@ title: = (代入演算子) (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -20,12 +20,12 @@ ms.assetid: c3040db6-21d6-40ac-a783-82c98ec006cc
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 616463e573d3ccf912889e9ad69b802ca91d1167
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 0b391e5cbc4279c029b6b0c40a282b6e9d8a045b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100074610"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751522"
 ---
 # <a name="-assignment-operator-transact-sql"></a>= (代入演算子) (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2012-all_md](../../includes/tsql-appliesto-ss2012-all-md.md)]

@@ -4,7 +4,7 @@ description: データベースミラーリング、非同期操作、Azure Acti
 ms.custom: ''
 ms.date: 02/11/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - data access [OLE DB Driver for SQL Server], features
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 8c93a622561a7c4384f4e7be3d0e95daf9d46abb
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 07d1c6f77cd9df46269a6d36261369ec057fd778
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861451"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751182"
 ---
 # <a name="ole-db-driver-for-sql-server-features"></a>OLE DB Driver for SQL Server の機能
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

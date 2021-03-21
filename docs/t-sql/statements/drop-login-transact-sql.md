@@ -4,7 +4,7 @@ title: DROP LOGIN (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 05/11/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -23,12 +23,12 @@ ms.assetid: acb5c3dc-7aa2-49f6-9330-573227ba9b1a
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5606e61e3608b9e8876d6c438de9e4e38b1291fc
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: d9ecf51ee05080532821c7941a454ed1fe0a886b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99201164"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755162"
 ---
 # <a name="drop-login-transact-sql"></a>DROP LOGIN (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

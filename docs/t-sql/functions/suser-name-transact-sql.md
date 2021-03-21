@@ -4,7 +4,7 @@ title: SUSER_NAME (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 12/12/2020
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, sql-database
+ms.prod_service: synapse-analytics, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -25,12 +25,12 @@ ms.assetid: ae598d9f-9baa-49b8-b1c1-042854206de4
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b163b8aae38c389b8b20a6853fce685cac0dfd8e
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: f9a204175b54b5349a975ade8926844eced687bd
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99200277"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755432"
 ---
 # <a name="suser_name-transact-sql"></a>SUSER_NAME (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

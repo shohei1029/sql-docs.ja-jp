@@ -4,7 +4,7 @@ title: EXECUTE AS (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 08/27/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -24,12 +24,12 @@ ms.assetid: 613b8271-7f7d-4378-b7a2-5a7698551dbd
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: = azuresqldb-current || >= sql-server-2016 || >= sql-server-linux-2017||=azure-sqldw-latest
-ms.openlocfilehash: 56bf90c0d3022ca15030faadeef731aa1e5bc982
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: eaeafb5eb8e64686429cb0c7b8ccac9c1b7785c2
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102464900"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104740162"
 ---
 # <a name="execute-as-transact-sql"></a>EXECUTE AS (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]

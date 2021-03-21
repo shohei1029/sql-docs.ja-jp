@@ -2,7 +2,7 @@
 title: FROM 句と JOIN、APPLY、PIVOT (T-SQL)
 description: FROM 句と JOIN、APPLY、PIVOT (Transact-SQL)
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -37,12 +37,12 @@ ms.author: vanto
 ms.custom: ''
 ms.date: 06/01/2019
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 03bd9ad046be57d9fedea50ae310956b26a32581
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 48f59f002589a2a609f38753cf49004367d25412
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186491"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751752"
 ---
 # <a name="from-clause-plus-join-apply-pivot-transact-sql"></a>FROM 句と JOIN、APPLY、PIVOT (Transact-SQL)
 

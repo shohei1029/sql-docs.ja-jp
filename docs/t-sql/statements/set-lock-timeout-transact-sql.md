@@ -4,7 +4,7 @@ title: SET LOCK_TIMEOUT (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/11/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -26,12 +26,12 @@ ms.assetid: dd0c389e-956d-435e-bf71-e16624a0a215
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 037fe5a16b873f325c73f6c4b81a2ec0ab029015
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 2ed18868e9b5509e4e8d47e6bf5b80d55bc4bf62
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189475"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754292"
 ---
 # <a name="set-lock_timeout-transact-sql"></a>SET LOCK_TIMEOUT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

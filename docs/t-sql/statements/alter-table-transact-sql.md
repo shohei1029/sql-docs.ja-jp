@@ -4,7 +4,7 @@ title: ALTER TABLE (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/28/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -61,12 +61,12 @@ ms.assetid: f1745145-182d-4301-a334-18f799d361d1
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6815d21b6a75216f4fc4a8bfccf2d2d3b0aa585e
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 5eee78a512274eb70ca9a5422687374f06e5f0a8
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186526"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748822"
 ---
 # <a name="alter-table-transact-sql"></a>ALTER TABLE (Transact-SQL)
 

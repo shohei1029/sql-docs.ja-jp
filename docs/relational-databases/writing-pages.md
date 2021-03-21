@@ -4,7 +4,7 @@ title: ページの書き込み | Microsoft Docs
 ms.custom: ''
 ms.date: 03/01/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: ''
 ms.topic: conceptual
@@ -14,12 +14,12 @@ ms.assetid: 409c8753-03c4-436d-839c-6a5879971551
 author: pmasl
 ms.author: pelopes
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3c9fc200c47ffdb82c15a86469244cd17bd75821
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: d0d41d9f67a1c9b210c9b3697e061d55dd3517b5
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97403375"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753212"
 ---
 # <a name="writing-pages"></a>ページの書き込み
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -4,7 +4,7 @@ title: ステートメントのパラメーターを使用する |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -20,12 +20,12 @@ ms.assetid: 2427d886-ec6c-49d7-b0b6-0d998b64cdb9
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b05c7d20deb1108e5e4c7f74fffce42072ba8515
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: cdab4bf289ce7ecf5f5ab0fbbf1723beeedaf42a
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478063"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752852"
 ---
 # <a name="using-statement-parameters"></a>ステートメント パラメーターの使用
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

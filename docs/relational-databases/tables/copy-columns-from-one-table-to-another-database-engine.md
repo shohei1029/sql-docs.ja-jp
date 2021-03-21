@@ -4,7 +4,7 @@ title: テーブル間での列のコピー (データベース エンジン) | 
 ms.custom: ''
 ms.date: 09/01/2016
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -15,12 +15,12 @@ ms.assetid: 5f5e70dc-69f9-44b8-bc48-b5d51ac20d77
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 46341304bf8f05e53a4143e8c5a151d2f9023155
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: ba2b4f4e106f1edb9d9f3fe57a0f42cdf20fec27
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99181498"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748632"
 ---
 # <a name="copy-columns-from-one-table-to-another-database-engine"></a>テーブル間での列のコピー (データベース エンジン)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]

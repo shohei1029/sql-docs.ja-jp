@@ -4,7 +4,7 @@ title: 'ISSAsynchStatus:: GetStatus (Native Client OLE DB provider) |Microsoft D
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -17,12 +17,12 @@ ms.assetid: 354b6ee4-b5a1-48f6-9403-da3bdc911067
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4dec7256e445ff41f5e8549e4dff4e6c5c341fe1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a3ebc5bce81c27b2797f9bcb7a48725dcad397d5
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97469383"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754422"
 ---
 # <a name="issasynchstatusgetstatus-native-client-ole-db-provider"></a>ISSAsynchStatus:: GetStatus (Native Client OLE DB プロバイダー)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

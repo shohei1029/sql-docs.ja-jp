@@ -4,7 +4,7 @@ description: SQL Server のインスタンス間でデータを一括転送す�
 ms.custom: ''
 ms.date: 09/30/2016
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: data-movement
 ms.topic: conceptual
@@ -15,12 +15,12 @@ ms.assetid: a6213308-f3d5-406e-9029-19d8bb3367f3
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 977e7c4222a200d697304be0be774214fbc4376a
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 623877af2ee11eb95a3cb75f2d661bf8017a80a1
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643465"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748502"
 ---
 # <a name="use-unicode-native-format-to-import-or-export-data-sql-server"></a>Unicode ネイティブ形式を使用したデータのインポートまたはエクスポート (SQL Server)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

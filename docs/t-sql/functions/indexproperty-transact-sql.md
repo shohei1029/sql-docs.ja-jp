@@ -4,7 +4,7 @@ title: INDEXPROPERTY (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/26/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 998d5788-4871-44a8-8125-0d9390868b84
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bd5a0c13ebd646e1300713c9153f8f1b1d1cb807
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: c447feb03cd83911cd020469af892004d9b183e6
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338021"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104746982"
 ---
 # <a name="indexproperty-transact-sql"></a>INDEXPROPERTY (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

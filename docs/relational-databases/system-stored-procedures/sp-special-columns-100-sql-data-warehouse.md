@@ -3,7 +3,7 @@ description: sp_special_columns_100 (Azure Synapse Analytics)
 title: sp_special_columns_100 (Azure Synapse Analytics)
 ms.custom: ''
 ms.date: 03/14/2017
-ms.prod_service: sql-data-warehouse, pdw
+ms.prod_service: synapse-analytics, pdw
 ms.service: sql-data-warehouse
 ms.subservice: design
 ms.reviewer: ''
@@ -14,12 +14,12 @@ ms.assetid: 5774fadc-77cc-46f8-8f9f-a0f9efe95e21
 author: ronortloff
 ms.author: rortloff
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
-ms.openlocfilehash: 26aef826cfe6b35d6428240296b31dbc8a99474c
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 45385004023168f40ea47ce9dfe88d14ba4e9fb3
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189268"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104745002"
 ---
 # <a name="sp_special_columns_100-azure-synapse-analytics"></a>sp_special_columns_100 (Azure Synapse Analytics)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
@@ -85,10 +85,10 @@ sp_special_columns_100 [ @table_name = ] 'table_name'
 |SCALE|**smallint**|データソース上の列の小数点以下桁数。 小数点以下桁数が適用されないデータ型に対しては NULL が返されます。|  
 |PSEUDO_COLUMN|**smallint**|その列が疑似列であるかどうかを示します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 常に1を返します。<br /><br /> 0 = SQL_PC_UNKNOWN<br /><br /> 1 = SQL_PC_NOT_PSEUDO<br /><br /> 2 = SQL_PC_PSEUDO|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  sp_special_columns は ODBC の SQLSpecialColumns に相当します。 返される結果は、スコープによって並べ替えられます。  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  スキーマに対する SELECT 権限が必要です。  
   
 ## <a name="examples-sssdwfull-and-sspdw"></a>例: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)]、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  

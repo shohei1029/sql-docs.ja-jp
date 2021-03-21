@@ -4,7 +4,7 @@ title: geometry インスタンスの OGC メソッド | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -16,12 +16,12 @@ ms.assetid: c0c0f441-bf33-410c-9df0-544e3d05b944
 author: MladjoA
 ms.author: mlandzic
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a4dfb9cd944b1bfd5b7fc954b35f9036c30973e0
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: d4c4f56e0bc5e5f41dddd984b6533361b28ac37e
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99159363"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753892"
 ---
 # <a name="ogc-methods-on-geometry-instances"></a>geometry インスタンスの OGC メソッド
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -4,7 +4,7 @@ title: SQL Server の既定の結果セットを使用する |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: ee1db3e5-60eb-4425-8a6b-977eeced3f98
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f3599b25297cd1c30e015cfc609ed06376c243bf
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a810c08596567e2bed2e8d4484b9b6676f4af44c
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438629"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104756242"
 ---
 # <a name="using-sql-server-default-result-sets"></a>SQL Server の既定の結果セットの使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

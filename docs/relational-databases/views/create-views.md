@@ -4,7 +4,7 @@ title: ビューの作成 |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -14,12 +14,12 @@ ms.assetid: 0b7bd2a1-544c-42ba-8e7b-4822f34d7b64
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d7c7e339afa580f81a834021670cc81fc61ab8ea
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 849f4a41873faaa97be61a1ee74f8d649c4a3213
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99161907"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755252"
 ---
 # <a name="create-views"></a>ビューの作成
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

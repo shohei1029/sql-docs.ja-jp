@@ -4,7 +4,7 @@ title: MERGE (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 02/27/2021
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -26,12 +26,12 @@ ms.assetid: c17996d6-56a6-482f-80d8-086a3423eecc
 author: XiaoyuMSFT
 ms.author: XiaoyuL
 monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 ||  azure-sqldw-latest
-ms.openlocfilehash: 96461f56445562b444ca775b24320d3c34661687
-ms.sourcegitcommit: e2d25f265556af92afcc0acde662929e654bf841
+ms.openlocfilehash: d3e84becfc081c57a915601b40c312e76926ad68
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103489765"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755412"
 ---
 # <a name="merge-transact-sql"></a>MERGE (Transact-SQL)
 

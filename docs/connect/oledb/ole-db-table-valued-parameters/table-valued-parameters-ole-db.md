@@ -4,7 +4,7 @@ description: これらの記事では、パラメーター行セットの作成�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - table-valued parameters (OLE DB)
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 8c49b476492d2296ce1224f935644dca650aefbf
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 7386ae8dcd59df4fd404136167e4b092882fc450
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88859877"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749172"
 ---
 # <a name="table-valued-parameters-ole-db"></a>テーブル値パラメーター (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "88859877"
 ## <a name="remarks"></a>解説  
  現時点では、複数行データを、パラメーター セット (**ICommand::Execute** の DBPARAMS パラメーター) と共にプロシージャのパラメーターとしてサーバーに送信できます。 パラメーター セットを使用する場合、セットの各要素は、個別のリモート プロシージャ コール (RPC) の要求でサーバーに送信する必要があります。 テーブル値パラメーターの機能は似ていますが、サーバーとの統合はより緊密になっています。 これにより、RPC 要求の数が減少し、サーバーでセットベースの操作が可能になります。  
   
- テーブル値パラメーターは、OLE DB Driver for SQL Server において OLE DB **行セット** オブジェクトとしてサポートされています。 どの**行セット** オブジェクトも、コンシューマー (つまり、OLE DB Driver for SQL Server を使用するクライアント アプリケーション) によってテーブル値パラメーターのプレースホルダーとして指定されます。 テーブル値パラメーターは、他の [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] パラメーターの型と同じように扱われます。 OLE DB Driver for SQL Server には、作成、検出、仕様、バインド、スキーマの各インターフェイスが用意されています。  
+ テーブル値パラメーターは、OLE DB Driver for SQL Server において OLE DB **行セット** オブジェクトとしてサポートされています。 どの **行セット** オブジェクトも、コンシューマー (つまり、OLE DB Driver for SQL Server を使用するクライアント アプリケーション) によってテーブル値パラメーターのプレースホルダーとして指定されます。 テーブル値パラメーターは、他の [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] パラメーターの型と同じように扱われます。 OLE DB Driver for SQL Server には、作成、検出、仕様、バインド、スキーマの各インターフェイスが用意されています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   

@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server でリターン コードと出力パ�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - ODBC CALL syntax
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: dea00388e5014791ae861ad175418670f06d6666
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 2cfdff50b615baec6fa575b7163087c460ed9bfd
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727113"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753852"
 ---
 # <a name="execute-stored-procedure-with-odbc-call-and-process-output"></a>ODBC 呼び出しと処理の出力でのストアド プロシージャの実行
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

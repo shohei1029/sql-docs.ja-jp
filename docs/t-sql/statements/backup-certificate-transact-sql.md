@@ -4,7 +4,7 @@ title: BACKUP CERTIFICATE (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 04/16/2020
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, pdw, sql-database
+ms.prod_service: synapse-analytics, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -29,12 +29,12 @@ ms.assetid: 509b9462-819b-4c45-baae-3d2d90d14a1c
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017'
-ms.openlocfilehash: 2ccce23a78d046729ccfdac4bdd34037b0a491b1
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 942b16b089c4f5324073c679345bd88ad77e4d60
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340600"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104740012"
 ---
 # <a name="backup-certificate-transact-sql"></a>BACKUP CERTIFICATE (Transact-SQL)
 [!INCLUDE [sql-pdw](../../includes/applies-to-version/sql-pdw.md)]

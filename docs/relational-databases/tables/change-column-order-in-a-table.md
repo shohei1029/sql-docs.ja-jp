@@ -4,7 +4,7 @@ title: テーブル内の列の順序の変更 | Microsoft Docs
 ms.custom: ''
 ms.date: 06/15/2018
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -15,12 +15,12 @@ ms.assetid: cd99ef56-9085-431a-a0fc-58e7add5399f
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d8064366c25925bf5ba6781e0afa0168a8df04fe
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: a7d3ca1b424b3fae26ad84e172dc6413731cc0be
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99181522"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104735021"
 ---
 # <a name="change-column-order-in-a-table"></a>テーブル内の列の順序の変更
 

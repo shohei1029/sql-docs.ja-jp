@@ -4,7 +4,7 @@ title: 拡張された日付/時刻機能の使用 (Native Client OLE DB プロ�
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -12,12 +12,12 @@ ms.assetid: 50f98cab-8c80-43c5-bc9a-5d2f95f67f17
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 336c63cf5b9be674ef8dfe972da67cf386e42f92
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: cb5e15371992003e7ef22563046618876ef233c1
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481053"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749452"
 ---
 # <a name="use-enhanced-date-and-time-features-in-sql-server-native-client-ole-db"></a>SQL Server Native Client (OLE DB) での強化された日付と時刻の機能の使用
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

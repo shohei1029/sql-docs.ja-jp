@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Serve で varchar(max)、varbinary(max)、nva
 ms.custom: ''
 ms.date: 06/12/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - OLE DB Driver for SQL Server, large value data types
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 7e450fed0ff29d20cb1a582644ad368a735f3f54
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 16fd14c4477d17c229edd057ab1030f80e4da6b5
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861592"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751112"
 ---
 # <a name="using-large-value-types"></a>大きな値をとるデータ型の使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

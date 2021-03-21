@@ -4,7 +4,7 @@ title: sys.sysデータベース (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -22,12 +22,12 @@ ms.assetid: 60a93880-62f1-4eda-a886-f046706ba90c
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f742ce25d05d588cb70e9d68b254e06f8e478500
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 890ef3b430b44a2ea5c8f407d12fa1c0a709fe86
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99201419"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753442"
 ---
 # <a name="syssysdatabases-transact-sql"></a>sys.sysdatabases (Transact-SQL)
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "99201419"
 |**確保**|**datetime**|将来使用するために予約されています。|  
 |**category**|**int**|レプリケーションに使用される情報のビットマップが含まれます。<br /><br /> 1 = スナップショットレプリケーションまたはトランザクションレプリケーション用にパブリッシュされます。<br /><br /> 2 = スナップショットパブリケーションまたはトランザクションパブリケーションをサブスクライブしています。<br /><br /> 4 = マージレプリケーション用にパブリッシュされます。<br /><br /> 8 = マージ パブリケーションにサブスクライブしています。<br /><br /> 16 = ディストリビューションデータベース。|  
 |**cmptlevel**|**tinyint**|データベースの互換性レベル。 詳細については、「[ALTER DATABASE 互換性レベル &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md)」を参照してください。|  
-|**filename**|**nvarchar(260)**|データベースのプライマリ ファイルのオペレーティング システム パスと名前です。<br /><br /> **ファイル名** は、 **dbcreator**、 **sysadmin**、データベース所有者、CREATE ANY database 権限、または次の権限のいずれかを持つているユーザーに表示されます: ALTER any DATABASE、CREATE any database、VIEW any DEFINITION。 パスとファイル名を返すには、 [sys.sysファイル](../../relational-databases/system-compatibility-views/sys-sysfiles-transact-sql.md) の互換性ビューまたは [sys.database_files](../../relational-databases/system-catalog-views/sys-database-files-transact-sql.md) ビューに対してクエリを実行します。|  
+|**ファイル名**|**nvarchar(260)**|データベースのプライマリ ファイルのオペレーティング システム パスと名前です。<br /><br /> **ファイル名** は、 **dbcreator**、 **sysadmin**、データベース所有者、CREATE ANY database 権限、または次の権限のいずれかを持つているユーザーに表示されます: ALTER any DATABASE、CREATE any database、VIEW any DEFINITION。 パスとファイル名を返すには、 [sys.sysファイル](../../relational-databases/system-compatibility-views/sys-sysfiles-transact-sql.md) の互換性ビューまたは [sys.database_files](../../relational-databases/system-catalog-views/sys-database-files-transact-sql.md) ビューに対してクエリを実行します。|  
 |**version**|**smallint**|このデータベースが作成された [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コードの内部バージョン番号です。 [!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
   
 ## <a name="see-also"></a>参照  

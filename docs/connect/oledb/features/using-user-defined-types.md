@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server では、ユーザー定義型は、�
 ms.custom: ''
 ms.date: 06/12/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -21,12 +21,12 @@ helpviewer_keywords:
 - ISSCommandWithParameters interface
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 32f1d88d7fad962e1a8aac7b82f8e672fa8e5942
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 575d81916ee080a649ff27aa49dc32e802c739bd
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88860620"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751102"
 ---
 # <a name="using-user-defined-types"></a>ユーザー定義型の使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -86,7 +86,7 @@ ms.locfileid: "88860620"
 #### <a name="the-procedure_parameters-schema-rowset"></a>PROCEDURE_PARAMETERS スキーマ行セット  
  PROCEDURE_PARAMETERS スキーマ行セットには、次の列が追加されました。  
   
-|列名|種類|説明|  
+|列名|Type|説明|  
 |-----------------|----------|-----------------|  
 |SS_UDT_CATALOGNAME|DBTYPE_WSTR|3 部構成の名前の識別子。|  
 |SS_UDT_SCHEMANAME|DBTYPE_WSTR|3 部構成の名前の識別子。|  
@@ -96,7 +96,7 @@ ms.locfileid: "88860620"
 #### <a name="the-sql_assemblies-schema-rowset"></a>SQL_ASSEMBLIES スキーマ行セット  
  OLE DB Driver for SQL Server は、登録済みの UDT に関する情報が格納される、プロバイダー固有の新しいスキーマ行セットを公開します。 ASSEMBLY_SERVER を DBTYPE_WSTR 型として指定することはできますが、行セットには格納されません。 指定しない場合、行セットでは既定で現在のサーバーが使用されます。 次の表に、SQL_ASSEMBLIES スキーマ行セットの定義を示します。  
   
-|列名|種類|説明|  
+|列名|Type|説明|  
 |-----------------|----------|-----------------|  
 |ASSEMBLY_CATALOG|DBTYPE_WSTR|このデータ型を含むアセンブリのカタログ名。|  
 |ASSEMBLY_SCHEMA|DBTYPE_WSTR|このデータ型を含むアセンブリのスキーマ名 (所有者の名前)。 アセンブリのスコープはスキーマではなくデータベースによって決まりますが、アセンブリには依然として所有者が存在します。|  
@@ -108,7 +108,7 @@ ms.locfileid: "88860620"
 #### <a name="the-sql_assemblies_-dependencies-schema-rowset"></a>SQL_ASSEMBLIES_ DEPENDENCIES スキーマ行セット  
  OLE DB Driver for SQL Server では、特定のサーバーにおけるアセンブリの依存関係に関する情報が格納される、プロバイダー固有の新しいスキーマ行セットを公開します。 ASSEMBLY_SERVER は呼び出し元により DBTYPE_WSTR 型として指定することができますが、行セットには格納されません。 指定しない場合、行セットでは既定で現在のサーバーが使用されます。 次の表に、SQL_ASSEMBLY_DEPENDENCIES スキーマ行セットの定義を示します。  
   
-|列名|種類|説明|  
+|列名|Type|説明|  
 |-----------------|----------|-----------------|  
 |ASSEMBLY_CATALOG|DBTYPE_WSTR|このデータ型を含むアセンブリのカタログ名。|  
 |ASSEMBLY_SCHEMA|DBTYPE_WSTR|このデータ型を含むアセンブリのスキーマ名 (所有者の名前)。 アセンブリのスコープはスキーマではなくデータベースによって決まりますが、アセンブリには依然として所有者が存在します。|  
@@ -118,7 +118,7 @@ ms.locfileid: "88860620"
 #### <a name="the-sql_user_types-schema-rowset"></a>SQL_USER_TYPES スキーマ行セット  
  OLE DB Driver for SQL Server は、特定サーバーの登録済み UDT が追加されたタイミングに関する情報が格納される、新しいスキーマ行セット SQL_USER_TYPES を公開します。 UDT_SERVER は、呼び出し元により DBTYPE_WSTR 型として指定される必要がありますが、行セットには格納されません。 次の表に、SQL_USER_TYPES スキーマ行セットの定義を示します。  
   
-|列名|種類|説明|  
+|列名|Type|説明|  
 |-----------------|----------|-----------------|  
 |UDT_CATALOGNAME|DBTYPE_WSTR|UDT 列の場合、このプロパティは、UDT が定義されているカタログの名前を指定する文字列です。|  
 |UDT_SCHEMANAME|DBTYPE_WSTR|UDT 列の場合、このプロパティは、UDT が定義されているスキーマの名前を指定する文字列です。|  
@@ -128,7 +128,7 @@ ms.locfileid: "88860620"
 #### <a name="the-columns-schema-rowset"></a>COLUMNS スキーマ行セット  
  COLUMNS スキーマ行セットには、次の列が追加されました。  
   
-|列名|種類|説明|  
+|列名|Type|説明|  
 |-----------------|----------|-----------------|  
 |SS_UDT_CATALOGNAME|DBTYPE_WSTR|UDT 列の場合、このプロパティは、UDT が定義されているカタログの名前を指定する文字列です。|  
 |SS_UDT_SCHEMANAME|DBTYPE_WSTR|UDT 列の場合、このプロパティは、UDT が定義されているスキーマの名前を指定する文字列です。|  
@@ -141,7 +141,7 @@ ms.locfileid: "88860620"
 #### <a name="the-dbpropset_sqlserverparameter-property-set"></a>DBPROPSET_SQLSERVERPARAMETER プロパティ セット  
  OLE DB で UDT をサポートするため、OLE DB Driver for SQL Server では、次の値を含む新しい DBPROPSET_SQLSERVERPARAMETER プロパティ セットが実装されました。  
   
-|Name|種類|説明|  
+|Name|Type|説明|  
 |----------|----------|-----------------|  
 |SSPROP_PARAM_UDT_CATALOGNAME|DBTYPE_WSTR|3 部構成の名前の識別子。<br /><br /> UDT パラメーターの場合、このプロパティは、ユーザー定義型が定義されているカタログ名を指定する文字列です。|  
 |SSPROP_PARAM_UDT_SCHEMANAME|DBTYPE_WSTR|3 部構成の名前の識別子。<br /><br /> UDT パラメーターの場合、このプロパティは、ユーザー定義型が定義されているスキーマ名を指定する文字列です。|  
@@ -152,7 +152,7 @@ ms.locfileid: "88860620"
 #### <a name="the-dbpropset_sqlservercolumn-property-set"></a>DBPROPSET_SQLSERVERCOLUMN プロパティ セット  
  **ITableDefinition** インターフェイスでのテーブルの作成をサポートするため、OLE DB Driver for SQL Server では、DBPROPSET_SQLSERVERCOLUMN プロパティ セットに次の 3 つの新しい列が追加されました。  
   
-|Name|説明|種類|説明|  
+|Name|説明|Type|説明|  
 |----------|-----------------|----------|-----------------|  
 |SSPROP_COL_UDT_CATALOGNAME|UDT_CATALOGNAME|VT_BSTR|DBTYPE_UDT 型の列の場合、このプロパティは、UDT が定義されているカタログ名を指定する文字列です。|  
 |SSPROP_COL_UDT_SCHEMANAME|UDT_SCHEMANAME|VT_BSTR|DBTYPE_UDT 型の列の場合、このプロパティは、UDT が定義されているスキーマ名を指定する文字列です。|  

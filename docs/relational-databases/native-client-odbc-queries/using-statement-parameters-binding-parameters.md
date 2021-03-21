@@ -4,7 +4,7 @@ description: ステートメントを実行する前に、SQL ステートメン
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -22,12 +22,12 @@ ms.assetid: d6c69739-8f89-475f-a60a-b2f6c06576e2
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a1ddbcb0f19cb62310e748da4f710b196357acbc
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3727d8e83174c6938d7aa871770bbb3d22020ef6
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478073"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752802"
 ---
 # <a name="using-statement-parameters---binding-parameters"></a>ステートメント パラメーターの使用 - パラメーターのバインド
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

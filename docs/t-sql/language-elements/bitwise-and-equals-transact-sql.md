@@ -4,7 +4,7 @@ title: '&amp;= (ビットごとの AND 代入) (Transact-SQL) | Microsoft Docs'
 ms.custom: ''
 ms.date: 01/10/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -22,12 +22,12 @@ ms.assetid: f374c885-3fee-434a-93fb-dfe6e0bcd100
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: af360c16950b63e906f6b61c0935bd8626131755
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: fc91d87f5f33473ea6a577b1cd25fcece380c9fc
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100341622"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104747882"
 ---
 # <a name="amp-bitwise-and-assignment-transact-sql"></a>&amp;= (ビットごとの AND 代入) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

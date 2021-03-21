@@ -4,7 +4,7 @@ description: これらの記事では、OLE DB Driver for SQL Server で新し�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - OLE DB, date/time improvements
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: cd0f564a68f0b296008907f8620cd870c0e5ca7d
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 490b8875547560a2fa5d2e8792fc80a1c9dabbff
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88862035"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104742342"
 ---
 # <a name="date-and-time-improvements-ole-db"></a>日付と時刻の強化機能 (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "88862035"
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の日付および時刻データ型をサポートする OLE DB (OLE DB Driver for SQL Server) の型について説明します。  
   
  [メタデータ &#40;OLE DB&#41;](../../oledb/ole-db-date-time/metadata-parameter-and-rowset.md)  
- DBBINDING 構造、**ICommandWithParameters::GetParameterInfo**、**ICommandWithParameters::SetParameterInfo**、**IColumnsRowset::GetColumnsRowset**、I**ColumnsInfo::GetColumnInfo** に関する詳細が含まれています。 また、OLE DB スキーマ行セットの更新についても説明します。  
+ DBBINDING 構造、**ICommandWithParameters::GetParameterInfo**、**ICommandWithParameters::SetParameterInfo**、**IColumnsRowset::GetColumnsRowset**、I **ColumnsInfo::GetColumnInfo** に関する詳細が含まれています。 また、OLE DB スキーマ行セットの更新についても説明します。  
   
  [バインドと変換 &#40;OLE DB&#41;](../../oledb/ole-db-date-time/conversions-ole-db.md)  
  既存の日付型と新しい日付型の両方を対象とした、サーバーとクライアント間における変換の規則について説明します。  

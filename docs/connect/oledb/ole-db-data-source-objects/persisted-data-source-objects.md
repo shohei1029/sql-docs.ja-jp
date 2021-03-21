@@ -4,7 +4,7 @@ description: これらの例では、OLE DB Driver for SQL Server の IPersistFi
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - persisted data source objects
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 49013eeca8561275a1ce78cef9f02d4beac9c190
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 4ebb7eeb25fb3a3b77894ddc2ec2994d5369e8a9
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88862052"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755572"
 ---
 # <a name="persisted-data-source-objects"></a>保存されるデータ ソース オブジェクト
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

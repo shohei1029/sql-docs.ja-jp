@@ -4,7 +4,7 @@ title: テーブルの定義の表示
 ms.custom: ''
 ms.date: 03/09/2021
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -16,12 +16,12 @@ helpviewer_keywords:
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 49a0a836cb2e61bef9b4edb280685392f62544ec
-ms.sourcegitcommit: 98acedd435aecfda1b3c4c23d3f0c3c1a12682a4
+ms.openlocfilehash: 0ffdea67493c7d14255cfc543b1a8518bb3a8b4d
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102532337"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748892"
 ---
 # <a name="view-the-table-definition"></a>テーブルの定義の表示
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]

@@ -4,7 +4,7 @@ description: SQL Server で効率的なインデックスを設計し、デー�
 ms.custom: ''
 ms.date: 01/19/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: supportability
 ms.topic: conceptual
@@ -23,12 +23,12 @@ ms.assetid: 11f8017e-5bc3-4bab-8060-c16282cfbac1
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d7a1f83563e3ae103fa683bbe604926f40982d06
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: eb77efd31eed1fe1e1aa26f0911fa46aebd321d3
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100352713"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749352"
 ---
 # <a name="sql-server-index-architecture-and-design-guide"></a>SQL Server のインデックスのアーキテクチャとデザイン ガイド
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

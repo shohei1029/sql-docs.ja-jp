@@ -4,7 +4,7 @@ description: SQL Server Client ODBC ドライバーが SQL ステートメント
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -16,12 +16,12 @@ ms.assetid: 0acc71e2-8004-4dd8-8592-05c022bdd692
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5963474c575dc33d7c33da14ae13dc43608a81b8
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 4a729c1e9bc89cf1c7d6d911260742811b7eac8b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438427"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750992"
 ---
 # <a name="constructing-an-sql-statement-odbc"></a>SQL ステートメントの構築 (ODBC)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
