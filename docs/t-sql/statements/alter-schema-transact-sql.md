@@ -4,7 +4,7 @@ title: ALTER SCHEMA (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/09/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -23,12 +23,12 @@ ms.assetid: 0a760138-460e-410a-a3c1-d60af03bf2ed
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c87d341f26970e368374702dfd20b99b6f56c441
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 49d0136858544c10c73c06060fca9155b2634d18
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100339300"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104742992"
 ---
 # <a name="alter-schema-transact-sql"></a>ALTER SCHEMA (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

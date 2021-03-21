@@ -4,7 +4,7 @@ title: sys.system_objects (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 069e9045-97f2-4463-8e8f-c73855f3ea0a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c3023fdedcac48278f34fc7759cdcc013c0a6dea
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 18b9f39ab92c433ecafd92cb2fff6a7ec8548d35
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189342"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739672"
 ---
 # <a name="syssystem_objects-transact-sql"></a>sys.system_objects (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "99189342"
 |is_published|**bit**|オブジェクトがパブリッシュされます。|  
 |is_schema_published|**bit**|オブジェクトのスキーマのみがパブリッシュされることを示します。|  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  

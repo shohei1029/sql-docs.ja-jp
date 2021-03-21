@@ -4,7 +4,7 @@ title: ページの読み取り | Microsoft Docs
 ms.custom: ''
 ms.date: 03/01/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: ''
 ms.topic: conceptual
@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: f8da760e-aacb-4661-9f3a-2578d8c11e4e
 author: pmasl
 ms.author: pelopes
-ms.openlocfilehash: 76594b64112fc18a1041878f97f775c8f181866a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 7eeef502690d3253d14d226a598f1d8f5078a040
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88423676"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755482"
 ---
 # <a name="reading-pages"></a>ページの読み取り
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]

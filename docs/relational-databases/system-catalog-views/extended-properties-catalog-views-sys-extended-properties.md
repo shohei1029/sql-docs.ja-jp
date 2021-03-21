@@ -4,7 +4,7 @@ title: sys.extended_properties (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 439b7299-dce3-4d26-b1c7-61be5e0df82a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f127b6ee96f95c0f51b4ce41a101348d7fce5c42
-ms.sourcegitcommit: be74dc0966930f28b03d0429aed22b1f0a296d3b
+ms.openlocfilehash: a431e14f32e84ac2e511d0b16c8efaf13698019f
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103421950"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755002"
 ---
 # <a name="extended-properties-catalog-views---sysextended_properties"></a>拡張プロパティのカタログビュー-sys.extended_properties
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,9 +40,9 @@ ms.locfileid: "103421950"
 |major_id|**int**|拡張プロパティが属するアイテムの ID です。アイテムのクラスに従って解釈されます。 ほとんどの項目では、これはクラスが表すものに適用される ID です。 非標準の主要な Id の解釈は次のとおりです。<br /><br /> class が 0 の場合、major_id は常に 0 になります。<br /><br /> class が 1、2、または 7 の場合、major_id は object_id になります。|  
 |minor_id|**int**|拡張プロパティが属するアイテムのセカンダリ ID です。アイテムのクラスに従って解釈されます。 ほとんどの項目では、これは0です。それ以外の場合、ID は次のようになります。<br /><br /> class が 1 の場合、minor_id は、列であれば column_id に、オブジェクトであれば 0 になります。<br /><br /> class が 2 の場合、minor_id は parameter_id になります。<br /><br /> class が 7 の場合、minor_id は index_id になります。|  
 |name|**sysname**|class、major_id、および minor_id で一意となるプロパティ名です。|  
-|value|**sql_variant**|拡張プロパティの値です。|  
+|値|**sql_variant**|拡張プロパティの値です。|  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  

@@ -4,7 +4,7 @@ title: ALTER USER (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 01/10/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -26,12 +26,12 @@ ms.assetid: 344fc6ce-a008-47c8-a02e-47fae66cc590
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9f10913c23d8ab4b395bea53d1aadb7fbd8d3009
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 16859439d0ff11e167c60bc772212dbc5494f473
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237016"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748782"
 ---
 # <a name="alter-user-transact-sql"></a>ALTER USER (Transact-SQL)
 

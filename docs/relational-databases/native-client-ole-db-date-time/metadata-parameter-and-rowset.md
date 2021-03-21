@@ -4,7 +4,7 @@ title: パラメーターと行セットのメタデータ (Native Client OLE DB
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: ''
 ms.topic: reference
@@ -14,12 +14,12 @@ ms.assetid: 31b318a4-20e7-4db0-b367-eb9938859029
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4a4b9178b168ce106b7fe7f9d64edfe2f17e8ff0
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: efd63dfec790f950ccf4e9a0463a506d0bdbf9c6
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97433887"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748357"
 ---
 # <a name="metadata---parameter-and-rowset-in-sql-server-native-client"></a>SQL Server Native Client のメタデータパラメーターと行セット
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

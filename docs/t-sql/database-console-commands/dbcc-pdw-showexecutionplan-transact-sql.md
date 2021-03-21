@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 07/16/2017
 ms.prod: sql
 ms.technology: data-warehouse
-ms.prod_service: sql-data-warehouse, pdw
+ms.prod_service: synapse-analytics, pdw
 ms.reviewer: ''
 ms.topic: language-reference
 dev_langs:
@@ -13,12 +13,12 @@ dev_langs:
 author: pmasl
 ms.author: umajay
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
-ms.openlocfilehash: d70321f41688300524a570a5e4a67df149832d14
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 29b7af17720e83fe6ceb338b1fe9370e754080b8
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97439315"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754532"
 ---
 # <a name="dbcc-pdw_showexecutionplan-transact-sql"></a>DBCC PDW_SHOWEXECUTIONPLAN (Transact-SQL)
 

@@ -4,7 +4,7 @@ title: sp_set_session_context (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 05/14/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: 7a3a3b2a-1408-4767-a376-c690e3c1fc5b
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4ad470228567b26a618800ec004a2a45c5f5440e
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: ff9f50aa953b0a7388156a9793d3ab1cbe819dc7
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99209288"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754632"
 ---
 # <a name="sp_set_session_context-transact-sql"></a>sp_set_session_context (Transact-sql)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -52,10 +52,10 @@ sp_set_session_context [ @key= ] N'key', [ @value= ] 'value'
  [ @read_only =] {0 | 1}  
  **ビット** 型のフラグです。 1の場合、指定されたキーの値は、この論理接続で再び変更することはできません。 0 (既定値) の場合は、値を変更できます。  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  すべてのユーザーは、セッションのコンテキストを設定できます。  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  他のストアドプロシージャと同様に、パラメーターとして渡すことができるのは、リテラルと変数 (式または関数呼び出しではない) だけです。  
   
  セッションコンテキストの合計サイズは 1 MB に制限されています。 この制限を超える値を設定すると、ステートメントは失敗します。 [Transact-sql&#41;&#40;sys.dm_os_memory_objects](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md)で、全体的なメモリ使用量を監視できます。  

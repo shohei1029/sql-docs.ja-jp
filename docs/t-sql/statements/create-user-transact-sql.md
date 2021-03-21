@@ -4,7 +4,7 @@ title: CREATE USER (Transact-SQL)
 ms.custom: ''
 ms.date: 11/06/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -30,12 +30,12 @@ ms.assetid: 01de7476-4b25-4d58-85b7-1118fe64aa80
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6943409b7a0406a7012374b0c8a0ee7142550fe0
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 19b2959a977f4fdd96efff6f912da8f8bd682664
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237070"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754362"
 ---
 # <a name="create-user-transact-sql"></a>CREATE USER (Transact-SQL)
 

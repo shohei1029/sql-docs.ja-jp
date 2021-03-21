@@ -4,7 +4,7 @@ title: 一括コピー、拡張型、OLE DB
 ms.custom: ''
 ms.date: 12/18/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -14,12 +14,12 @@ ms.assetid: c29e0f5e-9b3c-42b3-9856-755f4510832f
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: dcb0ada0f90cb93ffa4f6e09ba94d8e167508938
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: efdbaeb3b4d62f6ef7c999e77e98d32ac9993088
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440033"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104756162"
 ---
 # <a name="bulk-copy-changes-for-enhanced-date-and-time-types-ole-db-and-odbc"></a>機能強化された日付型と時刻型向けの一括コピーの変更 (OLE DB および ODBC)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -119,10 +119,10 @@ ms.locfileid: "97440033"
 |Datetime|1、2|1、4、10|1、12|1|1、10|1、5、10|1、11|1、11|  
 |Datetime2|1、2|1、4、10|1、10 (ODBC) 1、12 (OLE DB)|1、10|1、10|1、5、10|1、3|1、3|  
 |Datetimeoffset|1、2、8|1、4、8、10|1、8、10|1、8、10|1、8、10|1、10|1、3|1、3|  
-|Char/wchar (date)|9|-|9、6 (ODBC) 9、6、12 (OLE DB)|9、6 (ODBC) 9、6、12 (OLE DB)|9、6|9、5、6|N/A|該当なし|  
-|Char/wchar (time)|-|9、10|9、7、10 (ODBC) 9、7、10、12 (OLE DB)|9、7、10 (ODBC) 9、7、10、12 (OLE DB)|9、7、10|9、5、7、10|N/A|該当なし|  
-|Char/wchar (datetime)|9、2|9、4、10|9、10 (ODBC) 9、10、12 (OLE DB)|9、10 (ODBC) 9、10、12 (OLE DB)|9、10|9、5、10|N/A|該当なし|  
-|Char/wchar (datetimeoffset)|9、2、8|9、4、8、10|9、8、10 (ODBC) 9、8、10、12 (OLE DB)|9、8、10 (ODBC) 9、8、10、12 (OLE DB)|9、8、10|9、10|N/A|該当なし|  
+|Char/wchar (date)|9|-|9、6 (ODBC) 9、6、12 (OLE DB)|9、6 (ODBC) 9、6、12 (OLE DB)|9、6|9、5、6|該当なし|該当なし|  
+|Char/wchar (time)|-|9、10|9、7、10 (ODBC) 9、7、10、12 (OLE DB)|9、7、10 (ODBC) 9、7、10、12 (OLE DB)|9、7、10|9、5、7、10|該当なし|該当なし|  
+|Char/wchar (datetime)|9、2|9、4、10|9、10 (ODBC) 9、10、12 (OLE DB)|9、10 (ODBC) 9、10、12 (OLE DB)|9、10|9、5、10|該当なし|該当なし|  
+|Char/wchar (datetimeoffset)|9、2、8|9、4、8、10|9、8、10 (ODBC) 9、8、10、12 (OLE DB)|9、8、10 (ODBC) 9、8、10、12 (OLE DB)|9、8、10|9、10|該当なし|該当なし|  
 ||||||||||
 
 #### <a name="key-to-symbols"></a>記号の説明  

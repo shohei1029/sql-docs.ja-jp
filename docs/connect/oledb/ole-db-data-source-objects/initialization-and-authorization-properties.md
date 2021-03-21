@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server で OLE DB 初期化プロパティと
 ms.custom: ''
 ms.date: 09/30/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - initialization properties [OLE DB]
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 557918c819786cefe3a53149d7ad322f96e5a809
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 0f44fce02946e114e785e60937f472a087d29b09
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96504712"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755642"
 ---
 # <a name="initialization-and-authorization-properties"></a>初期化プロパティと承認プロパティ
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

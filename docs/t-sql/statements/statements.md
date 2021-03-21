@@ -2,7 +2,7 @@
 title: Transact-SQL ステートメント
 description: Transact-SQL ステートメント
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, database-engine, pdw, sql-database
+ms.prod_service: synapse-analytics, database-engine, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -15,12 +15,12 @@ ms.author: wiassaf
 ms.custom: ''
 ms.date: 04/17/2020
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 85f4838575e340a5b40dddc109802ed99afedd7c
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: a9a3bc7141bb9fe602854ea5097f6666691b4728
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189429"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748150"
 ---
 # <a name="transact-sql-statements"></a>Transact-SQL ステートメント
 

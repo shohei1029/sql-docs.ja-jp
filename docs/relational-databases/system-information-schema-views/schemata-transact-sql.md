@@ -4,7 +4,7 @@ title: スキーマ (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 09/08/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -20,12 +20,12 @@ ms.assetid: 69617642-0f54-4b25-b62f-5f39c8909601
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: cbb311366b6d2d036d44570761a7d198450b37a7
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 484cf3165dc602b6e808686fbcc62c5516915422
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99185513"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754652"
 ---
 # <a name="schemata-transact-sql"></a>スキーマ (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

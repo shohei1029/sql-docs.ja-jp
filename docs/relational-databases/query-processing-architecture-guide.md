@@ -4,7 +4,7 @@ title: クエリ処理アーキテクチャ ガイド | Microsoft Docs
 ms.custom: ''
 ms.date: 02/21/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: ''
 ms.topic: conceptual
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 44fadbee-b5fe-40c0-af8a-11a1eecf6cb5
 author: pmasl
 ms.author: pelopes
-ms.openlocfilehash: 05f33d170224ee079b4d23598e88e1802bebfbbb
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 0d755b3e6d6cac04a2d6ba67b012e4b42c1aab3c
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237680"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755522"
 ---
 # <a name="query-processing-architecture-guide"></a>クエリ処理アーキテクチャ ガイド
 [!INCLUDE [SQL Server Azure SQL Database](../includes/applies-to-version/sql-asdb.md)]
@@ -127,9 +127,9 @@ GO
 
 > [!NOTE]
 > [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] には、実行プランを表示するための 3 つのオプションがあります。        
-> -  *"*_[推定実行プラン](../relational-databases/performance/display-the-estimated-execution-plan.md)_*"_。これは、クエリ オプティマイザーによって生成された、コンパイル済みプランです。        
-> -  " _*_ [実際の実行プラン](../relational-databases/performance/display-an-actual-execution-plan.md) _*_ "。これは、コンパイル済みプランにその実行コンテキストを加えたものと同じです。 これには、実行が完了した後に利用可能なランタイム情報 (実行に関する警告など)、または実行中に使用された経過時間および CPU 時間 (新しいバージョンの[!INCLUDE[ssde_md](../includes/ssde_md.md)]の場合) が含まれます。        
-> -  " _*_ [ライブ クエリ統計](../relational-databases/performance/live-query-statistics.md) _*_ "。これは、コンパイル済みプラン (その実行コンテキストを含む) と同じです。 これには、実行が進行中のランタイム情報が含まれ、1 秒ごとに更新されます。 ランタイム情報には、演算子を通過する実際の行数などが含まれます。       
+> -  "***[推定実行プラン](../relational-databases/performance/display-the-estimated-execution-plan.md)***"。これは、クエリ オプティマイザーによって生成された、コンパイル済みプランです。        
+> -  "***[実際の実行プラン](../relational-databases/performance/display-an-actual-execution-plan.md)***"。これは、コンパイル済みプラン (その実行コンテキストを含む) と同じです。 これには、実行が完了した後に利用可能なランタイム情報 (実行に関する警告など)、または実行中に使用された経過時間および CPU 時間 (新しいバージョンの[!INCLUDE[ssde_md](../includes/ssde_md.md)]の場合) が含まれます。        
+> -  "***[ライブ クエリ統計](../relational-databases/performance/live-query-statistics.md)***"。これは、コンパイル済みプラン (その実行コンテキストを含む) と同じです。 これには、実行が進行中のランタイム情報が含まれ、1 秒ごとに更新されます。 ランタイム情報には、演算子を通過する実際の行数などが含まれます。       
 
 ### <a name="processing-a-select-statement"></a>SELECT ステートメントの処理
 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] が単一の SELECT ステートメントを処理する基本的な手順は次のとおりです。 
@@ -145,7 +145,7 @@ GO
 
 #### <a name="foldable-expressions"></a>たたみ込み可能な式
 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] では、次の種類の式に定数のたたみ込みを適用します。
-- 定数のみから構成される数式 (1+1、5/3_2 など)。
+- 定数のみから構成される数式 (1+1、5/3*2 など)。
 - 定数のみから構成される論理式 (1=1、1>2 AND 3>4 など)。
 - [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] によってたたみ込み可能と判断された組み込み関数 (`CAST`、`CONVERT` など)。 固有の関数は、通常はたたみ込み可能です。ただし結果が関数への入力のみによって決まらず、SET オプション、言語設定、データベース オプション、暗号化キーなどの、状況によって変わりうる他の情報を交えて決まる場合は例外です。 非決定的関数はたたみ込み不可能です。 組み込みの決定的関数はたたみ込み可能ですが、一部例外があります。
 - CLR ユーザー定義型の決定的メソッドおよび決定的スカラー値 CLR ユーザー定義関数 ([!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 以降)。 詳細については、「[CLR ユーザー定義関数およびメソッドの定数たたみ込み](/previous-versions/sql/2014/database-engine/behavior-changes-to-database-engine-features-in-sql-server-2014#constant-folding-for-clr-user-defined-functions-and-methods)」を参照してください。

@@ -4,7 +4,7 @@ title: sys.foreign_key_columns (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 7247f065-5441-4bcf-9f25-c84a03290dc6
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7d7f54d407acedac963983e2f4eb0bc95b87d8d6
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: f5f1808d512eb910ef2584869416756d66a18a63
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102465170"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104745342"
 ---
 # <a name="sysforeign_key_columns-transact-sql"></a>sys.foreign_key_columns (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "102465170"
 |**referenced_object_id**|**int**|候補キーを持つ、参照先のオブジェクトの ID。|  
 |**referenced_column_id**|**int**|参照される列の ID (候補キー列)。|  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  

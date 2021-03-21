@@ -4,7 +4,7 @@ title: レプリケーションに対して外部キー制約を無効にする�
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -16,12 +16,12 @@ ms.assetid: 4211f2fd-d16a-4081-995c-43f1f0827f0b
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 981983821435e17a8ab00b7c30ca1e676a960cb1
-ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
+ms.openlocfilehash: 26fe20c258d3d0ad46e5affc037dd46a30603a4b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98766155"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104747732"
 ---
 # <a name="disable-foreign-key-constraints-for-replication"></a>レプリケーションに対して外部キー制約を無効にする方法
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]

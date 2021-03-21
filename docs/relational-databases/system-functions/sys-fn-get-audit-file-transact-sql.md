@@ -4,7 +4,7 @@ title: sys.fn_get_audit_file (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 02/19/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -22,12 +22,12 @@ ms.assetid: d6a78d14-bb1f-4987-b7b6-579ddd4167f5
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
-ms.openlocfilehash: 013586570ce43b8270ae2613c05ced8bc9bdc48b
-ms.sourcegitcommit: c83c17e44b5e1e3e2a3b5933c2a1c4afb98eb772
+ms.openlocfilehash: 1b45da9fa22e2c342258d8ee8ad665fd4f33cc30
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100525216"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750622"
 ---
 # <a name="sysfn_get_audit_file-transact-sql"></a>sys.fn_get_audit_file (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]    
@@ -84,7 +84,7 @@ fn_get_audit_file ( file_pattern,
 ## <a name="tables-returned"></a>返されるテーブル  
  次の表に、この関数から返される監査ファイルの内容を示します。  
   
-| 列名 | 種類 | 説明 |  
+| 列名 | Type | 説明 |  
 |-------------|------|-------------|  
 | action_id | **varchar (4)** | アクションの ID。 NULL 値は許可されません。 |  
 | additional_information | **nvarchar (4000)** | 単一のイベントに対してだけ適用される固有の情報が XML として返されます。 少数の監査可能なアクションには、この種の情報が含まれています。<br /><br /> Tsql スタックが関連付けられているアクションに対して、1レベルの TSQL スタックが XML 形式で表示されます。 XML 形式は次のようになります。<br /><br /> `<tsql_stack><frame nest_level = '%u' database_name = '%.*s' schema_name = '%.*s' object_name = '%.*s' /></tsql_stack>`<br /><br /> frame nest_level は、フレームの現在の入れ子レベルを示します。 モジュール名は、3つの部分形式 (database_name、schema_name と object_name) で表されます。  モジュール名は、、、、などの無効な xml 文字をエスケープするために解析され `'\<'` `'>'` `'/'` `'_x'` ます。 これらは、としてエスケープされ `_xHHHH\_` ます。 HHHH は、文字の4桁の16進数の UCS 2 コードを表します。<br /><br /> NULL 値が許可されます。 イベントから追加情報が報告されない場合は NULL を返します。 |
@@ -132,7 +132,7 @@ fn_get_audit_file ( file_pattern,
 - **Fn_get_audit_file** に渡された *file_pattern* 引数が、存在しないパスまたはファイルを参照している場合、またはファイルが監査ファイルでない場合は、 **MSG_INVALID_AUDIT_FILE** エラーメッセージが返されます。  
 - **APPLICATION_LOG**、 **SECURITY_LOG**、または **EXTERNAL_MONITOR** オプションを使用して監査を作成する場合、 **fn_get_audit_file** は使用できません。
 
-## <a name="permissions"></a>アクセス許可
+## <a name="permissions"></a>権限
 
 - **SQL Server**: **CONTROL Server** 権限が必要です。  
 - **Azure SQL Database**: **CONTROL Database** 権限が必要です。     
@@ -140,7 +140,7 @@ fn_get_audit_file ( file_pattern,
   - 非サーバー管理者は、現在のデータベースからの監査ログにのみアクセスできます。
   - 上記の条件を満たしていない blob はスキップされます (スキップされた blob の一覧がクエリ出力メッセージに表示されます)。関数は、アクセスが許可されている blob からのログのみを返します。  
   
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 - **SQL Server**
 

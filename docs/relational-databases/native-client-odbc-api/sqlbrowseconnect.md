@@ -4,7 +4,7 @@ title: SQLBrowseConnect |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -15,12 +15,12 @@ ms.assetid: 57faf388-c7ca-4696-9845-34e0a10cc5f7
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 14f106f534364c033f796aefe6ec5b46ca422a6c
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: ef7782ed2c0fb5f60d0ca51ff814f109116820d8
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97473863"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751372"
 ---
 # <a name="sqlbrowseconnect"></a>SQLBrowseConnect
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -29,14 +29,14 @@ ms.locfileid: "97473863"
   
 ## <a name="level-1"></a>[レベル 1]  
   
-|Keyword|一覧が返されるかどうか|省略できるかどうか|説明|  
+|キーワード|一覧が返されるかどうか|省略できるかどうか|説明|  
 |-------------|--------------------|---------------|-----------------|  
 |DSN (DSN)|該当なし|いいえ|**Sqldatasources** ソースによって返されるデータソースの名前。 DSN キーワードは、DRIVER キーワードと同時に使用できません。|  
 |DRIVER|該当なし|いいえ|Microsoft® [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native CLIENT ODBC ドライバー名は { [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] native client 11} です。 DRIVER キーワードは、DSN キーワードと同時に使用できません。|  
   
 ## <a name="level-2"></a>[レベル 2]  
   
-|Keyword|一覧が返されるかどうか|省略できるかどうか|説明|  
+|キーワード|一覧が返されるかどうか|省略できるかどうか|説明|  
 |-------------|--------------------|---------------|-----------------|  
 |SERVER|はい|いいえ|データ ソースがあるネットワーク上のサーバー名。 サーバー名には「(local)」と入力することもできます。これは、ネットワークに接続されていない [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のローカル コピーも使用できることを意味します。|  
 |UID|いいえ|はい|ユーザー ログイン ID。|  
@@ -46,7 +46,7 @@ ms.locfileid: "97473863"
   
 ## <a name="level-3"></a>レベル 3  
   
-|Keyword|一覧が返されるかどうか|省略できるかどうか|説明|  
+|キーワード|一覧が返されるかどうか|省略できるかどうか|説明|  
 |-------------|--------------------|---------------|-----------------|  
 |DATABASE|はい|はい|データベースの名前 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。|  
 |LANGUAGE|はい|はい|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で使用される言語。|  

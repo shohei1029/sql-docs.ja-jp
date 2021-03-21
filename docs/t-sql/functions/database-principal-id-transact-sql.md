@@ -4,7 +4,7 @@ title: DATABASE_PRINCIPAL_ID (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 05/14/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 908c7dd8-c10b-4658-92f6-0224f9835dd9
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 911c4733853d3920486c2b1cd37298159b539e2d
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: dd2f492adae1a41611b6ec0cf06475e2239296f1
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99184034"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754682"
 ---
 # <a name="database_principal_id-transact-sql"></a>DATABASE_PRINCIPAL_ID (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]

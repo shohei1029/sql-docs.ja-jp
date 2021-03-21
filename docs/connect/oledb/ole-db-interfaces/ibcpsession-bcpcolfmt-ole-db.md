@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server で IBCPSession::BCPColFmt メソッ�
 ms.custom: ''
 ms.date: 05/25/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - BCPColFmt method
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 4806671e534faf347837333b0c667c396751aeef
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 8eba3778f18ec1ec37f95abd087670d16f6da0d0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99186292"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748752"
 ---
 # <a name="ibcpsessionbcpcolfmt-ole-db"></a>IBCPSession::BCPColFmt (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

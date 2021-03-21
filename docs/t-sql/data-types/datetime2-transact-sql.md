@@ -4,7 +4,7 @@ title: datetime2 (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 08/21/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -23,12 +23,12 @@ ms.assetid: 868017f3-214f-43ef-8536-cc1632a2288f
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0bdacc09933666e1deb2d238f867441a8cbc8f6c
-ms.sourcegitcommit: c83c17e44b5e1e3e2a3b5933c2a1c4afb98eb772
+ms.openlocfilehash: ad0fb7d21621f83370dfcef29ea57b8b1cf4680b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100525190"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104747712"
 ---
 # <a name="datetime2-transact-sql"></a>datetime2 (Transact-SQL)
 

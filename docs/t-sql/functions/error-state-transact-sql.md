@@ -4,7 +4,7 @@ title: ERROR_STATE (Transact-SQL)
 ms.custom: ''
 ms.date: 03/16/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, pdw, sql-database
+ms.prod_service: synapse-analytics, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -24,12 +24,12 @@ ms.assetid: 6059af00-83fe-409f-ab7c-daad111bc671
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 87e5a26589fb7c6bdc3af5fc1698526396dbe7b7
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: eaf240ae07d55ff0b22499d0dc3ae833be271d80
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100336850"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104747412"
 ---
 # <a name="error_state-transact-sql"></a>ERROR_STATE (Transact-SQL)
 

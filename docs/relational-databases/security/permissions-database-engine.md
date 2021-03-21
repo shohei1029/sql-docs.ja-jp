@@ -4,7 +4,7 @@ description: この SQL Server 権限の完全な一覧を参照して、使用�
 ms.custom: ''
 ms.date: 10/30/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: security
 ms.topic: conceptual
@@ -20,12 +20,12 @@ ms.assetid: f28e3dea-24e6-4a81-877b-02ec4c7e36b9
 author: AndreasWolter
 ms.author: anwolter
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b716f1daa936aa700bd28984ba71d0e9bfc1d2df
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: ea48dc9d5b0905ad10d98ccb349054421f296606
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "100341693"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748112"
 ---
 # <a name="permissions-database-engine"></a>権限 (データベース エンジン)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

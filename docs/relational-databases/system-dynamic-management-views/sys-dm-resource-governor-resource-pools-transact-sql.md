@@ -4,7 +4,7 @@ title: sys.dm_resource_governor_resource_pools (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 04/24/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 9bfc926e-d8bc-40f8-9229-ab1f8a1e69c5
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 81b2333e94a00c00c6743a51029d2b0e70cd9840
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 1088356349cd94e96a5952667b4e9436a4fa4ddf
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99135215"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750652"
 ---
 # <a name="sysdm_resource_governor_resource_pools-transact-sql"></a>sys.dm_resource_governor_resource_pools (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -79,7 +79,7 @@ ms.locfileid: "99135215"
 |io_issue_delay_total_ms|**bigint**|**適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。<br /><br /> スケジュールされた問題と IO の実際の問題との間の合計時間 (ミリ秒単位)。 NULL 値が許可されます。 リソースプールに IO が適用されていない場合は Null です。 つまり、リソースプールの MIN_IOPS_PER_VOLUME と MAX_IOPS_PER_VOLUME の設定は0です。|  
 |pdw_node_id|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  Resource Governor ワークロードグループと Resource Governor リソースプールには、多対一のマッピングがあります。 このため、多くのリソース プール統計が、ワークロード グループ統計から派生しています。  
   
  この動的管理ビューには、メモリ内の構成が表示されます。 保存されている構成メタデータを表示するには、sys.resource_governor_resource_pools カタログビューを使用します。  

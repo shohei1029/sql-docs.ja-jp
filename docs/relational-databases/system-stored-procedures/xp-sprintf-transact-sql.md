@@ -4,7 +4,7 @@ title: xp_sprintf (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 01/09/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 1eedd65c-03cc-4eab-b76e-04684fdfec52
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 75d36ece3d2875e7b6ae30a19626ee96bf85e0af
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: c4cccbc09cfeb79284dd17a0b107a754c548f5c4
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99122705"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755172"
 ---
 # <a name="xp_sprintf-transact-sql"></a>xp_sprintf (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

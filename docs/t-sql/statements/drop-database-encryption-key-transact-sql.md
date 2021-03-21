@@ -4,7 +4,7 @@ title: DROP DATABASE ENCRYPTION KEY (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/20/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, pdw, sql-database
+ms.prod_service: synapse-analytics, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -20,12 +20,12 @@ ms.assetid: 9231bd89-75e1-45c4-b4c8-13f08695af68
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 36e0c4d453c646b7fe3136d33337a604efe89bcc
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 70f4d8fcc7dabad7bac894f3bebdeef93a2907d5
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186625"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755422"
 ---
 # <a name="drop-database-encryption-key-transact-sql"></a>DROP DATABASE ENCRYPTION KEY (Transact-SQL)
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]

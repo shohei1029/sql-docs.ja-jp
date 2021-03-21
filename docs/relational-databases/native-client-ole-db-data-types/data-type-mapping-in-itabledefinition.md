@@ -4,7 +4,7 @@ title: ITableDefinition (Native Client OLE DB provider) でのデータ型マッ
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -20,12 +20,12 @@ ms.assetid: 13292d1f-c17e-4d11-bf98-3460a10cbb18
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 601dced15dd86a4caf639f5bc48aeadf81166925
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 1069b28011fa4a3319c6effc26cb6fd0211b4ca3
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477963"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748452"
 ---
 # <a name="sql-server-native-client-data-type-mapping-in-itabledefinition"></a>ITableDefinition でのデータ型マッピングの SQL Server Native Client
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

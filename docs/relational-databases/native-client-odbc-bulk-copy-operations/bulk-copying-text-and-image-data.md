@@ -4,7 +4,7 @@ title: テキストとイメージデータを一括コピーする |Microsoft D
 ms.custom: ''
 ms.date: 03/03/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -17,12 +17,12 @@ ms.assetid: 87155bfa-3a73-4158-9d4d-cb7435dac201
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0bba2a0229b16cade0e36d3684637e5d1818babe
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c89c583aa465d4bc7f42a735f6e65af0694bf760
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465043"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754762"
 ---
 # <a name="bulk-copying-text-and-image-data"></a>テキスト データと画像データの一括コピー
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

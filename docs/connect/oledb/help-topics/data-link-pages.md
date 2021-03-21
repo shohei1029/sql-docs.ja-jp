@@ -4,18 +4,18 @@ description: '[接続] タブを使用し、OLE DB Driver for SQL Server を使�
 ms.custom: ''
 ms.date: 09/30/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: v-daenge
 ms.technology: connectivity
 ms.topic: conceptual
 ms.author: v-beaziz
 author: bazizi
-ms.openlocfilehash: e3a7367daa776da3641c1b9a506f8f8335ce05d9
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: e9370ec3d095308741f2b587c507b6d8994fd35b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837491"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751062"
 ---
 # <a name="universal-data-link-udl-configuration"></a>ユニバーサル データ リンク (UDL) の構成
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

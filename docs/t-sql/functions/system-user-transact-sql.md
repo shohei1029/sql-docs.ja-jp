@@ -4,7 +4,7 @@ title: SYSTEM_USER (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, pdw, sql-database
+ms.prod_service: synapse-analytics, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -27,12 +27,12 @@ ms.assetid: 565984cd-60c6-4df7-83ea-2349b838ccb2
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3432cf3a1ba598f86ee5ac52b28922128171121e
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 8a718ab0e86ed0fa8bafdca88968760a3c103cca
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99197827"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754502"
 ---
 # <a name="system_user-transact-sql"></a>SYSTEM_USER (Transact-SQL)
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]

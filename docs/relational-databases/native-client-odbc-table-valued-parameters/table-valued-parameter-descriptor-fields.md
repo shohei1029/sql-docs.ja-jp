@@ -4,7 +4,7 @@ title: Table-Valued パラメーター記述子のフィールド |Microsoft Doc
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -14,12 +14,12 @@ ms.assetid: 4e009eff-c156-4d63-abcf-082ddd304de2
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 391c6bafc42a7504643f09ba5cef2d17e1e734ec
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6c45999c04377bb88f48e7f97a85b46020673eaf
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478043"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755052"
 ---
 # <a name="table-valued-parameter-descriptor-fields"></a>テーブル値パラメーターの記述子フィールド
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "97478043"
   
 ## <a name="remarks"></a>解説  
   
-|名前|場所|型|説明|  
+|名前|場所|Type|説明|  
 |----------|--------------|----------|-----------------|  
 |SQL_CA_SS_TYPE_NAME|IPD|SQLTCHAR*|テーブル値パラメーターのサーバーの型名です。<br /><br /> SQLBindParameter の呼び出しでテーブル値パラメーターの型名を指定する場合は、ANSI アプリケーションとしてビルドされたアプリケーションであっても、常に Unicode 値として指定する必要があります。 パラメーター *StrLen_or_IndPtr* に使用される値は、SQL_NTS か、名前の文字列の長さに SIZEOF (WCHAR) を掛けたものである必要があります。<br /><br /> SQLSetDescField を使用してテーブル値パラメーターの型名を指定する場合は、アプリケーションのビルド方法に準拠したリテラルを使用して指定できます。 ODBC ドライバー マネージャーで、必要な Unicode 変換を実行します。|  
 |SQL_CA_SS_TYPE_CATALOG_NAME (読み取り専用)|IPD|SQLTCHAR*|型が定義されているカタログです。|  
@@ -38,7 +38,7 @@ ms.locfileid: "97478043"
   
  次のステートメント属性および記述子のヘッダー フィールドは、テーブル値パラメーターにフォーカスが設定されている場合に適用されます。  
   
-|名前|場所|型|説明|  
+|名前|場所|Type|説明|  
 |----------|--------------|----------|-----------------|  
 |SQL_ATTR_PARAMSET_SIZE<br /><br /> (APD の SQL_DESC_ARRAY_SIZE に相当)|APD|SQLUINTEGER|テーブル値パラメーターのバッファー配列のサイズです。 これは、バッファーが保持できる最大行数、または行内のバッファーのサイズです。テーブル値パラメーターの値自体には、バッファーで保持できるよりも多い (または少ない) 行が含まれる場合があります。 既定値は 1 です。<br /><br /> 注: SQL_SOPT_SS_PARAM_FOCUS が既定値の0に設定されている場合、SQL_ATTR_PARAMSET_SIZE はステートメントを参照し、パラメーターセットの数を指定します。 SQL_SOPT_SS_PARAM_FOCUS がテーブル値パラメーターの序数に設定されている場合は、テーブル値パラメーターを参照し、テーブル値パラメーターのパラメーター セットごとの行数を指定します。|  
 |SQL_ATTR_PARAM _BIND_TYPE|APD|SQLINTEGER|既定値は SQL_PARAM_BIND_BY_COLUMN です。<br /><br /> 行方向のバインドを選択するには、このフィールドに、構造体の長さ、または一連のテーブル値パラメーターの行のバインドされるバッファーのインスタンスの長さが設定されます。 この長さには、バインドされたすべての列の領域と、構造体またはバッファーの埋め込みを含める必要があります。 これにより、バインドされた列のアドレスが指定の長さでインクリメントされると、結果は、次の行の同じ列の先頭を指すようになります。 ANSI C で **sizeof** 演算子を使用すると、この動作は保証されます。|  

@@ -4,7 +4,7 @@ title: SET QUOTED_IDENTIFIER (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 02/21/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -26,12 +26,12 @@ ms.assetid: 10f66b71-9241-4a3a-9292-455ae7252565
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 09ee4a1b7aa284b49661af669bf2f51eb1edfd4e
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 173ecf347f5d99f564bd3c0d518772e52cba5d4c
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99161107"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748572"
 ---
 # <a name="set-quoted_identifier-transact-sql"></a>SET QUOTED_IDENTIFIER (Transact-SQL)
 
