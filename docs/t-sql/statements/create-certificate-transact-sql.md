@@ -4,7 +4,7 @@ title: CREATE CERTIFICATE (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 02/06/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -28,12 +28,12 @@ ms.assetid: a4274b2b-4cb0-446a-a956-1c8e6587515d
 author: VanMSFT
 ms.author: vanto
 monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017||= azure-sqldw-latest
-ms.openlocfilehash: b670cd34ef9f0fed5fefbc788ac4774458f2c5a2
-ms.sourcegitcommit: be74dc0966930f28b03d0429aed22b1f0a296d3b
+ms.openlocfilehash: 02ec401b8167dbf6dcc145ab08a9604496b6f1a9
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103421931"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753372"
 ---
 # <a name="create-certificate-transact-sql"></a>CREATE CERTIFICATE (Transact-SQL)
 [!INCLUDE [sql-asdb-asa](../../includes/applies-to-version/sql-asdb-asa.md)]

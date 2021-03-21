@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server で SQL Server のデータ アクセ�
 ms.custom: ''
 ms.date: 03/18/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - MSOLEDBSQL, system requirements
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: c86f62f98e81ce3c4fdd86e1e79e8f73e1422851
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: aa46b5a4db292b5ac4ee5df71aa18abeb74c5559
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96127975"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104744872"
 ---
 # <a name="system-requirements-for-ole-db-driver-for-sql-server"></a>OLE DB Driver for SQL Server のシステム要件
 
@@ -42,7 +42,7 @@ OLE DB Driver for SQL Server をサポートするオペレーティング シ�
 
 ## <a name="azure-active-directory-authentication-requirements"></a>Azure Active Directory 認証の要件  
 
-18.3 "***より前** _" のバージョンの OLE DB Driver for SQL Server で Azure Active Directory 認証方法を使用する場合は、[SQL Server 用 Active Directory 認証ライブラリ](https://go.microsoft.com/fwlink/?LinkID=513072)が確実にインストールされていることを確認します (バージョン 18.3 には、インストーラー パッケージの一部として依存関係が含まれています)。ADAL は、他の認証方法や OLE DB 操作には必要ありません。 詳細については、次を参照してください。[Azure Active Directory の使用](features/using-azure-active-directory.md)。
+18.3 ***より前*** のバージョンの OLE DB driver for SQL Server で Azure Active Directory 認証方法を使用する場合は、[SQL Server 用 Active Directory 認証ライブラリ](https://go.microsoft.com/fwlink/?LinkID=513072)が確実にインストールされていることを確認します (バージョン 18.3 には、インストーラー パッケージの一部として依存関係が含まれています)。ADAL は、他の認証方法や OLE DB 操作には必要ありません。 詳細については、次を参照してください。[Azure Active Directory の使用](features/using-azure-active-directory.md)。
 
 ## <a name="sql-server-requirements"></a>SQL Server 要件  
 
@@ -56,7 +56,7 @@ OLE DB Driver for SQL Server の英語版は、サポートされているオペ
 
 アップグレードの要件を次に示します。  
 
-_ OLE DB Driver for SQL Server の英語版は、OLE DB Driver for SQL Server の任意のローカライズ版にアップグレードできます。  
+* OLE DB Driver for SQL Server の英語版は、OLE DB Driver for SQL Server の任意のローカライズ版にアップグレードできます。  
 * OLE DB Driver for SQL Server のローカライズ版は、同じ言語の OLE DB Driver for SQL Server のローカライズ版にアップグレードできます。  
 * OLE DB Driver for SQL Server のローカライズ版は、英語版の OLE DB Driver for SQL Server にアップグレードできます。  
 * OLE DB Driver for SQL Server のローカライズ版は、別のローカライズ言語でローカライズされた OLE DB Driver for SQL Server にアップグレードすることはできません。  

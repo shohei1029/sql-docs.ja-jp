@@ -4,7 +4,7 @@ title: SET DEADLOCK_PRIORITY (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, database-engine, pdw, sql-database
+ms.prod_service: synapse-analytics, database-engine, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -25,12 +25,12 @@ ms.assetid: 810a3a8e-3da3-4bf9-bb15-7b069685a1b6
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e40536f3e183ac7a4a737eb5f611a6242d92c998
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 58b66c429257da0667b0da73dc91feb38cc9a136
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189532"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751492"
 ---
 # <a name="set-deadlock_priority-transact-sql"></a>SET DEADLOCK_PRIORITY (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

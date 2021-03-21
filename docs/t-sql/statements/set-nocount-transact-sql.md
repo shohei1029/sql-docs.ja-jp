@@ -4,7 +4,7 @@ title: SET NOCOUNT (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, database-engine, sql-database
+ms.prod_service: synapse-analytics, database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -25,12 +25,12 @@ ms.assetid: eb3e6727-cb26-4bc2-84c7-171cbac02029
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 42311516c1ecfd9871c8e54b28409e5b5aef8030
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 22f53be21b5066d6c027feb5bb4403945c55c71c
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99161135"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754322"
 ---
 # <a name="set-nocount-transact-sql"></a>SET NOCOUNT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]

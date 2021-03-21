@@ -4,7 +4,7 @@ title: sys.column_encryption_keys (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 10/15/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 43980dd8-b9b1-4869-a304-2c183ae8977d
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 04332ba7c72b5c834936833f30387cb59167d1a8
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: b314d7024c8a78143b8280e58cf0b20671889ea1
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99188803"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104735822"
 ---
 # <a name="syscolumn_encryption_keys--transact-sql"></a>sys.column_encryption_keys (Transact-sql)
 [!INCLUDE[tsql-appliesto-ss2016-xxxx-asdw-xxx-md](../../includes/tsql-appliesto-ss2016-xxxx-asdw-xxx-md.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "99188803"
 |**create_date**|**datetime**|CEK が作成された日付。|  
 |**modify_date**|**datetime**|CEK が最後に変更された日付。|  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  **VIEW ANY COLUMN ENCRYPTION KEY** 権限が必要です。  
   
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  

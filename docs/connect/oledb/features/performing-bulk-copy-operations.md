@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server を使用した一括コピー操作�
 ms.custom: ''
 ms.date: 06/12/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - MSOLEDBSQL, bulk copy operations
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 6035f5ac8723e9ccb84735080569468c1b7b33b3
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: 13ddae176474396d5bbb718051069b67f60c0a8c
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96123852"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751192"
 ---
 # <a name="performing-bulk-copy-operations"></a>一括コピー操作の実行
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

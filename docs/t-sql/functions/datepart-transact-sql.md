@@ -3,7 +3,7 @@ title: DATEPART (Transact-SQL) | Microsoft Docs
 description: DATEPART 関数の Transact-SQL リファレンス。 この関数では、指定日付の datepart に対応する整数が返されます。
 ms.date: 07/29/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -27,12 +27,12 @@ ms.assetid: 15f1a5bc-4c0c-4c48-848d-8ec03473e6c1
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 610697bdc65acf22418d8c31c72b3e1a1d294693
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: d36754648df2a70ff858a514087811d98b8e5a77
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99181827"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752162"
 ---
 # <a name="datepart-transact-sql"></a>DATEPART (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

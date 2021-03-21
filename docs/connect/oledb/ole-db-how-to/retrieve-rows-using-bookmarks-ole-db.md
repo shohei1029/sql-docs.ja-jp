@@ -4,7 +4,7 @@ description: この例では、コンシューマーが OLE DB Driver for SQL Se
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - rows [OLE DB]
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: d456e16308944d8678d5938e0e56d094a0afa196
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: c5a874cb0d585385bb184885df61f287c81d4e3b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727057"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104741202"
 ---
 # <a name="retrieve-rows-using-bookmarks-ole-db"></a>ブックマークを使用した行の取得 (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

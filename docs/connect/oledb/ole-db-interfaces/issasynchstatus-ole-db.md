@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server で ISSAsynchStatus を使用して SQ
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - ISSAsynchStatus interface
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: a4fd0424a169f36f430dcc79f2bc44515335101b
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 1fa0d508fb2f4d6ba5724c98a3b643a929b40782
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99183714"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752322"
 ---
 # <a name="issasynchstatus-ole-db"></a>ISSAsynchStatus (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

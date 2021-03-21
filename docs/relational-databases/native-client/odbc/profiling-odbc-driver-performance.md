@@ -4,7 +4,7 @@ title: ODBC ドライバーのパフォーマンスのプロファイル |Micros
 ms.custom: ''
 ms.date: 03/17/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 8f44e194-d556-4119-a759-4c9dec7ecead
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bb392177fdd4364b17c93b9e5abba1fc9e421766
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 1e2771a14544aed31304779c66fc089769b5b7a2
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97483123"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104740722"
 ---
 # <a name="profiling-odbc-driver-performance"></a>ODBC ドライバーのパフォーマンスのプロファイル
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -68,11 +68,11 @@ ErrorMsg: [Microsoft][SQL Server Native Client]
   
 -   アプリケーション プロファイル  
   
--   Connection  
+-   接続  
   
 -   ネットワーク  
   
--   時刻  
+-   Time  
   
  次の表では、SQLPERF データ構造体のフィールドについて説明します。この説明は、パフォーマンス ログ ファイルに記録される統計情報にも適用されます。  
   

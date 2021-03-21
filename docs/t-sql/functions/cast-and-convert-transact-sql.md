@@ -3,7 +3,7 @@ title: CAST および CONVERT (Transact-SQL) | Microsoft Docs
 description: CAST および CONVERT Transact-SQL 関数のリファレンス。 これらの関数では、式がある型から別の型に変換されます。
 ms.date: 08/23/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -35,12 +35,12 @@ ms.assetid: a87d0850-c670-4720-9ad5-6f5a22343ea8
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 468775663e93981a134dd87cfe38d1f5bc960947
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a0742f3c81e1b98d206bb04a8fa3a38850e77e98
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100342627"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751272"
 ---
 # <a name="cast-and-convert-transact-sql"></a>CAST および CONVERT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

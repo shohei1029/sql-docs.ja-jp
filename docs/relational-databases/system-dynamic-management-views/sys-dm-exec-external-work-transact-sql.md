@@ -4,7 +4,7 @@ title: sys.dm_exec_external_work (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/10/2021
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -23,12 +23,12 @@ ms.assetid: 7597d97b-1fde-4135-ac35-4af12968f300
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ba2068fa58bdf711deecf90612ee4bf1e47d374b
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.openlocfilehash: 6b68c597892bad6965b86f62fda3834bb9c069e1
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622887"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752212"
 ---
 # <a name="sysdm_exec_external_work-transact-sql"></a>sys.dm_exec_external_work (Transact-sql)
 [!INCLUDE [sqlserver2016-asa-pdw](../../includes/applies-to-version/sqlserver2016-asa-pdw.md)]

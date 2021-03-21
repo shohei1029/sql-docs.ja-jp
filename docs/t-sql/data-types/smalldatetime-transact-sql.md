@@ -4,7 +4,7 @@ title: smalldatetime (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 07/22/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -23,12 +23,12 @@ ms.assetid: 68b74610-d54c-4c8e-b4b2-7e3747546ee0
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6d089b8b3b012cdc4d83948543f2bdd0da3bd5ac
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 24de52b89c597167c8ba6b9f7448701b637bba87
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99187817"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104736852"
 ---
 # <a name="smalldatetime-transact-sql"></a>smalldatetime (Transact-SQL)
 

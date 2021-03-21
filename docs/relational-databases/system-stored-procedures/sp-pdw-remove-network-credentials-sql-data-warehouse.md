@@ -3,7 +3,7 @@ description: sp_pdw_remove_network_credentials (Azure Synapse Analytics)
 title: sp_pdw_remove_network_credentials
 titleSuffix: Azure Synapse Analytics
 ms.date: 03/14/2017
-ms.prod_service: sql-data-warehouse, pdw
+ms.prod_service: synapse-analytics, pdw
 ms.reviewer: ''
 ms.service: sql-data-warehouse
 ms.subservice: design
@@ -15,12 +15,12 @@ author: ronortloff
 ms.author: rortloff
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 07de301f6407caf8ab2775ed1d65dfdd290e1185
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 1007555e8c4b16ded12a4d6ebb17b85c8f794711
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99196043"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739022"
 ---
 # <a name="sp_pdw_remove_network_credentials-azure-synapse-analytics"></a>sp_pdw_remove_network_credentials (Azure Synapse Analytics)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
@@ -48,7 +48,7 @@ sp_pdw_remove_network_credentials 'target_server_name'
 ## <a name="return-code-values"></a>リターン コードの値  
  0 (成功) または 1 (失敗)  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  **ALTER SERVER STATE** 権限が必要です。  
   
 ## <a name="error-handling"></a>エラー処理  

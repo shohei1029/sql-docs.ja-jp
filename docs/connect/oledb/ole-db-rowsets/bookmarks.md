@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server のコンシューマーでブック�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - OLE DB rowsets, bookmarks
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 3c5c389b941c6817b55b75e8e04f5c85bfaecbc0
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: ca8688c797f304ae99f0382a3f2f242a0cc21e8e
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88862113"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753122"
 ---
 # <a name="bookmarks"></a>ブックマーク
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

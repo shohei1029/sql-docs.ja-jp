@@ -4,7 +4,7 @@ title: sys.dm_os_threads (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/13/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: a5052701-edbf-4209-a7cb-afc9e65c41c1
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bd05ea40dd38053b30e75323e888689fc903f8f1
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 4ec18cabc3db2dfdb3be4ec6b4e6148226dbcd69
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837203"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750682"
 ---
 # <a name="sysdm_os_threads-transact-sql"></a>sys.dm_os_threads (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -51,14 +51,14 @@ ms.locfileid: "101837203"
 |stack_bytes_committed|**int**|スタックでコミットされたバイト数。|  
 |stack_bytes_used|**int**|スレッドでアクティブに使用されているバイト数。|  
 |affinity|**bigint**|このスレッドが実行されている CPU マスク。 これは、 **ALTER SERVER CONFIGURATION SET PROCESS AFFINITY** ステートメントで構成された値によって異なります。 ソフト アフィニティの場合は、スケジューラと異なることがあります。|  
-|Priority|**int**|このスレッドの優先度の値。|  
+|優先度|**int**|このスレッドの優先度の値。|  
 |Locale|**int**|スレッドのキャッシュされたロケール LCID。|  
 |トークン|**varbinary (8)**|スレッドのキャッシュされた偽装トークンハンドル。|  
 |is_impersonating|**int**|スレッドで Win32 権限借用が使用されているかどうかを示します。<br /><br /> 1 = スレッドではプロセスの既定値と異なるセキュリティ資格情報が使用されています。 これは、スレッドが、プロセスを作成したエンティティ以外のエンティティを偽装していることを示します。|  
 |is_waiting_on_loader_lock|**int**|スレッドでローダー ロックを待機中かどうかを示す、オペレーティング システムの状態。|  
 |fiber_data|**varbinary (8)**|スレッドで実行されている現在の Win32 ファイバー。 これは [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、が簡易プーリング用に構成されている場合にのみ適用されます。|  
-|thread_handle|**varbinary (8)**|内部使用のみ。|  
-|event_handle|**varbinary (8)**|内部使用のみ。|  
+|thread_handle|**varbinary (8)**|内部使用のみです。|  
+|event_handle|**varbinary (8)**|内部使用のみです。|  
 |scheduler_address|**varbinary (8)**|このスレッドに関連付けられているスケジューラのメモリアドレス。 詳細については、「 [sys.dm_os_schedulers &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-schedulers-transact-sql.md)」を参照してください。|  
 |worker_address|**varbinary (8)**|スレッドにバインドしているワーカーのメモリ アドレス。 詳細については、「 [sys.dm_os_workers &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-workers-transact-sql.md)」を参照してください。|  
 |fiber_context_address|**varbinary (8)**|内部ファイバー コンテキスト アドレス。 これは [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、が簡易プーリング用に構成されている場合にのみ適用されます。|  
@@ -66,7 +66,7 @@ ms.locfileid: "101837203"
 |processor_group|**smallint**|**適用対象**: [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] 以降。<br /><br /> プロセッサ グループ ID。|  
 |pdw_node_id|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。|  
   
-## <a name="permissions"></a>アクセス許可
+## <a name="permissions"></a>権限
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   

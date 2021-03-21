@@ -4,7 +4,7 @@ title: IDENTITY (プロパティ) (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, database-engine, sql-database
+ms.prod_service: synapse-analytics, database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -22,12 +22,12 @@ ms.assetid: 8429134f-c821-4033-a07c-f782a48d501c
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e239ff0edf653c5c172e0dfacb6b9ee835901a91
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 848ba2bd20e77c8dff156482256639f4675562ad
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99177934"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752672"
 ---
 # <a name="create-table-transact-sql-identity-property"></a>CREATE TABLE (Transact-SQL) IDENTITY (プロパティ)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]

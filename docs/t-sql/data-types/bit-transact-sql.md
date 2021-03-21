@@ -4,7 +4,7 @@ title: bit (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 07/23/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: 40adfd08-a31c-49cb-a172-386bcaa6edee
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 64a7c3376a5b308a6c67ff88df3a77a1b87e75e0
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 5787d6d100eaa860313de2b911675d3061b9355b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99192834"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104735812"
 ---
 # <a name="bit-transact-sql"></a>bit (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

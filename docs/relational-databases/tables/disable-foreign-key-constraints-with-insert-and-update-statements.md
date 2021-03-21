@@ -4,7 +4,7 @@ title: INSERT ステートメントと UPDATE ステートメントで外部キ�
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: table-view-index, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -18,12 +18,12 @@ ms.assetid: 029168d7-085e-4b13-9b86-5644b67c6e24
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 575ab9ae04fc18414426791c957acc76cd9ca428
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 797db82cd451ff21b0993492f828c35cf0e3e5b0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99179728"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104743132"
 ---
 # <a name="disable-foreign-key-constraints-with-insert-and-update-statements"></a>INSERT ステートメントまたは UPDATE ステートメントに対して外部キー制約を無効にする方法
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]

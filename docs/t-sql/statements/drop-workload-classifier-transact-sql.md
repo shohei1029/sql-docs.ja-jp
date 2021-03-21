@@ -4,7 +4,7 @@ title: DROP WORKLOAD CLASSIFIER (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2019
 ms.prod: sql
-ms.prod_service: sql-data-warehouse
+ms.prod_service: synapse-analytics
 ms.reviewer: jrasnick
 ms.technology: t-sql
 ms.topic: reference
@@ -20,12 +20,12 @@ helpviewer_keywords:
 author: ronortloff
 ms.author: rortloff
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: 2509ee07decbfcc9ca97b247b78191fead413c6b
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 1b49c0635ec485032724425021531d85a1ebf16e
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186451"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752842"
 ---
 # <a name="drop-workload-classifier-transact-sql"></a>DROP WORKLOAD CLASSIFIER (Transact-SQL)
 

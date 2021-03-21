@@ -4,7 +4,7 @@ title: OBJECTPROPERTYEX (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -23,12 +23,12 @@ ms.assetid: be36b3e3-3309-4332-bfb5-c7e9cf8dc8bd
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 611d0f17ae0ed8cd0e7679d149b186563f802ba4
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: e0802ac92d900b3ef4ddacaf714e377ce95a85b8
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237474"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754452"
 ---
 # <a name="objectpropertyex-transact-sql"></a>OBJECTPROPERTYEX (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -175,7 +175,7 @@ OBJECTPROPERTYEX ( id , property )
   
  ユーザーが所有しているか、または権限を与えられている、セキュリティ保護可能なリソースのメタデータのみを表示できます。 つまり、オブジェクトに対する権限がユーザーに与えられていない場合、メタデータを生成する組み込み関数 (OBJECTPROPERTYEX など) が NULL を返す可能性があります。 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  [!INCLUDE[ssDE](../../includes/ssde-md.md)]  を前提としています *object_id* が現在のデータベース コンテキストでします。 別のデータベースの *object_id* を参照するクエリは、NULL または正しくない値を返します。 たとえば、次のクエリでは、現在のデータベース コンテキストは master データベースです。 [!INCLUDE[ssDE](../../includes/ssde-md.md)]は、クエリ内で指定されたデータベースではなく、このデータベースの指定された *object_id* のプロパティ値を返します。 ビュー `vEmployee` は master データベース内にないため、このクエリでは正しくない結果が返されます。  
   
 ```sql  

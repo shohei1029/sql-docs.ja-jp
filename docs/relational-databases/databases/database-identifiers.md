@@ -4,7 +4,7 @@ description: データベース識別子について理解します。 これら
 ms.custom: ''
 ms.date: 03/16/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: configuration
 ms.topic: conceptual
@@ -22,12 +22,12 @@ ms.assetid: 171291bb-f57f-4ad1-8cea-0b092d5d150c
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 62d76e47e88a3d3a660d7be89249a995e919b715
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: fc83d9dcb124afd00e2c073bfdc3289a79cff0df
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478433"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749702"
 ---
 # <a name="database-identifiers"></a>データベース識別子
 

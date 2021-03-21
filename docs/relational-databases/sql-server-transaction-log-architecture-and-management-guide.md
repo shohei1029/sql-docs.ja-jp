@@ -4,7 +4,7 @@ title: トランザクション ログのアーキテクチャと管理ガイド
 ms.custom: ''
 ms.date: 10/23/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: ''
 ms.topic: conceptual
@@ -22,12 +22,12 @@ ms.assetid: 88b22f65-ee01-459c-8800-bcf052df958a
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ed532d22800cd10530ecc7db8595fcf75e3737da
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 8fb83212ffc79ccbea380b9aa7e43fd641e7ce47
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237943"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739722"
 ---
 # <a name="sql-server-transaction-log-architecture-and-management-guide"></a>SQL Server トランザクション ログのアーキテクチャと管理ガイド
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

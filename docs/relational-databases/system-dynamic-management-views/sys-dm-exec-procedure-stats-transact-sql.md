@@ -4,7 +4,7 @@ title: sys.dm_exec_procedure_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/03/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: ab8ddde8-1cea-4b41-a7e4-697e6ddd785a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ac7de1b87411c62c97041c92efafa8bd53ba0009
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 0556a20a490aad3663144f8a34bab5ee54b65501
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839282"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751802"
 ---
 # <a name="sysdm_exec_procedure_stats-transact-sql"></a>sys.dm_exec_procedure_stats (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -83,7 +83,7 @@ ms.locfileid: "101839282"
   
  <sup>1</sup> ネイティブコンパイルストアドプロシージャの統計コレクションが有効になっている場合、ワーカー時間はミリ秒単位で収集されます。 クエリが 1 ミリ秒未満で実行された場合は、値は 0 になります。  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
