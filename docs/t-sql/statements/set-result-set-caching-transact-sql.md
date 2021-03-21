@@ -4,7 +4,7 @@ title: RESULT_SET_CACHING の設定 (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 04/16/2020
 ms.prod: sql
-ms.prod_service: sql-data-warehouse
+ms.prod_service: synapse-analytics
 ms.reviewer: jrasnick
 ms.technology: t-sql
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords: ''
 author: XiaoyuMSFT
 ms.author: xiaoyul
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: deb8921c30dd784c97b37f69ac8fcfa5fb7f6da1
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 035030880a8c4b609bf430c2598cb2b778dedbda
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99161065"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104737832"
 ---
 # <a name="set-result-set-caching-transact-sql"></a>結果セット キャッシュの設定 (Transact-SQL) 
 

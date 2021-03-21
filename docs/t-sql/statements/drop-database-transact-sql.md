@@ -4,7 +4,7 @@ title: DROP DATABASE (Transact-SQL)
 ms.custom: ''
 ms.date: 02/21/2019
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, database-engine, pdw, sql-database
+ms.prod_service: synapse-analytics, database-engine, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -25,12 +25,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ffdf0615671d2f3e019bccde83159bdb75eddcdd
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 3c15b6aaf3244672232e4e6cdd4551564d11d9e2
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99236278"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750472"
 ---
 # <a name="drop-database-transact-sql"></a>DROP DATABASE (Transact-SQL)
 

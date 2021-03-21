@@ -4,7 +4,7 @@ title: sys.sql_expression_dependencies (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 78a218e4-bf99-4a6a-acbf-ff82425a5946
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 34c88c909239e7f9d9fcb12e5b30677708d9cfbc
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 96eb8bb58aca14dc2ca3eaeb4c2fc1be5f066d2a
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99210329"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750342"
 ---
 # <a name="syssql_expression_dependencies-transact-sql"></a>sys.sql_expression_dependencies (Transact-SQL)
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]
@@ -65,19 +65,19 @@ ms.locfileid: "99210329"
 |is_caller_dependent|**bit**|参照先エンティティのスキーマ バインドが実行時に行われるため、エンティティ ID の解決が呼び出し元のスキーマに依存することを示します。 このエラーは、参照先エンティティがストアドプロシージャ、拡張ストアドプロシージャ、または EXECUTE ステートメントで呼び出された非スキーマバインドユーザー定義関数である場合に発生します。<br /><br /> 1 = 参照先エンティティは呼び出し元に依存し、実行時に解決されます。 この場合、referenced_id は NULL です。<br /><br /> 0 = 参照先エンティティ ID は、呼び出し元に依存しません。<br /><br /> スキーマ バインド参照のほか、スキーマ名を明示的に指定するデータベース間参照やサーバー間参照の場合は常に 0 になります。 たとえば、`EXEC MyDatabase.MySchema.MyProc` 形式のエンティティ参照は呼び出し元に依存しません。 ただし、形式の参照 `EXEC MyDatabase..MyProc` は呼び出し元に依存します。|  
 |is_ambiguous|**bit**|参照があいまいであり、実行時にユーザー定義関数、ユーザー定義型 (UDT)、または **xml** 型の列への xquery 参照に解決できることを示します。<br /><br /> たとえば、ストアドプロシージャでステートメントが定義されているとし `SELECT Sales.GetOrder() FROM Sales.MySales` ます。 `Sales.GetOrder()` が `Sales` スキーマ内のユーザー定義関数なのか、`Sales` という名前のメソッドを持つ UDT 型の `GetOrder()` という名前の列なのかは、ストアド プロシージャが実行されるまで不明です。<br /><br /> 1 = 参照があいまいです。<br /><br /> 0 = 参照は明確です。または、ビューが呼び出されたときにエンティティを正常にバインドできます。<br /><br /> スキーマバインド参照の場合は常に0です。|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  次の表に、依存関係情報が作成および管理されるエンティティの種類を示します。 依存関係情報は、ルール、既定値、一時テーブル、一時ストアドプロシージャ、またはシステムオブジェクトに対して作成または管理されません。  
 
 > [!NOTE]
 > Azure Synapse Analytics と Parallel Data Warehouse では、この一覧からテーブル、ビュー、フィルター選択された統計情報、および Transact-sql ストアドプロシージャのエンティティ型をサポートしています。  依存関係情報は、テーブル、ビュー、およびフィルター選択された統計情報に対してのみ作成および管理されます。  
   
-|エンティティの種類|参照元エンティティ|参照先エンティティ|  
+|エンティティ型|参照元エンティティ|参照先エンティティ|  
 |-----------------|------------------------|-----------------------|  
 |テーブル|はい*|はい|  
 |表示|はい|はい|  
-|フィルター選択されたインデックス|可**|いいえ|  
-|フィルター選択された統計情報|可**|いいえ|  
-|[!INCLUDE[tsql](../../includes/tsql-md.md)] ストアドプロシージャ * * _|はい|はい|  
+|フィルター選択されたインデックス|はい**|いいえ|  
+|フィルター選択された統計情報|はい**|いいえ|  
+|[!INCLUDE[tsql](../../includes/tsql-md.md)] ストアド プロシージャ***|はい|はい|  
 |CLR ストアド プロシージャ (CLR stored procedure)|いいえ|はい|  
 |[!INCLUDE[tsql](../../includes/tsql-md.md)] ユーザー定義関数|はい|はい|  
 |CLR ユーザー定義関数|いいえ|はい|  
@@ -92,13 +92,13 @@ ms.locfileid: "99210329"
 |XML スキーマ コレクション|いいえ|はい|  
 |パーティション関数|いいえ|はい|  
   
- \_ テーブルは、 [!INCLUDE[tsql](../../includes/tsql-md.md)] 計算列、check 制約、または DEFAULT 制約の定義でモジュール、ユーザー定義型、または XML スキーマコレクションを参照している場合にのみ、参照元エンティティとして追跡されます。  
+ \* テーブルは、 [!INCLUDE[tsql](../../includes/tsql-md.md)] 計算列、check 制約、または DEFAULT 制約の定義でモジュール、ユーザー定義型、または XML スキーマコレクションを参照している場合にのみ、参照元エンティティとして追跡されます。  
   
  ** フィルター述語で使用する各列は、参照元エンティティとして追跡されます。  
   
- * * 整数値が1より大きい整数を持つ番号付きストアドプロシージャは、参照元または参照先エンティティとして追跡されません。  
+ 1より大きい整数値を持つ番号付きストアドプロシージャは、参照元エンティティまたは参照先エンティティとして追跡されません。  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  データベースに対する VIEW DEFINITION 権限およびデータベースの sys.sql_expression_dependencies に対する SELECT 権限が必要です。 既定では、SELECT 権限は db_owner 固定データベース ロールのメンバーだけに与えられます。 SELECT 権限と VIEW DEFINITION 権限が別のユーザーに与えられている場合、権限が許可されているユーザーはデータベース内のすべての依存関係を表示できます。  
   
 ## <a name="examples"></a>例  
@@ -154,7 +154,7 @@ CREATE DATABASE db1;
 GO  
 USE db1;  
 GO  
-CREATE PROCEDURE p1 AS SELECT _ FROM db2.s1.t1;  
+CREATE PROCEDURE p1 AS SELECT * FROM db2.s1.t1;  
 GO  
 CREATE PROCEDURE p2 AS  
     UPDATE db3..t3  

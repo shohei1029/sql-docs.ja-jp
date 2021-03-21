@@ -4,7 +4,7 @@ description: バッチ処理された SQL ステートメントの複数の行�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -17,12 +17,12 @@ helpviewer_keywords:
 - multiple-rowset results
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 93c2d5ec6f5965edc56fea26b8474d3b8926a0cb
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 1389e2728ac52e6b61ddbd360cadfb99e473e146
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88860157"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104737803"
 ---
 # <a name="commands-generating-multiple-rowset-results"></a>複数行セットの結果を生成するコマンド
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

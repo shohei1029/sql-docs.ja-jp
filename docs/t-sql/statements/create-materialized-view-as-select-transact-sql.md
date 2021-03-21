@@ -4,7 +4,7 @@ title: CREATE MATERIALIZED VIEW AS SELECT (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/04/2020
 ms.prod: sql
-ms.prod_service: sql-data-warehouse
+ms.prod_service: synapse-analytics
 ms.reviewer: jrasnick
 ms.technology: data-warehouse
 ms.topic: reference
@@ -38,12 +38,12 @@ ms.assetid: aecc2f73-2ab5-4db9-b1e6-2f9e3c601fb9
 author: XiaoyuMSFT
 ms.author: xiaoyul
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: 81073d458d69e28ee145c1bb1dd38f3474800b35
-ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
+ms.openlocfilehash: a484f4d57281ad869df4f86a4d6cebfb7602c8e8
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102770540"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104734172"
 ---
 # <a name="create-materialized-view-as-select-transact-sql"></a>CREATE MATERIALIZED VIEW AS SELECT (Transact-SQL)  
 

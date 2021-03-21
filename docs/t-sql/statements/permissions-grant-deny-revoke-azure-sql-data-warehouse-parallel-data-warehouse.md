@@ -5,7 +5,7 @@ titleSuffix: Azure Synapse Analytics
 ms.custom: seo-lt-2019
 ms.date: 08/10/2017
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, pdw
+ms.prod_service: synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -15,12 +15,12 @@ ms.assetid: 5a3b7424-408e-4cb0-8957-667ebf4596fc
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
-ms.openlocfilehash: c1dd1d663122327e5a9aeefc673909605fa5f116
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: fef6faff2e9e091836afbbe9e2b65f837851aad8
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575012"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104734064"
 ---
 # <a name="permissions-grant-deny-revoke-azure-synapse-analytics-parallel-data-warehouse"></a>権限:GRANT、DENY、REVOKE (Azure Synapse Analytics、Parallel Data Warehouse)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]

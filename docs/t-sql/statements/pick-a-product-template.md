@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 ms.custom: ''
 ms.date: 05/22/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords: ''
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: =azuresqldb-current||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||=azuresqldb-mi-current
-ms.openlocfilehash: ba0c386cb8f242902bc8ca1c20e36b2df5e9c8fa
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 6d30fd01a65942bca3eb1837c1abd8583a0766cf
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100082303"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104744102"
 ---
 # <a name="title-transact-sql"></a>タイトル (Transact-SQL)
 
