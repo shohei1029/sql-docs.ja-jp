@@ -4,7 +4,7 @@ title: sys.dm_os_memory_objects (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/13/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 5688bcf8-5da9-4ff9-960b-742b671d7096
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 46aba99eb9d012eabff0a2b77d5058802a4c341d
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: ee908ab13e7b6b34665e588b506a7862c8664493
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837696"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751012"
 ---
 # <a name="sysdm_os_memory_objects-transact-sql"></a>sys.dm_os_memory_objects (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -39,18 +39,18 @@ ms.locfileid: "101837696"
 |**parent_address**|**varbinary (8)**|親メモリ オブジェクトのアドレス。 NULL 値が許可されます。|  
 |**pages_allocated_count**|**int**|**適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]<br /><br /> メモリ オブジェクトによって割り当てられているページ数。 NULL 値は許可されません。|  
 |**pages_in_bytes**|**bigint**|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。<br /><br /> メモリオブジェクトのこのインスタンスによって割り当てられたメモリの量 (バイト単位)。 NULL 値は許可されません。|  
-|**creation_options**|**int**|内部使用のみ。 NULL 値が許可されます。|  
-|**bytes_used**|**bigint**|内部使用のみ。 NULL 値が許可されます。|  
+|**creation_options**|**int**|内部使用のみです。 NULL 値が許可されます。|  
+|**bytes_used**|**bigint**|内部使用のみです。 NULL 値が許可されます。|  
 |**type**|**nvarchar(60)**|メモリ オブジェクトの種類。<br /><br /> これは、このメモリオブジェクトが属するコンポーネント、またはメモリオブジェクトの関数を示します。 NULL 値が許可されます。|  
-|**name**|**varchar(128)**|内部使用のみ。 NULL 値は許可されます。|  
+|**name**|**varchar(128)**|内部使用のみです。 NULL 値は許可されます。|  
 |**memory_node_id**|**smallint**|メモリ オブジェクトが使用しているメモリ ノードの ID。 NULL 値は許可されません。|  
-|**creation_time**|**datetime**|内部使用のみ。 NULL 値が許可されます。|  
+|**creation_time**|**datetime**|内部使用のみです。 NULL 値が許可されます。|  
 |**max_pages_allocated_count**|**int**|**適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]<br /><br /> このメモリオブジェクトによって割り当てられたページの最大数。 NULL 値は許可されません。|  
 |**page_size_in_bytes**|**int**|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。<br /><br /> メモリ オブジェクトによって割り当てられているのページのサイズ (バイト単位)。 NULL 値は許可されません。|  
 |**max_pages_in_bytes**|**bigint**|このメモリオブジェクトによって使用されるメモリの最大量。 NULL 値は許可されません。|  
 |**page_allocator_address**|**varbinary (8)**|ページアロケーターのメモリアドレス。 NULL 値は許可されません。 詳細については、「 [sys.dm_os_memory_clerks &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-clerks-transact-sql.md)」を参照してください。|  
-|**creation_stack_address**|**varbinary (8)**|内部使用のみ。 NULL 値が許可されます。|  
-|**sequence_num**|**int**|内部使用のみ。 NULL 値が許可されます。|  
+|**creation_stack_address**|**varbinary (8)**|内部使用のみです。 NULL 値が許可されます。|  
+|**sequence_num**|**int**|内部使用のみです。 NULL 値が許可されます。|  
 |**partition_type**|**int**|**適用対象**: [!INCLUDE[ssSQL16](../../includes/sssql16-md.md)] 以降。<br /><br /> パーティションの種類。<br /><br /> 0-パーティション分割が不可能なメモリオブジェクト<br /><br /> 1-分割できないメモリオブジェクト (現在パーティション分割されていません)<br /><br /> 2-分割されたメモリオブジェクト。 NUMA ノードによってパーティション分割されます。 1つの NUMA ノードを持つ環境では、これは1に相当します。<br /><br /> 3-CPU でパーティション分割された、パーティション分割されたメモリオブジェクト。|  
 |**contention_factor**|**real**|**適用対象**: [!INCLUDE[ssSQL16](../../includes/sssql16-md.md)] 以降。<br /><br /> このメモリオブジェクトの競合を指定する値。0は競合しないことを意味します。 値は、指定された数のメモリ割り当てがその期間中に競合を反映したときに更新されます。 スレッドセーフなメモリオブジェクトにのみ適用されます。|  
 |**waiting_tasks_count**|**bigint**|**適用対象**: [!INCLUDE[ssSQL16](../../includes/sssql16-md.md)] 以降。<br /><br /> このメモリオブジェクトで待機している回数。 このカウンターは、メモリオブジェクトからメモリが割り当てられるたびにインクリメントされます。 インクリメントは、このメモリオブジェクトへのアクセスを現在待機しているタスクの数です。 スレッドセーフなメモリオブジェクトにのみ適用されます。 これは、正確性を保証せずに、ベストエフォートの値です。|  
@@ -59,7 +59,7 @@ ms.locfileid: "101837696"
   
  **partition_type**、 **contention_factor**、 **waiting_tasks_count**、および **exclusive_access_count** は、にまだ実装されていません [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] 。  
   
-## <a name="permissions"></a>アクセス許可
+## <a name="permissions"></a>権限
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   

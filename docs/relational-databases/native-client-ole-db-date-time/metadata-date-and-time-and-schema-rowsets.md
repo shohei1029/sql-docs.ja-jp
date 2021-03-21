@@ -3,7 +3,7 @@ description: メタデータ-SQL Server Native Client の日付と時刻およ�
 title: 日付と時刻およびスキーマ行セット
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: ''
 ms.topic: reference
@@ -14,12 +14,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-dt-2019
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 360b3ea7b6fe4957ba66044ec540fe050f43abfb
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 4a5f5f96bf0bbff708aff3fb345cb116fc133946
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97433611"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748372"
 ---
 # <a name="metadata---date-and-time-and-schema-rowsets-in-sql-server-native-client"></a>メタデータ-SQL Server Native Client の日付と時刻およびスキーマ行セット
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

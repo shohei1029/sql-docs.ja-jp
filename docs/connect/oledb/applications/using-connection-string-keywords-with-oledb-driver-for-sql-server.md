@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server API の一部では、接続文字列�
 ms.custom: ''
 ms.date: 09/30/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: vanto
 ms.technology: connectivity
 ms.topic: conceptual
@@ -17,12 +17,12 @@ helpviewer_keywords:
 - OLE DB Driver for SQL Server, connection string keywords
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 7b0a42cbec8c1feb253140c1534b8f9f2a3142eb
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: c5ddba7e6b2ac0faef93ff544dbb5f23f3fb5d15
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96506396"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751202"
 ---
 # <a name="using-connection-string-keywords-with-ole-db-driver-for-sql-server"></a>OLE DB Driver for SQL Server での接続文字列キーワードの使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -4,7 +4,7 @@ title: C から SQL への変換 |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -14,12 +14,12 @@ ms.assetid: 7ac098db-9147-4883-8da9-a58ab24a0d31
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0a65be08afc1a8570c64f7ffabddcb6c2d2d51b1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 89c0627ff26cd5d12aa60b2a25f4ab52d9646695
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438555"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104756112"
 ---
 # <a name="datetime-data-type-conversions-from-c-to-sql"></a>datetime データ型の C から SQL への変換
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -33,17 +33,17 @@ ms.locfileid: "97438555"
 | **SQL_C_DATE** |1|-|-|1、6|1、5、6|1、13|1、13|  
 | **SQL_C_TIME** |-|1|1|1、7|1、5、7|1、13|1、13|  
 | **SQL_C_SS_TIME2** |-|1、3|1、10|1、7|1、5、7|1、13|1、13|  
-| **SQL_C_BINARY(SQL_SS_TIME2_STRUCT)** |N/A|N/A|1、10、11|N/A|N/A|N/A|N/A|  
+| **SQL_C_BINARY(SQL_SS_TIME2_STRUCT)** |該当なし|該当なし|1、10、11|該当なし|該当なし|該当なし|該当なし|  
 | **SQL_C_TYPE_TIMESTAMP** |1、2|1、3、4|1、4、10|1、10|1、5、10|1、13|1、13|  
 | **SQL_C_SS_TIMESTAMPOFFSET** |1、2、8|1、3、4、8|1、4、8、10|1、8、10|1、10|1、13|1、13|  
-| **SQL_C_BINARY(SQL_SS_TIMESTAMPOFFSET_STRUCT)** |N/A|N/A|N/A|N/A|1、10、11|N/A|N/A|  
-| **SQL_C_CHAR/SQL_WCHAR (date)** |9|9|9|9、6|9、5、6|N/A|N/A|  
-| **SQL_C_CHAR/SQL_WCHAR (time2)** |9|9、3|9、10|9、7、10|9、5、7、10|N/A|N/A|  
-| **SQL_C_CHAR/SQL_WCHAR (datetime)** |9、2|9、3、4|9、4、10|9、10|9、5、10|N/A|N/A|  
-| **SQL_C_CHAR/SQL_WCHAR (datetimeoffset)** |9、2、8|9、3、4、8|9、4、8、10|9、8、10|9、10|N/A|N/A|  
-| **SQL_C_BINARY(SQL_DATE_STRUCT)** |1、11|N/A|N/A|N/A|N/A|N/A|N/A|  
-| **SQL_C_BINARY(SQL_TIME_STRUCT)** |N/A|N/A|N/A|N/A|N/A|N/A|N/A|  
-| **SQL_C_BINARY(SQL_TIMESTAMP_STRUCT)** |N/A|N/A|N/A|N/A|N/A|N/A|該当なし|  
+| **SQL_C_BINARY(SQL_SS_TIMESTAMPOFFSET_STRUCT)** |該当なし|該当なし|該当なし|該当なし|1、10、11|該当なし|該当なし|  
+| **SQL_C_CHAR/SQL_WCHAR (date)** |9|9|9|9、6|9、5、6|該当なし|該当なし|  
+| **SQL_C_CHAR/SQL_WCHAR (time2)** |9|9、3|9、10|9、7、10|9、5、7、10|該当なし|該当なし|  
+| **SQL_C_CHAR/SQL_WCHAR (datetime)** |9、2|9、3、4|9、4、10|9、10|9、5、10|該当なし|該当なし|  
+| **SQL_C_CHAR/SQL_WCHAR (datetimeoffset)** |9、2、8|9、3、4、8|9、4、8、10|9、8、10|9、10|該当なし|該当なし|  
+| **SQL_C_BINARY(SQL_DATE_STRUCT)** |1、11|該当なし|該当なし|該当なし|該当なし|該当なし|該当なし|  
+| **SQL_C_BINARY(SQL_TIME_STRUCT)** |該当なし|該当なし|該当なし|該当なし|該当なし|該当なし|該当なし|  
+| **SQL_C_BINARY(SQL_TIMESTAMP_STRUCT)** |該当なし|該当なし|該当なし|該当なし|該当なし|該当なし|該当なし|  
   
 ## <a name="key-to-symbols"></a>記号の説明  
   

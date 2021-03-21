@@ -3,7 +3,7 @@ description: サーバーからクライアントに対して実行される SQL
 title: サーバーからクライアントへの変換
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: ''
 ms.topic: reference
@@ -14,12 +14,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-dt-2019
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f91e2dfd6570808c5b385f07bcb6b3d66e2bd55b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: f7fbf944f45231a5dea9bb34de5e8095a9bc7a68
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97467693"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748402"
 ---
 # <a name="sql-server-native-client-conversions-performed-from-server-to-client"></a>サーバーからクライアントに対して実行される SQL Server Native Client 変換
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -36,14 +36,14 @@ ms.locfileid: "97467693"
 |Smalldatetime|7|8|9、10|10|[OK]|3|7|-|7 (VT_DATE)|[OK]|[OK]|4|4|  
 |Datetime|5、7|8|9、10|10|[OK]|3|7|-|7 (VT_DATE)|[OK]|[OK]|4|4|  
 |Datetime2|5、7|8|9、10|10|7|3|5、7|-|[OK] \(VT_BSTR)|[OK]|[OK]|4|4|  
-|Datetimeoffset|5、7、11|8、11|9、10、11|10、11|7、11|[OK]|5、7、11|-|[OK] \(VT_BSTR)|[OK]|[OK]|4|4|  
+|Datetimeoffset|5、7、11|8、11|9、10、11|10、11|7、11|OK|5、7、11|-|[OK] \(VT_BSTR)|[OK]|[OK]|4|4|  
 |Char、Varchar、<br /><br /> Nchar、Nvarchar|7、13|12|12、9|12|12|12|7、13|該当なし|該当なし|該当なし|該当なし|該当なし|該当なし|  
 |Sql_variant<br /><br /> (datetime)|7|8|9、10|10|[OK]|3|7|-|7 (VT_DATE)|[OK]|[OK]|4|4|  
 |Sql_variant<br /><br /> (smalldatetime)|7|8|9、10|10|[OK]|3|7|-|7 (VT_DATE)|[OK]|[OK]|4|4|  
 |Sql_variant<br /><br /> (date)|1、7|[OK]|2|2|1|1、3|1、7|-|OK (VT_BSTR)|[OK]|[OK]|4|4|  
 |Sql_variant<br /><br /> (time)|5、6、7|2|6|[OK]|6|3、6|5、6|-|OK (VT_BSTR)|[OK]|[OK]|4|4|  
 |Sql_variant<br /><br /> (datetime2)|5、7|8|9、10|10|[OK]|3|5、7|-|OK (VT_BSTR)|[OK]|[OK]|4|4|  
-|Sql_variant<br /><br /> (datetimeoffset)|5、7、11|8、11|9、10、11|10、11|7、11|[OK]|5、7、11|-|OK (VT_BSTR)|[OK]|[OK]|4|4|  
+|Sql_variant<br /><br /> (datetimeoffset)|5、7、11|8、11|9、10、11|10、11|7、11|OK|5、7、11|-|OK (VT_BSTR)|[OK]|[OK]|4|4|  
   
 ## <a name="key-to-symbols"></a>記号の説明  
   

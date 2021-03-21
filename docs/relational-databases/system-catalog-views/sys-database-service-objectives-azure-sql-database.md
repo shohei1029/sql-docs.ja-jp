@@ -4,7 +4,7 @@ title: sys.database_service_objectives
 titleSuffix: Azure SQL Database
 ms.date: 03/21/2018
 ms.service: sql-database
-ms.prod_service: sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.topic: conceptual
 keywords:
@@ -17,12 +17,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.custom: seo-dt-2019
 monikerRange: = azuresqldb-current || = azure-sqldw-latest
-ms.openlocfilehash: 861e8297a54cff399425e521591cd983afbb0cc6
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 786d236d676897da38753a885b021f2a45bb1ab6
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98098016"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754672"
 ---
 # <a name="sysdatabase_service_objectives-azure-sql-database"></a>sys.database_service_objectives (Azure SQL Database)
 [!INCLUDE [asdb-asdbmi-asa](../../includes/applies-to-version/asdb-asdbmi-asa.md)]
@@ -43,7 +43,7 @@ Azure SQL database または Azure Synapse Analytics のエディション (サ�
 |service_objective|sysname|データベースの価格レベル。 データベースがエラスティックプール内にある場合、は **ElasticPool** を返します。<br /><br /> **Basic** レベルでは、は **basic** を返します。<br /><br /> **Standard サービスレベルの単一データベースで** は、次のいずれかが返されます。 S0、S1、S2、S3、S4、S6、S7、S9、または S12。<br /><br /> **Premium レベルの単一のデータベース** は、次の値を返します: P1、P2、P4、P6、P11、または P15。<br /><br /> **Azure Synapse Analytics** は、DW30000C から DW100 を返します。<br /><br /> 詳細については、「[単一データベース](/azure/sql-database/sql-database-dtu-resource-limits-single-databases/)、[エラスティックプール](/azure/sql-database/sql-database-dtu-resource-limits-elastic-pools/)、[データウェアハウス](/azure/sql-data-warehouse/what-is-a-data-warehouse-unit-dwu-cdwu/)」を参照してください。|  
 |elastic_pool_name|sysname|データベースが属する [エラスティックプール](/azure/azure-sql/database/elastic-pool-overview) の名前。 データベースが単一データベースまたはデータウェアハウスの場合は **NULL** を返します。|  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
  Master データベースに対する **dbManager** 権限が必要です。  データベースレベルでは、ユーザーは作成者または所有者である必要があります。  
   
 ## <a name="examples"></a>例  

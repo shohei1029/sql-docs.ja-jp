@@ -4,7 +4,7 @@ title: sys.dm_os_workers (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/13/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 4d5d1e52-a574-4bdd-87ae-b932527235e8
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5fdbf16415df10f596ae9cf636d943fff3c3c4ba
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 54b518d95329be0fef64b212fb95692c199a2ad0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100347623"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749752"
 ---
 # <a name="sysdm_os_workers-transact-sql"></a>sys.dm_os_workers (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "100347623"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |worker_address|**varbinary (8)**|ワーカーのメモリアドレス。|  
-|status|**int**|内部使用のみ。|  
+|status|**int**|内部使用のみです。|  
 |is_preemptive|**bit**|1 = ワーカーは、プリエンプティブなスケジュール設定で実行中です。 外部コードを実行しているワーカーは、プリエンプティブスケジューリングの下で実行されます。|  
 |is_fiber|**bit**|1 = ワーカーは、簡易プーリングを使用して実行されています。 詳細については、「 [sp_configure &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md)」を参照してください。|  
 |is_sick|**bit**|1 = ワーカーは、スピン ロックを取得しようとして停止しています。 このビットが設定されている場合は、頻繁にアクセスされるオブジェクトの競合に問題がある可能性があります。|  
@@ -64,9 +64,9 @@ ms.locfileid: "100347623"
 |end_quantum|**bigint**|このワーカーの現在の実行が終了するまでの時間 (ミリ秒単位)。|  
 |last_wait_type|**nvarchar(60)**|最後の待機の種類。 待機の種類の一覧については、「 [sys.dm_os_wait_stats &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md)」を参照してください。|  
 |return_code|**int**|前回の待機からの戻り値。 値は、次のいずれかです。<br /><br /> 0 =SUCCESS<br /><br /> 3 = デッドロック<br /><br /> 4 = PREMATURE_WAKEUP<br /><br /> 258 = TIMEOUT|  
-|quantum_used|**bigint**|内部使用のみ。|  
-|max_quantum|**bigint**|内部使用のみ。|  
-|boost_count|**int**|内部使用のみ。|  
+|quantum_used|**bigint**|内部使用のみです。|  
+|max_quantum|**bigint**|内部使用のみです。|  
+|boost_count|**int**|内部使用のみです。|  
 |tasks_processed_count|**int**|このワーカーが処理したタスクの数。|  
 |fiber_address|**varbinary (8)**|ワーカーが関連付けられているファイバーのメモリ アドレス。<br /><br /> NULL = [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、簡易プーリング用に構成されていません。|  
 |task_address|**varbinary (8)**|現在のタスクのメモリアドレス。 詳細については、「 [sys.dm_os_tasks &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-tasks-transact-sql.md)」を参照してください。|  
@@ -82,11 +82,11 @@ ms.locfileid: "100347623"
   
  イベントで待機中のワーカーがシグナルを受け取ると、そのワーカーは実行可能キューの先頭に置かれます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でこれが 1,000 回続けて発生すると、ワーカーはキューの末尾に置かれます。 ワーカーがキューの末尾に移動すると、パフォーマンスに影響が生じる場合があります。  
   
-## <a name="permissions"></a>アクセス許可
+## <a name="permissions"></a>権限
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Premium レベルでは、データベースの権限が必要です `VIEW DATABASE STATE` 。 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Standard レベルと Basic レベルでは、 `Server Admin` ロールのメンバーシップ、またはアカウントが必要です `Azure Active Directory admin` 。   
 
-## <a name="examples"></a>使用例  
+## <a name="examples"></a>例  
  次のクエリを使用すると、SUSPENDED または RUNNABLE 状態でのワーカーの実行時間を調べることができます。  
   
 ```sql
