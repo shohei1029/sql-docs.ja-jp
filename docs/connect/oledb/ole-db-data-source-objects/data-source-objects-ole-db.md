@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server のコンシューマーでプロバ�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -18,12 +18,12 @@ helpviewer_keywords:
 - CLSID
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 9abdf54d533eab604ff564c9f32b99b2eba566d9
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 53208b567de362b388e5fb2183c67dccdabb2d2d
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88862403"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104735215"
 ---
 # <a name="data-source-objects-ole-db"></a>データ ソース オブジェクト (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

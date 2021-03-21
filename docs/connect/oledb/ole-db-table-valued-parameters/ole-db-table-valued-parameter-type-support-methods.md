@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server でテーブル値パラメーター�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - table-valued parameters (OLE DB), API support (methods)
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 89609f2c84ab8227b7bc1c83315806cffa859843
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: c8c6cf1cf3822e5822185211ccce02017ccf90d1
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88859891"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750822"
 ---
 # <a name="ole-db-table-valued-parameter-type-support-methods"></a>OLE DB テーブル値パラメーターの型のサポート (メソッド)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

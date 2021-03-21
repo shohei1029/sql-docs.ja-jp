@@ -4,7 +4,7 @@ title: ストアド プロシージャの実行 (OLE DB) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -16,12 +16,12 @@ ms.assetid: c77d9be9-2176-4438-8c7a-04b63ebece08
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 21cca9e6dd3ce8f3ee177997d94b1cfadb15ed1c
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3c37f35094020a3e587f41acc464e8c1a9da66a0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97467533"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104745012"
 ---
 # <a name="stored-procedures---running-in-sql-server-native-client"></a>ストアドプロシージャ-SQL Server Native Client で実行
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

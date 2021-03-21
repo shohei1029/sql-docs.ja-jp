@@ -4,7 +4,7 @@ description: ITableDefinition::AddColumn メソッドを利用すると、コン
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - adding columns
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 4366011d2f417dc7c35383a4460bfe5871065940
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: bb04db6e712c7c5fcd33d92f51b09ae44de770d9
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88859800"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749142"
 ---
 # <a name="adding-a-column-to-a-sql-server-table"></a>SQL Server テーブルへの列の追加
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

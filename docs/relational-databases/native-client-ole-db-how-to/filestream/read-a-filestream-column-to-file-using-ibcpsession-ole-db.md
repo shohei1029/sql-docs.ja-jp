@@ -4,7 +4,7 @@ title: FILESTREAM to File、IBCPSession (OLE DB)
 ms.custom: ''
 ms.date: 03/07/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -12,12 +12,12 @@ ms.assetid: ab3ce02a-549d-4e01-87b9-d15281fba349
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5c48614682a028ef06279dea44631bd03acf055f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: d5b8ab454231052fa32005b5e699c6a43f02ad75
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464903"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104756462"
 ---
 # <a name="read-a-filestream-column-to-file-using-ibcpsession-in-sql-server-native-client-ole-db"></a>SQL Server Native Client の IBCPSession を使用してファイルへの FILESTREAM 列を読み取ります (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -2,7 +2,7 @@
 description: bcp_bind
 title: bcp_bind |Microsoft Docs
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.technology: native-client
 ms.topic: reference
 apiname:
@@ -19,12 +19,12 @@ ms.custom: ''
 ms.reviewer: ''
 ms.date: 03/14/2017
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: edff3154a4385ee87bf7686cf5e2954e026e495f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3d73f055a77bb120d8c56425426273d6a06412b0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97473663"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749642"
 ---
 # <a name="bcp_bind"></a>bcp_bind
 

@@ -4,7 +4,7 @@ title: bcp_gettypename |Microsoft Docs
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: 65f036d1-f60e-4b8a-97b3-76fccf0dfed4
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3872736a1748dbd06e251a65d358522e7b92a630
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: b8ac4f8233301f8c6b96f78a83fc5517a75eb888
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97483374"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749552"
 ---
 # <a name="bcp_gettypename"></a>bcp_gettypename
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -55,7 +55,7 @@ RETCODE bcp_gettypename (
   
  次の表では、指定できる BCP 型、それらの BCP 型が max 型かどうか、および予想される出力を示しています。  
   
-|BCP 型名|MaxType|Output|  
+|BCP 型名|MaxType|出力|  
 |-------------------|-------------|------------|  
 |**SQLDECIMAL**|接続前/接続後|**decimal**|  
 |**SQLNUMERIC**|接続前/接続後|**numeric**|  
@@ -76,7 +76,7 @@ RETCODE bcp_gettypename (
 |**SQLBINARY**|いいえ|**Binary**|  
 |**SQLBIGVARBINARY**|いいえ|**可変長**|  
 |**SQLVARBINARY**|いいえ|**可変長**|  
-|**SQLIMAGE**|接続前/接続後|**イメージ**|  
+|**SQLIMAGE**|接続前/接続後|**Image**|  
 |**SQLINTN**|接続前/接続後|**int-null**|  
 |**SQLDATETIMN**|接続前/接続後|**datetime-null**|  
 |**SQLMONEYN**|接続前/接続後|**money-null**|  
@@ -88,7 +88,7 @@ RETCODE bcp_gettypename (
 |**SQLAOPMAX**|接続前/接続後|**Max (最大値)**|  
 |**SQLDATETIM4**|接続前/接続後|**smalldatetime**|  
 |**SQLMONEY4**|接続前/接続後|**Smallmoney**|  
-|**SQLFLT4**|接続前/接続後|**Real**|  
+|**SQLFLT4**|接続前/接続後|**本当の**|  
 |**SQLUNIQUEID**|接続前/接続後|**uniqueidentifier**|  
 |**SQLNCHAR**|いいえ|**Nchar**|  
 |**SQLNVARCHAR**|いいえ|**Nvarchar**|  

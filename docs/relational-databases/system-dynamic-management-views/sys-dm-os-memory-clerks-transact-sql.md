@@ -4,7 +4,7 @@ title: sys.dm_os_memory_clerks (Transact-SQL)
 ms.custom: ''
 ms.date: 02/18/2021
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -20,12 +20,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0cd75d2eb6e613f36cecee8e79e3c8d6c99eed8d
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: 9d02513db2bedda6e0ce6291bb0e0c3c308f6540
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575344"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750982"
 ---
 # <a name="sysdm_os_memory_clerks-transact-sql"></a>sys.dm_os_memory_clerks (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -54,12 +54,12 @@ ms.locfileid: "103575344"
 |**host_address**|**varbinary (8)**|このメモリ クラークのホストのメモリ アドレスを指定します。 詳細については、「 [sys.dm_os_hosts &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-hosts-transact-sql.md)」を参照してください。 Native Client などのコンポーネントは、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ホストインターフェイスを介してメモリリソースにアクセスします。<br /><br /> 0x00000000 = メモリ クラークは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に属します。<br /><br /> NULL 値は許可されません。|  
 |**pdw_node_id**|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。|  
 
-## <a name="permissions"></a>アクセス許可
+## <a name="permissions"></a>権限
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、[サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database)アカウントまたは[Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure)アカウントが必要です。 他のすべてのサービスの目的では、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] `VIEW DATABASE STATE` データベースで権限が必要です。   
   
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]メモリマネージャーは、3層階層で構成されます。 階層の最下部には、メモリノードがあります。 中間レベルは、メモリクラーク、メモリキャッシュ、およびメモリプールで構成されます。 最上位の階層はメモリ オブジェクトから成ります。 これらのオブジェクトは、のインスタンスにメモリを割り当てるために使用され [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。  
   
@@ -85,7 +85,7 @@ CACHESTORE と USERSTORE はメモリクラークですが、実際のキャッ�
 
 次の表は、メモリクラークの種類を示しています。
 
-|型  |Description  |
+|Type  |説明  |
 |---------|---------|
 |CACHESTORE_BROKERDSH     |     このキャッシュストアは [Service Broker](../../database-engine/configure-windows/sql-server-service-broker.md) ダイアログセキュリティヘッダーキャッシュによって割り当てを格納するために使用されます    |
 |CACHESTORE_BROKERKEK     |   このキャッシュストアは [Service Broker](../../database-engine/configure-windows/sql-server-service-broker.md)  キー交換キーキャッシュによって割り当てを格納するために使用されます    |
@@ -189,7 +189,7 @@ CACHESTORE と USERSTORE はメモリクラークですが、実際のキャッ�
 |USERSTORE_SXC     |    このユーザーストアは、すべての [RPC](https://docs.microsoft.com/openspecs/windows_protocols/ms-tds/619c43b6-9495-4a58-9e49-a4950db245b3) パラメーターを格納する割り当てに使用されます。     |
 |USERSTORE_TOKENPERM     |    TokenAndPermUserStore は、セキュリティコンテキスト、ログイン、ユーザー、アクセス許可、および監査のセキュリティエントリを追跡する単一の SOS ユーザーストアです。 これらのオブジェクトを格納するために、複数のハッシュテーブルが割り当てられます。    |
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
  [SQL Server オペレーティングシステム関連の動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql.md)   
  [sys.dm_os_sys_info &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md)   

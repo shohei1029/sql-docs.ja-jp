@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server の IBCPSession2 インターフェイ
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - IBCPSession2 interface
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 1bb2ed79ebbcafb1e7c319d1dab990195131084a
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: a8cb6f43ac49c99803cacaecfdd5c3f70ddf0842
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99190749"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749712"
 ---
 # <a name="ibcpsession2-ole-db"></a>IBCPSession2 (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server とその他のデータ アクセス 
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - OLE DB Driver for SQL Server, additional resources
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 39ae7839934055ac1845ee94ff1e8decaae5e223
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 03d2053e784c2887124b5dcf04ee904b2d1b4a91
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727262"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751082"
 ---
 # <a name="finding-more-ole-db-driver-for-sql-server-information"></a>OLE DB Driver for SQL Server の詳細情報の検索
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

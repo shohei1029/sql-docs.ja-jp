@@ -4,7 +4,7 @@ title: ALTER MASTER KEY (Transact-SQL) | Microsoft Docs
 ms.custom: fasttrack-edit
 ms.date: 02/21/2019
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, database-engine, pdw, sql-database
+ms.prod_service: synapse-analytics, database-engine, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -28,12 +28,12 @@ ms.assetid: 8ac501c3-4280-4d5b-b58a-1524fa715b50
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 677de39f127ea8efc853746168eea1d3be7e4eb9
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: ff7acc724a16f6b5304d4be5fa412d1ae1345557
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99204175"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104742942"
 ---
 # <a name="alter-master-key-transact-sql"></a>ALTER MASTER KEY (Transact-SQL)
 

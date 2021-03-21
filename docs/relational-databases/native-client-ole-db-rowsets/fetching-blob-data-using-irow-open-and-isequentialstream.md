@@ -4,7 +4,7 @@ title: 'BLOB、IRow:: Open、ISequentialStream'
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -17,12 +17,12 @@ ms.assetid: 439b3976-84e7-4d11-8dba-f668adbc9159
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 10b4010c55396493ed314305974a081c9b0787d7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 0c9fd6e499fd2e07a74cab41dfaa3bd0cc429424
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97483173"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753602"
 ---
 # <a name="fetching-blob-data-by-using-irowopen-and-isequentialstream"></a>IRow:: Open と ISequentialStream を使用して BLOB データをフェッチする
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

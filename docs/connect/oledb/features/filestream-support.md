@@ -4,7 +4,7 @@ description: SQL Server では、強化された FILESTREAM 機能がサポー�
 ms.custom: ''
 ms.date: 09/13/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - OLE DB Driver for SQL Server [FILESTREAM support]
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: d1fcc048d51186289d13cbe8918b5328f8c604f8
-ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
+ms.openlocfilehash: 3453ff4d5fff8d2c32cdfaf2f1641bbbc19d6fc0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98766139"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104742452"
 ---
 # <a name="filestream-support-in-ole-db-driver-for-sql-server"></a>OLE DB Driver for SQL Server の FILESTREAM のサポート
 [!INCLUDE[sql windows only](../../../includes/applies-to-version/sql-windows-only.md)]

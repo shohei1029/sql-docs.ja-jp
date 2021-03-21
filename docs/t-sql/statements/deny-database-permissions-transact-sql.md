@@ -4,7 +4,7 @@ title: DENY (データベースの権限の拒否) (Transact-SQL) | Microsoft Do
 ms.custom: ''
 ms.date: 02/21/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: 36cc4e2c-5a24-4975-9920-9305f12c6e7c
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1287d86ceeab338a1feaedbd7b0be694021a70fe
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: b3dfbdb871fa98a2292e377618e68acb2f3ee0f1
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "100342542"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104752682"
 ---
 # <a name="deny-database-permissions-transact-sql"></a>DENY (データベースの権限の拒否) (Transact-SQL)
 

@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server コンシューマーで ITableDefinit
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -18,12 +18,12 @@ helpviewer_keywords:
 - OLE DB, data types
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: fecca9ed46ea35fe45868b8c618b3514f0b04abd
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: e111f1760415a3511686dce17d8dec5784c9a991
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88860127"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755562"
 ---
 # <a name="data-type-mapping-in-itabledefinition"></a>ITableDefinition でのデータ型のマッピング
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "88860127"
 |DBTYPE_R4|**real**||  
 |DBTYPE_R8|**float**||  
 |DBTYPE_STR|**char**、**varchar**、**text**、**varchar(max)**|OLE DB Driver for SQL Server によって、DBCOLUMNDESC 構造体の *ulColumnSize* メンバーが確認されます。 この値と [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] インスタンスのバージョンを基に、OLE DB Driver for SQL Server によって型が **text** にマップされます。<br /><br /> *ulColumnSize* の値がマルチバイト文字のデータ型の列の最大長よりも小さい場合、OLE DB Driver for SQL Server によって、DBCOLUMNDESC の *rgPropertySets* メンバーが調査されます。 DBPROP_COL_FIXEDLENGTH が VARIANT_TRUE の場合、OLE DB Driver for SQL Server によって型が **char** にマップされます。 プロパティの値が VARIANT_FALSE の場合、OLE DB Driver for SQL Server によって型が **varchar** にマップされます。 いずれの場合も、DBCOLUMNDESC の *ulColumnSize* メンバーによって、作成される [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の列の幅が決まります。|  
-|DBTYPE_UDT|**UDT**|UDT 列が必要な場合、**ITableDefinition::CreateTable** では、**DBCOLUMNDESC** 構造体の以下の情報が使用されます。<br /><br /> *pwSzTypeName* が無視されます。<br /><br /> *rgPropertySets* には、「[ユーザー定義型の使用](../../oledb/features/using-user-defined-types.md)」の**DBPROPSET_SQLSERVERCOLUMN** に関するセクションにある説明のとおり、**DBPROPSET_SQLSERVERCOLUMN** プロパティが設定されている必要があります。|  
+|DBTYPE_UDT|**UDT**|UDT 列が必要な場合、**ITableDefinition::CreateTable** では、**DBCOLUMNDESC** 構造体の以下の情報が使用されます。<br /><br /> *pwSzTypeName* が無視されます。<br /><br /> *rgPropertySets* には、「[ユーザー定義型の使用](../../oledb/features/using-user-defined-types.md)」の **DBPROPSET_SQLSERVERCOLUMN** に関するセクションにある説明のとおり、**DBPROPSET_SQLSERVERCOLUMN** プロパティが設定されている必要があります。|  
 |DBTYPE_UI1|**tinyint**||  
 |DBTYPE_VARIANT|**sql_variant**||
 |DBTYPE_WSTR|**nchar**、**nvarchar**、**ntext**、**nvarchar(max)**|OLE DB Driver for SQL Server によって、DBCOLUMNDESC 構造体の *ulColumnSize* メンバーが確認されます。 この値に基づき、OLE DB Driver for SQL Server によって型が **ntext** にマップされます。<br /><br /> *ulColumnSize* の値が Unicode 文字のデータ型の列の最大長よりも小さい場合、OLE DB Driver for SQL Server によって、DBCOLUMNDESC の *rgPropertySets* メンバーが調査されます。 DBPROP_COL_FIXEDLENGTH が VARIANT_TRUE の場合、OLE DB Driver for SQL Server によって型が **nchar** にマップされます。 プロパティの値が VARIANT_FALSE の場合、OLE DB Driver for SQL Server によって型が **nvarchar** にマップされます。 いずれの場合も、DBCOLUMNDESC の *ulColumnSize* メンバーによって、作成される [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の列の幅が決まります。|  

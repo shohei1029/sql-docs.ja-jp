@@ -4,7 +4,7 @@ title: sys.dm_exec_query_parallel_workers (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 05/24/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -22,12 +22,12 @@ author: pelopes
 ms.author: pelopes
 manager: ajayj
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 337dc31b183f9e6a21a8b5bbbf9895af71f21008
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 2e04c5cf3b030e6ce43aa2c9640f3a11e6299bf9
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839030"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104734927"
 ---
 # <a name="sysdm_exec_query_parallel_workers-transact-sql"></a>sys.dm_exec_query_parallel_workers (Transact-SQL)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "101839030"
 |**free_worker_count**|**int**|タスクで使用可能なワーカーの数。<br /><br />**注:** すべての受信要求は、少なくとも1つのワーカーを消費します。これは、無料ワーカー数から差し引かれます。  負荷の高いサーバーでは、無料のワーカー数が負の数になる可能性があります。| 
 |**used_worker_count**|**int**|並列クエリで使用されるワーカーの数。|  
   
-## <a name="permissions"></a>アクセス許可  
+## <a name="permissions"></a>権限  
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
