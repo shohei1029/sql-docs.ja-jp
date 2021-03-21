@@ -4,7 +4,7 @@ title: sys.index_columns (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 07/03/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 211471aa-558a-475c-9b94-5913c143ed12
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9d0f9ed720df11627d59ecb773f294e12ec98346
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: 514291047ecb0bda70d215b32b3e68f9b1839d0b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102465065"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104745492"
 ---
 # <a name="sysindex_columns-transact-sql"></a>sys.index_columns (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "102465065"
 |**is_included_column**|**bit**|1 = 列は、CREATE INDEX INCLUDE 句を使用してインデックスに追加された非キー列です。または、列が列ストアインデックスの一部です。<br /><br /> 0 = 列は付加列ではありません。<br /><br /> クラスター化キーの一部であるために暗黙的に追加された列は **sys.index_columns** には記載されていません。<br /><br /> パーティション分割列であるために暗黙的に追加された列は、0として返されます。| 
 |**column_store_order_ordinal**</br> 適用対象: Azure Synapse Analytics (プレビュー)|**tinyint**|順序付けられたクラスター化列ストアインデックスの順序列のセット内での序数 (1 から始まる)。|
   
-## <a name="permissions"></a>アクセス許可
+## <a name="permissions"></a>権限
 
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  
   

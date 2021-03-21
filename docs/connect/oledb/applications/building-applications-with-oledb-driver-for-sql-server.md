@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server を使用してアプリケーショ�
 ms.custom: ''
 ms.date: 02/12/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.technology: connectivity
 ms.topic: reference
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: mikeray
-ms.openlocfilehash: b889749703cf2e82780120562f5c88e79ae07468
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: cea8fc9132b7c138865e2ad3a0ba40181ec82b4d
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88862070"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104746602"
 ---
 # <a name="building-applications-with-ole-db-driver-for-sql-server"></a>OLE DB Driver for SQL Server を使用したアプリケーションのビルド
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
