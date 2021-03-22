@@ -1,4 +1,5 @@
 ---
+description: 概要 (SMO)
 title: 概要 (SMO) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/06/2017
@@ -10,22 +11,22 @@ ms.topic: reference
 ms.assetid: e988f9e8-6801-41d1-8069-726f487244d5
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 7705aa50b488971b1c5aaf6e043ccf2dfd9103f6
-ms.sourcegitcommit: f3f83ef95399d1570851cd1360dc2f072736bef6
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 8b3a9c15979d162ca345a0d440f7093c4bd15ad9
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "70148657"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97439838"
 ---
 # <a name="overview-smo"></a>概要 (SMO)
-[!INCLUDE[appliesto-ss-asdb-asdw-xxx-md](../../includes/appliesto-ss-asdb-asdw-xxx-md.md)]
+[!INCLUDE [SQL Server ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
 
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]管理オブジェクト (SMO) は、をプログラムで管理する[!INCLUDE[msCoName](../../includes/msconame-md.md)]ために設計された[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]オブジェクトです。 SMO を使用すると、カスタマイズされた [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 管理アプリケーションを作成することができます。 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を管理するための強力で高度なアプリケーションですが、SMO アプリケーションの方が適している場合もあります。  
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]管理オブジェクト (SMO) は、をプログラムで管理するために設計されたオブジェクトです [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。 SMO を使用すると、カスタマイズされた [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 管理アプリケーションを作成することができます。 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を管理するための強力で高度なアプリケーションですが、SMO アプリケーションの方が適している場合もあります。  
   
  たとえば、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 管理タスクを制御するユーザー アプリケーションでは、新規ユーザーのニーズを満たし、トレーニング コストを削減するために、単純化を必要とする場合があります。 カスタマイズされた [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースの作成や、インデックスの効率を高めて、効率性を監視するためのアプリケーション作成が必要になることもあります。 また、サード パーティ製のハードウェアやソフトウェアをデータベース管理アプリケーションにシームレスに含めるために、SMO アプリケーションを使用する場合もあります。  
   
- SMO は以降のバージョン[!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]と互換性があるため、複数バージョンの環境を簡単に管理できます。  
+ SMO は以降のバージョンと互換性があるため [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 、複数バージョンの環境を簡単に管理できます。  
   
  SMO の機能には、次のものがあります。  
   
@@ -45,34 +46,34 @@ ms.locfileid: "70148657"
   
 -   パーティション構成にデータを格納するためのテーブルおよびインデックスのパーティション分割。 詳細については、「 [Partitioned Tables and Indexes](../../relational-databases/partitions/partitioned-tables-and-indexes.md)」を参照してください。  
   
--   SOAP 要求を管理するための HTTP エンドポイント。 詳細については、「[エンドポイントの実装](../../relational-databases/server-management-objects-smo/tasks/implementing-endpoints.md)」を参照してください。  
+-   SOAP 要求を管理するための HTTP エンドポイント。 詳細については、「 [エンドポイントの実装](../../relational-databases/server-management-objects-smo/tasks/implementing-endpoints.md)」を参照してください。  
   
 -   コンカレンシーを高めるためのスナップショット分離と行レベルのバージョニング。 詳細については、「[スナップショット分離を使用した作業](../../relational-databases/native-client/features/working-with-snapshot-isolation.md)」を参照してください。  
   
--   XML データの検証と格納を可能にする、XML スキーマ コレクション、XML インデックス、および XML データ型。 詳細については、「xml [ &#40;スキーマ&#41;コレクション SQL Server](../../relational-databases/xml/xml-schema-collections-sql-server.md) 」および「 [xml スキーマの使用](../../relational-databases/server-management-objects-smo/tasks/using-xml-schemas.md)」を参照してください。  
+-   XML データの検証と格納を可能にする、XML スキーマ コレクション、XML インデックス、および XML データ型。 詳細については、「 [Xml スキーマコレクション &#40;SQL Server&#41;](../../relational-databases/xml/xml-schema-collections-sql-server.md) 」および「 [Xml スキーマの使用](../../relational-databases/server-management-objects-smo/tasks/using-xml-schemas.md)」を参照してください。  
   
 -   データベースの読み取り専用コピーを作成するためのスナップショット データベース。  
   
 -   メッセージ ベースの通信に対する [!INCLUDE[ssSB](../../includes/sssb-md.md)] サポート。 詳細については、「 [SQL Server Service Broker](../../database-engine/configure-windows/sql-server-service-broker.md)」を参照してください。  
   
--   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース オブジェクトの複数の名前に対するシノニム サポート。 詳細については[、 &#40;「&#41;シノニムデータベースエンジン](../../relational-databases/synonyms/synonyms-database-engine.md)」を参照してください。  
+-   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース オブジェクトの複数の名前に対するシノニム サポート。 詳細については、「 [シノニム &#40;データベースエンジン&#41;](../../relational-databases/synonyms/synonyms-database-engine.md)」を参照してください。  
   
--   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] での電子メール サービス、電子メール プロファイル、および電子メール アカウントの作成を可能にするデータベース メールの管理。 詳細については、「 [Database Mail](../../relational-databases/database-mail/database-mail.md)」を参照してください。  
+-   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] での電子メール サービス、電子メール プロファイル、および電子メール アカウントの作成を可能にするデータベース メールの管理。 詳細については、「[データベース メール](../../relational-databases/database-mail/database-mail.md)」を参照してください。  
   
--   接続情報登録のための登録サーバーのサポート。 詳細については、「[サーバーの登録](../../tools/sql-server-management-studio/register-servers.md)」を参照してください。  
+-   接続情報登録のための登録サーバーのサポート。 詳細については、「 [サーバーの登録](../../ssms/register-servers/register-servers.md)」を参照してください。  
   
--   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] イベントのトレースおよび再生。 詳細については、「 [SQL Server プロファイラー](../../tools/sql-server-profiler/sql-server-profiler.md)、 [SQL トレース](../../relational-databases/sql-trace/sql-trace.md)、 [SQL Server 分散再生](../../tools/distributed-replay/sql-server-distributed-replay.md)、および[拡張イベント](../../relational-databases/extended-events/extended-events.md)」を参照してください。  
+-   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] イベントのトレースおよび再生。 詳細については、「 [SQL Server Profiler](../../tools/sql-server-profiler/sql-server-profiler.md)、 [SQL トレース](../../relational-databases/sql-trace/sql-trace.md)、 [SQL Server 分散再生](../../tools/distributed-replay/sql-server-distributed-replay.md)、および [拡張イベント](../../relational-databases/extended-events/extended-events.md)」を参照してください。  
   
 -   セキュリティ コントロールのための証明書およびキーのサポート。 詳細については、「 [Encryption Hierarchy](../../relational-databases/security/encryption/encryption-hierarchy.md)」を参照してください。  
   
 -   DDL イベント発生時に機能を追加するための DDL トリガー。 詳細については、「 [DDL トリガー](../../relational-databases/triggers/ddl-triggers.md)」を参照してください。  
   
- SMO の名前空間は、<xref:Microsoft.SqlServer.Management.Smo> です。 SMO は、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]アセンブリとして実装されます。 これは、SMO オブジェクトを使用する前[!INCLUDE[msCoName](../../includes/msconame-md.md)]に、 [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]バージョン2.0 の共通言語ランタイムをインストールする必要があることを意味します。 SMO アセンブリは、既定では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] SDK オプションを使用してグローバル アセンブリ キャッシュ (GAC) にインストールされています。 アセンブリは C:\Program are SQL Server\130\SDK\Assemblies\. にあります。 詳細については、 [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)]の[!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]ドキュメントを参照してください。  
+ SMO の名前空間は、<xref:Microsoft.SqlServer.Management.Smo> です。 SMO は、アセンブリとして実装され [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] ます。 これは [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] 、SMO オブジェクトを使用する前に、バージョン2.0 の共通言語ランタイムをインストールする必要があることを意味します。 SMO アセンブリは、既定では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] SDK オプションを使用してグローバル アセンブリ キャッシュ (GAC) にインストールされています。 アセンブリは C:\Program are SQL Server\130\SDK\Assemblies\. にあります。 詳細については、[!INCLUDE[vsprvs](../../includes/vsprvs-md.md)][!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] のドキュメントを参照してください。  
   
 ## <a name="smo-classes"></a>SMO クラス  
  SMO クラスには、インスタンス クラスおよびユーティリティ クラスの 2 つのカテゴリがあります。  
   
- **インスタンスクラス**  
+ **インスタンス クラス**  
   
  インスタンス クラスは、サーバー、データベース、テーブル、トリガー、およびストアド プロシージャなどの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] オブジェクトを表現します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスへの接続を確立し、これに送信されたコマンドのキャプチャ モードを制御するには、<xref:Microsoft.SqlServer.Management.Common.ServerConnection> クラスが使用されます。  
   
@@ -97,11 +98,11 @@ ms.locfileid: "70148657"
   
  実際のデータベース オブジェクトを表したオブジェクトであるインスタンス クラスには、インスタンス化の 3 つのレベルがあります。 最小インスタンス化 (必要な最小限のプロパティのみが 1 つのブロックに読み取られる)、部分的インスタンス化 (比較的大量のメモリを使用するすべてのプロパティが 1 つのブロックに読み取られる)、および完全インスタンス化の 3 つです。 従来、インスタンス化の状態は、インスタンスされていないか完全にインスタンス化されているかのいずれかでした。 部分的にインスタンス化されたオブジェクトには、オブジェクト プロパティの完全なセットに対する値が格納されていないため、部分的インスタンス化の状態は効率性の向上に役立ちます。 部分的インスタンス化は、直接参照されないオブジェクトの既定の状態です。 これらのプロパティの 1 つが参照されると、オブジェクトの完全インスタンス化を要求するフォールトが生成されます。  
   
- **実行のキャプチャ**  
+ **キャプチャの実行**  
   
  直接実行は、通常の実行方法です。 ステートメントは、発生した時点で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスに直接送信されます。 キャプチャ実行は、これに代わる方法です。  
   
- キャプチャ実行では、通常実行される [!INCLUDE[tsql](../../includes/tsql-md.md)] バッチをキャプチャすることができます。 これにより、SMO プログラマは、スクリプトの保留、後で実行するための格納、エンドユーザーへのプレビューの提供を行うことができます。 たとえば、 **create database**、 **create table**、および**create index**ステートメントを1つのバッチで送信し、3つの連続したステップとして実行できます。 この機能は、<xref:Microsoft.SqlServer.Management.Smo.Server.%23ctor%2A> オブジェクトを使用して、ユーザーによって制御されます。  
+ キャプチャ実行では、通常実行される [!INCLUDE[tsql](../../includes/tsql-md.md)] バッチをキャプチャすることができます。 これにより、SMO プログラマは、スクリプトの保留、後で実行するための格納、エンドユーザーへのプレビューの提供を行うことができます。 たとえば、 **create database**、 **create table**、および **create index** ステートメントを1つのバッチで送信し、3つの連続したステップとして実行できます。 この機能は、<xref:Microsoft.SqlServer.Management.Smo.Server.%23ctor%2A> オブジェクトを使用して、ユーザーによって制御されます。  
   
  **WMI プロバイダー**  
   
@@ -109,9 +110,9 @@ ms.locfileid: "70148657"
   
  **スクリプトの作成**  
   
- SMO では、スクリプトが拡張され、 **Scripter**クラスに移動されました。 **Scripter**クラスは、依存関係を検出し、オブジェクト間の関係を理解し、依存関係階層を操作できるようにします。 メインスクリプトオブジェクトは、 **Scripter**オブジェクトです。 また、依存関係を処理したり、進行中のイベントやエラー イベントに応答するサポート オブジェクトもいくつかあります。  
+ SMO では、スクリプトが拡張され、 **Scripter** クラスに移動されました。 **Scripter** クラスは、依存関係を検出し、オブジェクト間の関係を理解し、依存関係階層を操作できるようにします。 メインスクリプトオブジェクトは、 **Scripter** オブジェクトです。 また、依存関係を処理したり、進行中のイベントやエラー イベントに応答するサポート オブジェクトもいくつかあります。  
   
- **Scripter**オブジェクトでは、次の高度なスクリプト作成オプションがサポートされています。  
+ **Scripter** オブジェクトでは、次の高度なスクリプト作成オプションがサポートされています。  
   
 -   簡単な 1 フェーズ スクリプティング (スクリプトを 1 つの手順で作成)  
   
@@ -133,24 +134,24 @@ ms.locfileid: "70148657"
 /Server/Database[@Name='Adventureworks2012']  
 ```  
   
- オブジェクトの URN は、URN プロパティを参照することで取得することができます。 また、Scripter オブジェクトは、オブジェクト参照を**Scripter**オブジェクトのメソッドに渡すパラメーターとして urn を使用します。 また、**サーバー**オブジェクトの**GETSMOOBJECT**メソッドに URN を指定することもできます。 これは、SMO オブジェクトのインスタンスを作成するために使用します。  
+ オブジェクトの URN は、URN プロパティを参照することで取得することができます。 また、Scripter オブジェクトは、オブジェクト参照を **Scripter** オブジェクトのメソッドに渡すパラメーターとして urn を使用します。 また、**サーバー** オブジェクトの **GETSMOOBJECT** メソッドに URN を指定することもできます。 これは、SMO オブジェクトのインスタンスを作成するために使用します。  
   
 ## <a name="sql-server-features-represented-in-smo"></a>SMO で表される SQL Server 機能  
  **テーブルとインデックスのパーティション分割**  
   
  インデックス テーブル パーティション分割によって、ファイル グループにまたがるテーブルとインデックスのデータの分散を管理することができます。 SMO オブジェクトには、この新機能が反映されています。  
   
- **</C1>**  
+ **EndPoints**  
   
  SOAP およびデータベース ミラーリング要求は、<xref:Microsoft.SqlServer.Management.Smo.Endpoint> オブジェクトを使用して、エンドポイントによって処理されます。  
   
- **スナップショット分離/行レベルのバージョン管理**  
+ **スナップショット分離 / 行レベル バージョン**  
   
  スナップショット分離 (行レベル バージョン) は、新しい <xref:Microsoft.SqlServer.Management.Smo.Database> オブジェクト プロパティで表現されます。  
   
- **Xml スキーマ名前空間、XML インデックス、および XML データ型**  
+ **XML スキーマ名前空間、XML インデックス、および XML データ型**  
   
- XML スキーマ名前空間は、SMO ではオブジェクトのコレクションで表現されます。 XML インデックスは、SMO では**Index**オブジェクトプロパティによって表されます。  
+ XML スキーマ名前空間は、SMO ではオブジェクトのコレクションで表現されます。 XML インデックスは、SMO では **Index** オブジェクトプロパティによって表されます。  
   
  **フルテキスト検索の機能強化**  
   
@@ -160,7 +161,7 @@ ms.locfileid: "70148657"
   
  <xref:Microsoft.SqlServer.Management.Smo.DatabaseOptions.PageVerify%2A> オブジェクトは、データベース ページ確認オプションを表します。  
   
- **スナップショットデータベース**  
+ **スナップショット データベース**  
   
  スナップショット データベースは、特定の時点における、指定されたデータベースの読み取り専用のコピーです。 スナップショット データベースは、<xref:Microsoft.SqlServer.Management.Smo.Database.IsDatabaseSnapshot%2A> オブジェクトの <xref:Microsoft.SqlServer.Management.Smo.Database> プロパティを使用して指定することができます。  
   
@@ -174,5 +175,4 @@ ms.locfileid: "70148657"
   
 ## <a name="see-also"></a>参照  
  [レプリケーション管理オブジェクトの概念](../../relational-databases/replication/concepts/replication-management-objects-concepts.md)  
-  
   
