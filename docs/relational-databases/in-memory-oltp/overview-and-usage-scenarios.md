@@ -12,12 +12,12 @@ ms.assetid: 62c964c5-eae4-4cf1-9024-d5a19adbd652
 author: kevin-farlee
 ms.author: kfarlee
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8492183591b2069115e8da8d05d89759f5eee46d
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: d84282b089b8695b0fa325e10e7462ce2e70e93a
+ms.sourcegitcommit: bacd45c349d1b33abef66db47e5aa809218af4ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99235255"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104793119"
 ---
 # <a name="overview-and-usage-scenarios"></a>概要と使用シナリオ
 
@@ -29,7 +29,7 @@ ms.locfileid: "99235255"
 
 ## <a name="in-memory-oltp-overview"></a>インメモリ OLTP の概要
 
-インメモリ OLTP は、適切なワークロードの場合にパフォーマンスが大きく向上します。 お客様の BWIN は、インメモリ OLTP を利用して、[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] を実行する 1 台のコンピューターで[毎秒 120 万要求を達成](/archive/blogs/sqlcat/how-bwin-is-using-sql-server-2016-in-memory-oltp-to-achieve-unprecedented-performance-and-scale)しました。 また、Quorum は、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] でインメモリ OLTP を利用して、[リソース使用率を 70% 下げ](https://customers.microsoft.com/story/quorum-doubles-key-databases-workload-while-lowering-dtu-with-sql-database)、ワークロードを 2 倍にしました。 一部の事例では、最大 30 倍のパフォーマンス向上が見られていますが、向上率はワークロードによって変わります。
+インメモリ OLTP は、適切なワークロードの場合にパフォーマンスが大きく向上します。 一部の事例では、最大 30 倍のパフォーマンス向上が見られていますが、向上率はワークロードによって変わります。
 
 それでは、このパフォーマンス向上は何に由来するのでしょうか。 基本的に、インメモリ OLTP は、データ アクセスとトランザクションの実行を効率化し、同時に実行されるトランザクション間のロックとラッチの競合を取り除くことで、トランザクション プロセスのパフォーマンスを改善します。高速化の理由はデータがメモリ内にあるからではなく、メモリ内のデータを中心にして最適化しているためです。 メモリ内のコンカレンシー処理が多い計算に関する最新の機能強化を利用するように、データ ストレージ、アクセス、処理アルゴリズムはゼロから再設計されました。
 
