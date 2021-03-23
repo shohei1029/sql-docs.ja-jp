@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 30085c08-034f-4efe-80fe-408f9091ff5c
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 263de1026f5d63c240259852ca4acce1ed8f77d0
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ec1216cdc50f13279be057558dfd6e10800e9b47
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350189"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833800"
 ---
 # <a name="deploying-models-master-data-services"></a>モデルの配置 (マスター データ サービス)
 
@@ -28,7 +28,7 @@ ms.locfileid: "100350189"
   [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]におけるパッケージは、配置可能なモデル構造と (必要に応じて) モデル データを含んだ XML ファイルです。 モデル パッケージを使用して、モデルのコピーを MDS 環境間で移動したり、既存の MDS 環境に新しいモデルを作成したりすることができます。  
   
 > [!IMPORTANT]  
->  [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]**Mdsmodeldeploy ツール** は、以降で作成されたパッケージと下位互換性があり [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] ます。  
+> [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] 以降の **Mdsmodeldeploy ツール** は、以降で作成されたパッケージと下位互換性があり [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] ます。  
   
 ## <a name="tools-for-deploying-models"></a>モデルを展開するためのツール  
  モデル パッケージを使用するには、3 つのツールをニーズに応じて使い分けることができます。  

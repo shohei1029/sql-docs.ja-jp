@@ -12,18 +12,18 @@ ms.assetid: d8506bda-66dd-45a4-bfc9-3a10fa665acc
 author: lrtoyou1223
 ms.author: lle
 manager: erikre
-ms.openlocfilehash: d8cded1c88278ca67426eaf40df7bdd87474312c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3f7e92285692ed4227e0ed15d9d1ad5f3674c7f8
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350181"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833810"
 ---
 # <a name="deprecated-master-data-services-features"></a>非推奨のマスター データ サービス機能
 
 [!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
 
-  このトピックでは、[!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] でまだ使用できるものの、非推奨とされた [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]の機能について説明します。 これらの機能は [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]の今後のリリースで削除される予定です。 非推奨の機能を新しいアプリケーションで使用しないでください。  
+  このトピックでは、非推奨とされた [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] 機能について説明します。 これらの機能は今後のリリースで削除される予定です。 非推奨の機能を新しいアプリケーションで使用しないでください。  
   
 ## <a name="explicit-hierarchies-collections-and-related-components"></a>明示的階層、コレクション、および関連コンポーネント  
  明示的階層、コレクション、および関連コンポーネントは非推奨とされます。 以前統合メンバーの種類 (明示的階層の親) およびコレクション メンバーの種類としてモデル化されていたメンバーは、派生階層のリーフ メンバーとしてモデル化されます。 次の新機能により、派生階層を、明示的階層の代わりに使用できます。  

@@ -439,6 +439,8 @@
       items:
         - name: レポート ビルダーの既定のオプションを設定する
           href: ../reporting-services/report-builder/set-default-options-for-report-builder.md
+        - name: レポート ビルダーへのアクセスの構成
+          href: ../reporting-services/report-server/configure-report-builder-access.md
     - name: レポート デザイン ビュー
       href: ../reporting-services/report-builder/report-design-view-report-builder.md
       items:

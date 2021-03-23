@@ -1,8 +1,8 @@
 ---
 description: sys.query_store_wait_stats (Transact-sql)
-title: sys.query_store_wait_stats (Transact-sql) |Microsoft Docs
+title: sys.query_store_wait_stats (Transact-sql)
 ms.custom: ''
-ms.date: 11/19/2019
+ms.date: 03/22/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -16,16 +16,15 @@ dev_langs:
 helpviewer_keywords:
 - query_store_wait_stats catalog view
 - sys.query_store_wait_stats catalog view
-ms.assetid: ccf7a57c-314b-450c-bd34-70749a02784a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2517cd093bd840c8cf4cea34073acb8e03a98c8a
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: f8b5e578c5192114db39d4b3e4c24a75cf9a07a2
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99171818"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833888"
 ---
 # <a name="sysquery_store_wait_stats-transact-sql"></a>sys.query_store_wait_stats (Transact-sql)
 
@@ -62,17 +61,17 @@ ms.locfileid: "99171818"
 |**4**|**ラッチ**|LATCH_%|
 |**5**|**バッファーラッチ**|PAGELATCH_%|
 |**6**|**バッファー IO**|PAGEIOLATCH_%|
-|**7**|**コンパイル** _|RESOURCE_SEMAPHORE_QUERY_COMPILE|
-|_ *8**|**SQL CLR**|CLR%、SQLCLR%|
+|**7**|**Asp.net***|RESOURCE_SEMAPHORE_QUERY_COMPILE|
+|**8**|**SQL CLR**|CLR%、SQLCLR%|
 |**9**|**ミラーリング**|DBMIRROR|
 |**10**|**トランザクション**|XACT%、DTC%、TRAN_MARKLATCH_%、MSQL_XACT_%、TRANSACTION_MUTEX|
-|**11**|**退席**|SLEEP_%、LAZYWRITER_SLEEP、SQLTRACE_BUFFER_FLUSH、SQLTRACE_INCREMENTAL_FLUSH_SLEEP、SQLTRACE_WAIT_ENTRIES、FT_IFTS_SCHEDULER_IDLE_WAIT、XE_DISPATCHER_WAIT、REQUEST_FOR_DEADLOCK_SEARCH、LOGMGR_QUEUE、ONDEMAND_TASK_QUEUE、CHECKPOINT_QUEUE、XE_TIMER_EVENT|
+|**11**|**アイドル**|SLEEP_%、LAZYWRITER_SLEEP、SQLTRACE_BUFFER_FLUSH、SQLTRACE_INCREMENTAL_FLUSH_SLEEP、SQLTRACE_WAIT_ENTRIES、FT_IFTS_SCHEDULER_IDLE_WAIT、XE_DISPATCHER_WAIT、REQUEST_FOR_DEADLOCK_SEARCH、LOGMGR_QUEUE、ONDEMAND_TASK_QUEUE、CHECKPOINT_QUEUE、XE_TIMER_EVENT|
 |**12**|**事前**|PREEMPTIVE_%|
 |**13**|**Service Broker**|BROKER_% **(BROKER_RECEIVE_WAITFOR ではありません)**|
 |**14**|**Tran Log IO**|LOGMGR、LOGMGR、LOGMGR_RESERVE_APPEND、LOGMGR_FLUSH、LOGMGR_PMM_LOG、CHKPT.、WRITELOG|
 |**15**|**ネットワーク IO**|ASYNC_NETWORK_IO、NET_WAITFOR_PACKET、PROXY_NETWORK_IO、EXTERNAL_SCRIPT_NETWORK_IOF|
 |**16**|**並列処理**|CXPACKET、EXCHANGE、HT%、BMP%、BP%|
-|**17**|**[メモリ]**|RESOURCE_SEMAPHORE、CMEMTHREAD、CMEMPARTITIONED、EE_PMOLOCK、MEMORY_ALLOCATION_EXT、RESERVED_MEMORY_ALLOCATION_EXT、MEMORY_GRANT_UPDATE|
+|**17**|**メモリ**|RESOURCE_SEMAPHORE、CMEMTHREAD、CMEMPARTITIONED、EE_PMOLOCK、MEMORY_ALLOCATION_EXT、RESERVED_MEMORY_ALLOCATION_EXT、MEMORY_GRANT_UPDATE|
 |**18**|**ユーザーの待機**|WAITFOR、WAIT_FOR_RESULTS、BROKER_RECEIVE_WAITFOR|
 |**19**|**トレース**|TRACEWRITE、SQLTRACE_LOCK、SQLTRACE_FILE_BUFFER、SQLTRACE_FILE_WRITE_IO_COMPLETION、SQLTRACE_FILE_READ_IO_COMPLETION、SQLTRACE_PENDING_BUFFER_WRITERS、SQLTRACE_SHUTDOWN、QUERY_TRACEOUT、TRACE_EVTNOTIFF|
 |**20**|**フルテキスト検索**|FT_RESTART_CRAWL、フルテキスト GATHERER、MSSEARCH、FT_METADATA_MUTEX、FT_IFTSHC_MUTEX、FT_IFTSISM_MUTEX、FT_IFTS_RWLOCK、FT_COMPROWSET_RWLOCK、FT_MASTER_MERGE、FT_PROPERTYLIST_CACHE、FT_MASTER_MERGE_COORDINATOR、PWAIT_RESOURCE_SEMAPHORE_FT_PARALLEL_QUERY_SYNC|
@@ -80,7 +79,7 @@ ms.locfileid: "99171818"
 |**22**|**レプリケーション**|SE_REPL_%、REPL_%、HADR_% **(HADR_THROTTLE_LOG_RATE_GOVERNOR ではありません)**、PWAIT_HADR_%、REPLICA_WRITES、FCB_REPLICA_WRITE、FCB_REPLICA_READ、PWAIT_HADRSIM|
 |**23**|**ログレートガバナー**|LOG_RATE_GOVERNOR、POOL_LOG_RATE_GOVERNOR、HADR_THROTTLE_LOG_RATE_GOVERNOR、INSTANCE_LOG_RATE_GOVERNOR|
 
-**コンパイル** 待機カテゴリは現在サポートされていません。
+\*クエリストアは、クエリの *コンパイル* 時ではなく、クエリの *実行* 中にのみ待機の統計を追跡します。 これにより、クエリストアのコンパイル待機統計を追跡する機能が制限されます。
 
 ## <a name="permissions"></a>アクセス許可
 

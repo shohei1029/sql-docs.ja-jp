@@ -12,12 +12,12 @@ ms.assetid: 3236cce0-cfd9-43f8-8be3-e8c8dff8f162
 author: lrtoyou1223
 ms.author: lle
 manager: erikre
-ms.openlocfilehash: d3ef05db1eacea89d10426ddb7b1c7e74e65ee53
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 690b100cc92026eadd21c1479bd9c42cf137d678
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88389638"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833911"
 ---
 # <a name="discontinued-master-data-services-features"></a>提供が中止されたマスター データ サービス機能
 
@@ -25,8 +25,8 @@ ms.locfileid: "88389638"
 
   このトピックでは、 [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] で使用できなくなった [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]の機能について説明します。  
   
-## <a name="sscurrent-discontinued-features"></a>[!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] 提供が中止された機能  
- [!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)] のステージング プロセスは [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]から削除されました。 データのインポートと変更には、エンティティ ベースのステージング プロセスを使用してください。 詳細については、「 [概要: テーブルからのデータのインポート &#40;マスターデータサービス&#41;](../master-data-services/overview-importing-data-from-tables-master-data-services.md)」を参照してください。  
+## <a name="ssnoversion-discontinued-features"></a>[!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] 提供が中止された機能  
+ [!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)] のステージング プロセスは [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)]から削除されました。 データのインポートと変更には、エンティティ ベースのステージング プロセスを使用してください。 詳細については、「 [概要: テーブルからのデータのインポート &#40;マスターデータサービス&#41;](../master-data-services/overview-importing-data-from-tables-master-data-services.md)」を参照してください。  
   
  メタデータ モデルは使用できなくなります。 また、エクスプローラーの機能領域でメタデータを表示できなくなりました。  
   

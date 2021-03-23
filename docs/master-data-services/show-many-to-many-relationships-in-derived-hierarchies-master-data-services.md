@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 8b2a9c43-40e0-48f7-a6a9-325beb9f27da
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: f550a109d5271a216614d0566ed6f3a4d87be056
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ab2eaf50f73ae59bdde5cb40c75050bb0bc8206f
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100336295"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833806"
 ---
 # <a name="show-many-to-many-relationships-in-derived-hierarchies-master-data-services"></a>派生階層 (Master Data Services) の多対多リレーションシップを表示する
 
@@ -25,25 +25,29 @@ ms.locfileid: "100336295"
   派生階層 (DH) には 1 対多のリレーションシップが表示されますが、多対多のリレーションシップも表示できるようになります。  
   
 ## <a name="many-to-many-m2m-relationships"></a>多対多 (M2M) リレーションシップ  
- 2 つのエンティティ間の多対多 (M2M) リレーションシップは、両者間のマッピングを提供する第 3 のエンティティを使用してモデリングできます。  
+
+2 つのエンティティ間の多対多 (M2M) リレーションシップは、両者間のマッピングを提供する第 3 のエンティティを使用してモデリングできます。  
   
- ![mds_hierarchies_manytomany](../master-data-services/media/mds-hierarchies-manytomany.png "mds_hierarchies_manytomany")  
+![mds_hierarchies_manytomany](../master-data-services/media/mds-hierarchies-manytomany.png "mds_hierarchies_manytomany")  
   
- 上の例では、マッピング エンティティ **ClassRegistration** に指定された、 **Employee** エンティティと **TrainingClass** エンティティ間に M2M リレーションシップがあります。 1 人の従業員は、複数クラスの受講者として登録できます。また、各クラスには、複数の受講者を含めることができます。  
+上の例では、マッピング エンティティ **ClassRegistration** に指定された、 **Employee** エンティティと **TrainingClass** エンティティ間に M2M リレーションシップがあります。 1 人の従業員は、複数クラスの受講者として登録できます。また、各クラスには、複数の受講者を含めることができます。  
   
- 以前は、派生階層は M2M リレーションシップをモデリングできませんでした。 [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]以降、派生階層を作成できるようになり、受講者をクラス別に表示する、リレーションシップを反転する、受講者別にグループ化されたクラスを表示するなどの操作を実行できるようになりました。  
+たとえば、クラスごとに学生を表示する派生階層を作成したり、リレーションシップを反転して、学生別にグループ化されたクラスを表示したりすることができます。  
+
+> [!NOTE]
+> [!INCLUDE [sssql16-md](../includes/sssql16-md.md)] M2M リレーションシップの派生階層が導入されました。 この機能は、このバージョンより前では使用できませんでした。
   
- 最初に、派生階層の管理ページを開き、新しい派生階層を作成します。  
+まず、[派生階層] 管理ページにアクセスし、新しい派生階層を作成します。  
   
  ![mds_hierarchies_add_derived_hierarchy](../master-data-services/media/mds-hierarchies-add-derived-hierarchy.png "mds_hierarchies_add_derived_hierarchy")  
   
- 次に、ボトムアップから新しい派生階層にレベルを追加します。 この例では、クラス別にグループ化して受講者 (従業員) を表示するのが目的です。 そのため、 **Employee** エンティティが階層のリーフ レベルで、最初に追加されます。  
+ 次に、下から順に新しい派生階層にレベルを追加します。 この例では、クラス別にグループ化して受講者 (従業員) を表示するのが目的です。 そのため、 **Employee** エンティティが階層のリーフ レベルで、最初に追加されます。  
   
  ![mds_hierarchies_edit_derived_hierarchy_one](../master-data-services/media/mds-hierarchies-edit-derived-hierarchy-one.PNG "mds_hierarchies_edit_derived_hierarchy_one")  
   
- 上のスクリーンショットで、 **Employee** エンティティが唯一のレベルとして **[現在のレベル]** の中間に表示される点に注目してください。 右側の派生階層の **[プレビュー]** には、 **Employee** エンティティのすべてのメンバー一覧が表示されます。 左側の **[使用できるレベル]** セクションには、現在の上位レベル (**Employee**) に追加できるレベルが表示されます。 そのほとんどは、 **Department** DBA を含む、 **Employee** エンティティのドメインベースの属性 (DBA) です。  
+ 上のスクリーンショットで、 **Employee** エンティティが唯一のレベルとして **[現在のレベル]** の中間に表示される点に注目してください。 右側の派生階層の **プレビュー** には、 **Employee** エンティティのすべてのメンバーの一覧が表示されます。 左側の **[使用できるレベル]** セクションには、現在の上位レベル (**Employee**) に追加できるレベルが表示されます。 そのほとんどは、 **Department** DBA を含む、 **Employee** エンティティのドメインベースの属性 (DBA) です。  
   
- [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]以降は、M2M リレーションシップをモデリングする新しい種類のレベルがあります。例: **Class (ClassRegistration.Student でマッピング)**。 レベル名は他の情報よりも詳細で、マッピング リレーションシップをあいまいに説明するために必要な追加情報を反映しています。 このレベルを **[現在のレベル]** セクションの **[Employee]** レベルにドロップ ダウンします。  
+ [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)]以降は、M2M リレーションシップをモデリングする新しい種類のレベルがあります。例: **Class (ClassRegistration.Student でマッピング)**。 レベル名は他の情報よりも詳細で、マッピング リレーションシップをあいまいに説明するために必要な追加情報を反映しています。 このレベルを **[現在のレベル]** セクションの **[Employee]** レベルにドロップ ダウンします。  
   
  ![mds_hierarchies_edit_derived_hierarchy_two](../master-data-services/media/mds-hierarchies-edit-derived-hierarchy-two.PNG "mds_hierarchies_edit_derived_hierarchy_two")  
   
@@ -55,13 +59,13 @@ ms.locfileid: "100336295"
   
  ここでも、1 つの子を複数の親に表示できる方法について説明します。トレーニング クラス **1 {Master Data Services 101}** は、 **6 {Hillman, Reinout N}** と **40 {Ford, Jeffrey L}** の両方に表示されます。  
   
- マッピング エンティティのメンバー **ClassRegistration** は、派生階層内のどこにも表示されません。 階層内の親と子メンバー間のリレーションシップを定義するためだけに使用されることはありません。  
+ マッピングエンティティ **Classregistration** のメンバーは、派生階層内のどこにも表示されません。 階層内の親と子メンバー間のリレーションシップを定義するためだけに使用されることはありません。  
   
  マッピング エンティティ メンバーを変更し、次のいずれかを実行して M2M リレーションシップを編集できます。 M2M リレーションシップは、 **[派生階層エクスプローラー]** ページで読み取り専用です。  
   
 -   Excel 用のマスター データ サービス アドイン、またはデータ ステージングを使用して、 **[エンティティ エクスプローラー]** ページでマッピング エンティティ メンバーを変更します。  
   
--   **[派生階層エクスプローラー]** ページで、親間で子ノードをドロップ ダウンします。  
+-   **派生階層エクスプローラー** ページで親の間に子ノードをドラッグアンドドロップします。  
   
      このメソッドは、可能であれば既存のメンバーを変更し、必要に応じて新しいメンバーを追加します。 既存のメンバーは削除されません。  
   
@@ -69,7 +73,7 @@ ms.locfileid: "100336295"
   
      このプロセスでは、メンバーの削除を回避することで、他のユーザー データの不要な削除を回避します。たとえば、マッピング エンティティに、親子のリレーションシップを定義する 2 つの属性を除く他の属性が含まれている場合などです。 ユーザーは、マッピング エンティティで直接、明示的に削除を実行する必要があります。  
   
- 新しい M2M レベルは、ドメインベースの属性 (DBA) レベルが許可されている派生階層内であれば、どの階層にでも使用できます。 M2M レベルは、上の例のように最上位にすることができます。 再帰レベルを含め、DBA レベルより上位または下位の場合があります。 明示的階層 (非推奨) のキャップ レベルより下位の場合があります。 同じ派生階層内にある複数の M2M リレーションシップを連結することができます。  
+ 新しい M2M レベルは、ドメインベースの属性 (DBA) レベルが許可されている派生階層内の任意の場所で使用できます。 M2M レベルは、上の例のように最上位にすることができます。 再帰レベルを含め、DBA レベルより上位または下位の場合があります。 明示的階層 (非推奨) のキャップ レベルより下位の場合があります。 同じ派生階層内に複数の M2M リレーションシップを連結できます。  
   
  M2M レベルは、他の派生階層レベルと同様に非表示にすることができます。  
    
@@ -87,18 +91,18 @@ Customer サンプル モデルや、 [!INCLUDE[ssMDSshort_md](../includes/ssmds
   
  ![mds_hierarchies_onetomany](../master-data-services/media/mds-hierarchies-onetomany.png "mds_hierarchies_onetomany")  
   
- 各従業員は 1 つの部門にのみ属し、各部門には複数の従業員が属する可能性があるので、これは 1 対多のリレーションシップです。 派生階層を作成して、部門別にグループ化された従業員を表示することができます。  
+ 各従業員は 1 つの部門にのみ属し、各部門には複数の従業員が属する可能性があるので、これは 1 対多のリレーションシップです。 部門別にグループ化された従業員を表示する派生階層を作成できます。  
   
  ![mds_hierarchies_dh_screenshot](../master-data-services/media/mds-hierarchies-dh-screenshot.png "mds_hierarchies_dh_screenshot")  
   
 ##  <a name="member-security"></a><a name="bkmk_member_security"></a> メンバーのセキュリティ  
  メンバーの重複を許可する (1 人のメンバーが複数の親を持つことを許可する) 階層を使用して、メンバーのセキュリティ アクセス許可を割り当てることはできません。 次に例を示します。  
   
--   null 再帰をアンカーしない再帰的派生階層 (RDH) (再帰レベルの各メンバーは、ROOT と再帰的な親以下に出現します)。  
+-   Null 再帰をアンカーしない再帰派生階層 (RDH) (再帰レベルの各メンバーは、ルートと再帰的な親の両方に表示されます)。  
   
--   再帰レベルより上位のレベルの再帰的派生階層 (再帰レベルの各メンバーは、再帰的ではない親以下と再帰的な親以下の両方に出現します)。  
+-   再帰レベルより上位のレベルの再帰的派生階層 (再帰レベルの各メンバーは、再帰的ではない親と再帰的な親の両方に表示されます)。  
   
--   M2M レベルがある派生階層 (1 人の子を多数の管理者の役割にマッピングできます)。  
+-   M2M レベルの派生階層 (子は多数の親にマップされる場合があります)。  
   
 ## <a name="collections"></a>コレクション  
  コレクションと明示的階層は非推奨とされます。 変換ストアド プロシージャ (udpConvertCollectionAndConsolidatedMembersToLeaf) は、コレクション メンバーをリーフ メンバーに変換し、多対多の派生階層を作成し、コレクション メンバー情報をキャプチャします。  

@@ -14,12 +14,12 @@ keywords:
 ms.assetid: 9b31b7b6-319b-4840-b67d-eb383e7762b1
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 70375fd359e56081267f2478a582281d96c253eb
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 3dbb973b72d2df5a3a23ea40684ad7da47c19777
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88342378"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833735"
 ---
 # <a name="sql-server-examples-model-deployment-packages-mds"></a>SQL Server の例: モデルの配置パッケージ (MDS)
 
@@ -30,9 +30,9 @@ ms.locfileid: "88342378"
  サンプル モデル パッケージを配置する方法については、「 [サンプル モデルとデータを配置する](../master-data-services/master-data-services-installation-and-configuration.md#deploySample)」を参照してください。 サンプル モデル パッケージは、 [MDSModelDeploy ツール](../master-data-services/deploy-a-model-deployment-package-by-using-mdsmodeldeploy.md)を使用して配置します。  
   
 > [!IMPORTANT]
->  **サンプルの更新: [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]**  
+>  **サンプルの更新: [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)]**  
 > 
->  次の新しい機能をサポートするためにサンプル パッケージが更新されました。  
+>  サンプルパッケージでは、次の機能がサポートされています。  
 > 
 >  -   多対多リレーションシップの表示。  
 > 

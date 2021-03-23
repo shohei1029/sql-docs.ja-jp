@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.assetid: f6cd850f-b01b-491f-972c-f966b9fe4190
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 630ee8396c3f4f64e7eee5335484299f5bebfd42
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 1d12236bbfd3af474e883c23b975d357e0fd27a8
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350705"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833871"
 ---
 # <a name="master-data-services-installation-and-configuration"></a>マスター データ サービスのイントールと構成
 
@@ -26,17 +26,17 @@ ms.locfileid: "100350705"
   
 > [!NOTE] 
 > [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] をサポートするようになった Developer Edition を使用しているときに Windows 10 マシン上に [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] をインストールすることができます。 
->>さまざまな [!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)] エディションのオペレーティング システムのサポートの詳細については、「[SQL Server 2016 のインストールに必要なハードウェアおよびソフトウェア](../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md)」を参照してください。 
+>>さまざまなエディションのオペレーティングシステムのサポートの詳細については、 [SQL Server 2019: ハードウェアとソフトウェアの要件](../sql-server/install/hardware-and-software-requirements-for-installing-sql-server-ver15.md)」を参照してください。
 
 [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]のデータを整理する方法の概要については、 [マスター データ サービスの概要 (MDS)](../master-data-services/master-data-services-overview-mds.md)を参照してください。     
   
- [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] の新機能については、「[マスター データ サービス (MDS) の新機能](../master-data-services/what-s-new-in-master-data-services-mds.md)」を参照してください。  
+ 新機能の詳細については、「 [マスターデータサービス &#40;MDS&#41;の新 ](../master-data-services/what-s-new-in-master-data-services-mds.md)機能」を参照してください。  
  
 [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]を学習するためのビデオと他のトレーニング リソースへのリンクについては、「 [マスター データ サービスについて学習する](../master-data-services/learn-sql-server-master-data-services.md)」をご覧ください。 
   
 > **ダウンロード**  
-> -   [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]をダウンロードするには、  **[評価センター](https://www.microsoft.com/evalcenter/evaluate-sql-server-2017-ctp/)** に移動してください。  
-> -   Azure アカウントをすでにお持ちですか?  **[こちら](https://azure.microsoft.com/services/virtual-machines/sql-server/?wt.mc_id=sqL16_vm)** にアクセスして、SQL Server がインストール済みの仮想マシンをすぐにご利用いただけます。  
+> -   ダウンロードするに [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] は、「 **[ [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] ダウンロード](https://www.microsoft.com/sql-server/sql-server-downloads)**」を参照してください。
+> -   Azure アカウントをすでにお持ちですか?  次に、SQL Server が既にインストールされている仮想マシンを起動するために **[ [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] 、Azure portal の Windows 仮想マシンで作成するクイックスタートに関する](/azure/azure-sql/virtual-machines/windows/sql-vm-create-portal-quickstart)** ページに進んでください。  
 > 
 > **MDS Web サイトを作成できませんか?**
 > >この問題を解決する方法については、この Microsoft サポートの記事を参照してください。
@@ -47,16 +47,16 @@ ms.locfileid: "100350705"
 - Web アプリケーションで作業するには、Silverlight 5 をクライアント コンピューターにインストールする必要があります。 Silverlight の必要なバージョンがない場合、Web アプリケーションで Silverlight を使用する部分に移動したときに、Silverlight をインストールするよう要求されます。 Silverlight 5 は **[ここ](https://www.microsoft.com/silverlight/)** からインストールできます。
 
 ## <a name="ssmdsshort_md-on-an-azure-virtual-machine"></a>Azure 仮想マシン上の [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]
-既定では、が既にインストールされている Azure 仮想マシンを起動すると [!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)] 、 [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] もインストールされます。 
+既定では、が既にインストールされている Azure 仮想マシンを起動すると [!INCLUDE[ssnoversion_md](../includes/ssnoversion-md.md)] 、 [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] もインストールされます。 
 
 次の手順として、インターネット インフォメーション サービス (IIS) をインストールします。 「[IIS のインストールと構成](#InstallIIS)」を参照してください。 
 
-[!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)] のインストールを変更する場合は、既定の場所 (`<drive>`: \SQLServer_13.0_Full) にある setup.exe ファイルを見つけます。
+[!INCLUDE[ssnoversion_md](../includes/ssnoversion-md.md)] のインストールを変更する場合は、既定の場所 (`<drive>`: \SQLServer_13.0_Full) にある setup.exe ファイルを見つけます。
   
 ## <a name="installing-master-data-services"></a><a name="InstallMDS"></a> Master Data Services のインストール  
  [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のセットアップ インストール ウィザードまたはコマンド プロンプトを使用して、 [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]をインストールします。  
   
- **Windows Server 2012 R2 コンピューター上で [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] セットアップを使用して [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] をインストールするには**  
+ **[!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]セットアップを使用して [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Windows Server コンピューターにインストールするには**  
   
 1.  Setup.exe をダブルクリックして、インストール ウィザードの手順を実行します。  
   
@@ -90,7 +90,7 @@ ms.locfileid: "100350705"
    
 9. **[機能]** ページで、次の機能が選択されていることを確認し、**[次へ]** をクリックします。 これらの機能は、[!INCLUDE[winblue_server_2_md](../includes/winblue-server-2-md.md)] の [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] に必要です。
   
-    |機能|機能|  
+    |特徴|特徴|  
     |--------------|--------------|  
     |![mds_AddRolesFeaturesWizard_FeaturesPage](../master-data-services/media/mds-addrolesfeatureswizard-featurespage.png)|![mds_AddRolesFeaturesWizard_FeaturesPage_WindowsProcActive](../master-data-services/media/mds-addrolesfeatureswizard-featurespage-windowsprocactive.png)|  
 
@@ -130,7 +130,7 @@ ms.locfileid: "100350705"
   
 3.  [ **データベースサーバー** ] ページで、SQL Server インスタンスを指定します。 
 
-    >  [!INCLUDE[sqlv15](../includes/sssql19-md.md)] SQL Server Managed Instance のサポートを追加します。 **SQL Server インスタンス** の値をマネージインスタンスのホストに設定します。 たとえば、`xxxxxx.xxxxxx.database.windows.net` のようにします。
+    >  [!INCLUDE[sqlv15](../includes/sssql19-md.md)] SQL Server Managed Instance のサポートを追加します。 **SQL Server インスタンス** の値をマネージインスタンスのホストに設定します。 たとえば、「 `xxxxxx.xxxxxx.database.windows.net` 」のように入力します。
 
 4. 認証の **種類** を選択し、[ **接続のテスト** ] をクリックして、選択した認証の種類の資格情報を使用してデータベースに接続できることを確認します。 **[次へ]** をクリックします。
 
@@ -142,7 +142,7 @@ ms.locfileid: "100350705"
     >SQL Managed Instance では、ユーザーは固定サーバーロールのメンバーである必要があり `sysadmin` ます。
 
     > [!NOTE]  
-    >  認証の種類として [ **現在のユーザー-統合セキュリティ** ] を選択すると、[ **ユーザー名** ] ボックスは読み取り専用になり、コンピューターにログオンしている Windows ユーザーアカウントの名前が表示されます。 Azure 仮想マシン (VM) 上で [!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)] [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] が実行されている場合、**[ユーザー名]** ボックスに、VM の名前と、VM 上のローカル管理者アカウントのユーザー名が表示されます。 
+    >  認証の種類として [ **現在のユーザー-統合セキュリティ** ] を選択すると、[ **ユーザー名** ] ボックスは読み取り専用になり、コンピューターにログオンしている Windows ユーザーアカウントの名前が表示されます。 Azure 仮想マシン (VM) 上で [!INCLUDE[ssnoversion_md](../includes/ssnoversion-md.md)] [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] が実行されている場合、**[ユーザー名]** ボックスに、VM の名前と、VM 上のローカル管理者アカウントのユーザー名が表示されます。 
 
     ![mds_2016ConfigManager_CreateDatabaseWizard_ServerPage](../master-data-services/media/mds-2016configmanager-createdatabasewizard-serverpage.png)  
   
@@ -227,7 +227,7 @@ ms.locfileid: "100350705"
   
  このツールを実行するための前提条件については、「 [MDSModelDeploy を使用したモデルの配置パッケージの配置](../master-data-services/deploy-a-model-deployment-package-by-using-mdsmodeldeploy.md)」を参照してください。  
   
- [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)][!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] の新機能をサポートするためにデータに加えられた更新については、「[SQL Server のサンプル: モデル配置パッケージ(MDS)](../master-data-services/sql-server-samples-model-deployment-packages-mds.md)」を参照してください。  
+ [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)][!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] の新機能をサポートするためにデータに加えられた更新については、「[SQL Server のサンプル: モデル配置パッケージ(MDS)](../master-data-services/sql-server-samples-model-deployment-packages-mds.md)」を参照してください。  
   
  **サンプル モデルを配置するには**  
   

@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.assetid: ad530f60-d480-4457-ba7a-93a10c8a1695
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 7c5a436e6958d89f26ec0836b82850bd914d6c41
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: e57616613c37c568a72b20369acf3d3fd54521ed
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237139"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833876"
 ---
 # <a name="what39s-new-in-master-data-services-mds"></a>マスター データ サービス (MDS) の新機能
 
 [!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
 
-  [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] このトピックでは、 [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]リリースのマスター データ サービスの変更と更新の概要を説明します。 
+  このトピックでは、の最新リリースにおける変更と更新の概要を [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] 示します。 
   
  [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]のデータを整理する方法の概要については、 [マスター データ サービスの概要](../master-data-services/master-data-services-overview-mds.md)を参照してください。 
   
@@ -32,7 +32,7 @@ ms.locfileid: "99237139"
   
 -   [!INCLUDE[sssql15-md](../includes/sssql16-md.md)]をダウンロードするには、  **[評価センター](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)** に移動してください。  
   
--   Azure アカウントをすでにお持ちですか?  既にお持ちの場合は、 **[こちら](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsqlserver.sql2019-ws2019?tab=Overview)** にアクセスして、 [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] がインストール済みの仮想マシンをすぐにご利用いただけます。  
+-   Azure アカウントをすでにお持ちですか?  次に **[](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsqlserver.sql2019-ws2019?tab=Overview)** 、が [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] 既にインストールされている仮想マシンを起動するには、ここにアクセスします。  
   
 ##  <a name="improved-performance"></a>パフォーマンスの向上  
   
