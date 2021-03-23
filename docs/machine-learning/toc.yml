@@ -210,10 +210,6 @@ items:
             href: ../machine-learning/tutorials/demo-data-iris-in-sql.md
           - name: NYC タクシー データ セット
             href: ../machine-learning/tutorials/demo-data-nyctaxi-in-sql.md
-  - name: サンプル >>
-    href: 'https://github.com/Microsoft/sql-server-samples'
-  - name: ソリューション
-    href: ../machine-learning/tutorials/data-science-scenarios-and-solution-templates.md
   - name: 概念
     items:
       - name: 機能拡張フレームワーク
