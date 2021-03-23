@@ -12,12 +12,12 @@ ms.assetid: 7925ebef-cdb1-4cfe-b660-a8604b9d2153
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2e37f8234a1b8ee2ab72c76a423ea72ac9d3f14a
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 3343eda333415def037bd052b9593262fa43e88a
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99235826"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890663"
 ---
 # <a name="manage-retention-of-historical-data-in-system-versioned-temporal-tables"></a>システム バージョン管理されたテンポラル テーブルの履歴データの保有期間管理
 
@@ -374,14 +374,15 @@ DECLARE @periodColumnName sysname
 
 /*Generate script to discover history table name and end of period column for given temporal table name*/
 EXECUTE sp_executesql
-    N'SELECT @hst_tbl_nm = t2.name, @hst_sch_nm = s.name, @period_col_nm = c.name
+    N'SELECT @hst_tbl_nm = t2.name, @hst_sch_nm = s2.name, @period_col_nm = c.name
         FROM sys.tables t1
             JOIN sys.tables t2 on t1.history_table_id = t2.object_id
-        JOIN sys.schemas s on t2.schema_id = s.schema_id
-            JOIN sys.periods p on p.object_id = t1.object_id
+        JOIN sys.schemas s1 on t1.schema_id = s1.schema_id
+        JOIN sys.schemas s2 on t2.schema_id = s2.schema_id
+           JOIN sys.periods p on p.object_id = t1.object_id
            JOIN sys.columns c on p.end_column_id = c.column_id and c.object_id = t1.object_id
                   WHERE
-                 t1.name = @tblName and s.name = @schName'
+                 t1.name = @tblName and s1.name = @schName'
                 , N'@tblName sysname
                 , @schName sysname
                 , @hst_tbl_nm sysname OUTPUT
@@ -420,7 +421,7 @@ COMMIT;
 ## <a name="using-temporal-history-retention-policy-approach"></a>テンポラル履歴保有期間ポリシー手法の利用
 
 > [!NOTE]
-> テンポラル履歴保有期間ポリシーを使う方法は、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] および SQL Server 2017 の CTP 1.3 以降に適用されます。
+> テンポラル履歴保有期間ポリシーを使う方法は、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] および SQL Server 2017 の CTP 1.3 以降に適用されます。
 
 テンポラル履歴保有期間は個々のテーブル レベルで構成でき、ユーザーは柔軟なエージング ポリシーを作成できます。 テンポラル保有期間は簡単に適用できます。必要なのは、テーブル作成時またはスキーマ変更時にパラメーターを 1 つ設定することだけです。
 

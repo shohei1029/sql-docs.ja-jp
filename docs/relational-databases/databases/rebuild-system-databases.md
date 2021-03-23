@@ -16,16 +16,16 @@ helpviewer_keywords:
 ms.assetid: af457ecd-523e-4809-9652-bdf2e81bd876
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 2365440fd87789a30e67c8c5effcbf0e85b8bc24
-ms.sourcegitcommit: 544706f6725ec6cdca59da3a0ead12b99accb2cc
+ms.openlocfilehash: 1f02a50bf9fa7082c05a9e0c4149d0a699d133b6
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638995"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890727"
 ---
 # <a name="rebuild-system-databases"></a>システム データベースの再構築
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  [master](../../relational-databases/databases/master-database.md)、 [model](../../relational-databases/databases/model-database.md)、 [msdb](../../relational-databases/databases/msdb-database.md)、または [resource](../../relational-databases/databases/resource-database.md) の各システム データベースの損傷による問題を解決するか、既定のサーバー レベルの照合順序を変更するには、システム データベースを再構築する必要があります。 このトピックでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]でシステム データベースを再構築する手順について説明します。  
+  [master](../../relational-databases/databases/master-database.md)、 [model](../../relational-databases/databases/model-database.md)、 [msdb](../../relational-databases/databases/msdb-database.md)、または [resource](../../relational-databases/databases/resource-database.md) の各システム データベースの損傷による問題を解決するか、既定のサーバー レベルの照合順序を変更するには、システム データベースを再構築する必要があります。 このトピックでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]でシステム データベースを再構築する手順について説明します。  
   
  **このトピックの内容**  
   
@@ -97,7 +97,7 @@ ms.locfileid: "92638995"
   
 #### <a name="to-rebuild-system-databases-for-an-instance-of-sql-server"></a>SQL Server のインスタンスのシステム データベースを再構築するには  
   
-1.  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] インストール メディアをディスク ドライブに挿入するか、コマンド プロンプトから、ディレクトリをローカル サーバーの setup.exe ファイルがある場所に変更します。 サーバーの既定の場所は C:\Program Files\Microsoft SQL Server\130\Setup Bootstrap\SQLServer2016 です。  
+1.  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] インストール メディアをディスク ドライブに挿入するか、コマンド プロンプトから、ディレクトリをローカル サーバーの setup.exe ファイルがある場所に変更します。 サーバーの既定の場所は C:\Program Files\Microsoft SQL Server\130\Setup Bootstrap\SQLServer2016 です。  
   
 2.  コマンド プロンプト ウィンドウから、次のコマンドを入力します。 角かっこは省略可能なパラメーターであることを示します。 角かっこは入力しません。 ユーザー アカウント制御 (UAC) が有効な Windows オペレーション システムを使用する場合は、セットアップの実行に高度な特権が必要になります。 管理者としてコマンド プロンプトを実行する必要があります。  
   
@@ -107,10 +107,10 @@ ms.locfileid: "92638995"
     |--------------------|-----------------|  
     |/QUIET または /Q|セットアップがユーザー インターフェイスなしで実行されるように指定します。|  
     |/ACTION=REBUILDDATABASE|セットアップでシステム データベースを再作成することを指定します。|  
-    |/INSTANCENAME= *InstanceName*|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスの名前を指定します。 既定のインスタンスには「MSSQLSERVER」と入力します。|  
-    |/SQLSYSADMINACCOUNTS= *accounts*|**sysadmin** 固定サーバー ロールに追加する Windows グループまたは個々のアカウントを指定します。 複数のアカウントを指定する場合、各アカウントを空白で区切ります。 たとえば、「 **BUILTIN\Administrators MyDomain\MyUser** 」と入力します。 アカウント名に空白を含むアカウントを指定する場合は、アカウントを二重引用符で囲みます。 たとえば、「 **NT AUTHORITY\SYSTEM** 」と入力します。|  
-    |[ /SAPWD= *StrongPassword* ]|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **sa** アカウントのパスワードを指定します。 このパラメーターは、インスタンスが混合モード認証 ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] および Windows 認証) を使用する場合に必要になります。<br /><br /> **&#42;&#42; セキュリティ メモ &#42;&#42;** **sa** アカウントは、よく知られた [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] アカウントで、悪意のあるユーザーの攻撃対象となることが少なくありません。 **sa** ログインには、複雑なパスワードを使用することが非常に重要です。<br /><br /> Windows 認証モードにはこのパラメーターを指定しないでください。|  
-    |[ /SQLCOLLATION= *CollationName* ]|新しいサーバー レベルの照合順序を指定します。 このパラメーターは省略可能です。 これを指定しない場合は、サーバーの現在の照合順序が使用されます。<br /><br /> **\*\* 重要 \*\*** サーバー レベルの照合順序を変更しても、既存のユーザー データベースの照合順序は変更されません。 新しく作成されたすべてのユーザー データベースには、既定で新しい照合順序が使用されます。<br /><br /> 詳細については、「 [サーバーの照合順序の設定または変更](../../relational-databases/collations/set-or-change-the-server-collation.md)」を参照してください。|  
+    |/INSTANCENAME=*InstanceName*|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスの名前を指定します。 既定のインスタンスには「MSSQLSERVER」と入力します。|  
+    |/SQLSYSADMINACCOUNTS=*accounts*|**sysadmin** 固定サーバー ロールに追加する Windows グループまたは個々のアカウントを指定します。 複数のアカウントを指定する場合、各アカウントを空白で区切ります。 たとえば、「 **BUILTIN\Administrators MyDomain\MyUser**」と入力します。 アカウント名に空白を含むアカウントを指定する場合は、アカウントを二重引用符で囲みます。 たとえば、「 **NT AUTHORITY\SYSTEM**」と入力します。|  
+    |[ /SAPWD=*StrongPassword* ]|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **sa** アカウントのパスワードを指定します。 このパラメーターは、インスタンスが混合モード認証 ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] および Windows 認証) を使用する場合に必要になります。<br /><br /> **&#42;&#42; セキュリティ メモ &#42;&#42;** **sa** アカウントは、よく知られた [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] アカウントで、悪意のあるユーザーの攻撃対象となることが少なくありません。 **sa** ログインには、複雑なパスワードを使用することが非常に重要です。<br /><br /> Windows 認証モードにはこのパラメーターを指定しないでください。|  
+    |[ /SQLCOLLATION=*CollationName* ]|新しいサーバー レベルの照合順序を指定します。 このパラメーターは省略可能です。 これを指定しない場合は、サーバーの現在の照合順序が使用されます。<br /><br /> **\*\* 重要 \*\*** サーバー レベルの照合順序を変更しても、既存のユーザー データベースの照合順序は変更されません。 新しく作成されたすべてのユーザー データベースには、既定で新しい照合順序が使用されます。<br /><br /> 詳細については、「 [サーバーの照合順序の設定または変更](../../relational-databases/collations/set-or-change-the-server-collation.md)」を参照してください。|  
     |[ /SQLTEMPDBFILECOUNT=NumberOfFiles ]|tempdb データ ファイルの数を設定します。 この値は 8 またはコアの数の、どちらか大きい方まで増やすことができます。<br /><br /> 既定値:8 またはコアの数のうち、小さい方の値。|  
     |[ /SQLTEMPDBFILESIZE=FileSizeInMB ]|各 tempdb データ ファイルの初期サイズを MB 単位で指定します。 最大 1024 MB まで指定できます。<br /><br /> 既定値:8|  
     |[ /SQLTEMPDBFILEGROWTH=FileSizeInMB ]|各 tempdb データ ファイルのファイル拡張増分値を MB 単位で指定します。 0 は、自動拡張がオフで、領域を追加できないことを示します。 最大 1024 MB まで指定できます。<br /><br /> 既定値:64|  
@@ -147,7 +147,7 @@ ms.locfileid: "92638995"
   
 #### <a name="to-rebuild-the-resource-system-database"></a>resource システム データベースを再構築するには  
   
-1.  配布メディアから、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] セットアップ プログラム (setup.exe) を起動します。  
+1.  配布メディアから、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] セットアップ プログラム (setup.exe) を起動します。  
   
 2.  左側のナビゲーション領域の **[メンテナンス]** をクリックし、 **[修復]** をクリックします。  
   
@@ -172,7 +172,7 @@ ms.locfileid: "92638995"
   
      詳細については、「 [データベース エンジン、SQL Server エージェント、SQL Server Browser サービスの開始、停止、一時停止、再開、および再起動](../../database-engine/configure-windows/start-stop-pause-resume-restart-sql-server-services.md) 」を参照してください。  
   
-3.  別のコマンド ライン ウィンドウで、 **msdb** データベースをデタッチします。これには、`SQLCMD -E -S<servername> -dmaster -Q"EXEC sp_detach_db msdb"` というコマンドを実行します ( *\<servername>* は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスに置き換えます)  
+3.  別のコマンド ライン ウィンドウで、**msdb** データベースをデタッチします。これには、`SQLCMD -E -S<servername> -dmaster -Q"EXEC sp_detach_db msdb"` というコマンドを実行します ( *\<servername>* は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスに置き換えます)  
   
 4.  Windows エクスプローラーを使用して、 **msdb** データベースの各ファイルの名前を変更します。 これらのファイルは、既定で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスの DATA サブフォルダーにあります。  
   
@@ -192,7 +192,7 @@ ms.locfileid: "92638995"
 
 ##  <a name="rebuild-the-tempdb-database"></a><a name="RebuildTempdb"></a> tempdb データベースをリビルドする  
 
-**tempdb** データベースが破損していて、データベース エンジンを起動できない場合に、すべてのシステム データベースをリビルドすることなく、 **tempdb** をリビルドすることができます。
+**tempdb** データベースが破損していて、データベース エンジンを起動できない場合に、すべてのシステム データベースをリビルドすることなく、**tempdb** をリビルドすることができます。
   
 1. 現在の tempdb.mdf ファイルおよび templog.ldf ファイルが欠落しいていない場合は、名前を変更します。 
 1. 次のコマンドを使用して、コマンド プロンプトから [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を開始します。 
