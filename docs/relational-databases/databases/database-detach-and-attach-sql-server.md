@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: d0de0639-bc54-464e-98b1-6af22a27eb86
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: cf2c73cc1d9c3bed3b54ff0c1a71acf22462889a
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: ffa25f98d738b2cac2ec4d796bb946e9bac9e03b
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192392"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890743"
 ---
 # <a name="database-detach-and-attach-sql-server"></a>データベースのデタッチとアタッチ (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -55,7 +55,7 @@ ms.locfileid: "92192392"
 -   データベースがレプリケートおよびパブリッシュされている。 レプリケートされている場合、データベースをパブリッシュしてはいけません。 データベースをデタッチする前に、 [sp_replicationdboption](../../relational-databases/system-stored-procedures/sp-replicationdboption-transact-sql.md)を実行してパブリッシングを無効にする必要があります。  
   
     > [!NOTE]  
-    > **sp_replicationdboption**を使用できない場合、 [sp_removedbreplication](../../relational-databases/system-stored-procedures/sp-removedbreplication-transact-sql.md)を実行してレプリケーションを削除できます。  
+    > **sp_replicationdboption** を使用できない場合、 [sp_removedbreplication](../../relational-databases/system-stored-procedures/sp-removedbreplication-transact-sql.md)を実行してレプリケーションを削除できます。  
   
 -   データベースに、データベース スナップショットが存在する。  
   
@@ -91,7 +91,7 @@ ms.locfileid: "92192392"
 3.  データベースをデタッチし直します。  
   
 ##  <a name="attaching-a-database"></a><a name="AttachDb"></a> データベースのインポート  
-コピーまたはデタッチした [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースはアタッチできます。 フルテキスト カタログ ファイルを含む [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] データベースを [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] サーバー インスタンスにアタッチする場合、カタログ ファイルは [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]と同様に他のデータベース ファイルと一緒に以前の場所からアタッチされます。 詳細については、「 [フルテキスト検索のアップグレード](../../relational-databases/search/upgrade-full-text-search.md)」を参照してください。  
+コピーまたはデタッチした [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースはアタッチできます。 フルテキスト カタログ ファイルを含む [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] データベースを [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] サーバー インスタンスにアタッチする場合、カタログ ファイルは [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]と同様に他のデータベース ファイルと一緒に以前の場所からアタッチされます。 詳細については、「 [フルテキスト検索のアップグレード](../../relational-databases/search/upgrade-full-text-search.md)」を参照してください。  
   
 データベースをアタッチするときは、すべてのデータ ファイル (MDF ファイルおよび NDF ファイル) を利用できる状態にする必要があります。 データベースを最初に作成したときか最後にアタッチしたときとデータ ファイルのパスが異なる場合、ファイルの現在のパスを指定する必要があります。  
   

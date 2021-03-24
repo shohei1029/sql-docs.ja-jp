@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: 3c030e51-db82-4b43-b1e5-8547ddd3de87
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 0ddd5b76d37f170ed195c6b08f6debcb0f032e77
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 3a8068945e91b56537a16ddf87cebfc9aa27fb3c
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85756184"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890647"
 ---
 # <a name="database-properties-files-page"></a>「データベースのプロパティ」 ([ファイル] ページ)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "85756184"
  データベースの所有者を一覧から選択して指定します。  
   
  **フルテキスト インデックスを使用する**  
- [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]ではフルテキスト インデックスが常に有効になっているため、このチェック ボックスはオンに設定され、変更することはできません。 詳細については、「 [フルテキスト検索](../../relational-databases/search/full-text-search.md)」を参照してください。  
+ [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]ではフルテキスト インデックスが常に有効になっているため、このチェック ボックスはオンに設定され、変更することはできません。 詳細については、「 [フルテキスト検索](../../relational-databases/search/full-text-search.md)」を参照してください。  
   
  **データベース ファイル**  
  関連付けられたデータベースのデータベース ファイルを追加、表示、変更、または削除します。 データベース ファイルには、次のプロパティがあります。  
@@ -41,7 +41,7 @@ ms.locfileid: "85756184"
  ファイルの名前を入力または変更します。  
   
  **[ファイルの種類]**  
- ファイルの種類を一覧から選択します。 ファイルの種類は、 **データ**、 **ログ**、 **Filestream データ**のいずれかです。 既存のファイルの種類は変更できません。  
+ ファイルの種類を一覧から選択します。 ファイルの種類は、 **データ**、 **ログ**、 **Filestream データ** のいずれかです。 既存のファイルの種類は変更できません。  
   
  メモリ最適化ファイル グループにファイル (コンテナー) を追加する場合は、 **FILESTREAM データ** を選択します。  
   

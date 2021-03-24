@@ -34,12 +34,12 @@ helpviewer_keywords:
 - extended stored procedures [SQL Server], metadata
 - credentials [SQL Server], metadata
 - copying databases
-ms.openlocfilehash: 3dc93671874de47f45bd26ae12fa9ded44c9a4fd
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
+ms.openlocfilehash: 8502271ba3b04e66fd6fcc0b2723e0c8e4533f96
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "88412848"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890673"
 ---
 # <a name="manage-metadata-when-making-a-database-available-on-another-server"></a>データベースを別のサーバーで使用できるようにするときのメタデータの管理
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -194,7 +194,7 @@ ms.locfileid: "88412848"
   
  さらに、 [ワード ブレーカーとステマー](../../relational-databases/search/configure-and-manage-word-breakers-and-stemmers-for-search.md) のコンポーネント、または [フルテキスト検索フィルター](../../relational-databases/search/configure-and-manage-filters-for-search.md) コンポーネントのバージョンが、元のサーバー インスタンスと対象のサーバー インスタンスで異なると、フルテキスト インデックスおよびクエリの動作が異なる場合があります。 また、 [類義語辞典](../../relational-databases/search/configure-and-manage-thesaurus-files-for-full-text-search.md) はインスタンス固有のファイルに格納されています。 それらのファイルのコピーを対象のサーバー インスタンスの該当する場所にコピーするか、新しいインスタンス上でこれらのファイルを再作成する必要があります。  
   
-> **注:** フルテキスト カタログ ファイルを含む [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] データベースを [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] サーバー インスタンスにアタッチする場合、カタログ ファイルは [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]と同様に他のデータベース ファイルと一緒に以前の場所からアタッチされます。 詳細については、「 [フルテキスト検索のアップグレード](../../relational-databases/search/upgrade-full-text-search.md)」を参照してください。  
+> **注:** フルテキスト カタログ ファイルを含む [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] データベースを [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] サーバー インスタンスにアタッチする場合、カタログ ファイルは [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]と同様に他のデータベース ファイルと一緒に以前の場所からアタッチされます。 詳細については、「 [フルテキスト検索のアップグレード](../../relational-databases/search/upgrade-full-text-search.md)」を参照してください。  
   
  詳細については、次のトピックも参照してください。  
   

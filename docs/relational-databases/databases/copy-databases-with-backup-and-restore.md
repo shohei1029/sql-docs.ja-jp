@@ -19,17 +19,17 @@ helpviewer_keywords:
 ms.assetid: b93e9701-72a0-408e-958c-dc196872c040
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 42f8148fa7d0a648bd7ad34ee766ff2a4488dceb
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: 6be7ab989d06f807f33342bbe7e9978a23f809ad
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115740"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890686"
 ---
 # <a name="copy-databases-with-backup-and-restore"></a>バックアップと復元によるデータベースのコピー
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、[!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以降のバージョンを使用して作成したユーザー データベースのバックアップを復元して、新しいデータベースを作成できます。 ただし、以前のバージョンの **を使用して作成された**master **、** model **、および** msdb [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップを [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]で復元することはできません。 また、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のバックアップを以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]で復元することもできません。  
+  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、[!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以降のバージョンを使用して作成したユーザー データベースのバックアップを復元して、新しいデータベースを作成できます。 ただし、以前のバージョンの **を使用して作成された** master **、** model **、および** msdb [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップを [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]で復元することはできません。 また、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のバックアップを以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]で復元することもできません。  
   
 > [!IMPORTANT]
 > SQL Server 2016 では、以前のバージョンとは異なる既定パスが使用されます。 そのため、以前のバージョンの既定の場所で作成されたデータベースのバックアップを復元するには、MOVE オプションを使用する必要があります。 新しい既定パスの詳細については、「 [SQL Server の既定のインスタンスおよび名前付きインスタンスのファイルの場所](../../sql-server/install/file-locations-for-default-and-named-instances-of-sql-server.md)」を参照してください。 データベース ファイルの移動の詳細については、このトピックの「データベース ファイルの移動」を参照してください。  
@@ -39,7 +39,7 @@ ms.locfileid: "92115740"
   
  一般的な手順は次のとおりです。  
   
-1.  [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以降のインスタンスにあるコピー元データベースをバックアップします。 この [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスを実行しているコンピューターが **コピー元コンピューター**です。  
+1.  [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以降のインスタンスにあるコピー元データベースをバックアップします。 この [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスを実行しているコンピューターが **コピー元コンピューター** です。  
   
 2.  データベースをコピーする先のコンピューター ( **コピー先コンピューター**) で、データベースの復元先の SQL Server インスタンスに接続します。 必要に応じて、 **コピー元** データベースのバックアップに使用したのと同じバックアップ デバイスを **コピー先** のサーバー インスタンスにも作成します。  
   
