@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 95f41cff-c52a-4182-8ac6-bf49369d214c
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 8fc47f280e0c6f32e41cd7a0f7db34ff22ac98f1
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 29377edf5fa911c47b4e3a34fa1be58046c3e915
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99201786"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890782"
 ---
 # <a name="sp_xml_preparedocument-transact-sql"></a>sp_xml_preparedocument (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "99201786"
  **sp_xml_preparedocument** は、新しく作成された xml ドキュメントの内部表現にアクセスするために使用できるハンドルを返します。 このハンドルは、セッションの間、または **sp_xml_removedocument** を実行してハンドルが無効になるまで有効です。  
   
 > [!NOTE]  
->  解析されたドキュメントは、の内部キャッシュに格納され [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 MSXML パーサーでは、で使用可能な合計メモリの8分の1を使用し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 メモリが不足しないようにするには、 **sp_xml_removedocument** を実行してメモリを解放します。  
+>  解析されたドキュメントは、の内部キャッシュに格納され [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 MSXML パーサーでは、で使用可能な合計メモリの8分の1を使用でき [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 メモリが不足しないようにするには、 **sp_xml_removedocument** を実行して、ドキュメントが不要になったらすぐにメモリを解放します。 多くの場合、nodes () メソッドはより優れた方法であり、メモリ使用量が過剰にならないようにすることができます。
   
 > [!NOTE]  
 >  旧バージョンとの互換性のために、 **sp_xml_preparedocument** では、これらの文字がエンティティされている場合でも、属性の CR (char (13)) と LF (char (10)) の文字が折りたたまれます。  
@@ -159,5 +159,6 @@ EXEC sp_xml_preparedocument @hdoc OUTPUT, @doc, '<ROOT xmlns:xyz="urn:MyNamespac
  <br>[OPENXML (Transact-sql)](../../t-sql/functions/openxml-transact-sql.md)
  <br>[sys.dm_exec_xml_handles (Transact-sql)](../system-dynamic-management-views/sys-dm-exec-xml-handles-transact-sql.md)
  <br>[sp_xml_removedocument (Transact-sql)](../../relational-databases/system-stored-procedures/sp-xml-removedocument-transact-sql.md)
+ <br>[nodes&#40;&#41; Method &#40;xml データ型&#41;](../../t-sql/xml/nodes-method-xml-data-type.md)
   
   

@@ -2,7 +2,7 @@
 description: sys.dm_os_performance_counters (Transact-SQL)
 title: sys.dm_os_performance_counters (Transact-sql) |Microsoft Docs
 ms.custom: ''
-ms.date: 03/13/2017
+ms.date: 03/22/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
@@ -21,12 +21,12 @@ ms.assetid: a1c3e892-cd48-40d4-b6be-2a9246e8fbff
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a49588f109f6964893904ec7d14293aacd71370e
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 6bece57b97ce2a7e20b2800fb45a831674960012
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104750932"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890794"
 ---
 # <a name="sysdm_os_performance_counters-transact-sql"></a>sys.dm_os_performance_counters (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -54,9 +54,13 @@ SELECT COUNT(*) FROM sys.dm_os_performance_counters;
   
 戻り値が 0 行の場合、パフォーマンス カウンターが無効であることを意味します。 次に、セットアップログを確認し、エラー3409を検索し `Reinstall sqlctr.ini for this instance, and ensure that the instance login account has correct registry permissions.` ます。これは、パフォーマンスカウンターが有効になっていないことを示します。 3409エラーの直前に発生したエラーは、パフォーマンスカウンターの有効化の失敗の根本原因を示しています。 セットアップログファイルの詳細については、「 [SQL Server セットアップログファイルの表示と読み取り](../../database-engine/install-windows/view-and-read-sql-server-setup-log-files.md)」を参照してください。  
 
-パフォーマンスカウンターは、 `cntr_type` 列の値が65792、272696320、および537003264で、インスタントスナップショットカウンターの値が表示されます。
+パフォーマンスカウンター列の値が65792の場合は、平均では `cntr_type` なく、最後に計測された値のスナップショットのみが表示されます。 
 
-パフォーマンスカウンターは、 `cntr_type` 列の値が272696576、1073874176、および1073939712で、インスタントスナップショットではなく、累積カウンター値が表示されます。 そのため、スナップショットのような読み取りを行うには、2つのコレクションポイント間の差分を比較する必要があります。
+パフォーマンスカウンター列の `cntr_type` 値が272696320または272696576の場合、サンプリング間隔の1秒間に完了した操作の平均数が表示されます。 このタイプのカウンターは、システム時計のタイマー刻みで時間を計測します。 たとえば、とのカウンターに対してのみ、最後の1秒間のスナップショットと同様の読み取りを取得するには、2つの `Buffer Manager:Lazy writes/sec` `Buffer Manager:Checkpoint pages/sec` コレクションポイント間の差分を比較する必要があります。    
+
+パフォーマンスカウンターで `cntr_type` は、列の値が537003264の場合、そのセットに対するサブセットの比率がパーセンテージとして表示されます。 たとえば、カウンターは `Buffer Manager:Buffer cache hit ratio` キャッシュヒットの合計数とキャッシュ参照の合計数を比較します。 そのため、最後の1秒間だけのスナップショットのような読み取りを行うには、現在の値と2つのコレクションポイント間のベース値 (分母) との差を比較する必要があります。 対応する基本値は、 `Buffer Manager:Buffer cache hit ratio base` `cntr_type` 列の値が1073939712であるパフォーマンスカウンターです。
+
+列の値が1073874176のパフォーマンスカウンターで `cntr_type` は、操作の数に対して処理された項目の比率として、平均して処理される項目の数が表示されます。 たとえば、カウンターは、1秒あたりのロック `Locks:Average Wait Time (ms)` 待機回数を1秒あたりのロック要求数と比較し、待機する各ロック要求の平均待機時間 (ミリ秒単位) を表示します。 そのため、最後の1秒間だけのスナップショットのような読み取りを行うには、現在の値と2つのコレクションポイント間のベース値 (分母) との差を比較する必要があります。 対応する基本値は、 `Locks:Average Wait Time Base` `cntr_type` 列の値が1073939712であるパフォーマンスカウンターです。
 
 ## <a name="permission"></a>権限
 
