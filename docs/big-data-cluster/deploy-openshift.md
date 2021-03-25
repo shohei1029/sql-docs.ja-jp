@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d78e229bcbf2a088d42431abdf02bec3f9e51eab
-ms.sourcegitcommit: 62c7b972db0ac28e3ae457ce44a4566ebd3bbdee
+ms.openlocfilehash: 918dd8e746984d9bdc6a619cc2692bdfbab158a0
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103231500"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610825"
 ---
 # <a name="deploy-big-data-clusters-2019-on-openshift-on-premises-and-azure-red-hat-openshift"></a>オンプレミスの OpenShift および Azure Red Hat OpenShift に [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]をデプロイする
 
@@ -70,10 +70,11 @@ SQL Server 2019 CU5 では、OpenShift での SQL Server ビッグ データ ク
    oc new-project <namespaceName>
    ```
 
-4. BDC がデプロイされる名前空間内のユーザーに対するサービス アカウントに、カスタム SCC を割り当てます。
+4. カスタム SCC を、BDC がデプロイされる名前空間内のサービス アカウントとバインドします。
 
    ```console
-   oc create rolebinding bdc-rbac --clusterrole=system:scc:bdc-scc --group=system:serviceaccounts:<namespace>
+   oc create clusterrole bdc-role --verb=use --resource=scc --resource-name=bdc-scc -n <namespaceName>
+   oc create rolebinding bdc-rbac --clusterrole=bdc-role --group=system:serviceaccounts:mssql-bdc
    ```
 
 5. BDC をデプロイするユーザーに、適切なアクセス許可を割り当てます。 次のいずれかの操作を行います。 
@@ -83,7 +84,7 @@ SQL Server 2019 CU5 では、OpenShift での SQL Server ビッグ データ ク
    - BDC をデプロイするユーザーが名前空間管理者である場合は、作成される名前空間に対するクラスター管理者ローカル ロールをユーザーに割り当てます。 これは、ビッグ データ クラスターのデプロイと管理を行うユーザーが名前空間レベルの管理アクセス許可を持つ場合に推奨されるオプションです。
 
    ```console
-   oc adm policy add-role-to-user cluster-admin <deployingUser> -n <namespaceName>
+   oc create rolebinding bdc-user-rbac --clusterrole=cluster-admin --user=<userName> -n <namespaceName>
    ```
 
    ビッグ データ クラスターをデプロイするユーザーは、OpenShift コンソールにログインする必要があります。

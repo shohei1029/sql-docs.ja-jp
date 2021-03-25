@@ -19,12 +19,12 @@ ms.assetid: 19aefa9a-fbc2-4b22-92cf-67b8bb01671c
 author: rothja
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1ccca2b8dc74759e1b4a1dc4d2e9485bf2fbcca7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 7fcefb597fe97e90bfda78fe934c83646414c23f
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480193"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611182"
 ---
 # <a name="hierarchical-data-sql-server"></a>階層データ (SQL Server)
 
@@ -160,7 +160,7 @@ GO
   
 -   **幅優先**  
   
-     幅優先の場合、階層の各レベルの行が一緒に格納されます。 たとえば、同一の管理者に直属する従業員のレコードが、相互に近接して格納されます。  
+     幅優先インデックスでは、階層の各レベルの行が一緒に格納されます。 たとえば、同一の管理者に直属する従業員のレコードが、相互に近接して格納されます。  
   
      幅優先のインデックスでは、ノードの直接の子すべてが同じ場所に配置されます。 このため、"この管理者に直属するすべての従業員を検索する" など、直下の子に関するクエリに応答するには、幅優先インデックスが効率的です。  
   

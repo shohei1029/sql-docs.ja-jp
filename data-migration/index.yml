@@ -6,154 +6,183 @@ metadata:
   title: Azure データベースの移行ガイド | Microsoft Docs
   description: データ資産を最新化するためのステップ バイ ステップ ガイダンスです。
   ms.topic: hub-page
-  ms.openlocfilehash: 86398df9a3f1c2deeec590589d31fc183bd2970e
-  ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+  ms.openlocfilehash: c08abfbcb0e43a00319190153d169083b2da9395
+  ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 02/13/2021
-  ms.locfileid: "100336498"
+  ms.lasthandoff: 03/19/2021
+  ms.locfileid: "104610601"
 conceptualContent:
   items:
   - title: SQL Server から
     links:
-    - text: SQL Server (より新しいバージョン)
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: architecture
+    - text: SQL Server (アップグレード)
+      url: /sql/database-engine/install-windows/upgrade-sql-server
+      itemType: how-to-guide
     - text: Azure SQL Database
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: concept
+      url: /azure/azure-sql/migration-guides/database/sql-server-to-sql-database-overview
+      itemType: how-to-guide
     - text: Azure SQL Managed Instance
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: deploy
+      url: /azure/azure-sql/migration-guides/managed-instance/sql-server-to-managed-instance-overview
+      itemType: how-to-guide
     - text: Azure VM での SQL Server
-      url: linux/quickstart-install-connect-docker.md
-      itemType: download
+      url: /azure/azure-sql/migration-guides/virtual-machines/sql-server-to-sql-on-azure-vm-individual-databases-guide
+      itemType: how-to-guide
+    - text: Azure Synapse Analytics
+      url: /azure/synapse-analytics/migration-guides/migrate-to-synapse-analytics-guide
+      itemType: how-to-guide
   - title: Oracle から
     links:
     - text: SQL Server
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: get-started
+      url: /sql/sql-server/migrate/guides/oracle-to-sql-server
+      itemType: how-to-guide
     - text: Azure SQL Database
-      url: ssms/tutorials/connect-query-sql-server.md
+      url: /azure/azure-sql/migration-guides/database/oracle-to-sql-database-guide
       itemType: how-to-guide
     - text: Azure SQL Managed Instance
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: video
+      url: /azure/azure-sql/migration-guides/managed-instance/oracle-to-managed-instance-guide
+      itemType: how-to-guide
     - text: Azure VM での SQL Server
-      url: linux/quickstart-install-connect-docker.md
-      itemType: whats-new
+      url: /azure/azure-sql/migration-guides/virtual-machines/oracle-to-sql-on-azure-vm-guide
+      itemType: how-to-guide
+    - text: Azure Database for PostgreSQL
+      url: /azure/postgresql/howto-migrate-from-oracle
+      itemType: how-to-guide
+    - text: Azure Synapse Analytics
+      url: /azure/synapse-analytics/migration-guides/migrate-to-synapse-analytics-guide
+      itemType: how-to-guide
   - title: DB2 から
     links:
     - text: SQL Server
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+      url: /sql/sql-server/migrate/guides/db2-to-sql-server
+      itemType: how-to-guide
     - text: Azure SQL Database
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: quickstart
+      url: /azure/azure-sql/migration-guides/database/db2-to-sql-database-guide
+      itemType: how-to-guide
     - text: Azure SQL Managed Instance
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: quickstart
+      url: /azure/azure-sql/migration-guides/managed-instance/db2-to-managed-instance-guide
+      itemType: how-to-guide
     - text: Azure VM での SQL Server
-      url: linux/quickstart-install-connect-docker.md
-      itemType: quickstart
-  - title: MySQL から
-    links:
-    - text: SQL Server
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
-    - text: Azure SQL Database
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: quickstart
-    - text: Azure SQL Managed Instance
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: quickstart
-    - text: Azure VM での SQL Server
-      url: linux/quickstart-install-connect-docker.md
-      itemType: quickstart
-  - title: PostgreSQL から
-    links:
-    - text: Azure Database for PostgreSQL
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
-  - title: MongoDB から
-    links:
-    - text: Azure CosmosDB
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
-  - title: Cassandra から
-    links:
-    - text: Azure CosmosDB
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
-  - title: MariaDB から
-    links:
-    - text: Azure Database for MariaDB
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+      url: /azure/azure-sql/migration-guides/virtual-machines/db2-to-sql-on-azure-vm-guide
+      itemType: how-to-guide
   - title: Access から
     links:
     - text: SQL Server
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+      url: /sql/sql-server/migrate/guides/access-to-sql-server
+      itemType: how-to-guide
     - text: Azure SQL Database
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: quickstart
-    - text: Azure SQL Managed Instance
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: quickstart
-    - text: Azure VM での SQL Server
-      url: linux/quickstart-install-connect-docker.md
-      itemType: quickstart
+      url: /azure/azure-sql/migration-guides/database/access-to-sql-database-guide
+      itemType: how-to-guide
+  - title: MySQL から
+    links:
+    - text: SQL Server
+      url: /sql/sql-server/migrate/guides/mysql-to-sql-server
+      itemType: how-to-guide
+    - text: Azure SQL データベース
+      url: /azure/azure-sql/migration-guides/database/mysql-to-sql-database-guide
+      itemType: how-to-guide
+    - text: Azure Database for MySQL
+      url: /azure/mysql/concepts-migrate-import-export
+      itemType: how-to-guide
   - title: SAP ASE から
     links:
-    - text: SQL Server (より新しいバージョン)
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+    - text: SQL Server
+      url: /sql/sql-server/migrate/guides/sap-ase-to-sql-server
+      itemType: how-to-guide
     - text: Azure SQL Database
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: quickstart
-    - text: Azure SQL Managed Instance
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: quickstart
-    - text: Azure VM での SQL Server
-      url: linux/quickstart-install-connect-docker.md
-      itemType: quickstart
-  - title: Microsoft Azure Table Storage から
+      url: /azure/azure-sql/migration-guides/database/sap-ase-to-sql-database
+      itemType: how-to-guide
+  - title: オープンソース
     links:
-    - text: Azure CosmosDB
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+    - text: MariaDB から Azure Database for MariaDB
+      url: /azure/mariadb/howto-migrate-dump-restore
+      itemType: how-to-guide
+    - text: MySQL から Azure Database for MySQL
+      url: /azure/mysql/concepts-migrate-import-export
+      itemType: how-to-guide
+    - text: PostgreSQL から Azure Database for PostgreSQL
+      url: /azure/postgresql/howto-migrate-using-dump-and-restore
+      itemType: how-to-guide
+  - title: NoSQL
+    links:
+    - text: MongoDB から Azure Cosmos DB
+      url: /azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+      itemType: how-to-guide
+    - text: Cassandra から Azure Cosmos DB
+      url: /azure/cosmos-db/cassandra-import-data
+      itemType: how-to-guide
+    - text: Microsoft Azure Table Storage から Azure Cosmos DB
+      url: /azure/cosmos-db/table-import
+      itemType: how-to-guide
+  - title: リソース
+    links:
+    - text: 移行パートナーのリソース
+      url: https://www.microsoft.com/azure/partners/advspec?filters=windows-server-and-sql-server-migration-to-azure
+      itemType: reference
+    - text: クラウドの経済性
+      url: https://azure.microsoft.com/en-gb/overview/cloud-economics
+      itemType: reference
+    - text: 総保有コスト計算ツール
+      url: https://azure.microsoft.com/pricing/tco/calculator/
+      itemType: reference
+    - text: Azure ハイブリッド特典
+      url: https://azure.microsoft.com/pricing/hybrid-benefit/
+      itemType: reference
+    - text: Azure アーキテクチャを参照する
+      url: https://docs.microsoft.com/azure/architecture/browse/?azure_categories=migration
+      itemType: reference
+    - text: Azure 向けの Microsoft クラウド導入フレームワーク
+      url: https://azure.microsoft.com/cloud-adoption-framework/#cloud-adoption-journey
+      itemType: reference
+    - text: 顧客事例を参照する
+      url: https://customers.microsoft.com/en-us/search?sq=&ff=&p=0&so=story_publish_date%20desc
+      itemType: reference
 tools:
-  title: 言語およびツール
+  title: 移行ツール
   items:
   - title: Azure Migrate
-    imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
-    url: /azure/developer/python/
-  - title: Azure Database Migration Service
-    imageSrc: ./media/index/net-logo.svg
-    url: /dotnet/azure/
-  - title: Database Migration Assistant (DMA)
-    imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
-    url: /azure/developer/javascript/
-  - title: SQL Server Migration Assistant
-    imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
-    url: /azure/developer/java/
+    imageSrc: media/index/azure-migrate-symbol.svg
+    url: /azure/migrate/
+  - title: Azure Database Migration Service (DMS)
+    imageSrc: media/index/migration-service-symbol.svg
+    url: /azure/dms/
+  - title: Data Migration Assistant (DMA)
+    imageSrc: media/index/database-migration-assistant-symbol.svg
+    url: /sql/dma/dma-overview
+  - title: SQL Server Migration Assistant (SSMA)
+    imageSrc: media/index/sql-server-migration-assistant-symbol.svg
+    url: /sql/ssma/sql-server-migration-assistant
+  - title: Azure Synapse Pathway
+    imageSrc: media/index/azure-synapse-pathway-symbol.svg
+    url: /sql/tools/synapse-pathway/azure-synapse-pathway-overview
 additionalContent:
   sections:
-  - title: ケース スタディ
+  - title: 最近のお客様の導入事例
     items:
-    - title: Capita
-      summary: 米国政府機関とそのパートナー向けの専用クラウド。
-      url: azure-government/index.yml
-    - title: Willis Towers Watson
-      summary: ドイツのデータ処理規則に準拠する専用クラウド。
-      url: germany/index.yml
-    - title: Innovative Systems
-      summary: 中国に配置され、21Vianet によって運営される専用クラウド。
-      url: /azure/china/
-    - title: Geekwire
-      summary: 中国に配置され、21Vianet によって運営される専用クラウド。
-      url: /azure/china/
-    - title: Vipps
-      summary: 中国に配置され、21Vianet によって運営される専用クラウド。
-      url: /azure/china/
+    - title: Ferguson (米国)
+      summary: 米国最大の配管卸売業者では、Azure Arc SQL Managed Instance を使用して Azure サービスをオンプレミスに拡張しています。
+      url: https://customers.microsoft.com/story/844232-ferguson-enterprises-retailers-azure-arc
+    - title: Clearsale (ブラジル)
+      summary: ClearSale では、Azure SQL Database ハイパースケール サービス レベルで Azure に移行することによって、成長とイノベーションの基盤を構築しています。
+      url: https://customers.microsoft.com/story/773410-clearsale-partner-professional-services-azure
+    - title: Willis Towers Watson (英国)
+      summary: Willis Towers Watson では、Azure SQL Database への移行によってクラウドでのシームレスなスケーラビリティを実現しています。
+      url: https://customers.microsoft.com/story/willis-towers-watson-partner-professional-services-azure
+    - title: Paychex (米国)
+      summary: Paychex では、Azure SQL Database エラスティック プールを利用して爆発的な成長に対応しています。
+      url: https://customers.microsoft.com/story/paychex-azure-sql-database-us
+    - title: Innovative Systems (米国)
+      summary: Innovative Systems では、Azure Database Migration Service を利用して移行を促進し、遠隔地のデータベースをクラウドに統合しています。
+      url: https://customers.microsoft.com/story/innovative-systems-partner-professional-services-azure-sql-database
+    - title: Capita Group (英国)
+      summary: Capita Reading Cloud では、Azure を使用して 10,000 個のデータベースを移行し、新しいスケーラビリティを発見しています。
+      url: https://customers.microsoft.com/story/724217-capita-uk-professional-services-azure-sql-database
+    - title: Intershop (米国)
+      summary: eコマースのトップ企業である Intershop では、Oracle から SQL Server と Azure SQL Database に移行し、製品パフォーマンスの向上と市場の開拓を行っています。
+      url: https://customers.microsoft.com/story/intershop-partner-professional-services-azure-sql-database
+    - title: Minecraft Realms (米国)
+      summary: Minecraft Realms では、ユーザー ベースに対する中断を最小限に抑えながら、AWS から Azure に移行します。
+      url: https://developer.microsoft.com/games/blog/migrating-minecraft-realms-from-aws-to-azure/
+    - title: CCC Marketing (日本)
+      summary: CCC Marketing では、データ分析インフラストラクチャを Oracle から Microsoft Azure に切り替えました。
+      url: https://customers.microsoft.com/story/843276-ccc-marketing-professional-services-azure-en-japan

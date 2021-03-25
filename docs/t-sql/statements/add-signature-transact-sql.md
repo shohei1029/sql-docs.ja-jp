@@ -17,13 +17,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 ms.custom: ''
-ms.date: 06/10/2020
-ms.openlocfilehash: 86513345502531da670b870b5ecf70de9270f18f
-ms.sourcegitcommit: ece104654ac14e10d32e59f45916fa944665f4df
+ms.date: 03/16/2021
+ms.openlocfilehash: c33f34611db384dfcafabefeb2e9c1eee1b135f5
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102474906"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611232"
 ---
 # <a name="add-signature-transact-sql"></a>ADD SIGNATURE (Transact-SQL)
 
@@ -102,7 +102,9 @@ ADD [ COUNTER ] SIGNATURE TO module_class::module_name
 -   ProcForAlice への署名は ProcSelectT1 の呼び出し時に失われるので、この署名だけでは効果がありません。  
   
 ただし、ProcForAlice への署名に使用した証明書と同じ証明書を使用して ProcSelectT1 に副署名すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] において呼び出しチェーン全体で署名が保持され、T1 にアクセスできるようになります。 Alice が ProcSelectT1 を直接呼び出そうとしても、副署名では権限は付与されないので、T1 にはアクセスできません。 以下の例 C で、この例の [!INCLUDE[tsql](../../includes/tsql-md.md)] を示します。  
-  
+
+:::image type="content" source="media/signing-and-countersignature.png" alt-text="署名の例":::
+
 ## <a name="permissions"></a>アクセス許可  
 
 オブジェクトに対する ALTER 権限と、証明書または非対称キーに対する CONTROL 権限が必要です。 関連付けられている秘密キーがパスワードで保護されている場合、ユーザーはそのパスワードも保持している必要があります。  

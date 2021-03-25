@@ -2,7 +2,7 @@
 title: SQL Server Service Broker | Microsoft Docs
 description: Service Broker について説明します。 これにより、どのように SQL Server データベース エンジンおよび Azure SQL Managed Instance でのメッセージングがネイティブにサポートされるかを確認します。
 ms.custom: ''
-ms.date: 09/07/2018
+ms.date: 03/17/2021
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
@@ -24,12 +24,12 @@ ms.assetid: 8b8b3b57-fd46-44de-9a4e-e3a8e3999c1e
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: cf37305f773f4b417ed3cac1bc5a31ad8d910505
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 287e3c0abfc083607b96598da5e83cd5ab0b58dd
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465703"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611172"
 ---
 # <a name="service-broker"></a>Service Broker
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -101,15 +101,25 @@ FROM ExpenseQueue;
  [の概念、開発作業、および管理作業については、](/previous-versions/sql/sql-server-2008-r2/bb522893(v=sql.105)) 以前に公開されたドキュメント [!INCLUDE[ssSB](../../includes/sssb-md.md)] を参照してください。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] は [!INCLUDE[ssSB](../../includes/sssb-md.md)] においてわずかな変更しか加えられていないため、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]用のドキュメントは作成されていません。  
   
 ## <a name="whats-new-in-service-broker"></a>Service Broker の新機能  
- [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]で導入された大きな変更はありません。  [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]では、以下の変更が導入されました。  
 
 ### <a name="service-broker-and-azure-sql-managed-instance"></a>Service Broker と Azure SQL Managed Instance
 
-- インスタンス間の Service Broker はサポートされていません 
- - `sys.routes` - 前提条件: sys.routes からアドレスを選択してください。 すべてのルートでアドレスをローカルにする必要があります。 [sys.routes](../../relational-databases/system-catalog-views/sys-routes-transact-sql.md) をご覧ください。
- - `CREATE ROUTE` - `LOCAL` 以外の `ADDRESS` で `CREATE ROUTE` を使用することはできません。 [CREATE ROUTE](../../t-sql/statements/create-route-transact-sql.md) をご覧ください。
- - `ALTER ROUTE` では、`LOCAL` 以外の `ADDRESS` と共に `ALTER ROUTE` を使用することはできません。 [ALTER ROUTE](../../t-sql/statements/alter-route-transact-sql.md) をご覧ください。  
-  
+クロス インスタンス Service Broker メッセージ交換は、Azure SQL Managed Instance 間でのみサポートされます。
+
+- `CREATE ROUTE`: LOCAL 以外の ADDRESS、または別の SQL Managed Instance の DNS 名を指定して CREATE ROUTE を使用することはできません。 指定するポートは 4022 である必要があります。 [CREATE ROUTE](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql) をご覧ください。
+- `ALTER ROUTE`: LOCAL 以外の ADDRESS、または別の SQL Managed Instance の DNS 名を指定して ALTER ROUTE を使用することはできません。 指定するポートは 4022 である必要があります。 [ALTER ROUTE](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql) に関する記事をご覧ください。
+
+トランスポート セキュリティはサポートされていますが、ダイアログ セキュリティはサポートされていません。
+
+- `CREATE REMOTE SERVICE BINDING` がサポートされていません。
+
+Service Broker は既定で有効になっており、無効にできません。 次の ALTER DATABASE オプションはサポートされていません。
+
+- `ENABLE_BROKER`
+- `DISABLE_BROKER`
+
+[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で導入された大きな変更はありません。  [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]では、以下の変更が導入されました。 
+
 ### <a name="messages-can-be-sent-to-multiple-target-services-multicast"></a>メッセージを複数の対象サービスに送信可能 (マルチキャスト)  
  [SEND &#40;Transact-SQL&#41;](../../t-sql/statements/send-transact-sql.md) ステートメントの構文が拡張され、複数のメッセージ交換ハンドルをサポートすることにより、マルチキャストが有効になりました。  
   

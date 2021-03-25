@@ -85,12 +85,12 @@ ms.reviewer: ''
 ms.custom: ''
 ms.date: 01/07/2020
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: fa6e0857fb374d24dfe5ebe73ea8397c6d2f318b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 559bb922735dd6cd56a417bc09964f47297ab0ca
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348392"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611069"
 ---
 # <a name="install-sql-server-from-the-command-prompt"></a>コマンド プロンプトからの SQL Server のインストール
 
@@ -380,7 +380,7 @@ setup.exe /q /ACTION=CompleteImage /INSTANCENAME=MYNEWINST /INSTANCEID=<MYINST> 
   
 |[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] コンポーネント|パラメーター|説明|  
 |-----------------------------------------|---------------|-----------------|  
-|[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] セットアップ コントロール|/ACTION<br /><br /> **必須**|インストール ワークフローを示すために必要です。 サポートされる値:<br /><br /> **アップグレード**<br /><br /> **EditionUpgrade**<br /><br /> <br /><br /> 値 **EditionUpgrade** は、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の既存のエディションを別のエディションにアップグレードするときに使用します。 サポートされるバージョンとエディションのアップグレードについては、「 [Supported Version and Edition Upgrades](../../database-engine/install-windows/supported-version-and-edition-upgrades.md)」を参照してください。|  
+|[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] セットアップ コントロール|/ACTION<br /><br /> **必須**|インストール ワークフローを示すために必要です。 サポートされる値:<br /><br /> **アップグレード**<br /><br /> **EditionUpgrade**<br /><br /> <br /><br /> 値 **EditionUpgrade** は、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の既存のエディションを別のエディションにアップグレードするときに使用します。 サポートされるバージョンとエディションのアップグレードについては、「 [Supported Version and Edition Upgrades](../../database-engine/install-windows/supported-version-and-edition-upgrades.md)」を参照してください。|  
 |[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] セットアップ コントロール|/IACCEPTSQLSERVERLICENSETERMS<br /><br /> **自動インストールのために /Q パラメーターまたは /QS パラメーターを指定した場合にのみ必須です。**|ライセンス条項への同意を確認するために必要です。|  
 |[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] セットアップ コントロール|/ENU<br /><br /> **省略可能**|ローカライズされたオペレーティング システムに SQL Server の英語版をインストールする場合に、オペレーティング システムに対応する言語と英語の両方の言語パックがインストール メディアに含まれているときは、このパラメーターを使用します。|  
 |[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] セットアップ コントロール|/*UpdateEnabled*<br /><br /> **省略可能**|SQL Server セットアップが製品の更新プログラムを検出し、それらを含める必要があるかどうかを指定します。 有効値は True および False または 1 および 0 です。 既定では、SQL Server セットアップには検出された更新プログラムが含まれます。|  
@@ -868,7 +868,7 @@ setup.exe /q /ACTION=RemoveNode /INSTANCENAME="<Insert Instance Name>" [/INDICAT
 ||SDK|ソフトウェア開発キットをインストールします。|  
 ||LocalDB**|LocalDB (プログラムの開発者を対象とした [!INCLUDE[ssExpress](../../includes/ssexpress-md.md)] の実行モード) をインストールします。|  
 
-*[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] (SSMS) は、現在、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のインストーラーとは別のスタンドアロン インストーラー内にあります。 詳細については、[SQL Server Management Studio (SSMS) のダウンロード](../../ssms/download-sql-server-management-studio-ssms.md)に関するページを参照してください。
+*[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] (SSMS) は、現在、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のインストーラーとは別のスタンドアロン インストーラー内にあります。 詳細については、[SQL Server Management Studio (SSMS) のダウンロード](../../ssms/download-sql-server-management-studio-ssms.md)に関するページを参照してください。
 
 ### <a name="feature-parameter-examples"></a>機能パラメーターの例:
   
@@ -893,7 +893,7 @@ AllFeatures_WithDefaults ロールは、 [!INCLUDE[ssExpress](../../includes/sse
 |AllFeatures_WithDefaults|現在のエディションで使用できるすべての機能をインストールします。<br /><br /> 現在のユーザーを SQL Server **sysadmin** 固定サーバー ロールに追加します。<br /><br /> [!INCLUDE[firstref_longhorn](../../includes/firstref-longhorn-md.md)] 以降を使用していて、そのオペレーティング システムがドメイン コントローラーでない場合、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]と [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] は既定で NTAUTHORITY\NETWORK SERVICE アカウントを使用し、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] は既定で NTAUTHORITY\NETWORK SERVICE アカウントを使用します。<br /><br /> このロールは、 [!INCLUDE[ssExpress](../../includes/ssexpress-md.md)]のエディションで、既定で有効になっています。 その他のエディションの場合、このロールは有効になっていませんが、UI またはコマンドライン パラメーターを使用して指定できます。|[!INCLUDE[ssExpress](../../includes/ssexpress-md.md)]のエディションの場合は、そのエディションで使用できる機能のみがインストールされます。 その他のエディションの場合は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべての機能がインストールされます。<br /><br /> **AllFeatures_WithDefaults** パラメーターは、**AllFeatures_WithDefaults** パラメーターの設定をオーバーライドする他のパラメーターと組み合わせることができます。 たとえば、 **AllFeatures_WithDefaults** パラメーターと **/Features=RS** パラメーターを組み合わせて使用すると、すべての機能をインストールするコマンドがオーバーライドされ [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]のみがインストールされますが、 **AllFeatures_WithDefaults** パラメーターを適用することで、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]に対して既定のサービス アカウントが使用されます。<br /><br /> **AllFeatures_WithDefaults** パラメーターを **/ADDCURRENTUSERASSQLADMIN=FALSE** と共に使用すると、準備ダイアログには現在のユーザーに関する情報が自動入力されません。 SQL Server エージェントのサービス アカウントとパスワードを指定するには、 **/AGTSVCACCOUNT** と **/AGTSVCPASSWORD** を追加します。|
 
 ## <a name="controlling-failover-behavior-using-the-failoverclusterrollownership-parameter"></a><a name="RollOwnership"></a> /FAILOVERCLUSTERROLLOWNERSHIP パラメーターを使用したフェールオーバーの動作の制御  
-[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] フェールオーバー クラスターを [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] にアップグレードするには、フェールオーバー クラスター ノードのパッシブ ノードから開始して、1 ノードごとにセットアップを実行する必要があります。 フェールオーバー クラスター インスタンスのノード総数と、アップグレード済みのノードの数との違いに応じて、セットアップがアップグレード済みのノードにフェールオーバーする時期が決まります。 ノード総数の半数以上がアップグレード済みの場合、既定のセットアップにより、アップグレード済みのノードにフェールオーバーが発生します。
+[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] フェールオーバー クラスターをアップグレードするには、フェールオーバー クラスター ノードのパッシブ ノードから開始して、1 ノードごとにセットアップを実行する必要があります。 フェールオーバー クラスター インスタンスのノード総数と、アップグレード済みのノードの数との違いに応じて、セットアップがアップグレード済みのノードにフェールオーバーする時期が決まります。 ノード総数の半数以上がアップグレード済みの場合、既定のセットアップにより、アップグレード済みのノードにフェールオーバーが発生します。
 
 アップグレード プロセス中にクラスター ノードのフェールオーバーの動作を制御するには、コマンド プロンプトでアップグレード操作を実行して /FAILOVERCLUSTERROLLOWNERSHIP パラメーターを使用し、アップグレード操作によってノードがオフラインになる前にフェールオーバーの動作を制御します。 このパラメーターの使用方法は次のとおりです。
 

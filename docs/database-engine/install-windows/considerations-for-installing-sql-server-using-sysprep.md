@@ -11,12 +11,12 @@ ms.assetid: e1792eeb-2874-4653-b20e-3063f4eb4e5d
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: e5eeb7446542613eac7e1d3a78144f3ca165a47b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ff653258a42883d2942170f9b26d04f288fcb7f3
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100336371"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611111"
 ---
 # <a name="considerations-for-installing-sql-server-using-sysprep"></a>SysPrep を使用した SQL Server のインストールに関する注意点
 
@@ -61,9 +61,9 @@ SysPrep を使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)
     - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Express Edition の準備済みインスタンスには、製品 ID を指定できません。  
   
 ## <a name="supported-ssnoversion-installations"></a>サポートされる [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストール  
-[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の SysPrep は、ツールを含む [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のすべての機能をサポートします。  
+[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の SysPrep では、ツールを含むすべての機能がサポートされます。  
   
-[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] またはそれ以前のバージョンをサイド バイ サイドでインストールするために、複数のインスタンスを準備できます。 これらのインスタンスの機能は、SysPrep をサポートしている必要があります。  
+[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] またはそれ以前のバージョンをサイド バイ サイドでインストールするために、複数のインスタンスを準備できます。 これらのインスタンスの機能は、SysPrep をサポートしている必要があります。  
   
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client は、イメージの準備手順の終了時に自動的にインストールされ、完了します。  
   

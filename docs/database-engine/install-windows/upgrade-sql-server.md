@@ -13,17 +13,17 @@ ms.assetid: 5064e35b-b70d-4a0b-a9e9-fff04162f9d2
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 5019205027168dc2ebd1e429087924c59f7a17d0
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 417ff500b69535dbddcefae40c2895aea88a473c
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353832"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611222"
 ---
 # <a name="upgrade-sql-server"></a>SQL Server をアップグレードする
 [!INCLUDE [SQL Server -Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
  
- [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]、[!INCLUDE[ss2016](../../includes/sssql16-md.md)]、または [!INCLUDE[ss2017](../../includes/sssql17-md.md)] のインスタンスを直接 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] にアップグレードできます。 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] および [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] については、サポートされているメインストリーム オペレーティング システム間に共通の重複がないため、SQL Server 2019 に移行するには、並列アップグレードまたは移行を行う必要があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セットアップを実行して [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] にアップグレードする前に、アップグレード プロセスに関する以下の記事とリリース ノートを確認してください。  
+ [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]、[!INCLUDE[ss2016](../../includes/sssql16-md.md)]、または [!INCLUDE[sssql17](../../includes/sssql17-md.md)] のインスタンスを直接 [!INCLUDE[sssql19](../../includes/sssql19-md.md)] にアップグレードできます。 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] および [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] については、サポートされているメインストリーム オペレーティング システム間に共通の重複がないため、[!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] に移行するには、並列アップグレードまたは移行を行う必要があります。 セットアップを実行してアップグレードする前に、アップグレード プロセスに関する以下の記事とリリース ノートを確認してください。  
   
    - [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]からアップグレードする方法については、「 [Are you upgrading from SQL Server 2005?](../../sql-server/end-of-support/sql-server-end-of-life-overview.md)」(SQL Server 2005 からのアップグレード) を参照してください。  
    - [SQL Server 2016 リリース ノート](../../sql-server/sql-server-2016-release-notes.md) 

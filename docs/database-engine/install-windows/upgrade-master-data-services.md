@@ -11,12 +11,12 @@ ms.assetid: 9c3543f3-3eb9-455d-a9bf-f17e9506ad21
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 89905788ffe1b5f62f2c5a49daeee52261e00e73
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 94935c3cbba73a9d628dabefabdd2188a00cbc27
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100344939"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610956"
 ---
 # <a name="upgrade-master-data-services"></a>マスター データ サービスのアップグレード
 
@@ -33,11 +33,10 @@ ms.locfileid: "100344939"
 -   [アップグレードおよびバックアップからのデータベースの復元](../../database-engine/install-windows/upgrade-master-data-services.md#restore)  
   
 > [!IMPORTANT]  
-> -   [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] CTP1 リリースから CTP2 リリースへのアップグレードはサポートされていません。  
 > -   アップグレードを実行する前にデータベースをバックアップしてください。  
 > -   アップグレード プロセスでは、ストアド プロシージャを再作成し、 [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)]で使用されるテーブルをアップグレードします。 これらのコンポーネントのいずれかに加えたカスタマイズは失われる場合があります。  
 > -   モデル配置パッケージは作成されたエディションの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のみで使用できます。 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]、 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]、または [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] で作成されたモデル配置パッケージを [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]に配置することはできません。  
-> -   Data Quality Services およびマスター データ サービスを [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]にアップグレードした後は、以前のバージョンの Excel 用マスター データ サービス アドインは機能しなくなります。 Excel 用の [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] マスター データ サービス アドインは、「[Microsoft Excel 用マスター データ サービス アドイン](../../master-data-services/microsoft-excel-add-in/master-data-services-add-in-for-microsoft-excel.md)」からダウンロードできます。  
+> -   Data Quality Services およびマスター データ サービスを [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の最新バージョンにアップグレードした後は、以前のバージョンの Excel 用マスター データ サービス アドインは機能しなくなります。 Excel 用の [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] マスター データ サービス アドインは、「[Microsoft Excel 用マスター データ サービス アドイン](../../master-data-services/microsoft-excel-add-in/master-data-services-add-in-for-microsoft-excel.md)」からダウンロードできます。  
   
 ##  <a name="file-location"></a><a name="fileLocation"></a> ファイルの場所  
   
@@ -96,7 +95,7 @@ ms.locfileid: "100344939"
         -   **[新しいサイトの作成]** 。 Web サイトを作成すると、新しい Web アプリケーションが自動的に作成されます。  
   
         > [!IMPORTANT]  
-        >  以前のバージョンの SQL Server ([!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]、 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]、または [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]) から取得した既存の MDS Web アプリケーションを、マスター データ サービス構成マネージャーの [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] バージョンで選択できます。 既存の Web アプリケーションを選択することはできません。代わりに MDS に対応する [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] Web アプリケーションを作成する必要があります。 それ以外の場合は、アップグレード後の MDS データベースに Web アプリケーションを関連付けようとすると、ページに関連付けられた構成データが無効であるため、要求したページにアクセスできないことを示すエラーが返されます。  
+        >  以前のバージョンの SQL Server ([!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]、 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]、または [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]) から取得した既存の MDS Web アプリケーションを、マスター データ サービス構成マネージャーの [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] バージョンで選択できます。 既存の Web アプリケーションを選択することはできません。代わりに MDS に対応する [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] Web アプリケーションを作成する必要があります。 それ以外の場合は、アップグレード後の MDS データベースに Web アプリケーションを関連付けようとすると、ページに関連付けられた構成データが無効であるため、要求したページにアクセスできないことを示すエラーが返されます。  
         >   
         >  既存の ([!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]、[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]、または [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]) Web アプリケーションと同じ名前 (別名) を、MDS Web アプリケーションに使用する場合は、まず Web アプリケーションおよびそれに関連付けられているアプリケーション プールを IIS から削除し、次にマスター データ サービス構成マネージャーの [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] バージョンを使用して同じ名前の Web アプリケーションを作成します。 Web アプリケーションとアプリケーション プールを IIS から削除する方法については、「 [Remove an Application (IIS 7)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771205(v=ws.10)) 」 (アプリケーションを削除する (IIS 7))、および「 [Remove an Application Pool (IIS 7)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772406(v=ws.10))」(アプリケーション プールを削除する (IIS 7)) を参照してください。  
   
