@@ -1,6 +1,6 @@
 ---
-description: 行ロックについて
-title: 行ロックについて | Microsoft Docs
+description: 同時ユーザーが異なる接続からデータに同時アクセスするとき、そのアクセスを制御する目的で行ロックを使用する方法について学びます。
+title: 行ロックについて
 ms.custom: ''
 ms.date: 12/08/2020
 ms.prod: sql
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 63c76a2f-f2b9-461f-8904-acbda0169ac3
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: e5305f3feaa80d0a83dd1e7bfd97088492608ae5
-ms.sourcegitcommit: 7f76975c29d948a9a3b51abce564b9c73d05dcf0
+ms.openlocfilehash: 589700b7d3f4a08958e306f59e87249263f86675
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96901061"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673146"
 ---
 # <a name="understanding-row-locking"></a>行ロックについて
 
@@ -30,8 +30,8 @@ ms.locfileid: "96901061"
 ロックは、トランザクションの整合性とデータベースの一貫性を保つために使用します。 ロックを使用すると、他のユーザーがデータを変更している最中にそのデータを読み取ったり、複数のユーザーが同時に同一のデータを変更したりする危険性を回避できます。 ロックを使用しないと、データベース内のデータが論理的に正しくなくなったり、そのデータに対して実行したクエリから予期しない結果が返されたりする可能性があります。
 
 > [!NOTE]  
-> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の行ロックの詳細については、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] オンライン ブックの「[[!INCLUDE[ssDE](../../includes/ssde_md.md)]のロック](../../relational-databases/sql-server-transaction-locking-and-row-versioning-guide.md#Lock_Engine)」を参照してください。
+> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の行ロックの詳細については、「[[!INCLUDE[ssDE](../../includes/ssde_md.md)]のロック](../../relational-databases/sql-server-transaction-locking-and-row-versioning-guide.md#Lock_Engine)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-[JDBC ドライバーによる結果セットの管理](../../connect/jdbc/managing-result-sets-with-the-jdbc-driver.md)
+[JDBC ドライバーによる結果セットの管理](managing-result-sets-with-the-jdbc-driver.md)

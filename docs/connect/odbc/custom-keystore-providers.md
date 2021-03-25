@@ -11,14 +11,15 @@ ms.topic: conceptual
 ms.assetid: a6166d7d-ef34-4f87-bd1b-838d3ca59ae7
 ms.author: v-daenge
 author: David-Engel
-ms.openlocfilehash: f1f075c7ea2e80ec1760012c33ed9f719837c036
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 90eadc72e631ee59b0773dc47fe1199668484b65
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837431"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673136"
 ---
 # <a name="custom-keystore-providers"></a>カスタム キーストア プロバイダー
+
 [!INCLUDE[Driver_ODBC_Download](../../includes/driver_odbc_download.md)]
 
 ## <a name="overview"></a>概要
@@ -27,7 +28,7 @@ SQL Server 2016 の列暗号化機能を使用するには、サーバーに格�
 
 各キーストア プロバイダーでは、1 つまたは複数の CMK を格納し、管理します。これらは、キー パス (プロバイダーによって定義された形式の文字列) で識別されます。 この CMK は、(プロバイダーによって定義された文字列でもある) 暗号化アルゴリズムと共に、CEK の暗号化と ECEK の暗号化解除を行うために使用できます。 このアルゴリズムは、ECEK およびプロバイダーの名前と共に、データベースの暗号化メタデータに格納されます。 詳細については、[CREATE COLUMN MASTER KEY](../../t-sql/statements/create-column-master-key-transact-sql.md) と [CREATE COLUMN ENCRYPTION KEY](../../t-sql/statements/create-column-encryption-key-transact-sql.md) に関する記事をご覧ください。 このため、キー管理の 2 つの基本操作は次のようになります。
 
-```
+```cpp
 CEK = DecryptViaCEKeystoreProvider(CEKeystoreProvider_name, Key_path, Key_algorithm, ECEK)
 
 -and-
@@ -37,13 +38,13 @@ ECEK = EncryptViaCEKeystoreProvider(CEKeyStoreProvider_name, Key_path, Key_algor
 
 ここで、`CEKeystoreProvider_name` は特定の列暗号化キーストア プロバイダー (CEKeystoreProvider) を識別するために使用され、他の引数は CEKeystoreProvider によって、(E)CEK の暗号化とその解除を行うために使用されます。 名前とキー パスは CMK メタデータで指定されますが、アルゴリズムと ECEK 値は CEK メタデータで指定されます。 既定の組み込みプロバイダーと共に、複数のキーストア プロバイダーが存在する場合があります。 CEK を必要とする操作を実行するときに、ドライバーでは CMK メタデータを使用して、適切なキーストア プロバイダーを名前で検索し、その暗号化解除の操作を実行します。これは次のように表すことができます。
 
-```
+```cpp
 CEK = CEKeyStoreProvider_specific_decrypt(Key_path, Key_algorithm, ECEK)
 ```
 
 ドライバーで CEK を暗号化する必要はありませんが、キー管理ツールでは、CMK の作成や交換などの操作を実装するために必要になる場合があります。 これらのアクションでは、逆の操作を実行する必要があります。
 
-```
+```cpp
 ECEK = CEKeyStoreProvider_specific_encrypt(Key_path, Key_algorithm, CEK)
 ```
 
@@ -55,7 +56,7 @@ ECEK = CEKeyStoreProvider_specific_encrypt(Key_path, Key_algorithm, CEK)
 
 `CEKeystoreProvider` 構造体では、1 つのキーストア プロバイダーのエントリ ポイントを定義します。
 
-```
+```cpp
 typedef struct CEKeystoreProvider {
     wchar_t *Name;
     int (*Init)(CEKEYSTORECONTEXT *ctx, errFunc *onError);
@@ -93,9 +94,10 @@ typedef struct CEKeystoreProvider {
 
 Free を除き、このインターフェイス内の関数にはすべて、パラメーター (**ctx** と **onError**) のペアがあります。 前者では関数が呼び出されるコンテキストを識別しますが、後者はエラーの報告に使用されます。 詳細については、以下の[コンテキスト](#context-association)に関する記述と、「[エラー処理](#error-handling)」を参照してください。
 
-```
+```cpp
 int Init(CEKEYSTORECONTEXT *ctx, errFunc onError);
 ```
+
 プロバイダー定義の初期化関数のプレースホルダー名。 ドライバーでは、プロバイダーが読み込まれた後 (ただし、最初に ECEK の暗号化解除または Read() と Write() 要求を実行するために必要になる前) に、この関数を 1 回呼び出します。 この関数は、必要な初期化を実行するために使用します。
 
 |引数|説明|
@@ -104,36 +106,38 @@ int Init(CEKEYSTORECONTEXT *ctx, errFunc onError);
 |`onError`|[入力] エラー レポート関数。|
 |`Return Value`|成功を示す場合は 0 以外、失敗を示す場合は 0 を返します。|
 
-```
+```cpp
 int Read(CEKEYSTORECONTEXT *ctx, errFunc onError, void *data, unsigned int *len);
 ```
 
-プロバイダー定義の通信関数のプレースホルダー名。 ドライバーでは、アプリケーションによって SQL_COPT_SS_CEKEYSTOREDATA 接続属性を使用して (以前に書き込まれた) プロバイダーからデータを読み取るように要求されたときに、この関数を呼び出します。これにより、アプリケーションではプロバイダーから任意のデータを読み取ることができます。 詳細については、「[キーストア プロバイダーとの通信](../../connect/odbc/using-always-encrypted-with-the-odbc-driver.md#communicating-with-keystore-providers)」をご覧ください。
+プロバイダー定義の通信関数のプレースホルダー名。 ドライバーでは、アプリケーションによって SQL_COPT_SS_CEKEYSTOREDATA 接続属性を使用して (以前に書き込まれた) プロバイダーからデータを読み取るように要求されたときに、この関数を呼び出します。これにより、アプリケーションではプロバイダーから任意のデータを読み取ることができます。 詳細については、「[キーストア プロバイダーとの通信](using-always-encrypted-with-the-odbc-driver.md#communicating-with-keystore-providers)」をご覧ください。
 
 |引数|説明|
 |:--|:--|
 |`ctx`|[入力] 操作コンテキスト。|
 |`onError`|[入力] エラー レポート関数。|
 |`data`|[出力] アプリケーションによって読み取られるデータが、プロバイダーによって書き込まれるバッファーへのポインター。 このバッファーは、CEKEYSTOREDATA 構造体のデータ フィールドに対応します。|
-|`len`|[入出力] 長さの値へのポインター。入力時では、これはデータ バッファーの最大長であり、プロバイダーでは *len を超えるバイトは書き込まれません。 戻り時に、プロバイダーでは、書き込まれたバイト数で *len を更新する必要があります。|
+|`len`|[入出力] 長さの値へのポインター。入力時では、この値はデータ バッファーの最大長であり、プロバイダーでは `*len` を超えるバイトは書き込まれません。 戻り時に、プロバイダーでは、書き込まれたバイト数で `*len` を更新する必要があります。|
 |`Return Value`|成功を示す場合は 0 以外、失敗を示す場合は 0 を返します。|
 
-```
+```cpp
 int Write(CEKEYSTORECONTEXT *ctx, errFunc onError, void *data, unsigned int len);
 ```
-プロバイダー定義の通信関数のプレースホルダー名。 ドライバーでは、アプリケーションによって、SQL_COPT_SS_CEKEYSTOREDATA 接続属性を使用してプロバイダーにデータを書き込むように要求されたときに、この関数を呼び出します。これにより、アプリケーションではプロバイダーに任意のデータを書き込むことができます。 詳細については、「[キーストア プロバイダーとの通信](../../connect/odbc/using-always-encrypted-with-the-odbc-driver.md#communicating-with-keystore-providers)」をご覧ください。
+
+プロバイダー定義の通信関数のプレースホルダー名。 ドライバーでは、アプリケーションによって、SQL_COPT_SS_CEKEYSTOREDATA 接続属性を使用してプロバイダーにデータを書き込むように要求されたときに、この関数を呼び出します。これにより、アプリケーションではプロバイダーに任意のデータを書き込むことができます。 詳細については、「[キーストア プロバイダーとの通信](using-always-encrypted-with-the-odbc-driver.md#communicating-with-keystore-providers)」をご覧ください。
 
 |引数|説明|
 |:--|:--|
 |`ctx`|[入力] 操作コンテキスト。|
 |`onError`|[入力] エラー レポート関数。|
 |`data`|[入力] プロバイダーで読み取るデータが含まれているバッファーへのポインター。 このバッファーは、CEKEYSTOREDATA 構造体のデータ フィールドに対応します。 プロバイダーでは、このバッファーから len を超えるバイトを読み取ることはできません。|
-|`len`|[入力] データで使用可能なバイト数。 これは、CEKEYSTOREDATA 構造体の dataSize フィールドに対応します。|
+|`len`|[入力] データで使用可能なバイト数。 この値は、CEKEYSTOREDATA 構造体の dataSize フィールドに対応します。|
 |`Return Value`|成功を示す場合は 0 以外、失敗を示す場合は 0 を返します。|
 
-```
+```cpp
 int (*DecryptCEK)( CEKEYSTORECONTEXT *ctx, errFunc *onError, const wchar_t *keyPath, const wchar_t *alg, unsigned char *ecek, unsigned short ecekLen, unsigned char **cekOut, unsigned short *cekLen);
 ```
+
 プロバイダー定義の ECEK 暗号化解除関数のプレースホルダー名。 ドライバーでは、このプロバイダーに関連付けられている CMK によって暗号化された ECEK を CEK に暗号化解除するために、この関数を呼び出します。
 
 |引数|説明|
@@ -148,16 +152,17 @@ int (*DecryptCEK)( CEKEYSTORECONTEXT *ctx, errFunc *onError, const wchar_t *keyP
 |`cekLen`|[出力] プロバイダーでは、cekLen が指すアドレスに、**cekOut に書き込まれて暗号化解除された ECEK の長さを書き込みます。|
 |`Return Value`|成功を示す場合は 0 以外、失敗を示す場合は 0 を返します。|
 
-```
+```cpp
 int (*EncryptCEK)( CEKEYSTORECONTEXT *ctx, errFunc *onError, const wchar_t *keyPath, const wchar_t *alg, unsigned char *cek,unsigned short cekLen, unsigned char **ecekOut, unsigned short *ecekLen);
 ```
+
 プロバイダー定義の CEK 暗号化関数のプレースホルダー名。 ドライバーでは、この関数を呼び出したり、ODBC インターフェイスを介してその機能を公開したりすることはありませんが、これは、キー管理ツールによる ECEK の作成に対するプログラムでのアクセスを許可するために提供されます。
 
 |引数|説明|
 |:--|:--|
 |`ctx`|[入力] 操作コンテキスト。|
 |`onError`|[入力] エラー レポート関数。|
-|`keyPath`|[入力] 特定の ECEK によって参照される、CMK の[KEY_PATH](../../t-sql/statements/create-column-master-key-transact-sql.md) メタデータ属性の値。 null 値で終わるワイド文字列 (*) です。 これは、このプロバイダーによって処理される CMK を識別するためのものです。|
+|`keyPath`|[入力] 特定の ECEK によって参照される、CMK の[KEY_PATH](../../t-sql/statements/create-column-master-key-transact-sql.md) メタデータ属性の値。 null 値で終わるワイド文字列 (*) です。 この値は、このプロバイダーによって処理される CMK を識別するためのものです。|
 |`alg`|[入力] 特定の ECEK の [ALGORITHM](../../t-sql/statements/create-column-encryption-key-transact-sql.md) メタデータ属性の値。 null 値で終わるワイド文字列 (*) です。 この値は、指定された ECEK の暗号化に使用される暗号化アルゴリズムを識別するためのものです。|
 |`cek`|[入力] 暗号化される CEK へのポインター。|
 |`cekLen`|[入力] CEK の長さ。|
@@ -165,14 +170,14 @@ int (*EncryptCEK)( CEKEYSTORECONTEXT *ctx, errFunc *onError, const wchar_t *keyP
 |`ecekLen`|[出力] プロバイダーでは、ecekLen が指すアドレスに、**ecekOut に書き込まれて暗号化された CEK の長さを書き込みます。|
 |`Return Value`|成功を示す場合は 0 以外、失敗を示す場合は 0 を返します。|
 
-```
+```cpp
 void (*Free)();
 ```
+
 プロバイダー定義の終了関数のプレースホルダー名。 ドライバーでは、プロセスの通常の終了時にこの関数を呼び出すことができます。
 
 > [!NOTE]
 > *ワイド文字列は、SQL Server での格納方法により、2 バイト文字 (UTF-16) になります。*
-
 
 ### <a name="error-handling"></a>エラー処理
 
@@ -187,12 +192,12 @@ void (*Free)();
 |引数|説明|
 |:--|:--|
 |`ctx`|[入力] エラーを報告するコンテキスト。|
-|`msg`|[入力] 報告するエラー メッセージ。 null 値で終わるワイド文字列です。 パラメーター化された情報を表示できるようにするために、この文字列には、[FormatMessage](/windows/desktop/api/winbase/nf-winbase-formatmessage) 関数によって受け入れられるフォームの挿入書式設定シーケンスを含めることができます。 拡張機能は、以下に示すように、このパラメーターで指定できます。|
+|`msg`|[入力] 報告するエラー メッセージ。 null 値で終わるワイド文字列です。 情報をパラメーター化するために、この文字列には、[FormatMessage](/windows/desktop/api/winbase/nf-winbase-formatmessage) 関数によって受け入れられるフォームの挿入書式設定シーケンスを含めることができます。 拡張機能は、以下に示すように、このパラメーターで指定できます。|
 |...|[入力] 必要に応じて、msg の書式指定子に合わせるための追加の可変個引数パラメーター。|
 
 エラーが発生したときに報告するために、プロバイダーでは onError を呼び出します。これにより、ドライバーによってプロバイダー関数に渡されたコンテキスト パラメーターと、書式設定する省略可能な追加パラメーターを含むエラー メッセージが提供されます。 プロバイダーでは、この関数を複数回呼び出して、1 つのプロバイダー関数呼び出し内で複数のエラー メッセージを連続してポストする場合があります。 次に例を示します。
 
-```
+```cpp
     if (!doSomething(...))
     {
         onError(ctx, L"An error occurred in doSomething.");
@@ -200,7 +205,6 @@ void (*Free)();
         return 0;
     }
 ```
-
 
 `msg` パラメーターは通常、ワイド文字列ですが、追加の拡張機能を使用できます。
 
@@ -210,12 +214,11 @@ IDS_MSG マクロで特別な定義済みの値の 1 つを使用することに
 
 ドライバーによってエラーが認識されるようにするには、プロバイダー関数で失敗を返す必要があります。 ODBC 操作のコンテキストでエラーが発生すると、標準的な ODBC 診断メカニズム (`SQLError`、`SQLGetDiagRec`、および `SQLGetDiagField`) を使用して、接続またはステートメント ハンドルでポストされたエラーにアクセスできるようになります。
 
-
 ### <a name="context-association"></a>コンテキストの関連付け
 
 `CEKEYSTORECONTEXT` 構造体は、エラー コールバックのコンテキストを提供するだけでなく、プロバイダー操作が実行される ODBC コンテキストを特定するためにも使用できます。 このコンテキストにより、プロバイダーでは、これらの各コンテキストにデータを関連付け、接続ごとの構成の実装などを行うことができます。 このため、構造体には、環境、接続、およびステートメントのコンテキストに対応する、3 つの非透過ポインターが含まれています。
 
-```
+```cpp
 typedef struct CEKeystoreContext
 {
 void *envCtx;
@@ -230,8 +233,7 @@ void *stmtCtx;
 |`dbcCtx`|接続コンテキスト。|
 |`stmtCtx`|ステートメント コンテキスト。|
 
-これらの各コンテキストは非透過値ですが、対応する ODBC ハンドルと同じではなく、ハンドルの一意識別子として使用できます。ハンドル *X* がコンテキスト値 *Y* に関連付けられている場合、*X* と同時に存在する他の環境、接続、ステートメント ハンドルには、*Y* のコンテキスト値がなく、他のコンテキスト値はハンドル *X* に関連付けられません。実行されているプロバイダーの操作に特定のハンドル コンテキストがない (たとえば、SQLSetConnectAttr を呼び出してプロバイダーを読み込んで構成する際に、ステートメント ハンドルがない) 場合は、構造体の対応するコンテキスト値が null になります。
-
+これらの各コンテキストは非透過値ですが、対応する ODBC ハンドルと同じではなく、ハンドルの一意識別子として使用できます。ハンドル *X* がコンテキスト値 *Y* に関連付けられている場合、*X* と同時に存在する他の環境、接続、ステートメント ハンドルには、*Y* のコンテキスト値がなく、他のコンテキスト値はハンドル *X* に関連付けられません。実行されているプロバイダーの操作に特定のハンドル コンテキストがない (たとえば、SQLSetConnectAttr を呼び出してプロバイダーを読み込んで構成する場合に、ステートメント ハンドルがない) 場合は、構造体の対応するコンテキスト値が null になります。
 
 ## <a name="example"></a>例
 
@@ -239,7 +241,7 @@ void *stmtCtx;
 
 次のコードは、最小のキーストア プロバイダー実装の例です。
 
-```
+```cpp
 /* Custom Keystore Provider Example
 
 Windows:   compile with cl MyKSP.c /LD /MD /link /out:MyKSP.dll
@@ -364,7 +366,7 @@ CEKEYSTOREPROVIDER *CEKeystoreProvider[] = {
 
 次のコードは、上記のキーストア プロバイダーを使用する、デモ アプリケーションです。 これを実行するときは、プロバイダー ライブラリがアプリケーション バイナリと同じディレクトリにあり、接続文字列によって `ColumnEncryption=Enabled` 設定が指定されている (または、それを含む DSN が指定されている) ことを確認します。
 
-```
+```cpp
 /*
  Example application for demonstration of custom keystore provider usage
 
@@ -637,4 +639,4 @@ FoundProv:
 
 ## <a name="see-also"></a>参照
 
-[ODBC ドライバーで Always Encrypted を使用する](../../connect/odbc/using-always-encrypted-with-the-odbc-driver.md)
+[ODBC ドライバーで Always Encrypted を使用する](using-always-encrypted-with-the-odbc-driver.md)

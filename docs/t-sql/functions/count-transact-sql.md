@@ -4,7 +4,7 @@ title: COUNT (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 07/24/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -24,12 +24,12 @@ ms.assetid: 28d39da6-bc2e-46c7-858c-b1721c938830
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ad8aa2f0f24dda5f2c67c813df08291fe6bca432
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: d061173f0898345c9ebdef3b9208be3dddfccc53
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99184178"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748032"
 ---
 # <a name="count-transact-sql"></a>COUNT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -79,7 +79,7 @@ COUNT(DISTINCT *expression*) はグループ内の各行に対して *expression
   
 戻り値が 2^31-1 を超える場合、`COUNT` はエラーを返します。 このような場合は代わりに `COUNT_BIG` を使用してください。
   
-`COUNT` は、OVER および ORDER BY 句 "***なし** _" で使用される場合は決定的関数です。 OVER および ORDER BY 句と "_*_共に_*_" 使用される場合は、非決定的関数です。 詳細については、「[決定的関数と非決定的関数](../../relational-databases/user-defined-functions/deterministic-and-nondeterministic-functions.md)」を参照してください。
+`COUNT` は、OVER および ORDER BY 句 "***なし** _" で使用される場合は決定的関数です。 OVER および ORDER BY 句と "*_共に_*" 使用される場合は、非決定論的関数です。 詳細については、「[決定的関数と非決定的関数](../../relational-databases/user-defined-functions/deterministic-and-nondeterministic-functions.md)」を参照してください。
   
 ## <a name="examples"></a>例  
   
@@ -101,7 +101,7 @@ GO
 (1 row(s) affected)
 ```
   
-### <a name="b-using-count_"></a>B. COUNT(\_) を使用する  
+### <a name="b-using-count"></a>B. COUNT(\*) を使用する  
 この例は、[!INCLUDE[ssSampleDBCoFull](../../includes/sssampledbcofull-md.md)] の従業員の合計数を返します。
   
 ```sql

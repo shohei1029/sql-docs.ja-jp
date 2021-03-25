@@ -1,23 +1,24 @@
 ---
-title: Oracle を SQL Server に移行する
+title: 'Oracle から SQL Server に: 移行ガイド'
 description: 'このガイドでは、SQL Server Migration Assistant for Oracle (SSMA for Oracle) を使用して、Oracle スキーマを Microsoft SQL Server に移行する方法について説明します。 '
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: migration-guide
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 7ab329891001a8ce71d77a97ced85f2ef63ad002
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: 675086012398d03e3ed93fbe179de62e0a955cb6
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103603338"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673669"
 ---
-# <a name="migration-guide-migrate-oracle-to-sql-server"></a>移行ガイド: Oracle を SQL Server に移行する
+# <a name="migration-guide-oracle-to-sql-server"></a>移行ガイド: Oracle から SQL Server に
+[!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
 
 このガイドでは、SQL Server Migration Assistant for Oracle を使用して、Oracle データベースを SQL Server に移行する方法について説明します。 
 
@@ -51,15 +52,45 @@ MAP Toolkit を使用してインベントリ スキャンを実行するには�
 
 1. [MAP Toolkit](https://go.microsoft.com/fwlink/?LinkID=316883) を開きます。
 1. **[Create/Select database]\(データベースの作成/選択\)** を選択します。
+
+   ![データベースの選択](./media/oracle-to-sql-server/select-database.png)
+
 1. **[インベントリ データベースの作成]** を選択し、新しく作成するインベントリ データベースの名前を入力し、簡単な説明を入力して、 **[OK]** を選択します。 
+
+   :::image type="content" source="media/oracle-to-sql-server/create-inventory-database.png" alt-text="インベントリ データベースを作成する":::
+
 1. **[インベントリ データの収集]** を選択して、**インベントリと評価ウィザード** を開きます。 
+
+   :::image type="content" source="media/oracle-to-sql-server/collect-inventory-data.png" alt-text="インベントリ データを収集する":::
+
 1. **インベントリと評価ウィザード** で、 **[Oracle]** 、 **[次へ]** の順に選択します。 
+
+   ![Oracle を選択する](./media/oracle-to-sql-server/choose-oracle.png)
+
 1. ビジネス ニーズおよびご使用の環境に最も適したコンピューター検索オプションを選択し、 **[次へ]** を選択します。 
+
+   ![ビジネス ニーズに最適なコンピューター検索オプションを選択する](./media/oracle-to-sql-server/choose-search-option.png)
+
 1. 探索するシステムの資格情報を入力するか、新しい資格情報を作成し、 **[次へ]** を選択します。
+
+    ![資格情報を入力する](./media/oracle-to-sql-server/choose-credentials.png)
+
 1. 資格情報の順序を設定し、 **[次へ]** を選択します。 
+
+   ![資格情報の順序を設定する](./media/oracle-to-sql-server/set-credential-order.png)  
+
 1. 検出する各コンピューターの資格情報を指定します。 コンピューターまたはマシンごとに固有の資格情報を使用するか、 **[すべてのコンピューターの資格情報]** の一覧を使用することを選択できます。  
+
+   ![検出する各コンピューターの資格情報を指定する](./media/oracle-to-sql-server/specify-credentials-for-each-computer.png)
+
 1. 選択の概要を確認し、 **[完了]** を選択します。
+
+   ![概要の確認](./media/oracle-to-sql-server/review-summary.png)
+
 1. スキャンが完了したら、 **[データ収集]** 概要レポートを表示します。 スキャンには数分かかりますが、時間はデータベースの数によって異なります。 完了したら、 **[閉じる]** を選択します。 
+
+   ![コレクションの概要レポート](./media/oracle-to-sql-server/collection-summary-report.png)
+
 1. **[オプション]** を選択して、Oracle の評価とデータベースの詳細に関するレポートを生成します。 両方のレポートを生成するには、オプションを 1 つずつ選択します。
 
 
@@ -74,8 +105,20 @@ MAP Toolkit を使用してインベントリ スキャンを実行するには�
 1. [SQL Server Migration Assistant (SSMA) for Oracle](https://www.microsoft.com/download/details.aspx?id=54258) を開きます。 
 1. **[ファイル]** を選択し、 **[新しいプロジェクト]** を選択します。 
 1. プロジェクト名とプロジェクトを保存する場所を指定し、ドロップダウンから SQL Server 移行ターゲットを選択します。 **[OK]** を選択します。 
+
+   ![新しいプロジェクト](./media/oracle-to-sql-server/new-project.png)
+
 1. **[Oracle への接続]** ダイアログ ボックスで、Oracle 接続の詳細の値を入力します。
+
+   ![Oracle への接続](./media/oracle-to-sql-server/connect-to-oracle.png)
+
+   移行する Oracle スキーマを選択する:
+
+   ![読み込むスキーマを選択する](./media/oracle-to-sql-server/select-schema.png)
+
 1. **Oracle メタデータ エクスプローラー** で、Oracle スキーマを選択し、 **[レポートの作成]** を選択して、変換の統計とエラーまたは警告 (ある場合) を含む HTML レポートを生成します。
+
+   ![レポートの作成](./media/oracle-to-sql-server/create-report.png)
 
 1. HTML レポートで変換の統計、およびエラーと警告を確認します。 これを分析して、変換の問題点と解決策を把握します。
 
@@ -85,6 +128,8 @@ MAP Toolkit を使用してインベントリ スキャンを実行するには�
 
     これを Excel で開き、Oracle オブジェクトのインベントリと、スキーマ変換の実行に必要な作業を把握します。
 
+   ![変換レポート](./media/oracle-to-sql-server/conversion-report.png)
+
 
 ### <a name="validate-data-types"></a>データ型を検証する
 
@@ -93,6 +138,9 @@ MAP Toolkit を使用してインベントリ スキャンを実行するには�
 1. メニューから **[ツール]** を選択します。 
 1. **[プロジェクトの設定]** を選択します。 
 1. **[Type mappings]\(型のマッピング\)** タブを選択します。 
+
+   ![型マッピング](./media/oracle-to-sql-server/type-mappings.png)
+
 1. 各テーブルの型マッピングを変更するには、**Oracle メタデータ エクスプローラー** でテーブルを選択します。 
 
 
@@ -103,8 +151,22 @@ MAP Toolkit を使用してインベントリ スキャンを実行するには�
 
 1. (省略可能) 動的またはアドホックのクエリを変換するには、ノードを右クリックし、 **[ステートメントの追加]** を選択します。
 1. 一番上の行のナビゲーション バーから **[SQL Server への接続]** を選択し、SQL Server の接続の詳細を指定します。 既存のデータベースへの接続を選択することも、新しい名前を指定することもできます。後者の場合、データベースはターゲット サーバー上に作成されます。
+
+   ![SQL に接続する](./media/oracle-to-sql-server/connect-to-sql.png)
+
 1. スキーマを右クリックして、 **[スキーマの変換]** を選択します。
+
+   ![スキーマの変換](./media/oracle-to-sql-server/convert-schema.png)
+
 1. スキーマの変換が完了したら、スキーマの構造を確認し、潜在的な問題を特定します。
+
+   変換されたオブジェクトを元のオブジェクトと比較する: 
+
+   ![Schema Compare の変換とオブジェクト コードの確認](./media/oracle-to-sql-server/table-mapping.png)
+
+   変換されたプロシージャを元のプロシージャと比較する: 
+
+   ![変換されたプロシージャの確認](./media/oracle-to-sql-server/procedure-comparison.png)
 
    オフライン スキーマ修復の演習のために、プロジェクトをローカルに保存することができます。 このためには、 **[ファイル]** メニューから **[プロジェクトの保存]** を選択します。 これにより、スキーマを SQL Server に発行する前に、ソースとターゲットのスキーマをオフラインで評価し、修復を実行する機会が得られます。
 
@@ -117,10 +179,26 @@ MAP Toolkit を使用してインベントリ スキャンを実行するには�
 スキーマを発行し、データを移行するには、次の手順に従います。 
 
 1. **SQL Server メタデータ エクスプローラー** でデータベースを右クリックし、 **[データベースとの同期]** を選択します。 この操作により、Oracle スキーマが SQL Server に公開されます。 
+
+   ![データベースと同期する](./media/oracle-to-sql-server/synchronize-database.png)
+
+   データベースとの同期を確認する:
+
+   ![データベースと同期する - マッピングの確認](./media/oracle-to-sql-server/synchronize-database-review.png)
+
 1. **Oracle メタデータ エクスプローラー** で Oracle スキーマを右クリックし、 **[データの移行]** を選択します。 または、一番上の行のナビゲーションから [データの移行] を選択することもできます。
+
+   ![データの移行](./media/oracle-to-sql-server/migrate-data.png)
+
 1. ダイアログ ボックスで Oracle と SQL Server の接続の詳細を指定します。
 1. 移行が完了したら、データ移行レポートを表示します。
+
+    ![データ移行レポート](./media/oracle-to-sql-server/data-migration-report.png)
+
 1. [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) を使用して SQL Server に接続し、SQL Server インスタンス上のデータとスキーマを確認します。 
+
+   ![SSMA で検証する](./media/oracle-to-sql-server/validate-in-ssms.png)
+
 
 SSMA を使用するだけでなく、SQL Server Integration Services (SSIS) を使用してデータを移行することもできます。 詳細については、次を参照してください。 
 - ブログ「[SQL Server Migration Assistant: Microsoft 以外のデータ プラットフォームのデータを評価して SQL Server に移行する方法](https://blogs.msdn.microsoft.com/datamigration/2016/11/16/sql-server-migration-assistant-how-to-assess-and-migrate-databases-from-non-microsoft-data-platforms-to-sql-server/)」。

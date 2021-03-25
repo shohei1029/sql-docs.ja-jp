@@ -2,7 +2,7 @@
 title: SQL Server Backup to URL | Microsoft Docs
 description: Microsoft Azure Blob Storage をバックアップ先として使用するために、SQL Server で必要な概念、要件、コンポーネントについて学習します。
 ms.custom: ''
-ms.date: 03/25/2019
+ms.date: 03/19/2021
 ms.prod: sql
 ms.prod_service: backup-restore
 ms.reviewer: ''
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 11be89e9-ff2a-4a94-ab5d-27d8edf9167d
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: e2652320875d3bf22f5a7557dc7c1deba9a93376
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9dfb774bf9176c315cb5f77a8567503d12dba4e5
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100349042"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673899"
 ---
 # <a name="sql-server-backup-to-url"></a>URL への SQL Server のバックアップ
 
@@ -97,6 +97,9 @@ Microsoft Azure Blob Storage サービスとの間でバックアップまたは
   
     > [!IMPORTANT]  
     >  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、Azure のアカウント名とアクセス キーの認証または Shared Access Signature とアクセス トークンを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資格情報に保存する必要があります。 この情報は、バックアップ操作または復元操作の実行時に、Azure アカウントに対する認証に使用されます。  
+
+    > [!WARNING]
+    > Azure Storage では、ストレージ アカウントの共有キー認可を[無効に](https://docs.microsoft.com/azure/storage/common/shared-key-authorization-prevent)できます。 共有キー認可が無効になっている場合、URL には SQL Server をバックアップできません。
   
 - BACKUP コマンドまたは RESTORE コマンドの発行に使用するユーザー アカウントは、 **資格情報の変更** 権限を持つ **db_backup operator** データベース ロールに属している必要があります。   
 

@@ -1,21 +1,21 @@
 ---
-title: '移行ガイド: SQL Server へのアクセス'
+title: 'SQL Server へのアクセス: 移行ガイド'
 description: 'このガイドでは、SQL Server Migration Assistant for Access (SSMA for Access) を使用して、Microsoft Access データベースを Microsoft SQL Server に移行する方法について説明します。 '
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: migration-guide
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 3e49909b26d845c0edfaf9e5d50528b077fb2593
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: 467519e23ada08a1b14682720aa350e8df113318
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103603323"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673788"
 ---
 # <a name="migration-guide-access-to-sql-server"></a>移行ガイド: SQL Server へのアクセス
 [!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
@@ -45,18 +45,61 @@ SQL Server Migration Assistant (SSMA) for Access を使用すると、データ�
 評価を作成するには、次の手順を行います。
 
 1. [SQL Server Migration Assistant for Access](https://www.microsoft.com/download/details.aspx?id=54255) を開きます。 
-1. **[ファイル]** を選択し、 **[新しいプロジェクト]** を選択します。 移行プロジェクトの名前を指定します。 
+1. **[ファイル]** を選択し、 **[新しいプロジェクト]** を選択します。 移行ターゲットを選択し、移行プロジェクトの名前を指定します。 
+
+   ![[新しいプロジェクト]](./media/access-to-sql-server/new-project.png)
+
 1. **[データベースの追加]** を選択し、プロジェクトに追加するデータベースを選択します。 
+
+   ![[データベースの追加]](./media/access-to-sql-server/add-databases.png)
+
 1. **[Access Metadata Explorer]** で、評価するデータベースを右クリックして、 **[レポートの作成]** を選択します。 
+
+   ![レポートの作成](./media/access-to-sql-server/create-report.png)
+
 1. 評価レポートを確認します。 次に例を示します。 
+
+   ![サンプル レポート](./media/access-to-sql-server/sample-report.png)
+
+### <a name="validate-data-types"></a>データ型を検証する
+
+既定のデータ型マッピングを検証し、必要に応じて要件に基づいて変更します。 これを行うには、次のステップに従います。 
+
+1. メニューから **[ツール]** を選択します。 
+1. **[プロジェクトの設定]** を選択します。 
+1. **[Type mappings]\(型のマッピング\)** タブを選択します。 
+
+   ![型マッピング](./media/access-to-sql-server/type-mappings.png)
+
+1. 各テーブルの型マッピングを変更するには、**Oracle メタデータ エクスプローラー** でテーブルを選択します。 
+
+
 
 ### <a name="convert"></a>Convert 
 
 データベース オブジェクトを変換するには、次の手順に従います。 
 
-1. **[Azure SQL Database に接続する]** を選択し、接続の詳細を指定します。 
-1. **[Access Metadata Explorer]** 内でデータベースを右クリックし、 **[スキーマの変換]** を選択します。  
+1. **[SQL Server への接続]** を選択し、接続の詳細を指定します。 
+
+
+   ![SQL Server への接続](./media/access-to-sql-server/connect-to-sql-server.png)
+
+1. **[Access Metadata Explorer]** 内でデータベースを右クリックし、 **[スキーマの変換]** を選択します。 あるいは、データベースを選択した後、上部のナビゲーション バーから **[スキーマの変換]** を選択できます。 
+
+   ![スキーマの変換](./media/access-to-sql-server/convert-schema.png)
+
+   変換されたクエリを元のクエリと比較する: 
+
+   ![変換されたクエリの比較 ](./media/access-to-sql-server/query-comparison.png)
+
+   変換されたオブジェクトを元のオブジェクトと比較する: 
+
+   ![変換されたオブジェクトの確認](./media/access-to-sql-server/table-comparison.png)
+
 1. (省略可能) 個々のオブジェクトを変換するには、オブジェクトを右クリックし、 **[スキーマの変換]** を選択します。 変換されたオブジェクトは、 **[Access Metadata Explorer]** 内に太字で表示されます。 
+
+   ![メタデータ エクスプローラーの太字のオブジェクトが変換されています](./media/access-to-sql-server/converted-items-bold.png)
+ 
 1. [出力] ペインの **[結果の確認]** を選択し、 **[エラー一覧]** ペインでエラーを確認します。 
 
 
@@ -67,10 +110,29 @@ SQL Server Migration Assistant (SSMA) for Access を使用すると、データ�
 SSMA for Access を使用してデータを移行するには、次の手順に従います。 
 
 1. まだ行っていない場合は、 **[Azure SQL Database への接続]** を選択し、接続の詳細を指定します。 
-1. **[Azure SQL Database Metadata Explorer]** でデータベースを右クリックし、 **[データベースとの同期]** を選択します。 この操作により、MySQL スキーマが Azure SQL Database に公開されます。
+
+1. **SQL Server メタデータ エクスプローラー** でデータベースを右クリックし、 **[データベースとの同期]** を選択します。 この操作により、MySQL スキーマが SQL Server に公開されます。
+
+   ![データベースと同期する](./media/access-to-sql-server/synchronize-with-database.png)
+
+   データベースとの同期を確認する: 
+
+   ![データベースとの同期を確認する](./media/access-to-sql-server/synchronize-with-database-review.png)
+
 1. **[Access Metadata Explorer]** を使用して、移行する項目の横にあるチェック ボックスをオンにします。 データベース全体を移行する場合は、データベースの横にあるチェック ボックスをオンにします。 
 1. 移行するデータベースまたはオブジェクトを右クリックし、 **[データの移行]** を選択します。 
    データベース全体のデータを移行するには、データベース名の横にあるチェック ボックスをオンにします。 個々のテーブルからデータを移行するには、データベースを展開し、[テーブル] を展開して、テーブルの横にあるチェック ボックスをオンにします。 個々のテーブルのデータを除外するには、このチェック ボックスをオフにします。
+
+   ![データの移行](./media/access-to-sql-server/migrate-data.png)
+
+   移行されたデータを確認する: 
+
+   ![データ移行の確認](./media/access-to-sql-server/migrate-data-review.png)
+
+1. [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) を使用して SQL Server に接続し、SQL Server インスタンス上のデータとスキーマを確認します。 
+
+   ![SSMA で検証する](./media/access-to-sql-server/validate-in-ssms.png)
+
 
 
 ## <a name="post-migration"></a>移行後 

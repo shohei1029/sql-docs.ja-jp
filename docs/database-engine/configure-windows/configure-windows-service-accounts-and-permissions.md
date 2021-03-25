@@ -51,12 +51,12 @@ helpviewer_keywords:
 ms.assetid: 309b9dac-0b3a-4617-85ef-c4519ce9d014
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: e68604e7805342c9c1d0302c0f99d88d8d9fbf07
-ms.sourcegitcommit: 76c5e10704e3624b538b653cf0352e606b6346d3
+ms.openlocfilehash: 525f08bada39e02a3dfc4f834f5106be18571e36
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98924729"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673976"
 ---
 # <a name="configure-windows-service-accounts-and-permissions"></a>Windows サービス アカウントと権限の構成
 
@@ -249,7 +249,7 @@ ms.locfileid: "98924729"
 
 ### <a name="service-configuration-and-access-control"></a><a name="Serv_SID"></a> サービスの構成とアクセス制御
 
-[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の場合、各サービスに対してサービスごとの SID を使用することができます。これによって、サービスを分離し、多層防御を実現できます。 サービスごとの SID は、サービス名から取得されるので、そのサービスに固有です。 たとえば、[!INCLUDE[ssDE](../../includes/ssde-md.md)] サービスの名前付きインスタンスのサービス SID 名は、**NT Service\MSSQL$** _\<InstanceName>_ となります。 サービスを分離すると、高い特権のアカウントを使用したり、オブジェクトのセキュリティ保護を弱めたりすることなく、特定のオブジェクトにアクセスできます。 サービス SID を含むアクセス制御エントリを使用することにより、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービスはそのリソースへのアクセスを制限することができます。
+[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の場合、各サービスに対してサービスごとの SID を使用することができます。これによって、サービスを分離し、多層防御を実現できます。 サービスごとの SID は、サービス名から取得されるので、そのサービスに固有です。 たとえば、[!INCLUDE[ssDE](../../includes/ssde-md.md)] サービスの名前付きインスタンスのサービス SID 名は、**NT Service\MSSQL$** _\<InstanceName>_ となります。 サービスを分離すると、高い特権のアカウントを使用したり、オブジェクトのセキュリティ保護を弱めたりすることなく、特定のオブジェクトにアクセスできます。 サービス SID を含むアクセス制御エントリを使用することにより、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービスはそのリソースへのアクセスを制限することができます。
 
 > [!NOTE]
 > Windows 7 と [!INCLUDE[nextref_longhorn](../../includes/nextref-longhorn-md.md)] R2 以降では、サービスごとの SID は、サービスによって使用される仮想アカウントである場合があります。
@@ -529,8 +529,8 @@ SQL WMI プロバイダーには、以下の最低限のアクセス許可が必
 
 ここでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の以前のバージョンからのアップグレード中に行われる変更について説明します。
 
-- [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] は、 [!INCLUDE[nextref_longhorn](../../includes/nextref-longhorn-md.md)] R2 SP1、Windows Server 2012、Windows 8.0、Windows Server 2012 R2、または Windows 8.1 が必要です。 下位バージョンのオペレーティング システムで実行されている、以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]をアップグレードする前にオペレーティング システムをアップグレードする必要があります。
-- [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]へのアップグレード中、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セットアップは次の方法で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を構成します。
+- [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] には、サポートされている[オペレーティング システム](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server-ver15.md#operating-system-support)が必要になります。 下位バージョンのオペレーティング システムで実行されている、以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]をアップグレードする前にオペレーティング システムをアップグレードする必要があります。
+- [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] を [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] にアップグレードしているとき、セットアップによって [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスが次のように構成されます。
 
   - [!INCLUDE[ssDE](../../includes/ssde-md.md)] は、サービスごとの SID のセキュリティ コンテキストで実行されます。 サービスごとの SID には、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンス (DATA など) のファイル フォルダーまたは [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] レジストリ キーへのアクセス権が付与されます。
   - [!INCLUDE[ssDE](../../includes/ssde-md.md)] のサービスごとの SID は、 **sysadmin** 固定サーバー ロールのメンバーとして [!INCLUDE[ssDE](../../includes/ssde-md.md)] で準備されます。

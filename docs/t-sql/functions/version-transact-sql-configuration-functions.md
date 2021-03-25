@@ -22,12 +22,12 @@ ms.assetid: 385ba80e-7c28-41a5-9cdb-5648f3785983
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2cd2d33373af43341ddba761ee864a232b8a55bf
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 9e1534a67dc7d0009e0ab8ad624ac3dbc3322a23
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104754542"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890728"
 ---
 # <a name="x40x40version---transact-sql-configuration-functions"></a>&#x40;&#x40;バージョン - Transact SQL 構成関数
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -35,7 +35,15 @@ ms.locfileid: "104754542"
   現在インストールされている [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に関するシステム情報およびビルド情報を返します。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
-  
+
+> [!NOTE]  
+> @@VERSION によって報告された製品バージョンが **Azure SQL Database** で正しくないという問題については認識しています。
+> 
+> Azure SQL Database で実行される SQL Server データベース エンジンのバージョンは常に、SQL Server のオンプレミスのバージョンより新しいため、最新のセキュリティ修正プログラムが含まれています。 これは、パッチ レベルが SQL Server のオンプレミスのバージョンと同じかそれより新しく、SQL Server で使用できる最新の機能が Azure SQL Database で使用できることを意味します。
+>
+> エンジンのエディションをプログラムで確認するには、SELECT SERVERPROPERTY('EngineEdition') を使用します。 このクエリでは、Azure SQL Database の場合は '5' が、Azure SQL Managed Instance の場合は '8' が返されます。
+>
+> この問題が解決されたら、ドキュメントを更新します。
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
@@ -75,14 +83,6 @@ ms.locfileid: "104754542"
 -   ビルド日  
   
 -   著作権情報  
-
-> [!NOTE]  
-> @@VERSION によって報告された製品バージョンが Azure SQL Database で正しくない問題を認識しています。 Azure SQL Database で実行される SQL Server データベース エンジンのバージョンは常に、SQL Server のオンプレミスのバージョンより新しいため、最新のセキュリティ修正プログラムが含まれています。 これは、パッチ レベルが SQL Server のオンプレミスのバージョンと同じかそれより新しく、SQL Server で使用できる最新の機能が Azure SQL Database で使用できることを意味します。
->
-> エンジンのエディションをプログラムで確認するには、SELECT SERVERPROPERTY('EngineEdition') を使用します。 このクエリでは、Azure SQL Database の場合は '5' が、Azure SQL Managed Instance の場合は '8' が返されます。
->
-> この問題が解決されたら、ドキュメントを更新します。
-
   
 ## <a name="examples"></a>例  
   

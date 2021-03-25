@@ -1,21 +1,21 @@
 ---
-title: SAP ASE から SQL Server - 移行ガイド
+title: 'SAP ASE から SQL Server に: 移行ガイド'
 description: 'このガイドでは、SQL Server Migration Assistant for SAP ASE (SSMA for SAP ASE) を使用して、SAP ASE データベースを Microsoft SQL Server に移行する方法について説明します。 '
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: migration-guide
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: fb297b72e1eeb3d614a00a9ef574f0097f9d0f75
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: a549b0e28da092bc1320f621c29307772fc5d69b
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103603320"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611034"
 ---
 # <a name="migration-guide-sap-ase-to-sql-server"></a>移行ガイド: SAP ASE から SQL Server
 [!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
@@ -70,7 +70,7 @@ SAP SE データベースを SQL Server に移行するには、以下が必要�
 詳細については、[スキーマの変換](../../../ssma/sybase/converting-sybase-ase-database-objects-sybasetosql.md)に関する記事を参照してください
 
 
-## <a name="migrate"></a>Migrate 
+## <a name="migrate"></a>移行 
 
 必要な前提条件を満たし、**移行前** 段階に関連するタスクを完了すると、スキーマとデータの移行を実行する準備が整います。
 
@@ -121,7 +121,7 @@ SAP SE データベースを SQL Server に移行するには、以下が必要�
 > [!NOTE]
 > これらのリソースは、Azure Data Group エンジニアリング チームがスポンサーである Data Migration Jumpstart Program (DM Jumpstart) の一部として開発されました。 DM Jumpstart の中核となるのは、複雑な最新化のブロックを解除して加速し、データ プラットフォームを Microsoft の Azure Data プラットフォームに移行する機会を獲得することです。 組織が DM Jumpstart への参加に関心があると思われる場合は、アカウント チームに連絡し、申請を提出するよう依頼してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - Azure データベース移行ガイドとその内容の概要については、ビデオ「[データ移行ガイドの使い方](https://azure.microsoft.com/resources/videos/how-to-use-the-azure-database-migration-guide/)」を参照してください。
 

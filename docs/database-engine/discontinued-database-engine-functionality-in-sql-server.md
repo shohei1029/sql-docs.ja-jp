@@ -36,12 +36,12 @@ ms.assetid: d686cdf0-d11d-4dba-9ec8-de1a5f189f25
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>= sql-server-linux-2017  || >= sql-server-2016'
-ms.openlocfilehash: 2b735e98bd49e06057008a714a868cec6c9f5282
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: e1c5f8b15d40ff26cf1a164e806f7fa735b28319
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100347883"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673460"
 ---
 # <a name="discontinued-database-engine-functionality-in-sql-server"></a>SQL Server で廃止されたデータベース エンジンの機能
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -73,11 +73,13 @@ ms.locfileid: "100347883"
 
 - Secure Sockets Layer (SSL) での暗号化は廃止されました。 代わりに、トランスポート層セキュリティ (TLS) を使用してください。 詳細については、「[データベース エンジンへの暗号化接続の有効化](../database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md)」を参照してください。
 
+- `precompute rank` Server 構成オプションは SQL Server 2008 以降、廃止となりました。 この記事はドキュメントから削除されています。
+
 ## <a name="previous-versions"></a>以前のバージョン
 
 - [SQL Server 2014 で廃止されたデータベース エンジンの機能](/previous-versions/sql/2014/database-engine/discontinued-database-engine-functionality-in-sql-server-2016?view=sql-server-2014&preserve-view=true)
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 - [SQL Server 2019 データベース エンジンの非推奨の機能](deprecated-database-engine-features-in-sql-server-version-15.md)
 - [SQL Server 2017 データベース エンジンの非推奨の機能](deprecated-database-engine-features-in-sql-server-2017.md)

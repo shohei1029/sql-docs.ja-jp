@@ -45,21 +45,21 @@ helpviewer_keywords:
 ms.assetid: 09bcf20b-0a40-4131-907f-b61479d5e4d8
 ms.author: chadam
 author: cawrites
-ms.openlocfilehash: 52c29a7de29a324d7bda2fba4cb52073cf62d752
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b7def7a7f58d3fe2124545171c5858a012e4642b
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100352434"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673986"
 ---
 # <a name="sql-server-2019-hardware-and-software-requirements"></a>SQL Server 2019:ハードウェアとソフトウェアの要件
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
 
-この記事では、Windows オペレーティング システムでの SQL Server 2019 のインストールと実行に必要な最低限のハードウェア要件とソフトウェア要件について説明します。
+この記事では、Windows オペレーティング システムでの [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] のインストールと実行に必要な最低限のハードウェア要件とソフトウェア要件について説明します。
 
-他のバージョンの SQL Server のハードウェアとソフトウェアの要件については、以下を参照してください。
-- [SQL Server 2016 および 2017](hardware-and-software-requirements-for-installing-sql-server.md)
-- [SQL Server on Linux](../../linux/sql-server-linux-setup.md#system)
+他のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のハードウェア要件とソフトウェア要件については、以下を参照してください。
+- [[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 2016 および 2017](hardware-and-software-requirements-for-installing-sql-server.md)
+- [Linux の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]](../../linux/sql-server-linux-setup.md#system)
 - [ビッグ データ クラスター](../../big-data-cluster/deployment-guidance.md)
 
 ##  <a name="hardware-requirements"></a><a name="pmosr"></a> ハードウェア要件  
@@ -100,12 +100,12 @@ ms.locfileid: "100352434"
 > PolyBase 機能には、ハードウェアとソフトウェアに追加の要件があります。 詳細については、「 [PolyBase 入門](../../relational-databases/polybase/polybase-guide.md)」を参照してください。  
   
 
-##  <a name="operating-system-support"></a><a name="TOP_Principal"></a> オペレーティング システムのサポート 
+## <a name="operating-system-support"></a>オペレーティング システムのサポート
 
-次の表では、Windows のバージョンと SQL Server 2019 のエディションとの互換性を示します。  
+次の表では、Windows のバージョンと [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] のエディションとの互換性を示します。  
   
 
-| SQL Server のエディション:               | Enterprise | Developer | Standard | Web | Express |  
+| [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エディション:               | Enterprise | Developer | Standard | Web | Express |  
 | :------------------------         | :--------- | :-------- | :------- | :-- | :------ | 
 | Windows Server 2019 Datacenter    |    はい     |    はい    |    はい   | はい |   はい   |
 | Windows Server 2019 Standard      |    はい     |    はい    |    はい   | はい |   はい   |
@@ -121,7 +121,7 @@ ms.locfileid: "100352434"
 
 ### <a name="server-core-support"></a>Server Core サポート
 
-SQL Server 2019 の Server Core モードでのインストールは、次のエディションの Windows Server でサポートされます。
+[!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] のインストールは、次のエディションの Windows Server の Server Core モードでサポートされます。
 
 :::row:::
     :::column:::
@@ -138,11 +138,11 @@ SQL Server 2019 の Server Core モードでのインストールは、次のエ
     :::column-end:::
 :::row-end:::
 
-Server Core への SQL Server のインストールの詳細については、「[Server Core への SQL Server のインストール](../../database-engine/install-windows/install-sql-server-on-server-core.md)」を参照してください。 
+Server Core への [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールの詳細については、「[Server Core への [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストール](../../database-engine/install-windows/install-sql-server-on-server-core.md)」を参照してください。 
 
 
 ##  <a name="cross-language-support"></a><a name="CrossLanguageSupport"></a> 言語間サポート  
- 各言語にローカライズされた [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] をインストールする場合の言語間サポートと注意点の詳細については、「 [SQL Server のローカル言語版](../../sql-server/install/local-language-versions-in-sql-server.md)」を参照してください。  
+ 各言語にローカライズされた [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] をインストールする場合の言語間サポートと注意点の詳細については、「[[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のローカル言語版](../../sql-server/install/local-language-versions-in-sql-server.md)」を参照してください。  
   
 ##  <a name="disk-space-requirements"></a><a name="HardDiskSpace"></a> 必要なディスク領域  
  [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)]のインストール中は、Windows インストーラーによってシステム ドライブ上に一時ファイルが作成されます。 したがって、セットアップを実行して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]をインストールまたはアップグレードする前に、これらの一時ファイル用に 6.0 GB 以上の空き容量がシステム ドライブにあることを確認してください。 この要件は、既定以外のドライブに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コンポーネントをインストールする場合にも適用されます。  
@@ -173,13 +173,13 @@ Server Core への SQL Server のインストールの詳細については、�
  データ ファイルでサポートされているストレージの種類は、次のとおりです。  
   
 - ローカル ディスク 
-    - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は現在、標準のネイティブ セクター サイズである 512 バイトと 4 KB のディスク ドライブに対応しています。  ハード ディスクのセクター サイズが 4 KB を超える場合、それに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データ ファイルを格納しようとするとエラーが発生することがあります。  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でサポートされているハード ディスク セクターのサイズに関する詳細については、[SQL Server でのハード ディスク ドライブ セクターのサイズのサポート範囲](https://support.microsoft.com/kb/926930)に関するページを参照してください。 
+    - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は現在、標準のネイティブ セクター サイズである 512 バイトと 4 KB のディスク ドライブに対応しています。  ハード ディスクのセクター サイズが 4 KB を超える場合、それに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データ ファイルを格納しようとするとエラーが発生することがあります。  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でサポートされているハード ディスク セクターのサイズに関する詳細については、[[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でのハード ディスク ドライブ セクターのサイズのサポート範囲](https://support.microsoft.com/kb/926930)に関するページを参照してください。 
     - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] フェールオーバー クラスターのインストールでは、tempdb ファイルをインストールする場合のみローカル ディスクがサポートされます。 tempdb のデータ ファイルおよびログ ファイルに指定されたパスが、すべてのクラスター ノードで有効であることを確認してください。 フェールオーバー中に、tempdb のディレクトリがフェールオーバーのターゲット ノード上で利用できない場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] リソースはオンラインへの移行に失敗します。
 - ストレージの共有  
 - [記憶域スペース ダイレクト \(S2D\)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)  
 - SMB ファイル共有  
     - スタンドアロン インストールやクラスター化されたインストールでは、 [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] データ ファイルに対して SMB ストレージはサポートされていません。 代わりに、直接アタッチされたストレージ、ストレージ エリア ネットワーク、または S2D を使用してください。 
-    - SMB ストレージは、Windows ファイル サーバーまたはサード パーティ SMB ストレージ デバイスによってホストされます。 Windows ファイル サーバーが使用される場合、Windows ファイル サーバーのバージョンは 2008 以降である必要があります。 ストレージ オプションとして SMB ファイル共有をとして使用する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールの詳細については、「 [SQL Server をストレージ オプションとして SMB ファイル共有にインストールする](../../database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option.md)のインストールおよび実行に必要な最低限のハードウェア要件とソフトウェア要件について説明します。  
+    - SMB ストレージは、Windows ファイル サーバーまたはサード パーティ SMB ストレージ デバイスによってホストされます。 Windows ファイル サーバーが使用される場合、Windows ファイル サーバーのバージョンは 2008 以降である必要があります。 ストレージ オプションとして SMB ファイル共有をとして使用する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールの詳細については、[ストレージ オプションとして SMB ファイル共有ストレージを使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] をインストールする](../../database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option.md)方法に関するページを参照してください。  
   
   
   
@@ -197,12 +197,12 @@ Server Core への SQL Server のインストールの詳細については、�
 
 関連するインストール メディアは、次の場所から入手できます。 
   
-- [SQL Server 評価センター](https://www.microsoft.com/evalcenter/evaluate-sql-server-2019)
+- [[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 評価センター](https://www.microsoft.com/evalcenter/evaluate-sql-server-2019)
 - [最新の累積的な更新プログラム](../../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md)
 
-または、[SQL Server を既に実行している Azure 仮想マシン](/azure/virtual-machines/windows/sql/quickstart-sql-vm-create-portal)を作成することもできます。ただし、仮想マシン上の SQL Server は、仮想化のオーバーヘッドのためにネイティブで実行するよりも低速になります。
+または、[[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を既に実行している Azure 仮想マシン](/azure/virtual-machines/windows/sql/quickstart-sql-vm-create-portal)を作成することもできます。ただし、仮想マシン上の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、仮想化のオーバーヘッドのためにネイティブで実行するよりも低速になります。
 
 
 ## <a name="next-steps"></a>次のステップ
 
-SQL Server のインストールのためのハードウェアとソフトウェアの要件を確認したら、[SQL Server のインストール計画](../../sql-server/install/planning-a-sql-server-installation.md)を開始したり、[SQL Server のセキュリティに関する考慮事項](../../sql-server/install/security-considerations-for-a-sql-server-installation.md)を確認したりできます。
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールのためのハードウェアとソフトウェアの要件を確認したら、[[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストール計画](../../sql-server/install/planning-a-sql-server-installation.md)を開始したり、[[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセキュリティに関する考慮事項](../../sql-server/install/security-considerations-for-a-sql-server-installation.md)を確認したりできます。

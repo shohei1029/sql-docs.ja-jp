@@ -1,6 +1,6 @@
 ---
-description: データ ソース ウィザード画面 2 (ODBC Driver for SQL Server)
-title: データ ソース ウィザード画面 2 (ODBC Driver for SQL Server) | Microsoft Docs
+description: SQL Server への新しい ODBC 接続を作成する目的でデータ ソース ウィザードで認証方法を選択する方法について学びます。
+title: データ ソース ウィザード画面 2 (ODBC Driver for SQL Server)
 ms.custom: ''
 ms.date: 01/29/2021
 ms.prod: sql
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 76326eeb-1144-4b9f-85db-50524c655d30
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 74e061e4ac66da2dfdc165e66338f3ffb70387ea
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 7db7d1d8e01929f9c43b78cd4d74e63dcc1b6e12
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837289"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673386"
 ---
 # <a name="data-source-wizard-screen-2"></a>データ ソース ウィザード画面 2
 
@@ -54,7 +54,6 @@ ms.locfileid: "101837289"
 
 ドライバーが Azure Active Directory のサービス プリンシパルを使用して SQL Server に対する認証を行うように指定します。
 
-
 ### <a name="login-id"></a>Login ID
 
 **[ユーザーが入力する SQL Server 用のログイン ID とパスワードを使う]**、**[With Active Directory Password authentication using a login ID and password entered by the user]\(ユーザーが入力する Active Directory パスワード認証用のログイン ID とパスワードを使う\)**、または **[With Active Directory Interactive authentication using a login ID entered by the user]\(ユーザーが入力する Active Directory 対話型認証用のログイン ID を使う\)** が選択されている場合、SQL Server への接続時にドライバーが使用するログイン ID を指定します。 **[With Managed Identity authentication]\(マネージド ID の認証を使用する\)** が選択されている場合は、マネージド ID のオブジェクト ID を指定するか、空白のままにして既定の ID を使用します。 このフィールドは、サーバーの既定の設定を確認するために確立された接続のみに適用されます。そのため、マネージド ID の認証を使用する場合を除き、データ ソースが作成された後にそれを使用して確立された以降の接続には適用されません。
@@ -75,7 +74,5 @@ ms.locfileid: "101837289"
 
 ## <a name="next-steps"></a>次のステップ
 
-[データ ソース ウィザード画面 1](../../../connect/odbc/windows/dsn-wizard-1.md)
-
-[データ ソース ウィザード画面 3](../../../connect/odbc/windows/dsn-wizard-3.md)
-
+[データ ソース ウィザード画面 1](dsn-wizard-1.md)  
+[データ ソース ウィザード画面 3](dsn-wizard-3.md)  

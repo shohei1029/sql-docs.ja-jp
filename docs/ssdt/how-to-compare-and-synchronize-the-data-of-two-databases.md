@@ -13,13 +13,13 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
-ms.date: 02/09/2017
-ms.openlocfilehash: 73dcdd57b018f980291eceefa1be37d1b51df13a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 03/22/2021
+ms.openlocfilehash: d869aaf652cf3c5d9baa389ab26303ba46049b71
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100018442"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890719"
 ---
 # <a name="how-to-compare-and-synchronize-the-data-of-two-databases"></a>方法:2 つのデータベースのデータを比較および同期する
 
@@ -78,12 +78,12 @@ ms.locfileid: "100018442"
 2.  コマンド ウィンドウで、次のコマンドを入力します。  
   
     ```  
-    Sql.NewDataComparison /SrcServerName sServerName /SrcDatabaseName sDatabaseName /SrcUserName sUserName /SrcPassword sPassword /SrcDisplayName sDisplayName /TargetServerName tServerName /TargetDatabaseName tDatabaseName /TargeUserName tUserName /TargetPassword tPassword /TargetDisplayName tDisplayName  
+    Tools.NewDataComparison /SrcServerName sServerName /SrcDatabaseName sDatabaseName /SrcUserName sUserName /SrcPassword sPassword /SrcDisplayName sDisplayName /TargetServerName tServerName /TargetDatabaseName tDatabaseName /TargeUserName tUserName /TargetPassword tPassword /TargetDisplayName tDisplayName  
     ```  
   
     プレースホルダー (*sServerName*、*sDatabaseName*、*sUserName*、*sPassword*、*sDisplayName*、*tServerName*、*tDatabaseName*、*tUserName*、*tPassword*、*tDisplayName*) をソース データベースとターゲット データベースの値に置き換えます。  
   
-    ソースおよびターゲットを指定しない場合は、 **[新しいデータの比較]** ダイアログ ボックスが表示されます。 Sql.NewDataComparison コマンドのパラメーターについて詳しくは、[Visual Studio Team System のデータベース機能のオートメーション コマンド リファレンス](/previous-versions/visualstudio/visual-studio-2010/dd470565(v=vs.100))に関するページをご覧ください。  
+    ソースおよびターゲットを指定しない場合は、 **[新しいデータの比較]** ダイアログ ボックスが表示されます。 Tools.NewDataComparison コマンドのパラメーターの詳細については、[Visual Studio Team System のデータベース機能のオートメーション コマンド リファレンス](/previous-versions/visualstudio/visual-studio-2010/dd470565(v=vs.100))に関するページをご覧ください。  
   
     指定したソース データベースとターゲット データベースのデータが比較されます。 結果が [データ比較] セッションに表示されます。 結果の表示方法またはデータの同期方法について詳しくは、「[データの差異の表示](#ViewDifferences)」および「[データベース データの同期](#Synchronize)」をご覧ください。  
   

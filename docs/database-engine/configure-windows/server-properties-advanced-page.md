@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: cc5e65c2-448e-4f37-9ad4-2dfb1cc84ebe
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 796c722db124b9eda448652dc29f5571ea41b747
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 5df2313ce8dc5067828b8d21dc416694b2c17853
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85771811"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673530"
 ---
 # <a name="server-properties---advanced-page"></a>サーバーのプロパティ - [詳細設定] ページ
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "85771811"
   
 ## <a name="containment"></a>Containment  
  包含データベースの有効化  
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のこのインスタンスが包含データベースを許可するかどうかを示します。 **True**の場合は、包含データベースを作成、復元、およびアタッチできます。 **False**の場合は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のこのインスタンスで包含データベースを作成、復元、およびアタッチすることはできません。 包含プロパティを変更すると、データベースのセキュリティに影響する場合があります。 包含データベースを有効にすると、データベース所有者は、この [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]へのアクセスを許可できるようになります。 包含データベースを無効にすると、ユーザーが接続できないようにすることができます。 包含プロパティの影響について調べるには、「 [包含データベース](../../relational-databases/databases/contained-databases.md) 」および「 [包含データベースでのセキュリティのベスト プラクティス](../../relational-databases/databases/security-best-practices-with-contained-databases.md)」を参照してください。  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のこのインスタンスが包含データベースを許可するかどうかを示します。 **True** の場合は、包含データベースを作成、復元、およびアタッチできます。 **False** の場合は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のこのインスタンスで包含データベースを作成、復元、およびアタッチすることはできません。 包含プロパティを変更すると、データベースのセキュリティに影響する場合があります。 包含データベースを有効にすると、データベース所有者は、この [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]へのアクセスを許可できるようになります。 包含データベースを無効にすると、ユーザーが接続できないようにすることができます。 包含プロパティの影響について調べるには、「 [包含データベース](../../relational-databases/databases/contained-databases.md) 」および「 [包含データベースでのセキュリティのベスト プラクティス](../../relational-databases/databases/security-best-practices-with-contained-databases.md)」を参照してください。  
   
 ## <a name="filestream"></a>FILESTREAM  
  **[FILESTREAM アクセス レベル]**  
@@ -89,10 +89,10 @@ ms.locfileid: "85771811"
 > [!NOTE]  
 >  フルテキスト アップグレード オプションは、 [sp_fulltext_service](../../relational-databases/system-stored-procedures/sp-fulltext-service-transact-sql.md)の upgrade_option 操作を使用して設定することもできます。  
   
- [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] のデータベースを [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]にアタッチ、復元、またはコピーした後は、データベースが直ちに使用可能となり、自動的にアップグレードされます。 データベースにフルテキスト インデックスがある場合、アップグレード プロセスでは、 **"フルテキスト アップグレード オプション"** サーバー プロパティの設定に応じて、インポート、リセット、または再構築が行われます。 アップグレード オプションが **[インポート]** または **[再構築]** に設定されている場合、アップグレード中はフルテキスト インデックスを使用できなくなります。 インデックスを作成するデータ量によって、インポートには数時間、再構築には最大でその 10 倍の時間がかかることがあります。 なお、アップグレード オプションが **[インポート]** に設定されており、フルテキスト カタログが使用できない場合は、関連付けられたフルテキスト インデックスが再構築されます。 **フルテキスト アップグレード オプション** プロパティの設定の表示と変更については、「 [サーバー インスタンスでのフルテキスト検索の管理と監視](../../relational-databases/search/manage-and-monitor-full-text-search-for-a-server-instance.md)」を参照してください。  
+ [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] のデータベースをアタッチ、復元、またはコピーした直後にデータベースは使用可能となり、自動的にアップグレードされます。 データベースにフルテキスト インデックスがある場合、アップグレード プロセスでは、 **"フルテキスト アップグレード オプション"** サーバー プロパティの設定に応じて、インポート、リセット、または再構築が行われます。 アップグレード オプションが **[インポート]** または **[再構築]** に設定されている場合、アップグレード中はフルテキスト インデックスを使用できなくなります。 インデックスを作成するデータ量によって、インポートには数時間、再構築には最大でその 10 倍の時間がかかることがあります。 なお、アップグレード オプションが **[インポート]** に設定されており、フルテキスト カタログが使用できない場合は、関連付けられたフルテキスト インデックスが再構築されます。 **フルテキスト アップグレード オプション** プロパティの設定の表示と変更については、「 [サーバー インスタンスでのフルテキスト検索の管理と監視](../../relational-databases/search/manage-and-monitor-full-text-search-for-a-server-instance.md)」を参照してください。  
   
  **[テキスト レプリケーションの最大サイズ]**  
- 単一の INSERT、UPDATE、WRITETEXT、または UPDATETEXT の各ステートメント内のレプリケート対象列またはキャプチャ対象列に追加できる **text**型、 **ntext**型、 **varchar(max)** 型、 **nvarchar(max)** 型、 **xml**型、 **image** 型のデータの最大サイズ (バイト単位) を指定します。 設定を変更すると即座に反映されます。 詳細については、「 [max text repl size サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-max-text-repl-size-server-configuration-option.md)」を参照してください。  
+ 単一の INSERT、UPDATE、WRITETEXT、または UPDATETEXT の各ステートメント内のレプリケート対象列またはキャプチャ対象列に追加できる **text** 型、 **ntext** 型、 **varchar(max)** 型、 **nvarchar(max)** 型、 **xml** 型、 **image** 型のデータの最大サイズ (バイト単位) を指定します。 設定を変更すると即座に反映されます。 詳細については、「 [max text repl size サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-max-text-repl-size-server-configuration-option.md)」を参照してください。  
   
  **[スタートアップ プロシージャのスキャン]**  
  スタートアップ時のストアド プロシージャの自動実行が [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でスキャンされるように指定します。 **[True]** に設定した場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、サーバーに定義された自動実行のストアド プロシージャをすべてスキャンして実行します。 **[False]** (既定) に設定された場合、スキャンは実行されません。 詳細については、「 [scan for startup procs サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-scan-for-startup-procs-server-configuration-option.md)」を参照してください。  

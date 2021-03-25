@@ -17,16 +17,16 @@ ms.assetid: 99f66ed9-3a75-4e38-ad7d-6c27cc3529a9
 author: stevestein
 ms.author: sstein
 ms.custom: seo-dt-2019
-ms.openlocfilehash: a3bb3afe218c4087e09b8227bbcbf8c60798a3b2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 8dcf9f0c1acf4231d532a25fade340d152d3b6af
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88487110"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890779"
 ---
 # <a name="upgrade-a-database-using-detach-and-attach-transact-sql"></a>デタッチとアタッチを使用したデータベースのアップグレード (Transact-SQL)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-このトピックでは、デタッチ操作とアタッチ操作を使用し、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]のデータベースをアップグレードする方法について説明します。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]にアタッチした後は、データベースが直ちに使用可能となり、自動的にアップグレードされます。 これにより、データベースが古いバージョンの [!INCLUDE[ssde_md](../../includes/ssde_md.md)] で使用されるのを防ぎます。 ただし、メタデータのアップグレードは、データベースの[データベースの互換性レベル](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)の設定には影響しません。 詳細については、このトピックで後述する「[アップグレード後のデータベース互換性レベル](#dbcompat)」を参照してください。  
+このトピックでは、デタッチ操作とアタッチ操作を使用し、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]のデータベースをアップグレードする方法について説明します。 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]にアタッチした後は、データベースが直ちに使用可能となり、自動的にアップグレードされます。 これにより、データベースが古いバージョンの [!INCLUDE[ssde_md](../../includes/ssde_md.md)] で使用されるのを防ぎます。 ただし、メタデータのアップグレードは、データベースの[データベースの互換性レベル](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)の設定には影響しません。 詳細については、このトピックで後述する「[アップグレード後のデータベース互換性レベル](#dbcompat)」を参照してください。  
   
  **このトピックの内容**  
   
@@ -72,7 +72,7 @@ ms.locfileid: "88487110"
     > [!NOTE]  
     >  ログ ファイルを指定せずにデータベースのインポートを試みると、アタッチ操作は元の場所でログ ファイルを検索します。 元の場所にログの元のコピーが依然として存在する場合は、そのコピーがアタッチされます。 元のログ ファイルが使用されないようにするには、新しいログ ファイルのパスを指定するか、ログ ファイルの元のコピーを (新しい場所にコピーした後で) 削除します。  
   
-3.  コピーしたファイルを [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]のインスタンスにアタッチします。 詳細については、「 [Attach a Database](../../relational-databases/databases/attach-a-database.md)」を参照してください。  
+3.  コピーしたファイルを [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]のインスタンスにアタッチします。 詳細については、「 [Attach a Database](../../relational-databases/databases/attach-a-database.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、データベースのコピーを以前のバージョンの SQL Server からアップグレードします。 [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントは、アタッチするサーバー インスタンスに接続されたクエリ エディター ウィンドウで実行しています。  
@@ -111,8 +111,11 @@ ms.locfileid: "88487110"
 データベースにフルテキスト インデックスがある場合、アップグレード プロセスでは、 **upgrade_option** サーバー プロパティの設定に応じて、インポート、リセット、または再構築が行われます。 アップグレード オプションがインポート (**upgrade_option** = 2) または再構築 (**upgrade_option** = 0) に設定されている場合、アップグレード中はフルテキスト インデックスを使用できなくなります。 インデックスを作成するデータ量によって、インポートには数時間、再構築には最大でその 10 倍の時間がかかることがあります。 また、アップグレード オプションがインポートに設定されており、フルテキスト カタログが使用できない場合は、関連付けられたフルテキスト インデックスが再構築されます。 **upgrade_option** サーバー プロパティの設定を変更するには、 [sp_fulltext_service](../../relational-databases/system-stored-procedures/sp-fulltext-service-transact-sql.md)を使用します。  
   
 ### <a name="database-compatibility-level-after-upgrade"></a><a name="dbcompat"></a> アップグレード後のデータベース互換性レベル  
-アップグレード前のユーザー データベースの互換性レベルが 100 以上の場合は、アップグレード後も互換性レベルは変わりません。 アップグレードされたデータベースの互換性レベルが 90 の場合、互換性レベルは 100 に設定されます。これは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]でサポートされている下限の互換性レベルです。 詳細については、「[ALTER DATABASE 互換性レベル &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md)」を参照してください。  
-  
+
+アップグレード後は、以前の互換性レベルが新しいバージョンでサポートされていない場合を除き、データベースの互換性レベルはアップグレード前の互換性レベルのままです。 この場合、アップグレードされたデータベースの互換性レベルは、サポートされている最低の互換性レベルに設定されます。
+
+たとえば、[!INCLUDE [sssql19-md](../../includes/sssql19-md.md)]のインスタンスにアタッチする前の互換性レベルが 90 であったデータベースをアタッチする場合、アップグレード後、互換性レベルは 100 に設定されます。これは、[!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] でサポートされている最低の互換性レベルです。 詳細については、「[ALTER DATABASE 互換性レベル &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md)」を参照してください。
+
 ### <a name="managing-metadata-on-the-upgraded-server-instance"></a>アップグレードされたサーバー インスタンスでのメタデータの管理  
 データベースを別のサーバー インスタンスにアタッチするときは、ユーザーおよびアプリケーションに一貫した使用環境を提供するために、アタッチ先のサーバー インスタンスで、ログイン、ジョブ、権限などのデータベースのメタデータの一部またはすべてを作成し直す必要が生じる場合があります。 詳細については、「 [データベースを別のサーバー インスタンスで使用できるようにするときのメタデータの管理 &#40;SQL Server&#41;](../../relational-databases/databases/manage-metadata-when-making-a-database-available-on-another-server.md)」を参照してください。  
   

@@ -9,12 +9,12 @@ ms.prod_service: sql-tools
 ms.topic: conceptual
 author: dzsquared
 ms.author: drskwier
-ms.openlocfilehash: 3a5d63b5c727508473fe83c1de3668b5b3df85c0
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.openlocfilehash: ef52bf5f98b948312dcc36acfd438cd9281b25dd
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622548"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890682"
 ---
 # <a name="release-notes-for-sqlpackageexe"></a>SqlPackage.exe のリリース ノート
 
@@ -32,7 +32,7 @@ ms.locfileid: "102622548"
 |Windows .NET Core |[zip ファイル](https://go.microsoft.com/fwlink/?linkid=2157302)|2021 年 3 月 10 日| 18.7|15.0.5084.2|
 
 ### <a name="features"></a>特徴
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | デプロイ | Azure Storage との間でビッグ データを抽出/公開します。 詳細については、[ビッグ データ用の SqlPackage](sqlpackage-for-azure-synapse-analytics.md) に関する記事を参照してください |
 | Azure Synapse Analytics | 行レベルのセキュリティのサポート (インライン テーブル値関数、セキュリティ ポリシー、セキュリティ述語)  |
@@ -65,9 +65,10 @@ ms.locfileid: "102622548"
 | デプロイ | ターゲットの前回の値に基づいてデプロイ後に ID 値を再シードします。 |
 
 ### <a name="known-issues"></a>既知の問題
-| 機能 | 詳細 |
-| :------ | :------ |
-| デプロイ | Azure Synapse Analytics ワークロード管理機能 (ワークロード グループとワークロード分類子) はまだサポートされていません | 
+| 機能 | 詳細 | 回避策 |
+| :------ | :------ |:------ |
+| デプロイ | Azure Synapse Analytics ワークロード管理機能 (ワークロード グループとワークロード分類子) はまだサポートされていません | 該当なし |
+| デプロイ | 増分配置シナリオで、ユーザーが一時テーブルを削除すると共に、それに依存するオブジェクト (関数やストアドプロシージャなど) を削除すると、配置が失敗することがあります。 スクリプト生成の順序として、テーブル上で SYSTEM_VERSIONING をオフにする試みが行われます (これはテーブルを削除するための前提条件)。しかし、生成されるステップの順序が正しくありません。 [作業項目:](https://github.com/microsoft/azuredatastudio/issues/14655) | 配置スクリプトを生成し、System_Versioning OFF ステップを、削除するテーブルの直前に移動してから、スクリプトを実行します。 |
 
 ## <a name="186-sqlpackage"></a>18.6 sqlpackage
 
@@ -79,7 +80,7 @@ ms.locfileid: "102622548"
 |Windows .NET Core |[zip ファイル](https://go.microsoft.com/fwlink/?linkid=2143496)|2020 年 9 月 18 日| 18.6|15.0.4897.1|
 
 ### <a name="features"></a>特徴
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | プラットフォーム | .NET Core バージョン用の sqlpackage を .NET Core 3.1 に更新しました |
 | Always Encrypted | SQL Server 2019 向けセキュア エンクレーブ インポートおよびエクスポートのサポートが追加されました |
@@ -128,7 +129,7 @@ ms.locfileid: "102622548"
 |Windows .NET Core |[zip ファイル](https://go.microsoft.com/fwlink/?linkid=2128143)|2020 年 4 月 28 日| 18.5|15.0.4769.1|
 
 ### <a name="features"></a>特徴
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | デプロイ | SQL Server 2008 以降、Azure SQL Database、Azure Synapse Analytics で、データの秘密度の分類がサポートされるようになりました |
 | デプロイ | Azure Synapse Analytics でのテーブル制約のサポートを追加しました |
@@ -196,7 +197,7 @@ ms.locfileid: "102622548"
 
 ### <a name="features"></a>特徴
 
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | デプロイ | Azure Synapse Analytics (GA) に配置できるようにサポートを追加しました。 | 
 | プラットフォーム | macOS、Linux、および Windows 用の sqlpackage .NET Core GA。 | 
@@ -235,7 +236,7 @@ ms.locfileid: "102622548"
 
 ### <a name="features"></a>特徴
 
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | デプロイ | Azure Synapse Analytics (プレビュー) に配置できるようにサポートを追加しました。 | 
 | デプロイ | /p:DatabaseLockTimeout=(INT32 '60') パラメーターを sqlpackage に追加しました。 | 
@@ -270,7 +271,7 @@ ms.locfileid: "102622548"
 
 ### <a name="features"></a>特徴
 
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | グラフ | グラフ テーブルのエッジ制約とエッジ制約句のサポートが追加されました。 |
 | デプロイ | SQL Server 2016 以降のインデックス キーで 32 列をサポートするためのモデルの検証規則が有効になりました。 |
@@ -295,7 +296,7 @@ ms.locfileid: "102622548"
 
 ### <a name="features"></a>特徴
 
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | デプロイ | UTF8 照合順序のサポートが追加されました。 |
 | デプロイ | インデックス付きビューでの非クラスター化列ストア インデックスが有効になりました。 |
@@ -332,7 +333,7 @@ ms.locfileid: "102622548"
 
 ### <a name="features"></a>特徴
 
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | デプロイ | データベース互換性レベル 150 のサポートが追加されました。 | 
 | デプロイ | マネージ インスタンスのサポートが追加されました。 | 
@@ -359,7 +360,7 @@ ms.locfileid: "102622548"
 
 ### <a name="features"></a>特徴
 
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | 診断 | SqlClient の例外メッセージを含めて、接続エラーのエラー メッセージが改良されました。 |
 | デプロイ | 単一パーティション インデックスのインポート/エクスポートで、インデックスの圧縮がサポートされます。 |
@@ -380,7 +381,7 @@ ms.locfileid: "102622548"
 
 ### <a name="features"></a>特徴
 
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | インポート/エクスポート | 入れ子になったステートメントの数が多い Transact-SQL を解析するための ThreadMaxStackSize コマンドライン パラメーターが追加されました。 |
 | デプロイ | データベース カタログ照合順序のサポート。 | 
@@ -402,7 +403,7 @@ ms.locfileid: "102622548"
 
 ### <a name="features"></a>特徴
 
-| 特徴量 | 詳細 |
+| 機能 | 詳細 |
 | :------ | :------ |
 | デプロイ |  SQL 2017 以降と Azure SQL Database での _テンポラル保持ポリシー_ のサポートが追加されました。 | 
 | 診断 | 診断情報を保存するファイル パスを指定する /DiagnosticsFile:"C:\Temp\sqlpackage.log" コマンドライン パラメーターが追加されました。 | 
