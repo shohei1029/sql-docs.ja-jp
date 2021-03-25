@@ -1,6 +1,6 @@
 ---
-description: ラッパーとインターフェイス
-title: ラッパーとインターフェイス | Microsoft Docs
+description: JDBC API の拡張機能にアクセスできるようにするプロキシ インターフェイスとラッパーを作成する方法について説明します。
+title: ラッパーとインターフェイス
 ms.custom: ''
 ms.date: 08/12/2019
 ms.prod: sql
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 27fc9b72-9f21-4728-abcb-5c015f28a6ab
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 504527843063bb3d5e3fd4a8c284dfc5e8e25b12
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 653cb21216c123a342f26134b3288b9f54b68b67
+ms.sourcegitcommit: bacd45c349d1b33abef66db47e5aa809218af4ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88450054"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104793005"
 ---
 # <a name="wrappers-and-interfaces"></a>ラッパーとインターフェイス
 
@@ -32,29 +32,18 @@ java.sql.Wrapper インターフェイスには、**isWrapperFor** と **unwrap*
 
 **isWrapperFor** メソッドと **unwrap** メソッドは、次のとおり公開されています。
 
-- [isWrapperFor メソッド &#40;SQLServerCallableStatement&#41;](../../connect/jdbc/reference/iswrapperfor-method-sqlservercallablestatement.md)
-
-- [unwrap メソッド &#40;SQLServerCallableStatement&#41;](../../connect/jdbc/reference/unwrap-method-sqlservercallablestatement.md)
-
-- [isWrapperFor メソッド &#40;SQLServerConnectionPoolDataSource&#41;](../../connect/jdbc/reference/iswrapperfor-method-sqlserverconnectionpooldatasource.md)
-
-- [unwrap メソッド &#40;SQLServerConnectionPoolDataSource&#41;](../../connect/jdbc/reference/unwrap-method-sqlserverconnectionpooldatasource.md)
-
-- [isWrapperFor メソッド &#40;SQLServerDataSource&#41;](../../connect/jdbc/reference/iswrapperfor-method-sqlserverdatasource.md)
-
-- [unwrap メソッド &#40;SQLServerDataSource&#41;](../../connect/jdbc/reference/unwrap-method-sqlserverdatasource.md)
-
-- [isWrapperFor メソッド &#40;SQLServerPreparedStatement&#41;](../../connect/jdbc/reference/iswrapperfor-method-sqlserverpreparedstatement.md)
-
-- [unwrap メソッド &#40;SQLServerPreparedStatement&#41;](../../connect/jdbc/reference/unwrap-method-sqlserverpreparedstatement.md)
-
-- [isWrapperFor メソッド &#40;SQLServerStatement&#41;](../../connect/jdbc/reference/iswrapperfor-method-sqlserverstatement.md)
-
-- [unwrap メソッド &#40;SQLServerStatement&#41;](../../connect/jdbc/reference/unwrap-method-sqlserverstatement.md)
-
-- [isWrapperFor メソッド &#40;SQLServerXADataSource&#41;](../../connect/jdbc/reference/iswrapperfor-method-sqlserverxadatasource.md)
-
-- [unwrap メソッド &#40;SQLServerXADataSource&#41;](../../connect/jdbc/reference/unwrap-method-sqlserverxadatasource.md)
+- [isWrapperFor メソッド &#40;SQLServerCallableStatement&#41;](reference/iswrapperfor-method-sqlservercallablestatement.md)
+- [unwrap メソッド &#40;SQLServerCallableStatement&#41;](reference/unwrap-method-sqlservercallablestatement.md)
+- [isWrapperFor メソッド &#40;SQLServerConnectionPoolDataSource&#41;](reference/iswrapperfor-method-sqlserverconnectionpooldatasource.md)
+- [unwrap メソッド &#40;SQLServerConnectionPoolDataSource&#41;](reference/unwrap-method-sqlserverconnectionpooldatasource.md)
+- [isWrapperFor メソッド &#40;SQLServerDataSource&#41;](reference/iswrapperfor-method-sqlserverdatasource.md)
+- [unwrap メソッド &#40;SQLServerDataSource&#41;](reference/unwrap-method-sqlserverdatasource.md)
+- [isWrapperFor メソッド &#40;SQLServerPreparedStatement&#41;](reference/iswrapperfor-method-sqlserverpreparedstatement.md)
+- [unwrap メソッド &#40;SQLServerPreparedStatement&#41;](reference/unwrap-method-sqlserverpreparedstatement.md)
+- [isWrapperFor メソッド &#40;SQLServerStatement&#41;](reference/iswrapperfor-method-sqlserverstatement.md)
+- [unwrap メソッド &#40;SQLServerStatement&#41;](reference/unwrap-method-sqlserverstatement.md)
+- [isWrapperFor メソッド &#40;SQLServerXADataSource&#41;](reference/iswrapperfor-method-sqlserverxadatasource.md)
+- [unwrap メソッド &#40;SQLServerXADataSource&#41;](reference/unwrap-method-sqlserverxadatasource.md)
 
 ## <a name="interfaces"></a>インターフェイス
 
@@ -64,17 +53,12 @@ java.sql.Wrapper インターフェイスには、**isWrapperFor** と **unwrap*
 
 次のインターフェイスが追加されています。
 
-- [ISQLServerCallableStatement](../../connect/jdbc/reference/isqlservercallablestatement-interface.md)
-
-- [ISQLServerConnection](../../connect/jdbc/reference/isqlserverconnection-interface.md)
-
-- [ISQLServerDataSource](../../connect/jdbc/reference/isqlserverdatasource-interface.md)
-
-- [ISQLServerPreparedStatement](../../connect/jdbc/reference/isqlserverpreparedstatement-interface.md)
-
-- [ISQLServerResultSet](../../connect/jdbc/reference/isqlserverresultset-interface.md)
-
-- [ISQLServerStatement](../../connect/jdbc/reference/isqlserverstatement-interface.md)
+- [ISQLServerCallableStatement](reference/isqlservercallablestatement-interface.md)
+- [ISQLServerConnection](reference/isqlserverconnection-interface.md)
+- [ISQLServerDataSource](reference/isqlserverdatasource-interface.md)
+- [ISQLServerPreparedStatement](reference/isqlserverpreparedstatement-interface.md)
+- [ISQLServerResultSet](reference/isqlserverresultset-interface.md)
+- [ISQLServerStatement](reference/isqlserverstatement-interface.md)
 
 ## <a name="example"></a>例
 
@@ -85,33 +69,33 @@ java.sql.Wrapper インターフェイスには、**isWrapperFor** と **unwrap*
 ### <a name="code"></a>コード
 
 ```java
-import javax.sql.*;  
-import java.sql.*;  
-import com.microsoft.sqlserver.jdbc.*;  
+import javax.sql.*;
+import java.sql.*;
+import com.microsoft.sqlserver.jdbc.*;
 
-public class UnWrapTest {  
-   public static void main(String[] args) {  
+public class UnWrapTest {
+   public static void main(String[] args) {
       // This is a test.  This DataSource object could be something from an appserver
-      // which has wrapped the real SQLServerDataSource with its own wrapper  
-      SQLServerDataSource ds = new SQLServerDataSource();  
-      checkSendStringParametersAsUnicode(ds);  
-   }  
+      // which has wrapped the real SQLServerDataSource with its own wrapper
+      SQLServerDataSource ds = new SQLServerDataSource();
+      checkSendStringParametersAsUnicode(ds);
+   }
 
-   // Unwrap to the ISQLServerDataSource interface to access the getSendStringParametersAsUnicode function  
-   static void checkSendStringParametersAsUnicode(DataSource ds) {  
-      try {  
-         final ISQLServerDataSource sqlServerDataSource = ds.unwrap(ISQLServerDataSource.class);  
-         boolean sendStringParametersAsUnicode = sqlServerDataSource.getSendStringParametersAsUnicode();  
+   // Unwrap to the ISQLServerDataSource interface to access the getSendStringParametersAsUnicode function
+   static void checkSendStringParametersAsUnicode(DataSource ds) {
+      try {
+         final ISQLServerDataSource sqlServerDataSource = ds.unwrap(ISQLServerDataSource.class);
+         boolean sendStringParametersAsUnicode = sqlServerDataSource.getSendStringParametersAsUnicode();
 
-         System.out.println("Send string as parameter value is:-" + sendStringParametersAsUnicode);  
+         System.out.println("Send string as parameter value is:-" + sendStringParametersAsUnicode);
 
-      } catch (SQLException sqlE) {  
-         System.out.println("Exception:-" + sqlE);  
-      }  
-   }  
-}  
+      } catch (SQLException sqlE) {
+         System.out.println("Exception:-" + sqlE);
+      }
+   }
+}
 ```
 
 ## <a name="see-also"></a>関連項目
 
-[JDBC ドライバーのデータ型について](../../connect/jdbc/understanding-the-jdbc-driver-data-types.md)
+[JDBC ドライバーのデータ型について](understanding-the-jdbc-driver-data-types.md)

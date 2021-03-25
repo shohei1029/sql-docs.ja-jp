@@ -3,19 +3,19 @@ title: R カスタム ランタイムをインストールする
 description: 言語拡張機能を使用して SQL Server 用の R カスタム ランタイムをインストールする方法について説明します。 Python カスタム ランタイムは機械学習スクリプトを実行できます。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 02/08/2021
+ms.date: 03/16/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 zone_pivot_groups: sqlml-platforms
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
-ms.openlocfilehash: 17e4a885281cf428e8a5051b4060199b2824bd90
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5130a45eafbc9fa7b5fb684686fe9e0ea15c649b
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100072757"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833765"
 ---
 # <a name="install-an-r-custom-runtime-for-sql-server"></a>SQL Server 用の R カスタム ランタイムをインストールする
 
@@ -26,7 +26,7 @@ SQL Server で外部 R スクリプトを実行するための R カスタム �
 + Windows
 + Ubuntu Linux
 + Red Hat Enterprise Linux (RHEL)
-+ SUSE Linux Enterprise Server (SLES)
++ SUSE Linux Enterprise Server (SLES) バージョン 12
 
 カスタム ランタイムは、機械学習スクリプトを実行することができ、[SQL Server 言語拡張機能](../../language-extensions/language-extensions-overview.md)を使用します。
 
@@ -73,7 +73,7 @@ RECONFIGURE WITH OVERRIDE;
 
 ## <a name="verify-installation"></a>インストールの確認
 
-Python カスタム ランタイムのインストールと機能を確認するには、次の SQL スクリプトを使用します。
+R カスタム ランタイムのインストールと機能を確認するには、次の SQL スクリプトを使用します。
 
 ```sql
 EXEC sp_execute_external_script
@@ -84,6 +84,10 @@ print(file.path(R.home("bin"), "R"));
 print(R.version);
 print("Hello RExtension!");'
 ```
+
+::: zone pivot="platform-linux-rhel"
+[!INCLUDE [R custom runtime - Linux - RHEL known issues](includes/custom-runtime-r-linux-known-issues-rhel.md)]
+::: zone-end
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -5,18 +5,18 @@ author: vin-yu
 ms.author: vinsonyu
 ms.reviewer: vanto
 ms.custom: contperf-fy21q1
-ms.date: 09/07/2020
+ms.date: 03/22/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 moniker: '>= sql-server-linux-2017 || >= sql-server-2017 '
 zone_pivot_groups: cs1-command-shell
-ms.openlocfilehash: 2fa5cc3b5fe8ecc5a2b3ed87444474f1de54b022
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9d3fa1989b44bcdf53b8f80dedc1aa3bba5bfedb
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100273073"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833926"
 ---
 # <a name="configure-and-customize-sql-server-docker-containers"></a>SQL Server Docker コンテナーを構成およびカスタマイズする
 
@@ -44,6 +44,9 @@ ms.locfileid: "100273073"
 ### <a name="mount-a-host-directory-as-data-volume"></a>ホスト ディレクトリをデータ ボリュームとしてマウントする
 
 1 つ目のオプションは、ホスト上のディレクトリをコンテナー内のデータ ボリュームとしてマウントすることです。 これを行うには、`docker run` コマンドを `-v <host directory>:/var/opt/mssql` フラグと共に使用します。 これにより、コンテナーの実行間でデータを復元できます。
+
+> [!NOTE]
+> SQL Server 2019 コンテナーは自動的に非ルートとして起動するのに対し、SQL Server 2017 コンテナーは既定でルートとして起動します。 SQL Server コンテナーを非ルートとして実行する方法の詳細については、[セキュリティの構成](sql-server-linux-docker-container-security.md)に関するページを参照してください。
 
 <!--SQL Server 2017 on Linux -->
 ::: moniker range="= sql-server-linux-2017 || = sql-server-2017"

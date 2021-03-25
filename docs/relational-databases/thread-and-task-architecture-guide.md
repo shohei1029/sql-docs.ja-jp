@@ -23,12 +23,12 @@ ms.assetid: 925b42e0-c5ea-4829-8ece-a53c6cddad3b
 author: pmasl
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3eb9fd5897029fedb0e53378ecbe5f6c12f635ef
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: ec3a20e10fd625b588c4bae79f73265a8c292324
+ms.sourcegitcommit: bacd45c349d1b33abef66db47e5aa809218af4ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237658"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104793126"
 ---
 # <a name="thread-and-task-architecture-guide"></a>スレッドおよびタスクのアーキテクチャ ガイド
 [!INCLUDE [SQL Server Azure SQL Database](../includes/applies-to-version/sql-asdb.md)]
@@ -70,7 +70,7 @@ ms.locfileid: "99237658"
 
 > [!NOTE]
 > 次のシナリオについて検討してください。   
-> -  ワーカー 1 は長時間実行のタスクです。たとえば、メモリ内ベース テーブルで先行読み取りを利用する読み取りクエリです。 ワーカー 1 は、必要なデータ ページがバッファー プールに既にあることを見つけます。そのため、I/O 操作を待つ目的で一時停止する必要があります。一時停止前にそのクォンタムを完全に使用できます。   
+> -  ワーカー 1 は長時間実行のタスクです。たとえば、ディスク ベース テーブルで先行読み取りを利用する読み取りクエリです。 ワーカー 1 は、必要なデータ ページがバッファー プールに既にあることを見つけます。そのため、I/O 操作を待つ目的で一時停止する必要があります。一時停止前にそのクォンタムを完全に使用できます。   
 > -  ワーカー 2 はミリ秒未満の短時間タスクを行います。そのため、そのクォンタムが完全に使用される前に一時停止する必要があります。     
 >
 > このシナリオおよび [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] までは、ワーカー 1 には、全体的クォンタム時間を増やすことで、基本的にスケジューラーを独占することが許可されます。   

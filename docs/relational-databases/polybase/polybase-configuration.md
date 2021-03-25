@@ -8,13 +8,13 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
-monikerRange: '>= sql-server-2016'
-ms.openlocfilehash: 455c1de1f11b58d4d12cf982d035846b73e60a43
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+monikerRange: '>= sql-server-2016 '
+ms.openlocfilehash: 140c5d20c18fc7dae3710ae91c37f5ee1bb8d242
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100351853"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103879"
 ---
 # <a name="polybase-configuration-and-security-for-hadoop"></a>PolyBase の構成と Hadoop 用のセキュリティ
 

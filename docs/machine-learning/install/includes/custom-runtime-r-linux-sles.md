@@ -1,16 +1,16 @@
 ---
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 02/08/2021
+ms.date: 03/16/2021
 ms.topic: include
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: a10c54f61151835692f2bc05de440062fe2f3cfb
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 70bf06deb43e861209e12b6481f3fd414cb9361f
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100072793"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833779"
 ---
 ## <a name="install-language-extensions"></a>言語拡張をインストールする
 
@@ -31,7 +31,25 @@ sudo zypper install mssql-server-extensibility
     R の別のランタイムを使用する場合は、新しいバージョンのインストールを続ける前に、まず `microsoft-r-open-mro` を削除する必要があります。
 
     ```bash
-    sudo zypper remove microsoft-r-open-mro-3.5.2
+    sudo zypper remove microsoft-r-open-mro-3.4.4
     ```
 
-1. SUSE Linux Enterprise Server (SLES) 用に [R (3.3 以降)](https://www.r-project.org/) をインストールします。 既定では、R は **/usr/lib/R** にインストールされます。 このパスは **R_HOME** です。 R を別の場所にインストールする場合は、**R_HOME** としてそのパスを記録しておきます。
+1. SUSE Linux Enterprise Server (SLES) 用に [R (3.3 以降)](https://www.r-project.org/) をインストールします。 既定では、R は **/usr/lib64/R** にインストールされます。 このパスは **R_HOME** です。 R を別の場所にインストールする場合は、**R_HOME** としてそのパスを記録しておきます。
+
+    次の手順に従って R をインストールしてください。
+
+    ```bash
+    sudo zypper ar -f http://download.opensuse.org/repositories/devel:/languages:/R:/patched/openSUSE_12.3/ R-patched
+    sudo zypper --gpg-auto-import-keys ref
+    sudo zypper install R-core-libs R-core R-core-doc R-patched
+    ```
+
+    このパッケージが不要な場合は、**R-tcltk-3.6.1** の警告を無視してもかまいません。
+
+## <a name="install-gcc-c"></a>gcc-c++ をインストールする
+
+SUSE Linux Enterprise Server (SLES) に **gcc-c++** をインストールします。 これは、後でインストールする **Rcpp** に使用されます。
+
+```bash
+sudo zypper install gcc-c++
+```

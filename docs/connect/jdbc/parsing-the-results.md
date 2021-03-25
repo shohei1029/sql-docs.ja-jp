@@ -1,6 +1,6 @@
 ---
-description: 結果の解析
-title: 結果の解析 | Microsoft Docs
+description: JDBC ドライバーでのクエリ実行からの結果 (複数の結果セットを含む) を完全に処理することについて説明します。
+title: 結果の解析
 ms.custom: ''
 ms.date: 08/12/2019
 ms.prod: sql
@@ -12,12 +12,12 @@ ms.assetid: ''
 author: rene-ye
 ms.author: v-reye
 manager: kenvh
-ms.openlocfilehash: 7b56223594d1126c373b4fd8b24dabc1e81dab67
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 1605fd65414a81acc0912d774a24ff4ae10a1c9c
+ms.sourcegitcommit: bacd45c349d1b33abef66db47e5aa809218af4ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837082"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104793021"
 ---
 # <a name="parsing-the-results"></a>結果の解析
 
@@ -27,9 +27,10 @@ ms.locfileid: "101837082"
 
 ## <a name="update-counts-and-result-sets"></a>更新数と結果セット
 
-このセクションでは、SQL Server から返される最も一般的な 2 つの結果、つまり更新数と結果セットについて説明します。 一般に、ユーザーがクエリを実行すると、これら 2 つの結果のいずれかが返されます。ユーザーは、結果を処理するときに両方を処理することが想定されます。
+このセクションでは、SQL Server から返される最も一般的な 2 つの結果、つまり更新数と結果セットについて説明します。 一般に、ユーザーがクエリを実行すると、これらの結果のいずれかが返されます。 ユーザーは、結果を処理するときに両方を処理することが想定されます。
 
 次のコード例は、ユーザーがサーバーからのすべての結果を反復処理する方法を示しています。
+
 ```java
 try (Connection connection = DriverManager.getConnection(URL); Statement statement = connection.createStatement()) {
     boolean resultsAvailable = statement.execute(USER_SQL);
@@ -49,7 +50,8 @@ try (Connection connection = DriverManager.getConnection(URL); Statement stateme
 ```
 
 ## <a name="exceptions"></a>例外
-エラーまたは情報メッセージを生成するステートメントを実行すると、実行計画を生成できるかどうかによって SQL Server の応答が異なります。 ステートメントの実行直後にエラー メッセージをスローすることができます。また、エラー メッセージが別個の結果セットを必要とする場合もあります。 後者の場合、アプリケーションでは、結果セットを解析して例外を取得する必要があります。
+
+エラーまたは情報メッセージを生成するステートメントを実行すると、SQL Server の応答が異なる場合があります。 たとえば、実行プランを生成できない場合は、`execute()` ですぐにエラー メッセージがスローされます。 エラーがステートメントの処理に関連している場合、アプリケーションで結果セットを解析して例外を確認する必要があります。
 
 SQL Server が実行プランを生成できない場合、例外はただちにスローされます。
 
@@ -100,7 +102,7 @@ try (Statement statement = connection.createStatement();) {
 }
 ```
 
-`String SQL = "SELECT * FROM nonexistentTable; SELECT 1;";`の場合、例外は `execute()` でただちにスローされ、`SELECT 1` は実行されません。
+たとえば、`String SQL = "SELECT * FROM nonexistentTable; SELECT 1;";` は、`execute()` ですぐに例外をスローし、`SELECT 1` は一切実行されません。
 
 SQL Server からのエラーの重大度が `0` から `9` までの場合、情報メッセージと見なされ、`SQLWarning`として返されます。
 
@@ -115,4 +117,4 @@ try (Statement statement = connection.createStatement();) {
 
 ## <a name="see-also"></a>関連項目
 
-[JDBC ドライバーの概要](../../connect/jdbc/overview-of-the-jdbc-driver.md)
+[JDBC ドライバーの概要](overview-of-the-jdbc-driver.md)

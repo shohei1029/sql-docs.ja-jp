@@ -1,17 +1,19 @@
 ---
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 02/08/2021
+ms.date: 03/18/2021
 ms.topic: include
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 588fbd33a0fb65f3de1c2bee54ce3d927960661a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: f6ec3bbcc720fe472cc7146d59c30f0f3fc65ab0
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100072781"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833757"
 ---
++ RExtension には、GLIBCXX_3.4.20 が必要です。 Red Hat Enterprise Linux (RHEL) に **libstdc++.so.6** のバージョンをインストールすることで、これが提供されることを確認してください。
+
 ## <a name="install-language-extensions"></a>言語拡張をインストールする
 
 > [!NOTE]
@@ -34,4 +36,8 @@ sudo yum install mssql-server-extensibility
     sudo yum erase microsoft-r-open-mro-3.5.2
     ```
 
-1. Red Hat Enterprise Linux (RHEL) 用の [R (3.3 以降)](https://www.r-project.org/) をインストールします。 既定では、R は **/usr/lib/R** にインストールされます。 このパスは **R_HOME** です。 R を別の場所にインストールする場合は、**R_HOME** としてそのパスを記録しておきます。
+1. Red Hat Enterprise Linux (RHEL) 用の [R (3.3 以降)](https://www.r-project.org/) をインストールします。 既定では、R は **/usr/lib64/R** にインストールされます。 このパスは **R_HOME** です。 R を別の場所にインストールする場合は、**R_HOME** としてそのパスを記録しておきます。
+
+    ```bash
+    sudo yum install -y R
+    ```

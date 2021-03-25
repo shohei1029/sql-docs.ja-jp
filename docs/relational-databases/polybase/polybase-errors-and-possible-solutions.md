@@ -1,7 +1,7 @@
 ---
 title: PolyBase のエラーと考えられる解決策
 description: PolyBase のエラーと推奨される解決策のリファレンス。
-ms.date: 02/17/2021
+ms.date: 03/22/2021
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
@@ -17,12 +17,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
 monikerRange: '>= sql-server-linux-ver15 || >= sql-server-2016'
-ms.openlocfilehash: 463b54aefd36e74318331c90cf2c944734f8a5cc
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 46f56288382c1b1928e6ad3081a8eea41e23bb5f
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101873330"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833821"
 ---
 # <a name="polybase-errors-and-possible-solutions"></a>PolyBase のエラーと考えられる解決策
 
@@ -37,6 +37,11 @@ Windows と Linux での PolyBase のログ ファイルの一般的な場所に
 
 ## <a name="error-messages-and-possible-solutions"></a>エラー メッセージと考えられる解決策
 
+### <a name="error-100001failed-to-generate-query-plan"></a>エラー: "100001;クエリ プランを生成できませんでした"
+
+"クエリ プランを生成できませんでした" というエラーは、SQL Server データベース エンジンには累積的な更新プログラム 8 (15.0.4073) 以降の修正プログラムが適用されているが、PolyBase 機能が同じビルドに更新されていない場合に発生する可能性があります。 これは、PolyBase 機能を既存の SQL Server インスタンスに追加するときに発生する可能性があります。 詳細については、「[PolyBase error - 100001;Failed to generate query plan](https://techcommunity.microsoft.com/t5/sql-server-support/polybase-error-100001-failed-to-generate-query-plan/ba-p/2174693)」 (PolyBase エラー - 100001;クエリ プランを生成できませんでした) を参照してください。
+
+常に、新しい機能を同じバージョン レベルにすることにより、PolyBase 機能のインストールを維持します。 必要に応じて、Service Pack (SP)、累積的な更新プログラム (CU)、一般配布リリース (GDR) をインストールします。 PolyBase のバージョンを確認するには、「[SQL Server とそのコンポーネントのバージョン、エディション、更新レベルを確認する](/troubleshoot/sql/general/determine-version-edition-update-level#polybase)」を参照してください。
 
 ### <a name="service-account-change"></a>サービス アカウントの変更
 

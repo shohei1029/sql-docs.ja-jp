@@ -22,12 +22,12 @@ ms.assetid: 8a7aaaf2-62e3-46c0-8e44-fa22290dd86b
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 45380ece89d919f3f064415486cee209bf99fced
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: caef51295d4d38f1021f28f575bd96195cdbab63
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104750632"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833848"
 ---
 # <a name="replace-transact-sql"></a>REPLACE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -49,7 +49,7 @@ REPLACE ( string_expression , string_pattern , string_replacement )
  検索する文字列[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 *string_expression* 文字またはバイナリ データ型であることができます。  
   
  *string\_pattern*  
- 検索するサブストリングです。 *string_pattern* 文字またはバイナリ データ型であることができます。 *string_pattern* には空の文字列 ("") は指定できません。また、1 ページに収まる最大バイト数を超えないようにしてください。  
+ 検索するサブストリングです。 *string_pattern* 文字またはバイナリ データ型であることができます。 *string_pattern* は、1 ページに収まる最大バイト数を超えないようにしてください。 *string_pattern* が空の文字列 ('') の場合、*string_expression* は変更されずに返されます。 
   
  *string\_replacement*  
  置き換え後の文字列です。 *string_replacement* 文字またはバイナリ データ型であることができます。  

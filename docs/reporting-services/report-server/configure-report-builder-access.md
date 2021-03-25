@@ -1,44 +1,39 @@
 ---
 title: レポート ビルダーへのアクセスの構成 | Microsoft Docs
-description: SQL Server Reporting Services レポート サーバーと共にインストールされるレポート ツールであるレポート ビルダーを構成します。 ネイティブまたは SharePoint 統合モードが使用されます。
+description: SQL Server Reporting Services レポート サーバーで使用するレポート デザイン ツールであるレポート ビルダーを構成します。 ネイティブまたは SharePoint 統合モードが使用されます。
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: report-server
 ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
-ms.date: 06/06/2019
-ms.openlocfilehash: 168e8897743e113ae1a40df5ad8d35c66289fde0
-ms.sourcegitcommit: f0772f614482e0b3cde3609e178689ce62ca3a19
+ms.date: 03/07/2021
+ms.openlocfilehash: 6940a6c5b46861ebb745fb3965167a4d19173446
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84548084"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833856"
 ---
 # <a name="configure-report-builder-access"></a>レポート ビルダーへのアクセスの構成
-レポート ビルダーは、ネイティブ モードまたは SharePoint 統合モード用に構成される [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] レポート サーバーに付属しているカスタム レポート ツールです。  
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE[ssrs-appliesto-2016-and-later](../../includes/ssrs-appliesto-2016-and-later.md)] [!INCLUDE[ssrs-appliesto-pbirsi](../../includes/ssrs-appliesto-pbirs.md)]
+
+Microsoft レポート ビルダーは、ネイティブ モードまたは SharePoint 統合モード用に構成される [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] レポート サーバーで使用できるカスタム レポート ツールです。  
 
 レポート ビルダーへのアクセスは、次の要素により決定されます。  
 
-- レポート サーバーでレポート ビルダーを使用できるかどうかを指定するサーバー プロパティ。  
-
 - 個々のユーザーやグループがレポート ビルダーを使用できるようにするためのロール割り当てまたは権限。  
 
-- ユーザーの資格情報をレポート サーバーに渡せるか、アプリケーション ファイルで匿名アクセスを構成するかを指定する認証設定。
+- ユーザーの資格情報をレポート サーバーに渡せるかどうかを判断する認証設定。
 
 ## <a name="prerequisites"></a>前提条件
 
-レポート ビルダーは、 [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)」をご覧ください。  
-
-クライアント コンピューターには、[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] 4.6 または 4.6.1 をインストールしておく必要があります。SSRS 2016 の場合は 4.6、2017 の場合は 4.6.1 になります。 [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] は、 [!INCLUDE[ndptecclick](../../includes/ndptecclick-md.md)] アプリケーションを実行するためのインフラストラクチャを提供します。  
-
-[!INCLUDE[msCoName](../../includes/msconame-md.md)] Internet Explorer 11 以降か他の最新式のブラウザーを使用する必要があります。  
-
-レポート ビルダーは、常に完全信頼モードで実行されます。部分信頼モードで実行されるように構成することはできません。 以前のリリースでは、レポート ビルダーを部分信頼モードで実行できましたが、 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降のバージョンではこのオプションはサポートされていません。  
+クライアント コンピューターには、[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] 4.6.1 以降がインストールされている必要があります。
 
 ## <a name="enabling-and-disabling-report-builder"></a>レポート ビルダーの有効化と無効化  
 
-レポート ビルダーは既定で有効になっています。 レポート サーバー管理者は、レポート サーバーのシステム プロパティ **ShowDownloadMenu** を **false** に設定することで、レポート ビルダー機能を無効にすることができます。 このプロパティを設定すると、そのレポート サーバーでレポート ビルダー、Mobile Report Publisher、Power BI Mobile のダウンロードが無効になります。  
+既定では、ポータルを使用したレポート ビルダーのダウンロードが有効になっています。 レポート サーバー管理者は、レポート サーバーのシステム プロパティ **ShowDownloadMenu** を **false** に設定することで、レポート ビルダーのダウンロードを無効にすることができます。 このプロパティを設定すると、そのレポート サーバーでレポート ビルダー、Mobile Report Publisher、Power BI Desktop、Power BI Mobile のダウンロードが無効になります。  
 
  レポート サーバーのシステム プロパティを設定するには、Management Studio またはスクリプトを使用します。   
 
@@ -50,7 +45,7 @@ ms.locfileid: "84548084"
 
 ネイティブ モードのレポート サーバーでは、レポート ビルダーを使用するためのタスクを含むユーザー ロールの割り当てを作成します。 アイテムおよびサイト レベルでのロールの定義およびロールの割り当てを作成または変更できるのは、コンテンツ マネージャーとシステム管理者だけです。  
 
-次に示す手順では、定義済みロールを使用しているものとします。 ロールの定義を変更した場合や SQL Server 2000 からアップグレードした場合は、ロールに必要なタスクが含まれていることを確認してください。 ロール割り当ての作成について詳しくは、「[レポート サーバーへのユーザー アクセスを許可する](../../reporting-services/security/grant-user-access-to-a-report-server.md)」をご覧ください。
+次に示す手順では、定義済みロールを使用しているものとします。 ロールの定義を変更した場合は、ロールに必要なタスクが含まれていることを確認してください。 ロール割り当ての作成について詳しくは、「[レポート サーバーへのユーザー アクセスを許可する](../../reporting-services/security/grant-user-access-to-a-report-server.md)」をご覧ください。
 
 ロールの割り当てを作成すると、次の操作を行う権限がユーザーに許可されます。  
 
@@ -143,8 +138,6 @@ SharePoint 統合モードのレポート サーバーでは、レポート ビ�
 ## <a name="authentication-considerations-and-credential-reuse"></a>認証に関する注意点と資格情報の再利用  
 
 - レポート ビルダーは、レポート サーバーに対する専用の接続を確立します。 シングル サインオンを有効にした Windows 統合セキュリティを使用していない場合、ユーザーは、レポート ビルダーからレポート サーバーに接続するために資格情報を再入力する必要があります。  
-
-次の表に、レポート サーバーでサポートされている認証の種類、およびレポート ビルダーへのアクセスに追加の構成が必要かどうかを示します。  
 
 ## <a name="see-also"></a>関連項目  
 

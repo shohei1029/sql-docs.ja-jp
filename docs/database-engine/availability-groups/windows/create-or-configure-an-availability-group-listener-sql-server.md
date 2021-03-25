@@ -16,12 +16,12 @@ ms.assetid: 2bc294f6-2312-4b6b-9478-2fb8a656e645
 author: cawrites
 ms.author: chadam
 manager: erikre
-ms.openlocfilehash: fa497fc004393388e34b3afbbe913a5915bbb120
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 90dcdcc2f6f7224718a9f2069e112b6f9a7a77e5
+ms.sourcegitcommit: bacd45c349d1b33abef66db47e5aa809218af4ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350800"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104793104"
 ---
 # <a name="configure-a-listener-for-an-always-on-availability-group"></a>Always On 可用性グループのリスナーの構成
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -68,8 +68,8 @@ ms.locfileid: "100350800"
   
 |アクセス許可|Link|  
 |-----------------|----------|  
-|可用性グループをホストしている WSFC クラスターのクラスター オブジェクト名 (CNO) には、 **Create Computer objects** アクセス許可が必要です。<br /><br /> Active Directory では、CNO は既定で **Create Computer objects** アクセス許可を明示的に持たず、仮想コンピューター オブジェクト (VCO) を最大で 10 個作成できます。 VCO を 10 個作成した後、追加で VCO を作成しようとしても失敗します。 この問題は、WSFC クラスターの CNO に権限を明示的に与えることで回避できます。 削除した可用性グループの VCO は Active Directory 内で自動的に削除されず、手動で削除しない限り、VCO の 10 個の既定の制限の対象としてカウントされます。<br /><br /> 注:組織によっては、**Create Computer objects** 権限を個別のユーザー アカウントに付与することがセキュリティ ポリシーで禁止されている場合があります。|*クラスターをインストールするユーザーのアカウントを構成する手順*: 「[フェールオーバー クラスター ステップ バイ ステップ ガイド:Active Directory のアカウントの構成](https://technet.microsoft.com/library/cc731002\(WS.10\).aspx#BKMK_steps_installer)」<br /><br /> *クラスター名アカウントを事前設定する手順:* 「[フェールオーバー クラスター ステップ バイ ステップ ガイド:Active Directory のアカウントの構成](https://technet.microsoft.com/library/cc731002\(WS.10\).aspx#BKMK_steps_precreating)」|  
-|リスナーの仮想ネットワーク名にコンピューター アカウントを事前設定する必要がある場合は、 **Account Operator** グループのメンバーシップが必要です。または、ドメイン管理者に依頼する必要があります。|*クラスター化されたサービスまたはアプリケーションのアカウントを事前設定する手順*: 「[フェールオーバー クラスター ステップ バイ ステップ ガイド:Active Directory のアカウントの構成](https://technet.microsoft.com/library/cc731002\(WS.10\).aspx#BKMK_steps_precreating2)」|  
+|可用性グループをホストしている WSFC クラスターのクラスター名オブジェクト (CNO) には、**Create Computer objects** アクセス許可が必要です。<br /><br /> Active Directory では、CNO は既定で **Create Computer objects** アクセス許可を明示的に持たず、仮想コンピューター オブジェクト (VCO) を最大で 10 個作成できます。 VCO を 10 個作成した後、追加で VCO を作成しようとしても失敗します。 この問題は、WSFC クラスターの CNO に権限を明示的に与えることで回避できます。 削除した可用性グループの VCO は Active Directory 内で自動的に削除されず、手動で削除しない限り、VCO の 10 個の既定の制限の対象としてカウントされます。<br /><br /> 注: 組織によっては、 **Create Computer objects** 権限を個別のユーザー アカウントに付与することがセキュリティ ポリシーで禁止されている場合があります。|*クラスターをインストールするユーザーのアカウントを構成する手順:* 「 [フェールオーバー クラスター ステップ バイ ステップ ガイド: Active Directory のアカウントの構成](https://technet.microsoft.com/library/cc731002\(WS.10\).aspx#BKMK_steps_installer)<br /><br /> *クラスター名アカウントを事前設定する手順:* 「 [フェールオーバー クラスター ステップ バイ ステップ ガイド: Active Directory のアカウントの構成](https://technet.microsoft.com/library/cc731002\(WS.10\).aspx#BKMK_steps_precreating)|  
+|リスナーの仮想ネットワーク名にコンピューター アカウントを事前設定する必要がある場合は、 **Account Operator** グループのメンバーシップが必要です。または、ドメイン管理者に依頼する必要があります。|*クラスター化されたサービスまたはアプリケーションのアカウントを事前設定する手順:* 「 [フェールオーバー クラスター ステップ バイ ステップ ガイド: Active Directory のアカウントの構成](https://technet.microsoft.com/library/cc731002\(WS.10\).aspx#BKMK_steps_precreating2)」|  
   
 > [!TIP]  
 >  一般的には、リスナーの仮想ネットワーク名にコンピューター アカウントを事前設定しないことが最も簡単です。 可能な場合は、WSFC の高可用性ウィザードを実行する際にアカウントが自動的に作成および構成されるように構成します。  
@@ -211,7 +211,7 @@ ms.locfileid: "100350800"
   
 -   [Active Directory クォータ](https://technet.microsoft.com/library/cc904295\(WS.10\).aspx)  
   
-##  <a name="follow-up-after-creating-an-availability-group-listener"></a><a name="FollowUp"></a> 補足情報:可用性グループ リスナーを作成した後  
+##  <a name="follow-up-after-creating-an-availability-group-listener"></a><a name="FollowUp"></a> 補足情報: 可用性グループ リスナーの作成後  
   
 ###  <a name="multisubnetfailover-keyword-and-associated-features"></a><a name="MultiSubnetFailover"></a> MultiSubnetFailover のキーワードおよび関連機能  
  **MultiSubnetFailover** は、SQL Server 2012 の AlwaysOn 可用性グループおよび AlwaysOn フェールオーバー クラスター インスタンスに対して高速フェールオーバーを有効にするために使用する新しい接続文字列キーワードです。 接続文字列で `MultiSubnetFailover=True` が設定されていると、次の 3 つのサブ機能が有効になります。  
@@ -228,7 +228,7 @@ ms.locfileid: "100350800"
   
  **.NET Framework 3.5 および OLEDB で MultiSubnetFailover=True はサポートされない**  
   
- **問題:** 異なるサブネットからの複数の IP アドレスに応じて可用性グループまたはフェールオーバー クラスター インスタンスにリスナー名 (ネットワーク名または WSFC クラスター マネージャーのクライアント アクセス ポイント) がある場合に、ADO.NET with .NET Framework 3.5SP1 または SQL Native Client 11.0 OLEDB を使用していると、可用性グループ リスナーに対するクライアント接続要求の 50% が接続タイムアウトに達する可能性があります。  
+ **問題点:** 異なるサブネットからの複数の IP アドレスに応じて可用性グループまたはフェールオーバー クラスター インスタンスにリスナー名 (ネットワーク名または WSFC クラスター マネージャーのクライアント アクセス ポイント) がある場合に、ADO.NET with .NET Framework 3.5SP1 または SQL Native Client 11.0 OLEDB を使用していると、可用性グループ リスナーに対するクライアント接続要求の 50% が接続タイムアウトに達する可能性があります。  
   
  **回避策:** 次のいずれかのタスクを実行することをお勧めします。  
   
@@ -242,7 +242,7 @@ ms.locfileid: "100350800"
   
      **長所:** クライアント接続のタイムアウト値を大きくする必要がありません。  
   
-     **短所:** クロスサブネット フェールオーバーが発生した場合、**HostRecordTTL** 設定およびクロスサイト DNS/AD レプリケーション スケジュールの設定によっては、クライアントの復旧時間が 15 分以上になります。  
+     **短所:** クロスサブネット フェールオーバーが発生した場合、クロスサイト DNS/AD レプリケーション スケジュールの **HostRecordTTL** 設定によっては、クライアントの復旧時間が 15 分以上になる可能性があります。  
   
 ###  <a name="registerallprovidersip-setting"></a><a name="RegisterAllProvidersIP"></a> RegisterAllProvidersIP の設定  
  [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)]、 [!INCLUDE[tsql](../../../includes/tsql-md.md)]、または PowerShell を使用して可用性グループ リスナーを作成すると、WSFC にクライアント アクセス ポイントが作成され、その **RegisterAllProvidersIP** プロパティが 1 (true) に設定されます。 このプロパティ値の効果は、次に示すように、クライアント接続文字列によって異なります。  
@@ -306,7 +306,7 @@ Start-Clustergroup yourListenerGroupName
   
         3.  WSFC 可用性グループに対する依存関係を追加します。  
   
-         フェールオーバー クラスター マネージャーのダイアログ ボックスおよびタブについては、「[ユーザー インターフェイス:フェールオーバー クラスター マネージャー スナップ イン](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772502(v=ws.11))」を参照してください。  
+         フェールオーバー クラスター マネージャーのダイアログ ボックスおよびタブの詳細については、「 [ユーザー インターフェイス: フェールオーバー クラスター マネージャー スナップイン](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772502(v=ws.11))」を参照してください。  
   
     -   **フェールオーバー クラスターの Windows PowerShell の使用:**  
   
@@ -324,7 +324,7 @@ Start-Clustergroup yourListenerGroupName
   
  
   
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 これでリスナーを作成したので、[リスナーに接続する](listeners-client-connectivity-application-failover.md)ようにアプリケーションを構成します。 また、可用性グループの正常性を確保するために、さまざまな[可用性グループの監視戦略](monitoring-of-availability-groups-sql-server.md)を確認することもできます。
 
