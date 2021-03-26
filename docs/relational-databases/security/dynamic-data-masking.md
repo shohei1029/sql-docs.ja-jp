@@ -1,22 +1,21 @@
 ---
-title: 動的なデータ マスキング | Microsoft Docs
+title: 動的データ マスク
 description: 特権のないユーザーに対して機密データをマスクすることでその公開を制限する動的データ マスキングについて説明します。 これにより、SQL Server におけるセキュリティが大幅に簡素化できます。
-ms.date: 05/02/2019
+ms.date: 03/24/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: security
 ms.topic: conceptual
-ms.assetid: a62f4ff9-2953-42ca-b7d8-1f8f527c4d66
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 03ef32905fd9fcd79c296279095e089691625a86
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 128cc9ea3313a12bfe4fc6da7cdcf2139c2dfc9b
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104751262"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103799"
 ---
 # <a name="dynamic-data-masking"></a>動的なデータ マスキング
 [!INCLUDE [SQL Server 2016 ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -25,7 +24,7 @@ ms.locfileid: "104751262"
 
 動的データ マスク (DDM) では、機密データをマスクすることにより、特権のないユーザーへの機密データの公開を制限します。 DDM を使用すると、アプリケーションのセキュリティの設計とコーディングを大幅に簡略化することができます。  
 
-動的データ マスクでは、公開する機密データの量を指定することで、そのようなデータに対する未承認のアクセスを防ぎ、アプリケーション レイヤーへの影響が最小限に抑えられます。 DDM は、指定されたデータベース フィールドで、クエリの結果セットに含まれる機密データを隠蔽するように構成できます。 DDM によって、データベース内のデータが変更されることはありません。 動的データ マスクは、クエリの結果にマスク ルールが適用されるため、既存のアプリケーションで簡単に使用できます。 多くのアプリケーションは、既存のクエリを変更せずに、デリケートなデータをマスクすることができます。
+動的データ マスクでは、公開する機密データの量を指定することで、そのようなデータに対する未承認のアクセスを防ぎ、アプリケーション レイヤーへの影響が最小限に抑えられます。 DDM は、指定されたデータベース フィールドで、クエリの結果セットに含まれる機密データを隠蔽するように構成できます。 DDM によって、データベース内のデータが変更されることはありません。 DDM は、クエリの結果にマスク ルールが適用されるため、既存のアプリケーションで簡単に使用できます。 多くのアプリケーションは、既存のクエリを変更せずに、デリケートなデータをマスクすることができます。
 
 * 中央のデータ マスク ポリシーは、データベースの機密フィールドに対して直接動作します。
 * 機密データに対するアクセス権を持つ特権のあるユーザーまたはロールを指定します。
@@ -86,6 +85,8 @@ WHERE is_masked = 1;
 -   マスクは計算列に構築できません。ただし、計算列が MASK を所有する列に依存する場合は、計算列がマスクされたデータを返します。  
   
 -   データ マスクを持つ列を FULLTEXT インデックスのキーにすることはできません。  
+
+-   PolyBase [外部テーブル](../../t-sql/statements/create-external-table-transact-sql.md)内の列。
   
  **UNMASK** アクセス許可のないユーザーの場合、非推奨とされている **READTEXT**、 **UPDATETEXT**、および **WRITETEXT** ステートメントは、動的データ マスク用に構成された列で適切に動作しません。 
  
@@ -122,18 +123,18 @@ WHERE Salary > 99999 and Salary < 100001;
 ```sql
 
 -- schema to contain user tables
-CREATE SCHEMA Data
+CREATE SCHEMA Data;
 GO
 
 -- table with masked columns
 CREATE TABLE Data.Membership(
     MemberID        int IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
-    FirstName       varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
+    FirstName        varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
     LastName        varchar(100) NOT NULL,
-    Phone           varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
-    Email           varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
+    Phone            varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
+    Email            varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
     DiscountCode    smallint MASKED WITH (FUNCTION = 'random(1, 100)') NULL
-    )
+    );
 
 -- inserting sample data
 INSERT INTO Data.Membership (FirstName, LastName, Phone, Email, DiscountCode)

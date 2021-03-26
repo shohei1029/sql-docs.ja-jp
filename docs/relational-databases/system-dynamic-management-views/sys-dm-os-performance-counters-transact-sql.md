@@ -1,6 +1,6 @@
 ---
 description: sys.dm_os_performance_counters (Transact-SQL)
-title: sys.dm_os_performance_counters (Transact-sql) |Microsoft Docs
+title: sys.dm_os_performance_counters (Transact-SQL)
 ms.custom: ''
 ms.date: 03/22/2021
 ms.prod: sql
@@ -17,16 +17,15 @@ dev_langs:
 - TSQL
 helpviewer_keywords:
 - sys.dm_os_performance_counters dynamic management view
-ms.assetid: a1c3e892-cd48-40d4-b6be-2a9246e8fbff
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6bece57b97ce2a7e20b2800fb45a831674960012
-ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
+ms.openlocfilehash: 62489b131eea77ed67b1207a7606056cea39066d
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104890794"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551635"
 ---
 # <a name="sysdm_os_performance_counters-transact-sql"></a>sys.dm_os_performance_counters (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -34,7 +33,7 @@ ms.locfileid: "104890794"
   サーバーによって管理されているパフォーマンス カウンターごとに 1 つの行を返します。 各パフォーマンスカウンターの詳細については、「 [SQL Server オブジェクトの使用](../../relational-databases/performance-monitor/use-sql-server-objects.md)」を参照してください。  
   
 > [!NOTE]  
->  またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 **sys.dm_pdw_nodes_os_performance_counters** という名前を使用します。  
+>  これをまたはから呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、という名前を使用し `sys.dm_pdw_nodes_os_performance_counters` ます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -62,6 +61,8 @@ SELECT COUNT(*) FROM sys.dm_os_performance_counters;
 
 列の値が1073874176のパフォーマンスカウンターで `cntr_type` は、操作の数に対して処理された項目の比率として、平均して処理される項目の数が表示されます。 たとえば、カウンターは、1秒あたりのロック `Locks:Average Wait Time (ms)` 待機回数を1秒あたりのロック要求数と比較し、待機する各ロック要求の平均待機時間 (ミリ秒単位) を表示します。 そのため、最後の1秒間だけのスナップショットのような読み取りを行うには、現在の値と2つのコレクションポイント間のベース値 (分母) との差を比較する必要があります。 対応する基本値は、 `Locks:Average Wait Time Base` `cntr_type` 列の値が1073939712であるパフォーマンスカウンターです。
 
+DMV のデータ `sys.dm_os_performance_counters` は、データベースエンジンの再起動後に保持されません。 Sys.dm_os_sys_info の列を使用して、 `sqlserver_start_time` データベースエンジンの最後の起動時刻を検索します。 [](sys-dm-os-sys-info-transact-sql.md)   
+
 ## <a name="permission"></a>権限
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
@@ -79,3 +80,4 @@ WHERE cntr_type = 65792 OR cntr_type = 272696320 OR cntr_type = 537003264;
 ## <a name="see-also"></a>参照  
   [SQL Server オペレーティングシステム関連の動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql.md)   
  [sys.sysperfinfo &#40;Transact-SQL&#41;](../../relational-databases/system-compatibility-views/sys-sysperfinfo-transact-sql.md)  
+ [sys.dm_os_sys_info &#40;Transact-sql&#41;](sys-dm-os-sys-info-transact-sql.md)

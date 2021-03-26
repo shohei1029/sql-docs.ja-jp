@@ -11,18 +11,18 @@ ms.assetid: 8b7810b2-637e-46a3-9fe1-d055898ba639
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 5f7bbccc12c8d3f522703421542ba6188e826ea1
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: 611ce5f3bd9a7243ee19089deb8a755956eb156c
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104610971"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103829"
 ---
 # <a name="install-sql-server-with-smb-fileshare-storage"></a>SMB ファイル共有ストレージを使用して SQL Server をインストールする
 
 [!INCLUDE [SQL Server -Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
 
-[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]以降では、システム データベース (Master、Model、MSDB、TempDB) と [!INCLUDE[ssDE](../../includes/ssde-md.md)] ユーザー データベースをストレージ オプションとしてサーバー メッセージ ブロック (SMB) ファイル サーバーにインストールできます。 これは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] スタンドアロン インストールと [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] フェールオーバー クラスター インストール (FCI) の両方に当てはまります。  
+[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降では、システム データベース (Master、Model、MSDB、tempdb) と [!INCLUDE[ssDE](../../includes/ssde-md.md)] ユーザー データベースをストレージ オプションとしてサーバー メッセージ ブロック (SMB) ファイル サーバーにインストールできます。 これは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] スタンドアロン インストールと [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] フェールオーバー クラスター インストール (FCI) の両方に当てはまります。  
   
 > [!NOTE]  
 >  Filestream は現在、SMB ファイル共有ではサポートされていません。  
@@ -105,11 +105,11 @@ ms.locfileid: "104610971"
     >   
     >  仮想アカウントでは、リモートの場所へアクセスすることはできません。 どの仮想アカウントも、コンピューター アカウントの権限を使用します。 \<*domain_name*>\\<*computer_name*>\*$* の形式でコンピューター アカウントを準備してください。  
   
--   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールに使用するアカウントには、クラスター セットアップの際にデータ ディレクトリとして使用される、SMB ファイル共有フォルダーおよび他のすべてのデータ フォルダー (ユーザー データベース ディレクトリ、ユーザー データベース ログ ディレクトリ、TempDB ディレクトリ、TempDB ログ ディレクトリ、バックアップ ディレクトリ) に対して、フル コントロール権限が必要です。  
+-   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールに使用するアカウントには、クラスター セットアップの際にデータ ディレクトリとして使用される SMB ファイル共有フォルダーまたは他のすべてのデータ フォルダー (ユーザー データベース ディレクトリ、ユーザー データベース ログ ディレクトリ、tempdb ディレクトリ、tempdb ログ ディレクトリ、バックアップ ディレクトリ) に対して、"フル コントロール" 権限が必要です。  
   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールに使用するアカウントには、SMB ファイル サーバーに対する SeSecurityPrivilege 特権を付与する必要があります。 この特権を付与するには、ファイル サーバーで [ローカル セキュリティ ポリシー] コンソールを使用して、監査とセキュリティ ログの管理ポリシーに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セットアップ アカウントを追加します。 この設定は、[ローカル セキュリティ ポリシー] コンソールの [ローカル ポリシー] にある [ユーザー権利の割り当て] セクションで行うことができます。  
   
-## <a name="known-issues"></a>既知の問題  
+## <a name="known-issues-and-limitations"></a>既知の問題と制限事項 
   
 -   ネットワークにアタッチされたストレージ上に存在する [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データベースをデタッチした後で、その [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースを再アタッチしようとすると、データベース権限の問題が発生する場合があります。 詳細については、[エラー 5120](../../relational-databases/errors-events/mssqlserver-5120-database-engine-error.md) を参照してください。
   
@@ -123,7 +123,11 @@ ms.locfileid: "104610971"
         ALTER SERVER CONFIGURATION  
         SET DIAGNOSTICS LOG PATH = 'C:\logs';  
         ```  
-  
+
+-   SMB ファイル共有で [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データ ファイルをホストする場合、ファイルに対するすべての I/O は、サーバーまたは仮想マシン上のネットワーク インターフェイスを経由します。 ワークロードに必要な I/O をサポートするのに十分なネットワーク帯域幅があることを確認してください。
+
+-   ネットワーク接続の問題やその他の障害により、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データ ファイルをホストしているファイル共有が利用できないと、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] で I/O の遅延またはエラーが発生する可能性があります。 ミッション クリティカルなワークロードの場合は、ネットワークとファイル共有に冗長性が組み込まれており、ファイル共有で SMB 3.0 透過フェールオーバー ([継続的可用性](https://techcommunity.microsoft.com/t5/storage-at-microsoft/smb-transparent-failover-8211-making-file-shares-continuously/ba-p/425693)とも呼ばれます) がサポートされていることを確認してください。
+
 ## <a name="see-also"></a>関連項目  
  [SQL Server のインストール計画](../../sql-server/install/planning-a-sql-server-installation.md)   
  [Windows サービス アカウントと権限の構成](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md)  

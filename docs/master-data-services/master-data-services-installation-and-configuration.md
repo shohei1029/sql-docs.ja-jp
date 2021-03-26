@@ -1,22 +1,19 @@
 ---
 title: インストールと構成
 description: Windows Server 2012 R2 コンピューターにマスターデータサービスをインストールする方法、MDS データベースと web サイトを構成する方法、およびサンプルモデルとデータを配置する方法について説明します。
-ms.custom: ''
-ms.date: 07/01/2020
+ms.date: 03/24/2021
 ms.prod: sql
 ms.prod_service: mds
-ms.reviewer: ''
 ms.technology: master-data-services
 ms.topic: quickstart
-ms.assetid: f6cd850f-b01b-491f-972c-f966b9fe4190
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 1d12236bbfd3af474e883c23b975d357e0fd27a8
-ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
+ms.openlocfilehash: 80e4952dbc6af15a4a54a5f56e3b9080f07dbb9d
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104833871"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551659"
 ---
 # <a name="master-data-services-installation-and-configuration"></a>マスター データ サービスのイントールと構成
 
@@ -30,7 +27,7 @@ ms.locfileid: "104833871"
 
 [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]のデータを整理する方法の概要については、 [マスター データ サービスの概要 (MDS)](../master-data-services/master-data-services-overview-mds.md)を参照してください。     
   
- 新機能の詳細については、「 [マスターデータサービス &#40;MDS&#41;の新 ](../master-data-services/what-s-new-in-master-data-services-mds.md)機能」を参照してください。  
+新機能の詳細については、「 [マスターデータサービス &#40;MDS&#41;の新 ](../master-data-services/what-s-new-in-master-data-services-mds.md)機能」を参照してください。  
  
 [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]を学習するためのビデオと他のトレーニング リソースへのリンクについては、「 [マスター データ サービスについて学習する](../master-data-services/learn-sql-server-master-data-services.md)」をご覧ください。 
   
@@ -44,7 +41,8 @@ ms.locfileid: "104833871"
 
 ## <a name="internet-explorer-and-silverlight"></a>Internet Explorer と Silverlight
 - Windows Server 2012 マシンに [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] をインストールするときに、Web アプリケーション サイトでスクリプトを許可するように Internet Explorer セキュリティ強化を構成しなければならない場合があります。 そうしないと、サーバー コンピューター上のサイトの参照が失敗します。
-- Web アプリケーションで作業するには、Silverlight 5 をクライアント コンピューターにインストールする必要があります。 Silverlight の必要なバージョンがない場合、Web アプリケーションで Silverlight を使用する部分に移動したときに、Silverlight をインストールするよう要求されます。 Silverlight 5 は **[ここ](https://www.microsoft.com/silverlight/)** からインストールできます。
+- より前 [!INCLUDE[sqlv15](../includes/sssql19-md.md)] のでは、Web アプリケーションで作業するために、Silverlight 5 をクライアントコンピューターにインストールする必要がありました。 Silverlight の必要なバージョンがない場合、Web アプリケーションで Silverlight を使用する部分に移動したときに、Silverlight をインストールするよう要求されます。 Silverlight 5 は **[ここ](https://www.microsoft.com/silverlight/)** からインストールできます。
+- 以降では [!INCLUDE[sqlv15](../includes/sssql19-md.md)] 、HTML コントロールによって以前のすべての silverlight コンポーネントが置き換えられるため、silverlight の依存関係が削除されます。 Chrome や Edge などの他のブラウザーでは、マスターデータサービス web アプリにアクセスできるようになりました。
 
 ## <a name="ssmdsshort_md-on-an-azure-virtual-machine"></a>Azure 仮想マシン上の [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]
 既定では、が既にインストールされている Azure 仮想マシンを起動すると [!INCLUDE[ssnoversion_md](../includes/ssnoversion-md.md)] 、 [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] もインストールされます。 
@@ -74,7 +72,7 @@ ms.locfileid: "104833871"
   
      ![Windows Server 2012 タスクバーのサーバーマネージャーのアイコン](../master-data-services/media/mds-windowsservertaskbar-servermanagericon.png "Windows Server 2012 タスクバーのサーバーマネージャーのアイコン")  
   
-5.  **サーバー マネージャー** で、 **[管理]** メニューの **[役割と機能の追加]** をクリックします。  
+5.  **サーバー マネージャー** で、**[管理]** メニューの **[役割と機能の追加]** をクリックします。
    
      ![[サーバー管理] の [役割と機能の追加] メニューコマンド](../master-data-services/media/mds-servermanagerdashboard-addrolesfeaturesmenu.png "[サーバー管理] の [役割と機能の追加] メニューコマンド")  
   
@@ -123,6 +121,7 @@ ms.locfileid: "104833871"
 > 
 > **ブラウザーの要件**
 > >[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] Web アプリケーションは、Internet Explorer (IE) 9 以降でのみ動作します。 IE 8 以前のバージョン、Microsoft Edge、Chrome はサポートされていません。    
+> 以降では [!INCLUDE[sqlv15](../includes/sssql19-md.md)] 、HTML コントロールによって以前のすべての silverlight コンポーネントが置き換えられるため、silverlight の依存関係が削除されます。 Chrome や Edge を含むその他のブラウザーも、マスターデータサービス web アプリで使用できるようになりました。
   
 1.  [!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]を起動して、 **[データベース構成]** をクリックします。  
   
@@ -207,7 +206,7 @@ ms.locfileid: "104833871"
      ![mds_2016ConfigManager_WebConfig_Completed](../master-data-services/media/mds-2016configmanager-webconfig-completed.png)  
  
      
-15. **[Apply]** をクリックします。 **[構成の完了]** メッセージ ボックスが表示されます。 メッセージ ボックスで **[OK]** をクリックして、Web アプリケーションを起動します。 Web サイトのアドレスは、https://*server name* / *web application*/です。 
+15. **[適用]** をクリックします。 **[構成の完了]** メッセージ ボックスが表示されます。 メッセージ ボックスで **[OK]** をクリックして、Web アプリケーションを起動します。 Web サイトのアドレスは、https://*server name* / *web application*/です。 
 
 
 ![mds_2016ConfigurationComplete_MessageBox](../master-data-services/media/mds-2016configurationcomplete-messagebox.png) 

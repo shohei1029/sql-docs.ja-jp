@@ -463,6 +463,8 @@ items:
                 href: big-data-cluster/troubleshoot-hdfs-restore-admin.md
               - name: クラスターのトラブルシューティング ノートブック
                 href: big-data-cluster/cluster-troubleshooter-notebooks.md
+              - name: ビッグ データ クラスターに関する FAQ
+                href: big-data-cluster/big-data-cluster-faq.yml
       - name: リファレンス
         items:
           - name: デプロイ
@@ -7353,7 +7355,9 @@ items:
         items:
           - name: 作業の開始
             items:
-              - name: トレース
+              - name: マスター データ サービスのインストールと構成
+                href: master-data-services/master-data-services-installation-and-configuration.md
+              - name: マスター データ サービス Web アプリのトレース
                 href: master-data-services/tracing-master-data-services.md
               - name: Web サービス操作の分類
                 href: master-data-services/develop/categorized-web-service-operations-master-data-services.md

@@ -2,7 +2,7 @@
 description: sys.dm_os_wait_stats (Transact-SQL)
 title: sys.dm_os_wait_stats (Transact-SQL)
 ms.custom: contperf-fy21q3
-ms.date: 02/10/2021
+ms.date: 03/15/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
@@ -20,12 +20,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f5412b2c572bf9766123cf5aec6b92f08db1f7c9
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 4ea6295e78f7d0e7df4fe2d0e4266e565c1278c6
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104750252"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551488"
 ---
 # <a name="sysdm_os_wait_stats-transact-sql"></a>sys.dm_os_wait_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "104750252"
 実行されたスレッドによって検出されたすべての待機に関する情報を返します。 この集計ビューを使って、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] および特定のクエリとバッチに関するパフォーマンスの問題を診断できます。 [sys.dm_exec_session_wait_stats &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-session-wait-stats-transact-sql.md) は、セッションによって同様の情報を提供します。  
   
 > [!NOTE] 
-> **[!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] また [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] は** からこれを呼び出すには、 **sys.dm_pdw_nodes_os_wait_stats** という名前を使用します。  
+> これを **[!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] または [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]** から呼び出すには、という名前を使用し `sys.dm_pdw_nodes_os_wait_stats` ます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -44,7 +44,7 @@ ms.locfileid: "104750252"
 |signal_wait_time_ms|**bigint**|待機スレッドがシグナルを受け取ってから実行を開始するまでの時間。|  
 |pdw_node_id|**int**|このディストリビューションが配置されているノードの識別子。 <br/> **適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] |  
   
-## <a name="permissions"></a>権限
+## <a name="permissions"></a>アクセス許可
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
 SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについては、 [サーバー管理者](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) アカウントまたは [Azure Active Directory 管理者](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
@@ -56,7 +56,7 @@ SQL Database Basic、S0、S1 のサービス目標、およびエラスティッ
   
  **外部待機** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、ワーカーが拡張ストアドプロシージャ呼び出しやリンクサーバークエリなどの外部イベントを完了するのを待機しているときに発生します。 ブロッキングの問題を診断するときには、外部待機が発生していてもワーカーがアイドル状態になっているとは限らないことに注意してください。ワーカーはアクティブ状態で外部コードを実行している可能性があるためです。  
   
- `sys.dm_os_wait_stats` 完了した待機時間を示します。 この動的管理ビューには、現在の待機が表示されません。  
+ この動的管理ビューでは、既に終わった待機時間が示されます。 この動的管理ビューには、現在の待機が表示されません。  
   
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]次のいずれかに該当する場合、ワーカースレッドは待機しているとは見なされません。  
   
@@ -72,24 +72,23 @@ SQL Database Basic、S0、S1 のサービス目標、およびエラスティッ
   
  クエリ実行中に発生している待機時間の種類によって、クエリにボトルネックや機能停止ポイントがあるかどうかを判断できます。 また、サーバー全体の待機時間や待機カウントが高い値を示している場合は、サーバー インスタンス内の対話型クエリの対話にボトルネックまたはホット スポットが存在していることを表しています。 たとえば、ロック待機の場合はクエリによるデータ競合、ページ I/O ラッチ待機の場合は遅い I/O 反応時間、ページ ラッチ更新待機の場合は不正なファイル レイアウトが存在していると判断できます。  
   
- この動的管理ビューの内容は、次のコマンドを実行してリセットできます。  
-  
+ この動的管理ビューの内容をリセットできます。 この T-sql コマンドは、すべてのカウンターを0にリセットします。  
 ```sql  
 DBCC SQLPERF ('sys.dm_os_wait_stats', CLEAR);  
 GO  
 ```  
   
-このコマンドは、すべてのカウンターを0にリセットします。  
+
   
 > [!NOTE]
-> これらの統計は再起動時には保持されず、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 統計が最後にリセットされたときまたはサーバーが起動されてからのすべてのデータが累積されます。  
+> これらの統計は、データベースエンジンの再起動後には保持されません。また、統計が最後にリセットされたときまたはデータベースエンジンが起動してからのすべてのデータが累積されます。 Sys.dm_os_sys_info の列を使用して、 `sqlserver_start_time` データベースエンジンの最後の起動時刻を検索します。 [](sys-dm-os-sys-info-transact-sql.md)   
   
  次の表は、タスクで発生する待機の種類の一覧です。  
 
-|type |説明| 
+|待機の種類 |説明| 
 |-------------------------- |--------------------------| 
-|ABR |単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。| | 
-|AM_INDBUILD_ALLOCATION |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
+|ABR |単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。| 
+|AM_INDBUILD_ALLOCATION |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。|
 |AM_SCHEMAMGR_UNSHARED_CACHE |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |ASSEMBLY_FILTER_HASHTABLE |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 以降。| 
 |ASSEMBLY_LOAD |アセンブリ読み込みへの排他アクセス時に発生します。| 
@@ -105,7 +104,7 @@ GO
 |AUDIT_ON_DEMAND_TARGET_LOCK |ロックに待機があるときに発生します。このロックは、監査に関係する拡張イベントのターゲットを確実に単独で初期化できるようにするために使用されるものです。| 
 |AUDIT_XE_SESSION_MGR |ロックに待機があるときに発生します。このロックは、監査に関係する拡張イベントのセッションの開始と終了を同期するために使用されるものです。| 
 |BACKUP |バックアップ処理の一部としてタスクがブロックされているときに発生します。| 
-|BACKUP_OPERATOR |タスクがテープのマウントを待機しているときに発生します。 テープの状態を表示するには、sys.dm_io_backup_tapes にクエリを実行します。 マウント操作が保留中以外のときに、この待機が発生した場合は、テープ ドライブにハードウェア上の問題があると考えられます。| 
+|BACKUP_OPERATOR |タスクがテープのマウントを待機しているときに発生します。 テープの状態を表示するには、クエリを実行 `sys.dm_io_backup_tapes` します。 マウント操作が保留中以外のときに、この待機が発生した場合は、テープ ドライブにハードウェア上の問題があると考えられます。| 
 |BACKUPBUFFER |バックアップ タスクが、データまたはデータを格納するバッファーを待機しているときに発生します。 この待機は、タスクがテープのマウントを待機しているとき以外はほとんど発生しません。| 
 |BACKUPIO |バックアップ タスクが、データまたはデータを格納するバッファーを待機しているときに発生します。 この待機は、タスクがテープのマウントを待機しているとき以外はほとんど発生しません。| 
 |BACKUPTHREAD |タスクがバックアップ タスクの終了を待機しているときに発生します。 待機時間の長さは、数分から数時間に及ぶ場合があります。 待機中のタスクが I/O 処理中である場合は、この待機が発生しても問題はありません。| 
@@ -135,7 +134,7 @@ GO
 |BROKER_TRANSMISSION_OBJECT |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |BROKER_TRANSMISSION_TABLE |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |BROKER_TRANSMISSION_WORK |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
-|BROKER_TRANSMITTER |Service Broker 送信機能が作業を待機しているときに発生します。 Service Broker には、複数のダイアログからのメッセージを1つ以上の接続エンドポイント経由でネットワーク経由で送信されるようにスケジュールする、トランスミッタと呼ばれるコンポーネントがあります。 送信機には、この目的のための2つの専用スレッドがあります。 この待機の種類は、これらの送信スレッドがトランスポート接続を使用してダイアログメッセージを送信するのを待機している場合に課金されます。 この待機の種類の waiting_tasks_count の値が大きい場合は、これらの送信スレッドで断続的に機能し、パフォーマンスの問題を示すものではありません。 Service broker がまったく使用されていない場合、waiting_tasks_count は 2 (送信スレッド 2) であり、wait_time_ms インスタンスが起動してから2倍の時間が経過する必要があります。 「 [Service broker の待機統計](/archive/blogs/sql_service_broker/service-broker-wait-types)」を参照してください。|
+|BROKER_TRANSMITTER |Service Broker 送信機能が作業を待機しているときに発生します。 Service Broker には、複数のダイアログからのメッセージを1つ以上の接続エンドポイント経由でネットワーク経由で送信されるようにスケジュールする、トランスミッタと呼ばれるコンポーネントがあります。 送信機には、この目的のための2つの専用スレッドがあります。 この待機の種類は、これらの送信スレッドがトランスポート接続を使用してダイアログメッセージを送信するのを待機している場合に課金されます。 この待機の種類の値の上限 `waiting_tasks_count` は、これらの送信スレッドで断続的に機能し、パフォーマンスの問題を示すものではありません。 Service broker がまったく使用されていない場合は、2 `waiting_tasks_count` (2 トランスミッタのスレッドの場合) である必要があります。また、wait_time_ms インスタンスが起動してからの期間の2倍にする必要があります。 「 [Service broker の待機統計](/archive/blogs/sql_service_broker/service-broker-wait-types)」を参照してください。|
 |BUILTIN_HASHKEY_MUTEX |この待機はインスタンスの起動後、内部データ構造の初期化中に発生することがあります。 データ構造がいったん初期化されると、それ以降に再発生することはありません。| 
 |CHANGE_TRACKING_WAITFORCHANGES |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |CHECK_PRINT_RECORD |単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。| 
@@ -180,8 +179,8 @@ GO
 |DBMIRRORING_CMD  |タスクが、ログ レコードのディスクへのフラッシュを待機しているときに発生します。 この待機状態は、長時間続くことが予想されます。| 
 |DBSEEDING_FLOWCONTROL |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。| 
 |DBSEEDING_OPERATION |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。| 
-|DEADLOCK_ENUM_MUTEX |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で同時に複数のデッドロック検索が実行されていないかどうかを、デッドロック モニターと sys.dm_os_waiting_tasks が確認しようとするときに発生します。| 
-|DEADLOCK_TASK_SEARCH  |このリソースでの待機時間が長い場合は、サーバーが sys.dm_os_waiting_tasks 上で複数のクエリを実行したことにより、デッドロック モニターでデッドロック検索を実行できなくなっていることを表します。 この待機の種類は、デッドロック モニターにのみ使用されます。 sys.dm_os_waiting_tasks の上部のクエリは、DEADLOCK_ENUM_MUTEX を使用します。| 
+|DEADLOCK_ENUM_MUTEX |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で同時に複数のデッドロック検索が実行されていないかどうかを、デッドロック モニターと `sys.dm_os_waiting_tasks` が確認しようとするときに発生します。| 
+|DEADLOCK_TASK_SEARCH  |このリソースでの待機時間が長い場合は、サーバーが `sys.dm_os_waiting_tasks` 上で複数のクエリを実行したことにより、デッドロック モニターでデッドロック検索を実行できなくなっていることを表します。 この待機の種類は、デッドロック モニターにのみ使用されます。 `sys.dm_os_waiting_tasks` の上部のクエリは、DEADLOCK_ENUM_MUTEX を使用します。| 
 |DEBUG |Transact-sql と CLR による内部同期のデバッグ中に発生します。| 
 |DIRECTLOGCONSUMER_LIST |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 以降。| 
 |DIRTY_PAGE_POLL |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
@@ -330,7 +329,7 @@ GO
 |HADR_NOTIFICATION_WORKER_STARTUP_SYNC |バックグラウンド タスクが、Windows Server フェールオーバー クラスタリングの通知を処理するバックグラウンド タスクの起動完了を待機しています。 内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |HADR_NOTIFICATION_WORKER_TERMINATION_SYNC |バックグラウンド タスクが、Windows Server フェールオーバー クラスタリングの通知を処理するバックグラウンド タスクの終了を待機しています。 内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |HADR_PARTNER_SYNC |パートナーの一覧でのコンカレンシー制御の待機です。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
-|HADR_READ_ALL_NETWORKS |WSFC ネットワークの一覧に対する読み取りまたは書き込みアクセスの取得を待機しています。 内部使用のみです。 注: エンジンは、動的管理ビュー (sys.dm_hadr_cluster_networks など) で使用される WSFC ネットワークの一覧を保持するか、WSFC ネットワーク情報を参照する Transact-sql ステートメント Always On 検証します。 この一覧は、エンジンの起動時、WSFC 関連の通知、および内部 Always On の再起動時に更新されます (たとえば、WSFC クォーラムの損失や取り戻しなど)。 通常、この一覧の更新中はタスクがブロックされます。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
+|HADR_READ_ALL_NETWORKS |WSFC ネットワークの一覧に対する読み取りまたは書き込みアクセスの取得を待機しています。 内部使用のみです。 注: エンジンは、動的管理ビュー (など) で使用される WSFC ネットワークの一覧を保持 `sys.dm_hadr_cluster_networks` するか、wsfc ネットワーク情報を参照する transact-sql ステートメント Always On を検証します。 この一覧は、エンジンの起動時、WSFC 関連の通知、および内部 Always On の再起動時に更新されます (たとえば、WSFC クォーラムの損失や取り戻しなど)。 通常、この一覧の更新中はタスクがブロックされます。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |HADR_RECOVERY_WAIT_FOR_CONNECTION |復旧を実行する前に、セカンダリ データベースがプライマリ データベースに接続するのを待機しています。 これは想定される待機であり、プライマリへの接続確立に時間がかかる場合は長くなる可能性があります。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |HADR_RECOVERY_WAIT_FOR_UNDO |データベース復旧が、セカンダリ データベースが復帰および初期化フェーズを完了し、プライマリ データベースと共通のログ ポイントに戻るのを待機しています。 これは、フェールオーバー後に予想される待機です。 元に戻す処理は、Windows システムモニター (perfmon.exe) および動的管理ビューを使用して追跡できます。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |HADR_REPLICAINFO_SYNC |コンカレンシー制御が現在のレプリカの状態を更新するのを待機しています。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
@@ -380,12 +379,12 @@ GO
 |KTM_ENLISTMENT |単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。| 
 |KTM_RECOVERY_MANAGER |単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。| 
 |KTM_RECOVERY_RESOLUTION |単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。| 
-|LATCH_DT  |DT (破棄) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧について \_ \* は、sys.dm_os_latch_stats を参照してください。 sys.dm_os_latch_stats では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
-|LATCH_EX  |EX (排他) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧について \_ \* は、sys.dm_os_latch_stats を参照してください。 sys.dm_os_latch_stats では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
-|LATCH_KP  |KP (保持) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧について \_ \* は、sys.dm_os_latch_stats を参照してください。 sys.dm_os_latch_stats では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
+|LATCH_DT  |DT (破棄) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧については、「 \_ \* 」を参照 `sys.dm_os_latch_stats` してください。 `sys.dm_os_latch_stats` では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
+|LATCH_EX  |EX (排他) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧については、「 \_ \* 」を参照 `sys.dm_os_latch_stats` してください。 `sys.dm_os_latch_stats` では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
+|LATCH_KP  |KP (保持) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧については、「 \_ \* 」を参照 `sys.dm_os_latch_stats` してください。 `sys.dm_os_latch_stats` では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
 |LATCH_NL  |単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。| 
-|LATCH_SH  |SH (共有) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧について \_ \* は、sys.dm_os_latch_stats を参照してください。 sys.dm_os_latch_stats では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
-|LATCH_UP  |UP (更新) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧について \_ \* は、sys.dm_os_latch_stats を参照してください。 sys.dm_os_latch_stats では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
+|LATCH_SH  |SH (共有) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧については、「 \_ \* 」を参照 `sys.dm_os_latch_stats` してください。 `sys.dm_os_latch_stats` では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
+|LATCH_UP  |UP (更新) ラッチを待機しているときに発生します。 これには、バッファー ラッチまたはトランザクション マーク ラッチは含まれません。 ラッチ待機の一覧については、「 \_ \* 」を参照 `sys.dm_os_latch_stats` してください。 `sys.dm_os_latch_stats` では、LATCH_NL、LATCH_SH、LATCH_UP、LATCH_EX、および LATCH_DT の待機はグループ化されます。| 
 |LAZYWRITER_SLEEP  |レイジーライタータスクが中断されたときに発生します。 待機中のバックグラウンド タスクで費やされた時間を測定することができます。 ユーザーの機能停止を検索しているときには、この待機状態は考慮しないでください。| 
 |LCK_M_BU  |タスクが一括更新 (BU) ロックの取得を待機しているときに発生します。 詳細については、「 [一括更新ロック](../sql-server-transaction-locking-and-row-versioning-guide.md#bulk_update) 」を参照してください。| 
 |LCK_M_BU_ABORT_BLOCKERS |タスクがアボート ブロッカーによる一括更新 (BU) ロックの取得を待機しているときに発生します  (ALTER TABLE および ALTER INDEX の優先度の低い待機オプションに関連します)。 詳細については、「 [一括更新ロック](../sql-server-transaction-locking-and-row-versioning-guide.md#bulk_update) 」を参照してください。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。| 
@@ -959,7 +958,7 @@ GO
 |WAITFOR |WAITFOR Transact-sql ステートメントの結果として発生します。 この待機時間は、ステートメントに渡すパラメーターによって決まります。 この待機はユーザーによって開始されるものです。| 
 |WAITFOR_PER_QUEUE |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 以降。| 
 |WAITFOR_TASKSHUTDOWN |単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。| 
-|WAITSTAT_MUTEX |sys.dm_os_wait_stats の設定に使用する統計コレクションへのアクセスの同期中に発生します。| 
+|WAITSTAT_MUTEX |`sys.dm_os_wait_stats` の設定に使用する統計コレクションへのアクセスの同期中に発生します。| 
 |WCC |単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。| 
 |WINDOW_AGGREGATES_MULTIPASS |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 以降。| 
 |WINFAB_API_CALL |内部使用のみです。 <br /><br /> **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。| 
@@ -1029,4 +1028,5 @@ GO
     
  [SQL Server オペレーティングシステム関連の動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql.md)   
  [sys.dm_exec_session_wait_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-session-wait-stats-transact-sql.md)   
- [sys.dm_db_wait_stats &#40;Azure SQL Database&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database.md)
+ [sys.dm_db_wait_stats &#40;Azure SQL Database&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database.md)    
+ [sys.dm_os_sys_info &#40;Transact-sql&#41;](sys-dm-os-sys-info-transact-sql.md)    

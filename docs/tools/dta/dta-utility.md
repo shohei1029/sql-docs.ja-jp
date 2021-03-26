@@ -21,12 +21,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/09/2017
-ms.openlocfilehash: b05279df08153efab4257a74a8389ea33b38b966
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ff53b6711375e5f06368333392da33bb0f5108b9
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338744"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890741"
 ---
 # <a name="dta-utility"></a>dta ユーティリティ
 
@@ -59,7 +59,7 @@ dta
       [ -ix input_XML_file_name ]  
       [ -A time_for_tuning_in_minutes ]  
       [ -n number_of_events ]
-      [ -I time_window_in_hours ]  
+      [ -l time_window_in_hours ]  
       [ -m minimum_improvement ]  
       [ -fa physical_design_structures_to_add ]  
       [ -fi filtered_indexes]  
@@ -182,9 +182,8 @@ dta -d AdventureWorks2012 ...
 **-fc**  
  列ストア インデックスが新しい推奨設定用と見なされるように指定します。 DTA では、クラスター化列ストア インデックスと非クラスター化列ストア インデックスの両方が考慮されます。 詳細については、「    
 「[データベース エンジン チューニング アドバイザー (DTA) での列ストア インデックスの推奨事項](../../relational-databases/performance/columnstore-index-recommendations-in-database-engine-tuning-advisor-dta.md)」を参照してください。
- ||  
-|-|  
-|**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。|  
+
+> **適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。  
 
   
  **-fk** _keep_existing_option_  
@@ -220,9 +219,8 @@ dta -d AdventureWorks2012 ...
 
 **-iq**  
  クエリ ストアをワークロードとして使用することを指定します。 明示的に選択したデータベースについての上位 1,000 個のクエリ ストアのイベントが分析されます。 この値は **-n** オプションを使用して変更できます。  詳細については、[クエリ ストア](../../relational-databases/performance/how-query-store-collects-data.md)に関するページと、「[クエリ ストアのワークロードを使用してデータベースをチューニングする](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md)」を参照してください。
- ||  
-|-|  
-|**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。|  
+  
+> **適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。
      
  **-if** _workload_file_  
  チューニングの入力として使用するワークロード ファイルのパスとファイルの名前を指定します。 ファイルは、.trc (SQL Server Profiler トレース ファイル)、.sql (SQL ファイル)、.log ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] トレース ファイル) のいずれかの形式になっている必要があります。 ワークロード ファイル、またはワークロード テーブルを 1 つ指定する必要があります。  
@@ -273,18 +271,18 @@ dta -n number_of_events -A 0
   
  この場合、チューニング時間を無制限 (`-A 0`) に指定することが重要です。 無制限に指定しない場合、データベース エンジン チューニング アドバイザーでは、既定の 8 時間のチューニング時間が前提となります。
  
- **-I** _time_window_in_hours_   
-   **-iq** オプション (クエリ ストアのワークロード) を使用した場合に、DTA でのチューニングのためにクエリが実行されたと見なされる期間 (時間) を指定します。 
+ **-l** _time_window_in_hours_   
+   **-iq** オプション (クエリ ストアのワークロード) を使用した場合に、DTA でのチューニングのためにクエリが実行されたと見なされる期間 (時間) を指定します。
+   
 ```  
-dta -iq -I 48  
+dta -iq -l 48  
 ```  
+
 この場合、DTA ではクエリ ストアをワークロードのソースとして使用し、過去 48 時間に実行されたクエリのみが考慮されます。  
-  ||  
-|-|  
-|**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。|  
 
+> **適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。  
 
-  
+ 
  **-of** _output_script_file_name_  
  **dta** が、指定したファイル名と出力先に推奨設定を [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプトとして書き込むことを指定します。  
   

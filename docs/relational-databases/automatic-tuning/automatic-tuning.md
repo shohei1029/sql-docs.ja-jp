@@ -1,8 +1,8 @@
 ---
-title: 自動チューニング |Microsoft Docs
+title: 自動チューニング
 description: SQL Server と Azure SQL Database での自動チューニングについて説明します。
 ms.custom: fasttrack-edit
-ms.date: 09/28/2020
+ms.date: 03/12/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -14,29 +14,28 @@ helpviewer_keywords:
 - aprc
 - automatic plan regression correction
 - last known good plan
-ms.assetid: ''
 author: jovanpop-msft
 ms.author: jovanpop
 monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9c01a9e02576d666c39df13dc6e7e01f6d622a7d
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
+ms.openlocfilehash: 6ea61597a7f9874b7438392167380c5f01b11527
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98169874"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551660"
 ---
 # <a name="automatic-tuning"></a>自動チューニング
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
 
 自動チューニングは、潜在的なクエリ パフォーマンスの問題に関する洞察を提供し、解決策を推奨して、特定された問題を自動的に解決するデータベース機能です。
 
-で導入された自動チューニングは [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] 、潜在的なパフォーマンスの問題が検出されるたびに通知を行い、是正措置を適用したり、パフォーマンスの問題を自動的に修正したりできるようにし [!INCLUDE[ssde_md](../../includes/ssde_md.md)] ます。 自動チューニングを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用すると、 **クエリ実行プランの選択の回帰** によって発生するパフォーマンスの問題を特定し、修正することができます。 また、自動チューニングでは [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 、必要なインデックスを作成し、未使用のインデックスを削除します。 クエリ実行プランの詳細については、「 [実行プラン](../../relational-databases/performance/execution-plans.md)」を参照してください。
+で導入された自動チューニングは [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] 、潜在的なパフォーマンスの問題が検出されるたびに通知を行い、是正措置を適用したり、パフォーマンスの問題を自動的に修正したりできるようにし [!INCLUDE[ssde_md](../../includes/ssde_md.md)] ます。 自動チューニングを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用すると、 **クエリ実行プランの選択の回帰** によって発生するパフォーマンスの問題を特定し、修正することができます。 また、自動チューニングでは [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 、必要なインデックスを作成し、未使用のインデックスを削除します。 クエリ実行プランの詳細については、「 [実行プラン](../../relational-databases/performance/execution-plans.md)」を参照してください。
 
 は、 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] データベースで実行されるクエリを監視し、ワークロードのパフォーマンスを自動的に向上させます。 には、 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] データベースをワークロードに動的に適合させることによって、クエリのパフォーマンスを自動的に調整して向上させることができるインテリジェンスメカニズムが組み込まれています。 次の2つの自動チューニング機能を使用できます。
 
--   **自動プラン修正** で [は、パラメーターの感度やパラメータースニッフィング](../../relational-databases/query-processing-architecture-guide.md#ParamSniffing) の問題など、問題のあるクエリの実行プランが特定され、回帰が発生する前に最後の既知の良好なプランを強制することによって、クエリ実行プランに関連するパフォーマンスの問題が修正されます。 **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
+-    **自動プラン修正** で [は、パラメーターの感度やパラメータースニッフィング](../../relational-databases/query-processing-architecture-guide.md#ParamSniffing) の問題など、問題のあるクエリの実行プランが特定され、回帰が発生する前に最後の既知の良好なプランを強制することによって、クエリ実行プランに関連するパフォーマンスの問題が修正されます。 **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
--   **自動インデックス管理** では、データベースに追加する必要があるインデックスと、削除する必要があるインデックスが識別されます。 **適用対象**: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
+-    **自動インデックス管理** では、データベースに追加する必要があるインデックスと、削除する必要があるインデックスが識別されます。 **適用対象**: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 ## <a name="why-automatic-tuning"></a>自動チューニングを行う理由
 
@@ -63,7 +62,7 @@ ms.locfileid: "98169874"
 
  ![クエリ実行プランの選択の回帰](media/plan-choice-regression.png "クエリ実行プランの選択の回帰") 
 
-プラン選択の回帰が発生した場合は常に、以前の良好なプランを見つけて、現在のプランの代わりに使用することをお勧めします。 これを行うには、プロシージャを使用し `sp_query_store_force_plan` ます。 のは、 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] 低下したプランと推奨される是正措置に関する情報を提供します。 また、では、 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] このプロセスを完全に自動化し、 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 計画の変更に関連する問題を修正することができます。
+プラン選択の回帰が発生した場合は常に、以前の良好なプランを見つけて、現在のプランの代わりに使用することをお勧めします。 これを行うには、プロシージャを使用し `sp_query_store_force_plan` ます。 のは、 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] 低下したプランと推奨される是正措置に関する情報を提供します。 また、では、 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] このプロセスを完全に自動化し、 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 計画の変更に関連する問題を修正することができます。
 
 > [!IMPORTANT]
 > ベースラインがキャプチャされた後のデータベース互換性レベルのアップグレードのスコープで自動プラン修正を使用して、ワークロードアップグレードのリスクを自動的に軽減する必要があります。 このユースケースの詳細については、「 [新しい SQL Server へのアップグレード中にパフォーマンスの安定性を維持する](../../relational-databases/performance/query-store-usage-scenarios.md#CEUpgrade)」を参照してください。 
@@ -99,9 +98,9 @@ SET AUTOMATIC_TUNING ( FORCE_LAST_GOOD_PLAN = ON );
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クエリストアのパフォーマンスを監視し、問題を修正するために必要なすべてのビューと手順について説明します。
 
-では [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] 、クエリストアシステムビューを使用して、プラン選択の回帰を見つけることができます。 以降では、によって、 [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] [!INCLUDE[ssde_md](../../includes/ssde_md.md)] プランの選択の回帰の可能性が検出され、 [sys.dm_db_tuning_recommendations &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md) DMV で適用される推奨の操作が示されます。 DMV には、問題に関する情報、問題の重要度、および特定されたクエリ、低下したプランの ID、比較の基準として使用されたプランの ID、および [!INCLUDE[tsql_md](../../includes/tsql-md.md)] 問題を解決するために実行できるステートメントなどの詳細が表示されます。
+では [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] 、クエリストアシステムビューを使用して、プラン選択の回帰を見つけることができます。 以降では、によって、 [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] [!INCLUDE[ssde_md](../../includes/ssde_md.md)] プランの選択の回帰の可能性が検出され、 [sys.dm_db_tuning_recommendations &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md) DMV で適用される推奨の操作が示されます。 DMV には、問題に関する情報、問題の重要度、および特定されたクエリ、低下したプランの ID、比較の基準として使用されたプランの ID、および [!INCLUDE[tsql_md](../../includes/tsql-md.md)] 問題を解決するために実行できるステートメントなどの詳細が表示されます。
 
-| type | description | DATETIME | score | details | ... |
+| 型 | description | DATETIME | score | details | ... |
 | --- | --- | --- | --- | --- | --- |
 | `FORCE_LAST_GOOD_PLAN` | CPU 時間が4ミリ秒から14ミリ秒に変更されました | 3/17/2017 | 83 | `queryId` `recommendedPlanId` `regressedPlanId` `T-SQL` |   |
 | `FORCE_LAST_GOOD_PLAN` | CPU 時間が37ミリ秒から84ミリ秒に変更されました | 3/16/2017 | 26 | `queryId` `recommendedPlanId` `regressedPlanId` `T-SQL` |   |
@@ -138,7 +137,7 @@ CROSS APPLY OPENJSON (Details, '$.planForceDetails')
 
 [!INCLUDE[ssresult-md](../../includes/ssresult-md.md)]     
 
-| reason | score | スクリプト | クエリ \_ id | 現在のプラン \_ id | 推奨されるプラン \_ id | 推定 \_ ゲイン | エラーが発生し \_ やすい
+| reason | score | script | クエリ \_ id | 現在のプラン \_ id | 推奨されるプラン \_ id | 推定 \_ ゲイン | エラーが発生し \_ やすい
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | CPU 時間が3ミリ秒から46ミリ秒に変更されました | 36 | EXEC sp \_ クエリ \_ ストア \_ force \_ プラン 12, 17; | 12 | 28 | 17 | 11.59 | 0
 
@@ -147,7 +146,7 @@ CROSS APPLY OPENJSON (Details, '$.planForceDetails')
 には [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 計画選択の回帰を識別するために必要なすべての情報が用意されていますが、継続的な監視とパフォーマンスの問題の修正は面倒なプロセスになることがあります。 自動チューニングでは、このプロセスがはるかに簡単になります。
 
 > [!NOTE]
-> DMV のデータ `sys.dm_db_tuning_recommendations` は、インスタンスの再起動間に保持されません [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。
+> DMV のデータ `sys.dm_db_tuning_recommendations` は、データベースエンジンの再起動後に保持されません。 Sys.dm_os_sys_info の列を使用して、 `sqlserver_start_time` データベースエンジンの最後の起動時刻を検索します。 [](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md)   
 
 ## <a name="automatic-index-management"></a>インデックスの自動管理
 
@@ -182,7 +181,7 @@ CROSS APPLY OPENJSON (Details, '$.planForceDetails')
 
 [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] このプロセスを簡略化します。 [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] ワークロードを分析し、新しいインデックスを使用してより高速に実行できるクエリを識別し、未使用または重複したインデックスを識別します。 変更する必要があるインデックスの識別の詳細については、「[Azure Portal を使用した SQL Database Advisor](/azure/sql-database/sql-database-advisor-portal)」参照してください。
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ALTER DATABASE SET AUTOMATIC_TUNING &#40;Transact-sql&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)   
  [sys.database_automatic_tuning_options &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-database-automatic-tuning-options-transact-sql.md)  
  [sys.dm_db_tuning_recommendations &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md)   
@@ -190,9 +189,10 @@ CROSS APPLY OPENJSON (Details, '$.planForceDetails')
  [sp_query_store_force_plan &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-query-store-force-plan-transact-sql.md)     
  [sp_query_store_unforce_plan &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-query-store-unforce-plan-transact-sql.md)           
  [sys.database_query_store_options &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-database-query-store-options-transact-sql.md)   
+ [sys.dm_os_sys_info &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md)    
  [JSON 関数](../json/json-data-sql-server.md)    
  [実行プラン](../../relational-databases/performance/execution-plans.md)    
  [パフォーマンスの監視とチューニング](../../relational-databases/performance/monitor-and-tune-for-performance.md)     
  [パフォーマンス監視およびチューニング ツール](../../relational-databases/performance/performance-monitoring-and-tuning-tools.md)     
  [クエリのストアを使用した、パフォーマンスの監視](../../relational-databases/performance/monitoring-performance-by-using-the-query-store.md)  
- [クエリ調整アシスタント](../../relational-databases/performance/upgrade-dbcompat-using-qta.md)
+ [クエリ調整アシスタント](../../relational-databases/performance/upgrade-dbcompat-using-qta.md)    

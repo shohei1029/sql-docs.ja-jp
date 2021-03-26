@@ -3,23 +3,23 @@ title: Python スクリプトと R スクリプトを実行する権限を許可
 description: SQL Server Machine Learning Services で外部の Python スクリプトおよび R スクリプトを実行する権限をユーザーに許可する方法とデータベースに対する読み取り、書き込み、またはデータ定義言語 (DDL) の権限を許可する方法について説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 10/14/2020
+ms.date: 03/19/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019, contperf-fy20q4
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
-ms.openlocfilehash: 9214a27e0f52108f7e22ebf2108bfc06a3d6fbaf
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: bbfc55b4c0460d948d78d72e628033d195a1f027
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340360"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103719"
 ---
-# <a name="grant-users-permission-to-execute-python-and-r-scripts-with-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services で Python スクリプトと R スクリプトを実行する権限をユーザーに許可する
+# <a name="grant-database-users-permission-to-execute-python-and-r-scripts-with-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services で Python スクリプトと R スクリプトを実行する権限をデータベース ユーザーに付与する
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
-[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) で外部の Python スクリプトおよび R スクリプトを実行する権限をユーザーに許可する方法とデータベースに対する読み取り、書き込み、またはデータ定義言語 (DDL) の権限を許可する方法について説明します。
+[SQL Server Machine Learning Services](../../relational-databases/security/authentication-access/create-a-database-user.md) で外部の Python スクリプトおよび R スクリプトを実行する権限を[データベース ユーザー](../sql-server-machine-learning-services.md)に付与する方法とデータベースに対する読み取り、書き込み、またはデータ定義言語 (DDL) の権限を付与する方法について説明します。
 
 詳細については、「[機能拡張フレームワークのセキュリティ概要](../../machine-learning/concepts/security.md#permissions)」の「権限」セクションを参照してください。
 
@@ -29,7 +29,7 @@ ms.locfileid: "100340360"
 
 SQL Server Machine Learning Services で Python スクリプトまたは R スクリプトを実行する、管理者ではない各ユーザーに対して、その言語が使用されている各データベースで外部スクリプトを実行する権限を許可する必要があります。
 
-外部スクリプトを実行する権限を許可するには、次のようにします。
+外部スクリプトを実行する権限を[データベース ユーザー](../../relational-databases/security/authentication-access/create-a-database-user.md)に付与するには、次のスクリプトを実行します。
 
 ```sql
 USE <database_name>
@@ -42,17 +42,17 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO [UserName]
 
 <a name="permissions-db"></a>
 
-## <a name="grant-databases-permissions"></a>データベースの権限の許可
+## <a name="grant-database-permissions"></a>データベース アクセス許可を付与する
 
-ユーザーがスクリプトを実行している間、ユーザーは他のデータベースからデータを読み取ることが必要になる場合があります。 ユーザーは、結果を格納したり、テーブルにデータを書き込んだりするために、新しいテーブルを作成することが必要になる場合もあります。
+データベース ユーザーはスクリプトの実行中に他のデータベースからデータを読み取らなければならない場合があります。 また、データベース ユーザーは、結果を格納するための新しいテーブルを作成したり、テーブルにデータを書き込んだりすることが必要になる場合もあります。
 
-R スクリプトまたは Python スクリプトを実行している Windows ユーザー アカウントまたは SQL ログインがそれぞれ、特定のデータベースに対して適切なアクセス許可を持っていることを確認します。 
+R スクリプトまたは Python スクリプトを実行しているデータベース ユーザー アカウントまたは SQL ログインがそれぞれ、特定のデータベースに対して適切なアクセス許可を持っていることを確認します。 
 
 + データを読み取るための `db_datareader`。
 + オブジェクトをデータベースに保存するための `db_datawriter`。
 + トレーニングおよびシリアル化されたデータを含むストアド プロシージャまたはテーブルなどのオブジェクトを作成する `db_ddladmin`。
 
-たとえば、次の [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでは、SQL ログインである *MySQLLogin* に、*ML_Samples* データベースで T-SQL クエリを実行する権限を与えています。 このステートメントを実行するには、SQL ログインがサーバーのセキュリティ コンテキストに既に存在している必要があります。
+たとえば、次の [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでは、SQL ログインである *MySQLLogin* に、*ML_Samples* データベースで T-SQL クエリを実行する権限を与えています。 このステートメントを実行するには、SQL ログインがサーバーのセキュリティ コンテキストに既に存在している必要があります。 詳細については、「[sp_addrolemember (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-addrolemember-transact-sql.md)」をご覧ください。
 
 ```sql
 USE ML_Samples

@@ -1,8 +1,8 @@
 ---
-title: sys.dm_db_tuning_recommendations (Transact-sql) |Microsoft Docs
+title: sys.dm_db_tuning_recommendations (Transact-sql)
 description: SQL Server と Azure SQL Database で、潜在的なパフォーマンスの問題と推奨される修正を見つける方法について説明します
 ms.custom: ''
-ms.date: 07/20/2017
+ms.date: 03/12/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -18,16 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - database tuning recommendations feature [SQL Server], sys.dm_db_tuning_recommendations dynamic management view
 - sys.dm_db_tuning_recommendations dynamic management view
-ms.assetid: ced484ae-7c17-4613-a3f9-6d8aba65a110
 author: jovanpop-msft
 ms.author: jovanpop
 monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 401636f25e34c3c76faed1cc73fc54b9e2b911bf
-ms.sourcegitcommit: e8c0c04eb7009a50cbd3e649c9e1b4365e8994eb
+ms.openlocfilehash: 44c4b9bbc975074d1852f0e7a0f074e3c3acc979
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100489346"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551663"
 ---
 # <a name="sysdm_db_tuning_recommendations-transact-sql"></a>sys.dm \_ db \_ チューニングに \_ 関する推奨事項 (transact-sql)
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
@@ -58,9 +57,9 @@ ms.locfileid: "100489346"
 | **住所** | **nvarchar(max)** | 推奨事項についての詳細が記載された JSON ドキュメント。 次のフィールドを使用できます。<br /><br />`planForceDetails`<br />-    `queryId` - \_ 低下したクエリのクエリ id。<br />-    `regressedPlanId` -低下したプランの plan_id。<br />-   `regressedPlanExecutionCount` -回帰が検出されるまでの低下した plan を使用したクエリの実行回数。<br />-    `regressedPlanAbortedCount` -低下したプランの実行中に検出されたエラーの数。<br />-    `regressedPlanCpuTimeAverage` -回帰が検出される前に低下したクエリによって消費される平均 CPU 時間 (マイクロ秒)。<br />-    `regressedPlanCpuTimeStddev` -回帰が検出される前に低下したクエリによって消費される CPU 時間の標準偏差。<br />-    `recommendedPlanId` -強制する計画の plan_id。<br />-   `recommendedPlanExecutionCount`-回帰が検出される前に強制される必要があるプランを持つクエリの実行回数。<br />-    `recommendedPlanAbortedCount` -プランの実行中に強制される必要がある検出されたエラーの数。<br />-    `recommendedPlanCpuTimeAverage` -強制的に実行する必要がある (回帰が検出される前に計算された) プランで実行されたクエリによって消費される平均 CPU 時間 (マイクロ秒)。<br />-    `recommendedPlanCpuTimeStddev` 回帰が検出される前に低下したクエリによって消費される CPU 時間の標準偏差。<br /><br />`implementationDetails`<br />-  `method` -回帰を修正するために使用する必要があるメソッド。 値は常に `TSql` です。<br />-    `script` - [!INCLUDE[tsql_md](../../includes/tsql-md.md)] 推奨されるプランを強制するために実行するスクリプト。 |
   
 ## <a name="remarks"></a>解説  
- によって返される情報 `sys.dm_db_tuning_recommendations` は、データベースエンジンによってクエリパフォーマンスの潜在的な回帰が識別され、保存されない場合に更新されます。 推奨事項は、が再起動されるまで保持され [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 サーバーの再利用後に保持する場合は、データベース管理者がチューニングの推奨設定のバックアップコピーを定期的に作成する必要があります。 
+ によって返される情報 `sys.dm_db_tuning_recommendations` は、データベースエンジンによってクエリパフォーマンスの潜在的な回帰が識別され、保存されない場合に更新されます。 推奨事項は、データベースエンジンが再起動されるまで保持されます。 Sys.dm_os_sys_info の列を使用して、 `sqlserver_start_time` データベースエンジンの最後の起動時刻を検索します。 [](sys-dm-os-sys-info-transact-sql.md)  サーバーの再利用後に保持する場合は、データベース管理者がチューニングの推奨設定のバックアップコピーを定期的に作成する必要があります。   
 
- `currentValue` 列のフィールドには `state` 、次の値が含まれる場合があります。
+ 列のフィールドには `currentValue` `state` 、次の値が含まれる場合があります。
  
  | Status | 説明 |
  |--------|-------------|
@@ -77,7 +76,7 @@ ms.locfileid: "100489346"
 | `SchemaChanged` | 参照されるテーブルのスキーマが変更されたため、推奨設定の有効期限が切れました。 新しいスキーマで新しいクエリプランの回帰が検出されると、新しい推奨事項が作成されます。 |
 | `StatisticsChanged`| 参照されるテーブルの統計が変更されたため、推奨設定の有効期限が切れました。 新しい統計に基づいて新しいクエリプランの回帰が検出されると、新しい推奨事項が作成されます。 |
 | `ForcingFailed` | クエリで推奨されるプランを強制することはできません。 `last_force_failure_reason` [Sys.query_store_plan](../../relational-databases/system-catalog-views/sys-query-store-plan-transact-sql.md)ビューでを見つけて、エラーの原因を見つけます。 |
-| `AutomaticTuningOptionDisabled` | `FORCE_LAST_GOOD_PLAN` オプションは、検証プロセス中にユーザーによって無効にされます。 `FORCE_LAST_GOOD_PLAN` [ALTER database SET AUTOMATIC_TUNING](../../t-sql/statements/alter-database-transact-sql-set-options.md)使用してオプションを有効にするか &#40;transact-sql&#41;ステートメントを使用するか、[スクリプトに含まれるスクリプト] 列を使用して手動でプランを強制して `[details]` ください。 |
+| `AutomaticTuningOptionDisabled` | `FORCE_LAST_GOOD_PLAN` オプションは、検証プロセス中にユーザーによって無効にされます。 `FORCE_LAST_GOOD_PLAN` [ALTER database SET AUTOMATIC_TUNING](../../t-sql/statements/alter-database-transact-sql-set-options.md)使用してオプションを有効にするか &#40;transact-sql&#41;ステートメントを使用するか、または列のスクリプトを使用して手動でプランを強制して `details` ください。 |
 | `UnsupportedStatementType` | クエリに対してプランを強制することはできません。 サポートされていないクエリの例としては、カーソルと `INSERT BULK` ステートメントがあります。 |
 | `LastGoodPlanForced` | 推奨事項が正常に適用されました。 |
 | `AutomaticTuningOptionNotEnabled`| [!INCLUDE[ssde_md](../../includes/ssde_md.md)] パフォーマンスが低下する可能性があることを確認しましたが、 `FORCE_LAST_GOOD_PLAN` オプションが有効になっていません。 [ALTER database SET AUTOMATIC_TUNING &#40;transact-sql&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)を参照してください。 推奨設定を手動で適用するか、オプションを有効に `FORCE_LAST_GOOD_PLAN` します。 |
@@ -88,7 +87,7 @@ ms.locfileid: "100489346"
 | `UserForcedDifferentPlan` | ユーザーは [sp_query_store_force_plan &#40;transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-query-store-force-plan-transact-sql.md) プロシージャを使用して手動で別のプランを強制しています。 ユーザーが明示的に何らかのプランを強制する場合、データベースエンジンは推奨設定を適用しません。 |
 | `TempTableChanged` | プランで使用された一時テーブルが変更されます。 |
 
- [詳細] 列の統計情報には、ランタイムプランの統計情報 (現在の CPU 時間など) は表示されません。 推奨事項の詳細は、回帰の検出時に取得され、特定されたパフォーマンスの回帰の理由を説明し [!INCLUDE[ssde_md](../../includes/ssde_md.md)] ます。 およびを使用し `regressedPlanId` て `recommendedPlanId` [クエリストアカタログビュー](../../relational-databases/performance/how-query-store-collects-data.md) に対してクエリを実行し、正確なランタイムプランの統計情報を検索します。
+ 列の統計情報に `details` は、ランタイムプランの統計情報 (現在の CPU 時間など) は表示されません。 推奨事項の詳細は、回帰の検出時に取得され、特定されたパフォーマンスの回帰の理由を説明し [!INCLUDE[ssde_md](../../includes/ssde_md.md)] ます。 およびを使用し `regressedPlanId` て `recommendedPlanId` [クエリストアカタログビュー](../../relational-databases/performance/how-query-store-collects-data.md) に対してクエリを実行し、正確なランタイムプランの統計情報を検索します。
 
 ## <a name="examples-of-using-tuning-recommendations-information"></a>チューニングの推奨設定情報の使用例  
 
@@ -101,7 +100,7 @@ SELECT name, reason, score,
     details.* 
 FROM sys.dm_db_tuning_recommendations
 CROSS APPLY OPENJSON(details, '$.planForceDetails')
-    WITH (  [query_id] int '$.queryId',
+    WITH (    [query_id] int '$.queryId',
             regressed_plan_id int '$.regressedPlanId',
             last_good_plan_id int '$.recommendedPlanId') AS details
 WHERE JSON_VALUE(state, '$.currentValue') = 'Active';
@@ -184,4 +183,4 @@ INNER JOIN sys.query_store_query_text AS qsqt ON qsqt.query_text_id = qsq.query_
  [自動チューニング](../../relational-databases/automatic-tuning/automatic-tuning.md)   
  [sys.database_automatic_tuning_options &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-database-automatic-tuning-options-transact-sql.md)   
  [sys.database_query_store_options &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-database-query-store-options-transact-sql.md)   
- [JSON のサポート](../json/json-data-sql-server.md)
+ [JSON サポート](../json/json-data-sql-server.md) [sys.dm_os_sys_info &#40;transact-sql&#41;](sys-dm-os-sys-info-transact-sql.md)    
