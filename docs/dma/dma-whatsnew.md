@@ -14,18 +14,33 @@ helpviewer_keywords:
 ms.assetid: ''
 author: rajeshsetlem
 ms.author: rajpo
-ms.openlocfilehash: 11bbf0a39ed9a9bbaa19992f98e4e23d50d6fbe9
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: a8f7e74a44b489f22827c42bab2bd5ee60a7658a
+ms.sourcegitcommit: 038a3a730cf088a64d55501d9605f2f6b31d573d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727761"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105616671"
 ---
 # <a name="whats-new-in-data-migration-assistant"></a>Data Migration Assistant の新機能
 
 この記事では、Data Migration Assistant の各リリースで追加された機能の一覧を示します。
 
+## <a name="data-migration-assistant-v-53"></a>Data Migration Assistant v 5.3
+
+Data Migration Assistant のバージョン5.3 リリースでは、次の機能がサポートされています。
+- コマンドラインでの外部アプリケーションのアドホッククエリ評価。 
+- Dma.exe.config 構成ファイルのコマンドタイムアウトパラメーターをカスタマイズするユーザー。
+- 構成ファイルを使用して DMA コマンドラインを実行する方法を説明する、評価構成サンプルファイルと PowerShell サンプルスクリプト。
+- タイムアウト制限のない、オンプレミスの移行でのバックアップと復元の操作。
+
+さらに、このリリースの Data Migration Assistant は .NET 4.8 に更新されており、次の問題のバグ修正が行われています。
+- 移行フェーズでは、sysadmin アクセス許可がない評価を実行したり Azure SQL Database に接続したりすることはできません。
+- ユーザーは、RDS 評価に対する sysadmin アクセス許可なしに評価を実行することはできません。
+- ユーザーが、JSON 評価レポートを Azure Migrate にアップロードするときに問題が発生しました。
+- 中国語文字を含むオブジェクトを移行することはできません。
+
 ## <a name="data-migration-assistant-v-52"></a>Data Migration Assistant v 5.2
+
 Data Migration Assistant の v1.0 リリースでは、次のことがサポートされています。
 - Azure Government および national クラウド (ソブリンオファリング) をサポートする Azure Migrate に評価をアップロードしています。  この機能により、は、Azure SQL に移行する SQL Server のデータ資産の準備状況を評価できるようになります。
 - Azure Government および国内のクラウドをサポートする Azure Migrate に評価をアップロードするためのコマンドラインサポート。  これで、Azure migrate project への評価のアップロードを完全に自動化して、統合された Azure SQL 対応レポートを取得できます。 
@@ -75,7 +90,7 @@ Data Migration Assistant の version 4.1 リリースでは、SQL Managed Instan
 
 評価ワークフローは、SQL Managed Instance への移行に影響する可能性がある次の問題を検出するのに役立ちます。
 
-- サポート**されていない機能または部分的にサポートされる機能**。 Data Migration Assistant は、ターゲット SQL Managed Instance で部分的にサポートされているかサポートされていない使用中の機能について、ソース SQL Server データベースを評価します。 このツールでは、一連の推奨事項、Azure で利用可能なその他のアプローチ、および移行プロジェクトを計画する際にお客様がこの情報を考慮できるようにするための対策を講じます。
+- サポート **されていない機能または部分的にサポートされる機能**。 Data Migration Assistant は、ターゲット SQL Managed Instance で部分的にサポートされているかサポートされていない使用中の機能について、ソース SQL Server データベースを評価します。 このツールでは、一連の推奨事項、Azure で利用可能なその他のアプローチ、および移行プロジェクトを計画する際にお客様がこの情報を考慮できるようにするための対策を講じます。
 
 - **互換性の問題**。 Data Migration Assistant は、次の領域に関連する互換性の問題も識別します。
 
@@ -187,9 +202,9 @@ Data Migration Assistant の v1.0 リリースは最初のリリースであり�
 - アップグレード後にデータベースが恩恵を受けることのできるターゲット SQL Server プラットフォームの新機能の検出。 すべての結果は、機能に関する推奨事項として説明されており、次の領域に分類されています。
   - パフォーマンス
   - セキュリティ
-  - ストレージ
+  - Storage
 - 評価を実行する最新のユーザーエクスペリエンス。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Data Migration Assistant の概要](../dma/dma-overview.md)
