@@ -14,12 +14,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 243c9043598879936eaf4037b2a2d1feef9ae8c0
-ms.sourcegitcommit: e2dbe5639b0d1e1dd7cb4cdf0b86f1b212b532b4
+ms.openlocfilehash: 91e986ff921966b6213173243702192ba921bb21
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105008413"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103709"
 ---
 # <a name="index-json-data"></a>JSON データへのインデックスの追加
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sqlserver2016-asdb.md)]
@@ -63,7 +63,9 @@ ON Sales.SalesOrderHeader(vCustomerName)
 
 このステートメントは、次の警告を返します。
 ```
-Warning! The maximum key length for a nonclustered index is 1700 bytes. The index 'col1' has maximum length of 8000 bytes. For some combination of large values, the insert/update operation will fail.
+Warning! The maximum key length for a nonclustered index is 1700 bytes.
+The index 'vCustomerName' has maximum length of 8000 bytes.
+For some combination of large values, the insert/update operation will fail.
 ```
 
 `JSON_VALUE` 関数は、8000 バイトまでのテキスト値を返すことができます (たとえば、NVARCHAR (4000) 型として)。 ただし、1700 バイトより長い値にインデックスを付けることはできません。 1700 バイトより長いインデックス付き計算列に値を入力しようとすると、DML 操作は失敗します。 これは、ランタイム エラーになります。
