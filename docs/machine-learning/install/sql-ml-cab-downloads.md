@@ -3,18 +3,18 @@ title: オフライン インストール用の CAB ダウンロード更新プ�
 description: SQL Server Machine Learning Services 用の Python と R の CAB ファイルのダウンロードについて説明します。 これらの CAB ファイルには、インターネット アクセスがない場合にサーバーに SQL Server をインストールするときに使用できる、Machine Learning Services (Python と R) 機能の更新プログラムが含まれています。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 10/02/2020
+ms.date: 03/25/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: a356a006e2defb8fd8c99f479280ff75c5ea45d9
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6268ceaae37016bae72a488170408312d25bf536
+ms.sourcegitcommit: 35cc65808d2a1769dea65c6ce7f9c2f69640968b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471163"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568928"
 ---
 # <a name="cab-downloads-for-offline-installation-of-cumulative-updates-for-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の累積的な更新プログラムをオフラインでインストールするための CAB ダウンロード
 
@@ -91,7 +91,7 @@ CAB ファイルは、新しい順で一覧表示されます。 CAB ファイ�
 
 |Release  |コンポーネント | ダウンロード リンク  | 対処された問題 | 
 |---------|----------|----------------|------------------|
-|**[SQL Server 2017 CU22](https://support.microsoft.com/help/4577467/)** |  |  |  |
+|**[SQL Server 2017 CU22](https://support.microsoft.com/help/4577467/)-[CU23](https://support.microsoft.com/help/5000685/)** |  |  |  |
 | | Microsoft R Open      | [SRO_3.5.2.777_1033.cab](https://go.microsoft.com/fwlink/?linkid=2134897)  |  |
 | | R Server              | [SRS_9.4.7.958_1033.cab](https://go.microsoft.com/fwlink/?linkid=2136942)  |  |
 | | Microsoft Python Open | [SPO_4.5.12.479_1033.cab](https://go.microsoft.com/fwlink/?LinkId=2118341) |  |

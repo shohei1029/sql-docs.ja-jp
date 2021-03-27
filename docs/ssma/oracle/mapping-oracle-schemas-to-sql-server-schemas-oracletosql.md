@@ -11,12 +11,12 @@ ms.assetid: 0edeaa08-9c5d-4e3a-bc15-b9a1f0c8a9dc
 author: nahk-ivanov
 ms.author: alexiva
 manager: alexiva
-ms.openlocfilehash: 16c4de0bdf08be3bfdbc8644ae61d300284a0c25
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: dc144017c6bf45a21721fe647dbf5affa486f8ef
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100080775"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105632921"
 ---
 # <a name="mapping-oracle-schemas-to-sql-server-schemas-oracletosql"></a>SQL Server スキーマへの Oracle スキーマのマッピング (OracleToSQL)
 Oracle では、各データベースに1つ以上のスキーマがあります。 既定では、SSMA は、Oracle スキーマ内のすべてのオブジェクトを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、スキーマのという名前のデータベースに移行します。 ただし、Oracle スキーマとデータベース間のマッピングをカスタマイズすることはでき [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。  
@@ -24,7 +24,7 @@ Oracle では、各データベースに1つ以上のスキーマがあります
 ## <a name="oracle-and-sql-server-schemas"></a>Oracle スキーマと SQL Server スキーマ  
 Oracle データベースには、スキーマが含まれています。 のインスタンスには [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 複数のデータベースが含まれており、それぞれが複数のスキーマを持つことができます。  
   
-スキーマの Oracle の概念は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースの概念とそのスキーマの1つにマップされます。 たとえば、Oracle には **HR** という名前のスキーマが存在する場合があります。 のインスタンスには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **HR** という名前のデータベースがあり、そのデータベース内にはスキーマがあります。 1つのスキーマは、 **dbo** (またはデータベース所有者) スキーマです。 既定では、Oracle スキーマの **hr** は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースとスキーマの **hr. dbo** にマップされます。 SSMA [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] とは、スキーマとしてのデータベースとスキーマの組み合わせを意味します。  
+スキーマの Oracle の概念は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースの概念とそのスキーマの1つにマップされます。 たとえば、Oracle には **HR** という名前のスキーマが存在する場合があります。 のインスタンスには [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、 **sampledatabase** という名前のデータベースがあり、そのデータベース内には複数のスキーマが存在する場合があります。 既定では、Oracle スキーマの **HR** は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースとスキーマ **SampleDatabase.HR** にマップされます。 SSMA [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] とは、スキーマとしてのデータベースとスキーマの組み合わせを意味します。  
   
 Oracle とスキーマ間のマッピングを変更でき [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。  
   
