@@ -19,12 +19,12 @@ ms.assetid: 8ead516a-1334-4f40-84b2-509d0a8ffa45
 author: briancarrig
 ms.author: brcarrig
 manager: amitban
-ms.openlocfilehash: ab2554561abb1590db33249a0ade4e8458b0fd54
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 59fdc25c91b1d471d3108988f93de03a5ecbdc7f
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100272373"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103769"
 ---
 # <a name="add-persisted-log-buffer-to-a-database"></a>永続化されたログ バッファーをデータベースに追加する
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -56,6 +56,8 @@ ALTER DATABASE <MyDB>
     SIZE = 20MB
   );
 ```
+
+DAX ボリューム上のログ ファイルのサイズは、ADD FILE コマンドで指定されたサイズに関係なく 20 MB になることに注意してください。
 
 新しいログ ファイルを配置するボリュームまたはマウントは、DAX でフォーマットされている (NTFS) か、DAX オプションを使用してマウントされている (XFS/EXT4) 必要があります。
 
