@@ -21,12 +21,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 65d22530171663ddb9415c36ccf0151b28e5b6d5
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: c1fe9a6204340b408f20c9c80f360546f3c52b9e
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104744232"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103859"
 ---
 # <a name="create-external-table-transact-sql"></a>CREATE EXTERNAL TABLE (Transact-SQL)
 
@@ -212,6 +212,7 @@ PolyBase では、クエリのパフォーマンスを向上させるために�
 
 - 外部テーブルの列に対する DEFAULT 制約
 - データ操作言語 (DML) の削除、挿入、更新の操作
+- 外部テーブル列に対する[動的データ マスク](../../relational-databases/security/dynamic-data-masking.md)
 
 ### <a name="query-limitations"></a>クエリの制限事項
 
@@ -699,6 +700,7 @@ SELECT FROM EXTERNAL TABLE などのアドホック クエリのシナリオの�
 
 - 外部テーブルの列に対する DEFAULT 制約
 - データ操作言語 (DML) の削除、挿入、更新の操作
+- 外部テーブル列に対する[動的データ マスク](../../relational-databases/security/dynamic-data-masking.md)
 
 外部データ ソースにプッシュ ダウンできるのは、クエリで定義されたリテラル述語のみです。 これはリンク サーバーとは異なり、クエリ実行中に決定された述語を使用できる場合、つまりクエリ プランで入れ子になったループと組み合わせて使用されるときにアクセスします。 この動作により、多くの場合、外部テーブル全体がローカルにコピーされてから結合されます。
 
@@ -944,6 +946,7 @@ PolyBase では、クエリのパフォーマンスを向上させるために�
 
 - 外部テーブルの列に対する DEFAULT 制約
 - データ操作言語 (DML) の削除、挿入、更新の操作
+- 外部テーブル列に対する[動的データ マスク](../../relational-databases/security/dynamic-data-masking.md)
 
 ### <a name="query-limitations"></a>クエリの制限事項
 
@@ -1190,6 +1193,7 @@ PolyBase では、クエリのパフォーマンスを向上させるために�
 
 - 外部テーブルの列に対する DEFAULT 制約
 - データ操作言語 (DML) の削除、挿入、更新の操作
+- 外部テーブル列に対する[動的データ マスク](../../relational-databases/security/dynamic-data-masking.md)
 
 ### <a name="query-limitations"></a>クエリの制限事項
 
