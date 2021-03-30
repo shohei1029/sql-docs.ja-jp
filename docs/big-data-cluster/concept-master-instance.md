@@ -9,18 +9,18 @@ ms.date: 08/21/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: bd97d5b0da5d88974dcd56aa0f32cbc3243532f0
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 8950cbe32582dcf69d012bfae9ea0fb7def076bf
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052140"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551560"
 ---
 # <a name="what-is-the-master-instance-in-a-sql-server-big-data-cluster"></a>SQL Server ビッグ データ クラスターのマスター インスタンスとは
 
 [!INCLUDE[SQL Server 2019](../includes/applies-to-version/sqlserver2019.md)]
 
-この記事では、SQL Server ビッグ データ クラスターでの "*SQL Server マスター インスタンス*" の役割について説明します。 マスター インスタンスとは、SQL Server ビッグ データ クラスターで実行される、接続、スケールアウト クエリ、メタデータとユーザー データベース、機械学習サービスを管理する SQL Server のインスタンスです。
+この記事では、SQL Server ビッグ データ クラスターでの "*SQL Server マスター インスタンス*" の役割について説明します。 マスター インスタンスとは、SQL Server ビッグ データ クラスターで実行される SQL Server インスタンスです。 マスター インスタンスでは、接続、スケールアウト クエリ、メタデータとユーザー データベース、機械学習サービスが管理されます。
 
 SQL Server マスター インスタンスには、次の機能があります。
 
@@ -30,11 +30,11 @@ SQL Server マスター インスタンスにより、クラスターに対し�
 
 ## <a name="scale-out-query-management"></a>クエリの管理をスケールアウトする
 
-SQL Server マスター インスタンスには、[コンピューティング プール](concept-compute-pool.md)内のノード上の SQL Server インスタンス間でクエリを分散するために使用されるスケールアウト クエリ エンジンが含まれています。 スケールアウト クエリ エンジンでは、追加の構成を行わずに、Transact-SQL を使用してクラスター内のすべての Hive テーブルにアクセスすることもできます。
+SQL Server マスター インスタンスには、[コンピューティング プール](concept-compute-pool.md)内のノード上の SQL Server インスタンス間でクエリを分散するために使用されるスケールアウト クエリ エンジンが含まれています。 スケールアウト クエリ エンジンでは、追加の構成を必要とせずに、Transact-SQL を使用してクラスター内のすべての Hive テーブルにアクセスすることもできます。
 
 ## <a name="metadata-and-user-databases"></a>メタデータとユーザー データベース
 
-SQL マスター インスタンスには、標準の SQL Server システム データベースに加えて、次のものも含まれます。
+SQL マスター インスタンスには、標準の SQL Server システム データベースに加えて、次が含まれます。
 
 - HDFS テーブルのメタデータを格納するメタデータ データベース。
 - データ プレーンのシャード マップ。
@@ -45,9 +45,9 @@ SQL マスター インスタンスには、標準の SQL Server システム �
 
 ## <a name="machine-learning-services"></a>Machine Learning Services
 
-SQL Server Machine Learning Services は、SQL Server で Java、R、および Python コードを実行するために使用される、データベース エンジンのアドオン機能です。 この機能は SQL Server 機能拡張フレームワークに基づいています。これにより、外部プロセスがコア エンジン プロセスから分離されますが、ストアド プロシージャとして、R または Python ステートメントを含む T-SQL スクリプトとして、あるいは、T-SQL を含む Java、R、または Python コードとして、リレーショナル データと完全に統合されます。
+SQL Server Machine Learning サービス機能は、データベース エンジンのアドオン機能です。 SQL Server で Java、R、および Python コードを実行するために使用する、機械学習の機能です。 この機能は SQL Server 機能拡張フレームワークに基づいています。これにより、外部プロセスがコア エンジン プロセスから分離されますが、ストアド プロシージャとして、R または Python ステートメントを含む T-SQL スクリプトとして、あるいは、T-SQL を含む Java、R、または Python コードとして、リレーショナル データと完全に統合されます。
 
-Machine Learning Services は、SQL Server ビッグ データ クラスターの一部として既定により SQL Server マスター インスタンス上で使用できるようになります。 つまり、SQL Server マスター インスタンス上で外部スクリプトの実行が有効になると、sp_execute_external_script を使用して Java、R、Python スクリプトを実行できるようになります。
+Machine Learning Services は、SQL Server ビッグ データ クラスターの一部として既定により SQL Server マスター インスタンス上で使用できるようになります。 SQL Server マスター インスタンス上で外部スクリプトを実行できるようになると、sp_execute_external_script を使用して Java、R、Python スクリプトを実行できるようになります。
 
 ### <a name="advantages-of-machine-learning-services-in-a-big-data-cluster"></a>ビッグ データ クラスターでの Machine Learning Services の利点
 
@@ -70,4 +70,4 @@ Machine Learning Services は、SQL Server ビッグ データ クラスター�
 [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] の詳細については、次のリソースを参照してください。
 
 - [[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)]とは](big-data-cluster-overview.md)
-- [ワークショップ: Microsoft [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] アーキテクチャ](https://github.com/Microsoft/sqlworkshops/tree/master/sqlserver2019bigdataclusters)
+- [ワークショップ: Microsoft [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] アーキテクチャ](https://github.com/microsoft/sqlworkshops-bdc)

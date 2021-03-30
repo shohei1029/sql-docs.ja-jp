@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: e4fbb1222168200d2107198091db7109ef6247ec
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 485ae050a4456e846d8455fef71875198ddf4655
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100039412"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551523"
 ---
 # <a name="security-concepts-for-big-data-clusters-2019"></a>[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]のセキュリティの概念
 
@@ -53,7 +53,7 @@ ms.locfileid: "100039412"
 
 ## <a name="authorization"></a>承認
 
-クラスター全体で、さまざまなコンポーネント間の統合セキュリティにより、Spark や SQL Server からクエリを発行するときに元のユーザーの ID を HDFS に渡すことができます。 前述のように、さまざまな外部クラスター エンドポイントで AD 認証がサポートされています。
+クラスター全体におよぶさまざまなコンポーネント間の統合セキュリティにより、Spark と SQL Server から HDFS までクエリを発行するときに元のユーザーの ID を渡すことができます。 前述のように、さまざまな外部クラスター エンドポイントで AD 認証がサポートされています。
 
 クラスターには、データ アクセスを管理するための 2 レベルの承認チェックがあります。 ビッグ データのコンテキストでの承認は、オブジェクトに対する従来の SQL Server アクセス許可を使用して SQL Server 内で、また、ユーザー ID を特定のアクセス許可に関連付ける制御リスト (ACL) を使用して HDFS 内で行われます。
 
@@ -105,6 +105,8 @@ Hadoop コンポーネントでは混合モード認証がサポートされま�
 
 [[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)]とは](big-data-cluster-overview.md)
 
-[ワークショップ: Microsoft [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] アーキテクチャ](https://github.com/Microsoft/sqlworkshops/tree/master/sqlserver2019bigdataclusters)
+[ワークショップ: Microsoft [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] アーキテクチャ](https://github.com/microsoft/sqlworkshops-bdc)
 
-[Kubernetes RBAC](kubernetes-rbac.md)
+[Kubernetes RBAC](kubernetes-rbac.md)  
+
+[ビッグ データ クラスターに関する FAQ](big-data-cluster-faq.yml)  

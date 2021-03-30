@@ -2,7 +2,7 @@
 title: ALTER DATABASE の SET オプション (Transact-SQL) | Microsoft Docs
 description: SQL Server と Azure SQL Database で自動調整、暗号化、クエリ ストアなどのデータベースのオプションを設定する方法について説明します。
 ms.custom: ''
-ms.date: 09/04/2020
+ms.date: 03/24/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -31,12 +31,12 @@ ms.assetid: f76fbd84-df59-4404-806b-8ecb4497c9cc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||=azuresqldb-mi-current
-ms.openlocfilehash: 37ea2f4896d68f4ae5a47b14025d54a344febdc0
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ffc1d15b32bb24d01dfb9a6e0797959561d1b4dc
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100016319"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551498"
 ---
 # <a name="alter-database-set-options-transact-sql"></a>ALTER DATABASE の SET オプション (Transact-SQL)
 
@@ -2024,6 +2024,9 @@ master、tempdb、または msdb システム データベースでは、READ_CO
 
 > [!WARNING]
 > `DURABILITY = SCHEMA_ONLY` でテーブルを作成した後に、`ALTER DATABASE` を使用して **READ_COMMITTED_SNAPSHOT** を変更すると、テーブル内のデータが失われます。
+
+> [!TIP]
+> [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、データベースに対して READ_COMMITTED_SNAPSHOT を ON または OFF に設定する `ALTER DATABASE` コマンドは、`master` データベースで実行する必要があります。
 
 MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT { ON | **OFF** }     
 ON     

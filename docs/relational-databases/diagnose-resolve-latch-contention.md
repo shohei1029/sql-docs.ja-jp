@@ -1,7 +1,7 @@
 ---
 title: 'ホワイトペーパー: ラッチの競合の診断と解決'
 description: この記事では、SQL Server におけるラッチの競合の診断と解決について詳しく説明します。 この記事は、当初、Microsoft の SQLCAT チームによって公開されたものです。
-ms.date: 09/30/2020
+ms.date: 03/12/2021
 ms.prod: sql
 ms.reviewer: wiassaf
 ms.technology: performance
@@ -9,18 +9,18 @@ ms.topic: how-to
 author: bluefooted
 ms.author: pamela
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 67f6fe5f8c1577142ac2356a070a954f94b856f1
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 6f32d848b19ee8d2885f61031aa42ed38ec345fd
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100075016"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551453"
 ---
 # <a name="diagnose-and-resolve-latch-contention-on-sql-server"></a>SQL Server でラッチの競合を診断および解決する
 
 このガイドでは、ある種のワークロードで高コンカレンシー システム上の SQL Server アプリケーションを実行したときに見られるラッチの競合の問題を特定し、解決する方法について説明します。
 
-サーバー上の CPU コアの数が増え続けると、それに関連するコンカレンシーの上昇により、データベース エンジン内で順次アクセスする必要がある競合ポイントがデータ構造内に発生する可能性があります。 これは、高スループットで高コンカレンシーのトランザクション処理 (OLTP) ワークロードに特に当てはまります。 これらの課題に対処するためのさまざまなツール、手法、手段と、それらを完全に回避するのに役立つ場合がある、アプリケーションの設計で従うことができるプラクティスがあります。 この記事では、スピンロックを使用してこれらのデータ構造へのアクセスをシリアル化するデータ構造での特定の種類の競合について説明します。
+サーバー上の CPU コアの数が増え続けると、それに関連するコンカレンシーの上昇により、データベース エンジン内で順次アクセスする必要がある競合ポイントがデータ構造内に発生する可能性があります。 これは、高スループットで高コンカレンシーのトランザクション処理 (OLTP) ワークロードに特に当てはまります。 これらの課題に対処するさまざまなツール、テクニック、手段と、それらを完全に回避するのに役立つ、アプリケーションの設計時に従うことができる手法があります。 この記事では、スピンロックを使用してこれらのデータ構造へのアクセスをシリアル化するデータ構造での特定の種類の競合について説明します。
 
 > [!NOTE]
 > このコンテンツは、Microsoft SQL Server Customer Advisory Team (SQLCAT) チームにより、高コンカレンシー システム上の SQL Server アプリケーションにおけるページ ラッチの競合に関連する問題の特定と解決についてのそのプロセスに基づいて作成されたものです。 ここに記載されている推奨事項とベスト プラクティスは、実際の OLTP システムの開発と展開における実際の経験に基づいています。
@@ -87,18 +87,18 @@ SuperLatch の数、1 秒あたりの SuperLatch のレベル上げ数、1 秒�
 
 ## <a name="latch-wait-types"></a>ラッチ待機の種類
 
-累積的な待機の情報は SQL Server によって追跡され、動的管理ビュー (DMW) *sys.dm_os_wait_stats* を使用してアクセスできます。 SQL Server で使用されている 3 つのラッチ待機種類は、*sys.dm_os_wait_stats* DMV の対応する "wait_type" によって定義されています。
+累積的な待機の情報は SQL Server によって追跡され、動的管理ビュー (DMW) `sys.dm_os_wait_stats` を使用してアクセスできます。 SQL Server では、対応する `wait_type` に `sys.dm_os_wait_stats` DMV で定義された、3 つのラッチ待機種類を使用しています。
 
-* **バッファー (BUF) ラッチ:** ユーザー オブジェクトのインデックスとデータ ページの整合性を保証するために使用されます。 また、SQL Server によってシステム オブジェクト用に使用されるデータ ページへのアクセスを保護するためにも使用されます。 たとえば、割り当てを管理するページは、バッファー ラッチによって保護されます。 これらには、Page Free Space (PFS)、Global Allocation Map (GAM)、Shared Global Allocation Map (SGAM)、Index Allocation Map (IAM) などのページが含まれます。 バッファー ラッチは、*wait_type* が **PAGELATCH\_\*** の *sys.dm_os_wait_stats* でレポートされます。
+* **バッファー (BUF) ラッチ:** ユーザー オブジェクトのインデックスとデータ ページの整合性を保証するために使用されます。 また、SQL Server によってシステム オブジェクト用に使用されるデータ ページへのアクセスを保護するためにも使用されます。 たとえば、割り当てを管理するページは、バッファー ラッチによって保護されます。 これらには、Page Free Space (PFS)、Global Allocation Map (GAM)、Shared Global Allocation Map (SGAM)、Index Allocation Map (IAM) などのページが含まれます。 バッファー ラッチは、`wait_type` が **PAGELATCH\_\*** の `sys.dm_os_wait_stats` でレポートされます。
 
-* **非バッファー (非 BUF) ラッチ:** バッファー プールページ以外のメモリ内構造の整合性を保証するために使用されます。 非バッファー ラッチに対するすべての待機は、**LATCH\_\*** の *wait_type* としてレポートされます。
+* **非バッファー (非 BUF) ラッチ:** バッファー プールページ以外のメモリ内構造の整合性を保証するために使用されます。 非バッファー ラッチに対するすべての待機は、**LATCH\_\*** の `wait_type` としてレポートされます。
 
-* **IO ラッチ:** バッファー ラッチのサブセットであり、バッファー ラッチによって保護される同じ構造が I/O 操作でバッファー プールに読み込まれる必要があるときに、これらの構造の整合性を保証します。 IO ラッチを使用すると、別のスレッドによって、互換性のないラッチによって同じページがバッファー プールに読み込まれることが防がれます。 **PAGEIOLATCH\_\*** の *wait_type* に関連付けられています。
+* **IO ラッチ:** バッファー ラッチのサブセットであり、バッファー ラッチによって保護される同じ構造が I/O 操作でバッファー プールに読み込まれる必要があるときに、これらの構造の整合性を保証します。 IO ラッチを使用すると、別のスレッドによって、互換性のないラッチによって同じページがバッファー プールに読み込まれることが防がれます。 **PAGEIOLATCH\_\*** の `wait_type` に関連付けられています。
 
    > [!NOTE]
    > PAGEIOLATCH 待機が大量に発生する場合は、SQL Server が I/O サブシステムで待機していることを意味します。 ある程度の量の PAGEIOLATCH 待機が発生することは想定され、通常の動作ですが、PAGEIOLATCH 待機の平均時間が常に 10 ミリ秒 (ms) を超えている場合は、I/O サブシステムに負荷がかかっている原因を調査する必要があります。
 
-*sys.dm_os_wait_stats* DMV を調べていて、非バッファー ラッチが検出される場合は、*sys.dm_os_latch_waits* を調べて、非バッファー ラッチの累積待機情報の詳細な内訳を取得する必要があります。 すべてのバッファー ラッチ待機は BUFFER ラッチ クラスに分類され、残りは非バッファー ラッチを分類するために使用されます。
+`sys.dm_os_wait_stats` DMV を調べていて、非バッファー ラッチが検出される場合は、`sys.dm_os_latch_waits` を調べて、非バッファー ラッチの累積待機情報の詳細な内訳を取得する必要があります。 すべてのバッファー ラッチ待機は BUFFER ラッチ クラスに分類され、残りは非バッファー ラッチを分類するために使用されます。
 
 ## <a name="symptoms-and-causes-of-sql-server-latch-contention"></a>SQL Server のラッチの競合の現象と原因
 
@@ -163,40 +163,40 @@ OLTP 環境でパフォーマンスを妨げるラッチの競合は、通常、
 
 3. ラッチに関係があるものの割合を判断します。
 
-累積待機情報は、*sys.dm_os_wait_stats* DMV から入手できます。 最も一般的なラッチの競合の種類はバッファー ラッチ競合であり、*wait_type* が **PAGELATCH\_\** _ であるラッチ待機時間の増加として観察されます。 非バッファー ラッチは、待機の種類 _*LATCH\**_ の下にグループ化されています。 次の図に示すように、まず、_sys.dm_os_wait_stats* DMV を使用してシステムの累積待機時間を取得し、バッファーまたは非バッファー ラッチによる全体的な待機時間の割合を確認する必要があります。 非バッファー ラッチが発生している場合は、*sys.dm_os_latch_stats* DMV も調べる必要があります。
+累積待機情報は、`sys.dm_os_wait_stats` DMV から入手できます。 最も一般的なラッチの競合の種類は、`wait_type` が **PAGELATCH\_\* *_ のラッチで待機時間が増えるときの、バッファー ラッチ競合です。バッファーではないラッチは、_* LATCH\*** の待機の種類にグループ化されます。 次の図に示すように、まず、`sys.dm_os_wait_stats` DMV を使用してシステムの累積待機時間を取得し、バッファーまたは非バッファー ラッチによる全体的な待機時間の割合を確認する必要があります。 非バッファー ラッチが発生している場合は、`sys.dm_os_latch_stats` DMV も調べる必要があります。
 
-次の図は、*sys.dm_os_wait_stats* と *sys.dm_os_latch_stats* DMV によって返される情報の関係を示したものです。
+次の図は、`sys.dm_os_wait_stats` と `sys.dm_os_latch_stats` DMV によって返される情報の関係を示したものです。
 
 ![ラッチの待機](./media/diagnose-resolve-latch-contention/image7.png)
 
-*sys.dm_os_wait_stats* DMV の詳細については、SQL Server のヘルプの「[sys.dm_os_wait_stats (Transact-SQL)](./system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md)」を参照してください。
+`sys.dm_os_wait_stats` DMV の詳細については、SQL Server のヘルプの「[sys.dm_os_wait_stats (Transact-SQL)](./system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md)」を参照してください。
 
-*sys.dm_os_latch_stats* DMV の詳細については、SQL Server のヘルプの「[sys.dm_os_latch_stats (Transact-SQL)](./system-dynamic-management-views/sys-dm-os-latch-stats-transact-sql.md)」を参照してください。
+`sys.dm_os_latch_stats` DMV の詳細については、SQL Server のヘルプの「[sys.dm_os_latch_stats (Transact-SQL)](./system-dynamic-management-views/sys-dm-os-latch-stats-transact-sql.md)」を参照してください。
 
 ラッチ待機時間の次のメジャーは、過度なラッチの競合がアプリケーションのパフォーマンスに影響を与えていることを示すインジケーターです。
 
-* **スループットと共にページ ラッチの平均待機時間が一貫して上昇する**: スループットと共にページ ラッチの平均待機時間が一貫して上昇し、バッファー ラッチの平均待機時間も予想されるディスク応答時間を上回る場合は、*sys.dm_os_waiting_tasks* DMV を使用して現在の待機中のタスクを調べる必要があります。 平均は、それだけで分析すると誤って解釈される可能性があるため、可能な場合はシステムをライブで確認し、ワークロードの特性を理解することが重要です。 特に、任意のページの PAGELATCH_EX 要求や PAGELATCH_SH 要求で長い待機時間が発生しているかどうかを確認します。 次の手順に従って、スループットに伴う平均ページ ラッチ待機時間の一貫した上昇を診断します。
+* **スループットと共にページ ラッチの平均待機時間が一貫して上昇する**: スループットと共にページ ラッチの平均待機時間が一貫して上昇し、バッファー ラッチの平均待機時間も予想されるディスク応答時間を上回る場合は、`sys.dm_os_waiting_tasks` DMV を使用して現在の待機中のタスクを調べる必要があります。 平均は、それだけで分析すると誤って解釈される可能性があるため、可能な場合はシステムをライブで確認し、ワークロードの特性を理解することが重要です。 特に、任意のページの PAGELATCH_EX 要求や PAGELATCH_SH 要求で長い待機時間が発生しているかどうかを確認します。 次の手順に従って、スループットに伴う平均ページ ラッチ待機時間の一貫した上昇を診断します。
 
    * 「[sys.dm_os_waiting_tasks のクエリを実行してセッション ID の順に並べ替える](#waiting-tasks-script1)」または「[一定期間の待機時間を計算する](#calculate-waits-over-a-time-period)」のサンプル スクリプトを使用して、現在の待機中のタスクを調べ、ラッチの平均待機時間を測定します。 
    * 「[バッファー記述子のクエリを実行して、ラッチ競合の原因となっているオブジェクトを特定する](#query-buffer-descriptors)」のサンプル スクリプトを使用して、競合が発生しているインデックスと基になるテーブルを特定します。 
-   * パフォーマンス モニターのカウンター **MSSQL%InstanceName%\\Wait Statistics\\Page Latch Waits\\Average Wait Time** を使用して、または *sys.dm_os_wait_stats* DMV を実行することで、平均ページ ラッチ待機時間を測定します。
+   * パフォーマンス モニターのカウンター **MSSQL%InstanceName%\\Wait Statistics\\Page Latch Waits\\Average Wait Time** を使用して、または `sys.dm_os_wait_stats` DMV を実行することで、平均ページ ラッチ待機時間を測定します。
 
    > [!NOTE]
-   > 特定の待機の種類 (*sys.dm_os_wait_stats* によって *wt_:type* として返されます) に対する平均待機時間を計算するには、合計待機時間 (*wait_time_ms* として返されます) を待機中のタスクの数 (*waiting_tasks_count* として返されます) で除算します。
+   > 特定の待機の種類 (`sys.dm_os_wait_stats` によって *wt_:type* として返されます) に対する平均待機時間を計算するには、合計待機時間 (`wait_time_ms` として返されます) を待機中のタスクの数 (`waiting_tasks_count` として返されます) で除算します。
 
 * **ピーク負荷の間にラッチ待機の種類で費やされた合計待機時間の割合**: 総待機時間の割合としての平均ラッチ待機時間が、アプリケーションの負荷に従って増加する場合、ラッチの競合がパフォーマンスに影響を与えている可能性があり、調査する必要があります。
 
    [SQLServer:Wait Statistics Object](./performance-monitor/sql-server-wait-statistics-object.md) パフォーマンス カウンターを使用して、ページ ラッチ待機と非ページ ラッチ待機を測定します。 その後、これらのパフォーマンス カウンターの値を、CPU、I/O、メモリ、ネットワーク スループットに関連付けられているパフォーマンス カウンターと比較します。 たとえば、トランザクション数/秒とバッチ要求数/秒は、リソース使用率の 2 つの適切な測定値です。
 
    > [!NOTE]
-   > 各待機の種類に対する相対待機時間は、*sys.dm_os_wait_stats* DMV には含まれません。この DMW を使用すると、SQL Server のインスタンスが最後に開始されてから、または DBCC SQLPERF を使用して累積待機統計がリセットてからの待機時間が、測定されるためです。 各待機の種類の相対的な待機時間を計算するには、ピーク負荷の前と後に *sys.dm_os_wait_stats* のスナップショットを取得して、その差を計算します。 「[一定期間の待機時間を計算する](#calculate-waits-over-a-time-period)」のサンプル スクリプトを、この目的に使用できます。
+   > 各待機の種類に対する相対待機時間は、`sys.dm_os_wait_stats` DMV には含まれません。この DMW を使用すると、SQL Server のインスタンスが最後に開始されてから、または DBCC SQLPERF を使用して累積待機統計がリセットてからの待機時間が、測定されるためです。 各待機の種類の相対的な待機時間を計算するには、ピーク負荷の前と後に `sys.dm_os_wait_stats` のスナップショットを取得して、その差を計算します。 「[一定期間の待機時間を計算する](#calculate-waits-over-a-time-period)」のサンプル スクリプトを、この目的に使用できます。
 
-   **非運用環境** のみの場合は、次のコマンドを使用して *sys.dm_os_wait_stats* DMV をクリアします。
+   **非運用環境** のみの場合は、次のコマンドを使用して `sys.dm_os_wait_stats` DMV をクリアします。
    
    ```sql
    dbcc SQLPERF ('sys.dm_os_wait_stats', 'CLEAR')
    ```
-   同様のコマンドを実行して、*sys.dm_os_latch_stats* DMV をクリアできます。
+   同様のコマンドを実行して、`sys.dm_os_latch_stats` DMV をクリアできます。
    
    ```sql
    dbcc SQLPERF ('sys.dm_os_latch_stats', 'CLEAR')
@@ -210,7 +210,7 @@ OLTP 環境でパフォーマンスを妨げるラッチの競合は、通常、
 
 ## <a name="analyzing-current-wait-buffer-latches"></a>現在の待機バッファー ラッチの分析
 
-バッファー ラッチの競合は、_sys.dm_os_wait_stats* DMV に表示される *wait_type* が **PAGELATCH\_\** _ または _*PAGEIOLATCH\_\**_ であるラッチ待機時間の増加として示されます。 システムをリアルタイムで確認するには、システムに対して次のクエリを実行し、*sys.dm_os_wait_stats*、*sys.dm_exec_sessions*、*sys.dm_exec_requests* の各 DMV を結合します。 その結果を使用して、サーバーで実行されているセッションの現在の待機の種類を特定できます。
+バッファー ラッチの競合は、`sys.dm_os_wait_stats` DMV に、**PAGELATCH\_\* *_ または _* PAGEIOLATCH\_\*** のいずれかの `wait_type` のラッチ待機時間が増える場合に発生します。 システムをリアルタイムで確認するには、システムに対して次のクエリを実行し、`sys.dm_os_wait_stats`、`sys.dm_exec_sessions`、`sys.dm_exec_requests` の各 DMV を結合します。 その結果を使用して、サーバーで実行されているセッションの現在の待機の種類を特定できます。
 
 ```sql
 SELECT wt.session_id, wt.wait_type
@@ -237,12 +237,12 @@ ORDER BY wt.wait_duration_ms desc
 | **Wait_duration_ms** | SQL Server インスタンスが開始された後、または累積待機統計がリセットされた後に、この待機の種類での待機に費やされた合計待機時間 (ミリ秒単位)。 |
 | **Blocking_session_id** | 要求をブロックしているセッションの ID。 |
 | **Blocking_exec_context_id** | タスクに関連付けられている実行コンテキストの ID。 |
-| **Resource_description** | resource_description 列には、待機中の正確なページが次の形式で一覧表示されます: `<database_id>:<file_id>:<page_id>` |
+| **Resource_description** | `resource_description` 列には、待機中の正確なページが `<database_id>:<file_id>:<page_id>` の形式で一覧表示されます。 |
 
 次のクエリを実行すると、すべての非バッファー ラッチに関する情報が返されます。
 
 ```sql
-select * from sys.dm_os_latch_stats where latch_class <> 'BUFFER' order by wait_time_ms desc
+select * from sys.dm_os_latch_stats where latch_class <> 'BUFFER' order by wait_time_ms desc;
 ```
 
 ![クエリの出力](./media/diagnose-resolve-latch-contention/image9.png)
@@ -251,16 +251,16 @@ select * from sys.dm_os_latch_stats where latch_class <> 'BUFFER' order by wait_
 
 | 統計 | 説明 |
 |---|---|
-| **Latch_class** | SQL Server によってエンジンに記録されたラッチの種類。これにより、現在の要求の実行が妨げられています。 |
-| **Waiting_requests_count** | SQL Server が再起動されてからの、このクラスのラッチでの待機の数。 このカウンターは、ラッチ待機の開始時に増分されます。 |
-| **Wait_time_ms** | このラッチの種類での待機に費やされた合計待機時間 (ミリ秒単位)。 |
-| **Max_wait_time_ms** | 任意の要求で、このラッチの種類での待機に費やされた最大時間 (ミリ秒単位)。 |
+| **latch_class** | SQL Server によってエンジンに記録されたラッチの種類。これにより、現在の要求の実行が妨げられています。 |
+| **waiting_requests_count** | SQL Server が再起動されてからの、このクラスのラッチでの待機の数。 このカウンターは、ラッチ待機の開始時に増分されます。 |
+| **wait_time_ms** | このラッチの種類での待機に費やされた合計待機時間 (ミリ秒単位)。 |
+| **max_wait_time_ms** | 任意の要求で、このラッチの種類での待機に費やされた最大時間 (ミリ秒単位)。 |
 
 > [!NOTE]
-> この DMV によって返される値は、サーバーが最後に再起動されたとき、または DMV がリセットされたときからの累積です。 長時間実行されているシステムの場合、これは *Max_wait_time_ms* などの一部の統計があまり役に立たないことを意味します。 次のコマンドを使用して、この DMV の待機統計をリセットできます。
+> この DMV が返す値は、データベース エンジンが最後に再起動されたとき、または DMV がリセットされたときからの累積です。 データベース エンジンが最後に起動された時刻を調べるには、[sys.dm_os_sys_info](../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md) の `sqlserver_start_time` を使用します。 長時間実行されているシステムの場合、これは `max_wait_time_ms` などの一部の統計があまり役に立たないことを意味します。 次のコマンドを使用して、この DMV の待機統計をリセットできます。
 >
 > ```sql
-> DBCC SQLPERF ('sys.dm_os_latch_stats', CLEAR)
+> DBCC SQLPERF ('sys.dm_os_latch_stats', CLEAR);
 > ```
 
 ## <a name="sql-server-latch-contention-scenarios"></a>SQL Server におけるラッチの競合のシナリオ
@@ -271,7 +271,7 @@ select * from sys.dm_os_latch_stats where latch_class <> 'BUFFER' order by wait_
 
 ID 列または日付列に対するクラスター化インデックスの作成は、OLTP での一般的なプラクティスです。 これはインデックスの物理的な編成の維持に役立ち、インデックスの読み取りと書き込み両方のパフォーマンスを大幅に向上させることができます。 ただし、このスキーマの設計により、誤ってラッチの競合が発生する可能性があります。 この問題が最もよく見られるのは、小さい行が含まれる大きいテーブルでの、昇順の整数や日時キーなどの順番に増加するキー列が先頭に含まれるインデックスへの挿入です。 このシナリオの場合、アプリケーションで更新または削除が実行されることはめったにありませんが、アーカイブ操作は例外です。
 
-次の例では、スレッド 1 とスレッド 2 の両方で、ページ 299 に格納されるレコードの挿入が実行されます。 論理的なロックの観点からは、行レベルのロックが使用され、同じページ上の両方のレコードに対して排他ロックを同時に保持できるため、問題はありません。 ただし、物理メモリの整合性を保証するため、排他的ラッチを取得できるのは一度に 1 つのスレッドのみなので、ページへのアクセスはシリアル化され、メモリ内の更新は失われません。 この場合、スレッド 1 が排他ラッチを取得し、スレッド 2 は待機します。これにより、このリソースの PAGELATCH_EX 待機が待機統計に登録されます。 これは、*sys.dm_os_waiting_tasks* DMV の *wait_type* 値によって表示されます。
+次の例では、スレッド 1 とスレッド 2 の両方で、ページ 299 に格納されるレコードの挿入が実行されます。 論理的なロックの観点からは、行レベルのロックが使用され、同じページ上の両方のレコードに対して排他ロックを同時に保持できるため、問題はありません。 ただし、物理メモリの整合性を保証するため、排他的ラッチを取得できるのは一度に 1 つのスレッドのみなので、ページへのアクセスはシリアル化され、メモリ内の更新は失われません。 この場合、スレッド 1 が排他ラッチを取得し、スレッド 2 は待機します。これにより、このリソースの PAGELATCH_EX 待機が待機統計に登録されます。 これは、`sys.dm_os_waiting_tasks` DMV の `wait_type` 値によって表示されます。
 
 ![最後の行での排他ページ ラッチ](./media/diagnose-resolve-latch-contention/image10.png)
 
@@ -294,7 +294,7 @@ ID 列または日付列に対するクラスター化インデックスの作�
 
 5. すべてのページのラッチを解除します。
 
-テーブル インデックスが順番に増加するキーに基づいている場合、各新規挿入は、B ツリーの最後にある同じページに、そのページがいっぱいになるまで送られます。 高コンカレンシーのシナリオの場合、これにより B ツリーの右端で競合が発生する可能性があります。これは、クラスター化インデックスと非クラスター化インデックスの両方で発生する場合があります。 この種類の競合の影響を受けるテーブルは、主に INSERT を受け入れ、問題のあるインデックスのページは比較的高密度です (たとえば、行のオーバーヘッドを含む行サイズ \~165 バイトは、1 ページあたり \~49 行になります)。 この挿入の多い例の場合、PAGELATCH_EX および PAGELATCH_SH 待機が発生することが予想され、これは一般的な観察です。 ページ ラッチ待機とツリー ページ ラッチ待機の対比を調べるには、*sys.dm_db_index_operational_stats* DMV を使用します。
+テーブル インデックスが順番に増加するキーに基づいている場合、各新規挿入は、B ツリーの最後にある同じページに、そのページがいっぱいになるまで送られます。 高コンカレンシーのシナリオの場合、これにより B ツリーの右端で競合が発生する可能性があります。これは、クラスター化インデックスと非クラスター化インデックスの両方で発生する場合があります。 この種類の競合の影響を受けるテーブルは、主に INSERT を受け入れ、問題のあるインデックスのページは比較的高密度です (たとえば、行のオーバーヘッドを含む行サイズ \~165 バイトは、1 ページあたり \~49 行になります)。 この挿入の多い例の場合、PAGELATCH_EX および PAGELATCH_SH 待機が発生することが予想され、これは一般的な観察です。 ページ ラッチ待機とツリー ページ ラッチ待機の対比を調べるには、`sys.dm_db_index_operational_stats` DMV を使用します。
 
 次の表は、この種類のラッチの競合によって見られる主な要素をまとめたものです。
 
@@ -302,7 +302,7 @@ ID 列または日付列に対するクラスター化インデックスの作�
 |---|---|
 | **SQL Server によって使用されている論理 CPU** | この種類のラッチの競合は、主に CPU コアが 16 個以上のシステムで発生し、CPU コアが 32 個以上のシステムで最も一般的です。 |
 | **スキーマの設計とアクセス パターン** | トランザクション データのテーブルのインデックスでの先頭列として、順番に増加する ID 値を使用します。<br/><br/>インデックスには、挿入の率が高い、増加する主キーがあります。<br/><br/>インデックスには、少なくとも 1 つの順番に増加する列の値があります。<br/><br/>通常、行サイズが小さく、ページごとに多数の行が含まれます。 |
-| **観察される待機の種類** | 待機期間クエリの順に並べ替えられた sys.dm_os_waiting_tasks のクエリによって返される sys.dm_os_waiting_tasks DMV 内の同じ resource_description に関連付けられている排他 (EX) または共有 (SH) ラッチ待機で同じリソースに対して競合する多くのスレッド。 |
+| **観察される待機の種類** | [待機時間順に並べ替えられた sys.dm_os_waiting_tasks クエリ](#waiting-tasks-script2)によって返される `sys.dm_os_waiting_tasks` DMV 内の同じ resource_description に関連付けられている排他 (EX) または共有 (SH) ラッチ待機で同じリソースに対して競合している多くのスレッド。|
 | **考慮する設計要素** | 挿入が常に B ツリー全体に一様に分散されることを保証できる場合は、連続しないインデックスの軽減戦略で説明されているように、インデックス列の順序を変更を検討します。<br/><br/>ハッシュ パーティション軽減戦略を使用した場合は、スライディング ウィンドウ アーカイブなどの他の目的にパーティション分割を使用できなくなります。<br/><br/>ハッシュ パーティション軽減戦略を使用すると、アプリケーションによって使用される SELECT クエリに対してパーティション削除の問題が発生する可能性があります。 |
 
 ### <a name="latch-contention-on-small-tables-with-a-non-clustered-index-and-random-inserts-queue-table"></a>非クラスター化インデックスとランダムな挿入を使用する小さなテーブルでのラッチの競合 (キュー テーブル)
@@ -333,7 +333,7 @@ ID 列または日付列に対するクラスター化インデックスの作�
 | **コンカレンシーのレベル** | アプリケーション層からの同時要求のレベルが高い場合にのみ、ラッチの競合が発生します。
 | **観察される待機の種類** | ルート分割のため、バッファー (PAGELATCH_EX と PAGELATCH_SH) と非バッファー ラッチ ACCESS_METHODS_HOBT_VIRTUAL_ROOT で待機が観察されます。 また、PFS ページで PAGELATCH_UP が待機されます。 非バッファー ラッチ待機の詳細については、SQL Server のヘルプで「[sys.dm_os_latch_stats (Transact-SQL)](./system-dynamic-management-views/sys-dm-os-latch-stats-transact-sql.md)」を参照してください。
 
-浅い B ツリーとインデックス全体へのランダムな挿入が組み合わさると、B ツリーでページ分割が発生しやすくなります。 SQL Server でページ分割を実行するには、すべてのレベルで共有 (SH) ラッチを取得した後、ページ分割に含まれる B ツリー内のページで排他 (EX) ラッチを取得する必要があります。 また、コンカレンシーが高く、データが継続的に挿入および削除される場合も、B ツリーのルート分割が発生する可能性があります。 この場合、他の挿入は、B ツリーで取得された非バッファー ラッチを待機することが必要になる場合があります。 これは、*sys.dm_os_latch_stats* DMV で観察される ACCESS_METHODS_HBOT_VIRTUAL_ROOT ラッチの種類での多数の待機として示されます。
+浅い B ツリーとインデックス全体へのランダムな挿入が組み合わさると、B ツリーでページ分割が発生しやすくなります。 SQL Server でページ分割を実行するには、すべてのレベルで共有 (SH) ラッチを取得した後、ページ分割に含まれる B ツリー内のページで排他 (EX) ラッチを取得する必要があります。 また、コンカレンシーが高く、データが継続的に挿入および削除される場合も、B ツリーのルート分割が発生する可能性があります。 この場合、他の挿入は、B ツリーで取得された非バッファー ラッチを待機することが必要になる場合があります。 これは、`sys.dm_os_latch_stats` DMV で観察される ACCESS_METHODS_HBOT_VIRTUAL_ROOT ラッチの種類での多数の待機として示されます。
 
 次のスクリプトを変更して、影響を受けたテーブルでのインデックスの B ツリーの深さを確認できます。
 
@@ -354,7 +354,7 @@ join sysObjects o on o.id = i.id
 where o.type = 'u'
    and indexProperty(object_id(o.name), i.name, 'isHypothetical') = 0 --filter out hypothetical indexes
    and indexProperty(object_id(o.name), i.name, 'isStatistics') = 0 --filter out statistics
-order by o.name
+order by o.name;
 ```
 
 ### <a name="latch-contention-on-page-free-space-pfs-pages"></a>ページ空き領域 (PFS) ページでのラッチの競合
@@ -407,12 +407,12 @@ create table table1
        TransactionID bigint not null,
        UserID      int not null,
        SomeInt       int not null
-)
+);
 go
 
 alter table table1
        add constraint pk_table1
-       primary key clustered (TransactionID, UserID)
+       primary key clustered (TransactionID, UserID);
 go
 ```
 
@@ -421,7 +421,7 @@ go
 
 **並べ替えられたインデックスの定義**
 
-主キーの先頭列として UserID を使用するインデックスを並べ替えると、挿入はページ間にほぼランダムに分散されました。 すべてのユーザーが同時にオンラインになるわけではないため、結果の分散は 100% ランダムではありませんが、過剰なラッチの競合を軽減するには十分にランダムな分散になりました。 インデックス定義の並べ替えに関する注意点の 1 つとして、このテーブルに対する選択クエリを、等値述語として UserID と TransactionID の両方を使用するように変更する必要があります。
+主キーの先頭列が UserID のインデックスのキー列を並べ替えると、挿入はページ間にほぼランダムに分散されました。 すべてのユーザーが同時にオンラインになるわけではないため、結果の分散は 100% ランダムではありませんが、過剰なラッチの競合を軽減するには十分にランダムな分散になりました。 インデックス定義の並べ替えに関する注意点の 1 つとして、このテーブルに対する選択クエリを、等値述語として UserID と TransactionID の両方を使用するように変更する必要があります。
 
 > [!IMPORTANT]
 > 運用環境で実行する前に、テスト環境で変更を徹底的にテストする必要があります。
@@ -432,12 +432,12 @@ create table table1
        TransactionID bigint not null,
        UserID      int not null,
        SomeInt       int not null
-)
+);
 go
 
 alter table table1
        add constraint pk_table1
-       primary key clustered (UserID, TransactionID)
+       primary key clustered (UserID, TransactionID);
 go
 ```
 
@@ -451,14 +451,14 @@ create table table1
        TransactionID bigint not null,
        UserID      int not null,
        SomeInt       int not null
-)
+);
 go
 -- Consider using bulk loading techniques to speed it up
 ALTER TABLE table1
    ADD [HashValue] AS (CONVERT([tinyint], abs([TransactionID])%(32))) PERSISTED NOT NULL   
 alter table table1
        add constraint pk_table1
-       primary key clustered (HashValue, TransactionID, UserID)
+       primary key clustered (HashValue, TransactionID, UserID);
 go
 ```
 
@@ -494,19 +494,19 @@ SQL Server でテーブルのパーティション分割を使用すると、過
 --Create the partition scheme and function, align this to the number of CPU cores 1:1 up to 32 core computer
 -- so for below this is aligned to 16 core system
 CREATE PARTITION FUNCTION [pf_hash16] (tinyint) AS RANGE LEFT FOR VALUES
-   (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+   (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
 
-CREATE PARTITION SCHEME [ps_hash16] AS PARTITION [pf_hash16] ALL TO ( [ALL_DATA] )
+CREATE PARTITION SCHEME [ps_hash16] AS PARTITION [pf_hash16] ALL TO ( [ALL_DATA] );
 -- Add the computed column to the existing table (this is an OFFLINE operation)
 
 -- Consider using bulk loading techniques to speed it up
 ALTER TABLE [dbo].[latch_contention_table]
-   ADD [HashValue] AS (CONVERT([tinyint], abs(binary_checksum([hash_col])%(16)),(0))) PERSISTED NOT NULL
+   ADD [HashValue] AS (CONVERT([tinyint], abs(binary_checksum([hash_col])%(16)),(0))) PERSISTED NOT NULL;
 
 --Create the index on the new partitioning scheme 
 CREATE UNIQUE CLUSTERED INDEX [IX_Transaction_ID] 
 ON [dbo].[latch_contention_table]([T_ID] ASC, [HashValue]) 
-ON ps_hash16(HashValue)
+ON ps_hash16(HashValue);
 ```
 
 このスクリプトを使用すると、[最後のページまたは後続のページでの挿入の競合](#last-pagetrailing-page-insert-contention)によって引き起こされる問題が発生しているテーブルをハッシュ パーティションできます。 この手法を使用すると、テーブルがパーティション分割され、ハッシュ値剰余演算でテーブル パーティション全体に挿入が分散されることによって、最後のページから競合が移動されます。
@@ -612,7 +612,7 @@ JOIN sys.partitions p ON au.container_id = p.partition_id
 JOIN sys.indexes i ON  p.index_id = i.index_id AND p.object_id = i.object_id
 JOIN sys.objects o ON i.object_id = o.object_id 
 JOIN sys.schemas s ON o.schema_id = s.schema_id
-order by wt.wait_duration_ms desc
+order by wt.wait_duration_ms desc;
 ```
 
 ここで示すように、競合はテーブル LATCHTEST およびインデックス名 CIX_LATCHTEST で発生しています。 ワークロードを匿名にするため、名前は変更されていることに注意してください。
@@ -623,7 +623,7 @@ order by wt.wait_duration_ms desc
 
 ### <a name="alternative-technique-to-isolate-the-object-causing-latch-contention"></a>ラッチ競合の原因となるオブジェクトを分離する別の方法
 
-*sys.dm_os_buffer_descriptors* のクエリを実行することが実用的でない場合があります。 バッファー プールに使用できるシステムのメモリが増えると、この DMV を実行するために必要な時間も長くなります。 256 GB のシステムでは、この DMV を実行するのに最大で 10 分、またはそれ以上かかる場合があります。 以下では、使用可能な別の手法を、ラボで別のワークロードを使用して実行した場合の概要を説明します。
+`sys.dm_os_buffer_descriptors` のクエリを実行することが実用的でない場合があります。 バッファー プールに使用できるシステムのメモリが増えると、この DMV を実行するために必要な時間も長くなります。 256 GB のシステムでは、この DMV を実行するのに最大で 10 分、またはそれ以上かかる場合があります。 以下では、使用可能な別の手法を、ラボで別のワークロードを使用して実行した場合の概要を説明します。
 
 1. 付録の「[sys.dm_os_waiting_tasks のクエリを実行して待機時間の順に並べ替える](#waiting-tasks-script2)」のスクリプトを使用して、現在待機中のタスクのクエリを実行します。
 
@@ -633,10 +633,10 @@ order by wt.wait_duration_ms desc
 
    ```sql
    --enable trace flag 3604 to enable console output
-   dbcc traceon (3604)
+   dbcc traceon (3604);
 
    --examine the details of the page
-   dbcc page (8,1, 111305, -1)
+   dbcc page (8,1, 111305, -1);
    ```
 
 4. DBCC の出力を調べます。 これらは、関連付けられたメタデータ ObjectID である必要があります (この例では "78623323")。
@@ -650,7 +650,7 @@ order by wt.wait_duration_ms desc
 
    ```sql
    --get object name
-   select OBJECT_NAME (78623323)
+   select OBJECT_NAME (78623323);
    ```
 
    ![オブジェクト名](./media/diagnose-resolve-latch-contention/image23.png)
@@ -687,16 +687,16 @@ order by wt.wait_duration_ms desc
 行を埋め込んでページ全体を占めるには、次のようなスクリプトを使用できます。
 
 ```sql
-ALTER TABLE mytable ADD Padding CHAR(5000) NOT NULL DEFAULT ('X')
+ALTER TABLE mytable ADD Padding CHAR(5000) NOT NULL DEFAULT ('X');
 ```
 
 > [!NOTE]
 > 値の埋め込みに必要な余分な CPU と、行をログに記録するために必要な追加領域を減らすため、可能な限り少ない文字数を使用して、強制的に 1 行を 1 ページにします。 ハイ パフォーマンスのシステムでは、すべてのバイトがカウントされます。
 
-完全を期すため、この手法について説明します。実際の SQLCAT においては、1 回のパフォーマンス エンゲージメントが 10,000 行の小さいテーブルでのみ、これを使用しました。 大きなテーブルの場合に SQL Server でのメモリ負荷が増加し、非リーフ ページで非バッファー ラッチの競合が発生する可能性があるため、この手法の適用には制限があります。 メモリ負荷の増加は、この手法の適用に対する大きな制限要因になることがあります。 最新のサーバーでは使用可能なメモリ量が多いので、通常、OLTP ワークロードのワーキング セットの大部分はメモリに保持されます。 データ セットがメモリに収まらないほど大きいサイズになると、パフォーマンスの大幅な低下が発生します。 したがって、この手法は、小さなテーブルに対してのみ適用できます。 大きいテーブルに対する最後のページまたは後続のページでの挿入の競合などのシナリオの場合、この手法は SQLCAT では使用されません。
+完全を期すため、この手法について説明します。実際の SQLCAT においては、1 回のパフォーマンス エンゲージメントが 10,000 行の小さいテーブルでのみ、これを使用しました。 テーブルが大きい場合、SQL Server でのメモリ負荷が増加し、非リーフ ページで非バッファー ラッチの競合が発生する可能性があるため、この手法の適用には制限があります。 メモリ負荷の増加は、この手法の適用に対する大きな制限要因になることがあります。 最新のサーバーでは使用可能なメモリ量が多いので、通常、OLTP ワークロードのワーキング セットの大部分はメモリに保持されます。 データ セットがメモリに収まらないほど大きいサイズになると、パフォーマンスの大幅な低下が発生します。 したがって、この手法は、小さなテーブルに対してのみ適用できます。 大きいテーブルに対する最後のページまたは後続のページでの挿入の競合などのシナリオの場合、この手法は SQLCAT では使用されません。
 
 > [!IMPORTANT]
-> この方法を採用すると、B ツリーの非リーフ レベルで大量のページ分割が発生する場合があるため、ACCESS_METHODS_HBOT_VIRTUAL_ROOT のラッチの種類で多数の待機が発生する可能性があります。 SQL Server でこのようなことが発生した場合は、すべてのレベルで共有 (SH) ラッチを取得した後、ページ分割の可能性がある B ツリー内のページで、排他 (EX) ラッチを取得する必要があります。 行を埋め込んだ後、ACCESS_METHODS_HBOT_VIRTUAL_ROOT のラッチの種類で待機が多いかどうか、*sys.dm_os_latch_stats* DMV を確認します。
+> この方法を採用すると、B ツリーの非リーフ レベルで大量のページ分割が発生する場合があるため、ACCESS_METHODS_HBOT_VIRTUAL_ROOT のラッチの種類で多数の待機が発生する可能性があります。 SQL Server でこのようなことが発生した場合は、すべてのレベルで共有 (SH) ラッチを取得した後、ページ分割の可能性がある B ツリー内のページで、排他 (EX) ラッチを取得する必要があります。 行を埋め込んだ後、ACCESS_METHODS_HBOT_VIRTUAL_ROOT のラッチの種類で待機が多いかどうか、`sys.dm_os_latch_stats` DMV を確認します。
 
 ## <a name="appendix-sql-server-latch-contention-scripts"></a>付録: SQL Server ラッチ競合スクリプト
 
@@ -704,7 +704,7 @@ ALTER TABLE mytable ADD Padding CHAR(5000) NOT NULL DEFAULT ('X')
 
 ### <a name="query-sysdm_os_waiting_tasks-ordered-by-session-id"></a><a id="waiting-tasks-script1"></a> sys.dm_os_waiting_tasks のクエリを実行してセッション ID の順に並べ替える
 
-次のサンプル スクリプトを使用すると、sys.dm_os_waiting_tasks のクエリが実行され、セッション ID の順に並べ替えられたラッチ待機が返されます。
+次のサンプル スクリプトを使用すると、`sys.dm_os_waiting_tasks` にクエリが実行され、セッション ID の順に並べ替えられたラッチ待機が返されます。
 
 ```sql
 -- WAITING TASKS ordered by session_id 
@@ -718,12 +718,12 @@ JOIN sys.dm_exec_sessions es ON wt.session_id = es.session_id
 JOIN sys.dm_exec_requests er ON wt.session_id = er.session_id
 WHERE es.is_user_process = 1
 AND wt.wait_type <> 'SLEEP_TASK'
-ORDER BY session_id
+ORDER BY session_id;
 ```
 
 ### <a name="query-sysdm_os_waiting_tasks-ordered-by-wait-duration"></a><a id="waiting-tasks-script2"></a> sys.dm_os_waiting_tasks のクエリを実行して待機時間の順に並べ替える
 
-次のサンプル スクリプトを使用すると、sys.dm_os_waiting_tasks のクエリが実行され、待機時間の順に並べ替えられたラッチ待機が返されます。
+次のサンプル スクリプトを使用すると、`sys.dm_os_waiting_tasks` にクエリが実行され、待機時間の順に並べ替えられたラッチ待機が返されます。
 
 ```sql
 -- WAITING TASKS ordered by wait_duration_ms
@@ -736,7 +736,7 @@ JOIN sys.dm_exec_sessions es ON wt.session_id = es.session_id
 JOIN sys.dm_exec_requests er ON wt.session_id = er.session_id
 WHERE es.is_user_process = 1
 AND wt.wait_type <> 'SLEEP_TASK'
-ORDER BY wt.wait_duration_ms desc
+ORDER BY wt.wait_duration_ms desc;
 ```
 
 ### <a name="calculate-waits-over-a-time-period"></a>一定期間の待機時間を計算する
@@ -754,10 +754,10 @@ ORDER BY wt.wait_duration_ms desc
 use tempdb
 go
 
-declare @current_snap_time datetime
-declare @previous_snap_time datetime
+declare @current_snap_time datetime;
+declare @previous_snap_time datetime;
 
-set @current_snap_time = GETDATE()
+set @current_snap_time = GETDATE();
 
 if not exists(select name from tempdb.sys.sysobjects where name like '#_wait_stats%')
    create table #_wait_stats
@@ -770,7 +770,7 @@ if not exists(select name from tempdb.sys.sysobjects where name like '#_wait_sta
       ,signal_wait_time_ms bigint
       ,avg_signal_wait_time int
       ,snap_time datetime
-   )
+   );
 
 insert into #_wait_stats (
          wait_type
@@ -787,12 +787,12 @@ insert into #_wait_stats (
          ,max_wait_time_ms
          ,signal_wait_time_ms
          ,getdate()
-      from sys.dm_os_wait_stats
+      from sys.dm_os_wait_stats;
 
 --get the previous collection point
 select top 1 @previous_snap_time = snap_time from #_wait_stats 
          where snap_time < (select max(snap_time) from #_wait_stats)
-         order by snap_time desc
+         order by snap_time desc;
 
 --get delta in the wait stats  
 select top 10
@@ -823,11 +823,11 @@ select top 10
                               , 'FT_IFTS_SCHEDULER_IDLE_WAIT', 'BROKER_TO_FLUSH', 'XE_DISPATCHER_WAIT'
                               , 'SQLTRACE_INCREMENTAL_FLUSH_SLEEP')
 
-order by (e.wait_time_ms - s.wait_time_ms) desc 
+order by (e.wait_time_ms - s.wait_time_ms) desc ;
 
 --clean up table
 delete from #_wait_stats
-where snap_time = @previous_snap_time
+where snap_time = @previous_snap_time;
 ```
 
 ### <a name="query-buffer-descriptors-to-determine-objects-causing-latch-contention"></a><a id="query-buffer-descriptors"></a> バッファー記述子のクエリを実行して、ラッチ競合の原因となっているオブジェクトを特定する
@@ -858,7 +858,7 @@ BEGIN
    WAITFOR DELAY @WaitDelay;
 END;
 
---select * from #WaitResources
+--select * from #WaitResources;
 
    update #WaitResources 
       set db_name = DB_NAME(bd.database_id),
@@ -875,8 +875,9 @@ END;
       JOIN sys.partitions p ON au.container_id = p.partition_id
       JOIN sys.indexes i ON p.index_id = i.index_id AND p.object_id = i.object_id
       JOIN sys.objects o ON i.object_id = o.object_id
-      JOIN sys.schemas s ON o.schema_id = s.schema_id
-select * from #WaitResources order by wait_duration_ms desc
+      JOIN sys.schemas s ON o.schema_id = s.schema_id;
+
+select * from #WaitResources order by wait_duration_ms desc;
 GO
 
 /*
@@ -899,19 +900,19 @@ GROUP BY session_id, wait_type, db_name, schema_name, object_name, index_name;
 --Create the partition scheme and function, align this to the number of CPU cores 1:1 up to 32 core computer
 -- so for below this is aligned to 16 core system
 CREATE PARTITION FUNCTION [pf_hash16] (tinyint) AS RANGE LEFT FOR VALUES
-   (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+   (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
 
-CREATE PARTITION SCHEME [ps_hash16] AS PARTITION [pf_hash16] ALL TO ( [ALL_DATA] )
+CREATE PARTITION SCHEME [ps_hash16] AS PARTITION [pf_hash16] ALL TO ( [ALL_DATA] );
 -- Add the computed column to the existing table (this is an OFFLINE operation)
 
 -- Consider using bulk loading techniques to speed it up
 ALTER TABLE [dbo].[latch_contention_table]
-   ADD [HashValue] AS (CONVERT([tinyint], abs(binary_checksum([hash_col])%(16)),(0))) PERSISTED NOT NULL
+   ADD [HashValue] AS (CONVERT([tinyint], abs(binary_checksum([hash_col])%(16)),(0))) PERSISTED NOT NULL;
 
 --Create the index on the new partitioning scheme 
 CREATE UNIQUE CLUSTERED INDEX [IX_Transaction_ID] 
 ON [dbo].[latch_contention_table]([T_ID] ASC, [HashValue]) 
-ON ps_hash16(HashValue)
+ON ps_hash16(HashValue);
 ```
 
 ## <a name="next-steps"></a>次のステップ

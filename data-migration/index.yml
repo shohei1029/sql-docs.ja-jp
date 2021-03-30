@@ -4,14 +4,14 @@ summary: 'データ資産を最新化するためのステップ バイ ステ�
 brand: sql
 metadata:
   title: Azure データベースの移行ガイド | Microsoft Docs
-  description: データ資産を最新化するためのステップ バイ ステップ ガイダンスです。
+  description: 'お使いのデータ資産を、SQL Server、Azure SQL Database、Azure SQL Managed Instance、Azure Database、Azure Cosmos DB、Azure VM 上の SQL Server および Azure Synapse Analytics に移行し、最新化する詳細な手順を説明します。 '
   ms.topic: hub-page
-  ms.openlocfilehash: c08abfbcb0e43a00319190153d169083b2da9395
-  ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+  ms.openlocfilehash: 097d3eb4a8a90328cbc4fc86551bb292616f017c
+  ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/19/2021
-  ms.locfileid: "104610601"
+  ms.lasthandoff: 03/25/2021
+  ms.locfileid: "105103279"
 conceptualContent:
   items:
   - title: SQL Server から
@@ -19,7 +19,7 @@ conceptualContent:
     - text: SQL Server (アップグレード)
       url: /sql/database-engine/install-windows/upgrade-sql-server
       itemType: how-to-guide
-    - text: Azure SQL Database
+    - text: Azure SQL データベース
       url: /azure/azure-sql/migration-guides/database/sql-server-to-sql-database-overview
       itemType: how-to-guide
     - text: Azure SQL Managed Instance
@@ -33,10 +33,13 @@ conceptualContent:
       itemType: how-to-guide
   - title: Oracle から
     links:
+    - text: Azure Database for PostgreSQL
+      url: /azure/postgresql/howto-migrate-from-oracle
+      itemType: how-to-guide
     - text: SQL Server
       url: /sql/sql-server/migrate/guides/oracle-to-sql-server
       itemType: how-to-guide
-    - text: Azure SQL Database
+    - text: Azure SQL データベース
       url: /azure/azure-sql/migration-guides/database/oracle-to-sql-database-guide
       itemType: how-to-guide
     - text: Azure SQL Managed Instance
@@ -45,18 +48,15 @@ conceptualContent:
     - text: Azure VM での SQL Server
       url: /azure/azure-sql/migration-guides/virtual-machines/oracle-to-sql-on-azure-vm-guide
       itemType: how-to-guide
-    - text: Azure Database for PostgreSQL
-      url: /azure/postgresql/howto-migrate-from-oracle
-      itemType: how-to-guide
     - text: Azure Synapse Analytics
       url: /azure/synapse-analytics/migration-guides/migrate-to-synapse-analytics-guide
       itemType: how-to-guide
-  - title: DB2 から
+  - title: Db2 から
     links:
     - text: SQL Server
       url: /sql/sql-server/migrate/guides/db2-to-sql-server
       itemType: how-to-guide
-    - text: Azure SQL Database
+    - text: Azure SQL データベース
       url: /azure/azure-sql/migration-guides/database/db2-to-sql-database-guide
       itemType: how-to-guide
     - text: Azure SQL Managed Instance
@@ -70,57 +70,60 @@ conceptualContent:
     - text: SQL Server
       url: /sql/sql-server/migrate/guides/access-to-sql-server
       itemType: how-to-guide
-    - text: Azure SQL Database
+    - text: Azure SQL データベース
       url: /azure/azure-sql/migration-guides/database/access-to-sql-database-guide
       itemType: how-to-guide
   - title: MySQL から
     links:
+    - text: Azure Database for MySQL
+      url: /azure/mysql/concepts-migrate-import-export
+      itemType: how-to-guide
     - text: SQL Server
       url: /sql/sql-server/migrate/guides/mysql-to-sql-server
       itemType: how-to-guide
     - text: Azure SQL データベース
       url: /azure/azure-sql/migration-guides/database/mysql-to-sql-database-guide
       itemType: how-to-guide
-    - text: Azure Database for MySQL
-      url: /azure/mysql/concepts-migrate-import-export
-      itemType: how-to-guide
   - title: SAP ASE から
     links:
     - text: SQL Server
       url: /sql/sql-server/migrate/guides/sap-ase-to-sql-server
       itemType: how-to-guide
-    - text: Azure SQL Database
+    - text: Azure SQL データベース
       url: /azure/azure-sql/migration-guides/database/sap-ase-to-sql-database
       itemType: how-to-guide
   - title: オープンソース
     links:
-    - text: MariaDB から Azure Database for MariaDB
-      url: /azure/mariadb/howto-migrate-dump-restore
+    - text: PostgreSQL から Azure Database for PostgreSQL
+      url: /azure/postgresql/howto-migrate-using-dump-and-restore
       itemType: how-to-guide
     - text: MySQL から Azure Database for MySQL
       url: /azure/mysql/concepts-migrate-import-export
       itemType: how-to-guide
-    - text: PostgreSQL から Azure Database for PostgreSQL
-      url: /azure/postgresql/howto-migrate-using-dump-and-restore
+    - text: MariaDB から Azure Database for MariaDB
+      url: /azure/mariadb/howto-migrate-dump-restore
       itemType: how-to-guide
   - title: NoSQL
     links:
     - text: MongoDB から Azure Cosmos DB
-      url: /azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
-      itemType: how-to-guide
-    - text: Cassandra から Azure Cosmos DB
-      url: /azure/cosmos-db/cassandra-import-data
+      url: /azure/dms/tutorial-mongodb-cosmos-db-online?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
       itemType: how-to-guide
     - text: Microsoft Azure Table Storage から Azure Cosmos DB
       url: /azure/cosmos-db/table-import
       itemType: how-to-guide
+    - text: Cassandra から Azure Cosmos DB
+      url: /azure/cosmos-db/cassandra-import-data
+      itemType: how-to-guide
   - title: リソース
     links:
+    - text: Azure Migration Center
+      url: https://azure.microsoft.com/migration/
+      itemType: reference
     - text: 移行パートナーのリソース
       url: https://www.microsoft.com/azure/partners/advspec?filters=windows-server-and-sql-server-migration-to-azure
       itemType: reference
     - text: クラウドの経済性
-      url: https://azure.microsoft.com/en-gb/overview/cloud-economics
+      url: https://azure.microsoft.com/overview/cloud-economics
       itemType: reference
     - text: 総保有コスト計算ツール
       url: https://azure.microsoft.com/pricing/tco/calculator/

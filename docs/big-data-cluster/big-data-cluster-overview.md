@@ -9,12 +9,12 @@ ms.date: 01/07/2020
 ms.topic: overview
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: c1109745a2fda000732c0645094dd5a157089717
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5e3b94698712f8359c51f925b70e148917610360
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100047923"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551273"
 ---
 # <a name="what-are-big-data-clusters-2019"></a>[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]とは
 
@@ -35,7 +35,9 @@ ms.locfileid: "100047923"
 - [PolyBase](../relational-databases/polybase/polybase-guide.md) を使用してデータを仮想化します。 外部テーブルを使用して、外部の SQL Server、Oracle、Teradata、MongoDB、ODBC データ ソースからデータを照会します。
 - Always On 可用性グループ テクノロジを使用して、SQL Server マスター インスタンスとすべてのデータベースの高可用性を実現します。
 
-最新リリースの新機能と既知の問題の詳細については、[リリース ノート](release-notes-big-data-cluster.md)を参照してください。
+最新リリースの新機能と既知の問題の詳細については、[リリース ノート](release-notes-big-data-cluster.md)を参照してください。   
+
+ビッグ データ クラスターの詳細については、[ビッグ データ クラスターに関する FAQ](big-data-cluster-faq.yml) に関するページを参照してください。
 
 ## <a name="scenarios"></a>シナリオ
 
@@ -119,4 +121,5 @@ Kubernetes はオープン ソースのコンテナー オーケストレータ�
 
 ## <a name="next-steps"></a>次のステップ
 
-[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] の展開の詳細については、「[[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]の概要](deploy-get-started.md)」を参照してください。
+* [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] の展開の詳細については、「[[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]の概要](deploy-get-started.md)」を参照してください。    
+* [ビッグ データ クラスターに関する FAQ](big-data-cluster-faq.yml) に関するページを確認します。  

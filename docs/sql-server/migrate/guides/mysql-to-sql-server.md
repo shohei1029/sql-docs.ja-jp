@@ -10,26 +10,27 @@ ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 454466e2f387f7bc11d80660eb0534f67aecb7a8
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 3aaeac199e74cf3b5aaae1a922613912adfebfe2
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104751582"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103746"
 ---
 # <a name="migration-guide-mysql-to-sql-server"></a>移行ガイド:MySQL から SQL Server へ
 [!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
 
 このガイドでは、MySQL データベースを SQL Server に移行する方法について説明します。 
 
-その他の移行ガイドについては、[データベースの移行](https://datamigration.microsoft.com/)に関するページを参照してください。 
+その他の移行ガイドについては、[データベースの移行](https://docs.microsoft.com/data-migration)に関するページを参照してください。 
 
 ## <a name="prerequisites"></a>前提条件 
 
 MySQL データベースを SQL Server に移行するには、以下が必要です。
 
-- 評価と変換を実行できるように、ソースの MySQL データベースに接続する。
-- [SQL Server Migration Assistant for MySQL](https://aka.ms/ssmaformysql)。
+- ソース環境がサポートされていることを確認する。 現時点では、MySQL 5.6 および 5.7 がサポートされています。 
+- [SQL Server Migration Assistant for MySQL](https://www.microsoft.com/download/details.aspx?id=54257)。
+- ソースとターゲットの両方への接続と、十分なアクセス許可。 
 
 ## <a name="pre-migration"></a>移行前 
 
@@ -37,29 +38,32 @@ MySQL データベースを SQL Server に移行するには、以下が必要�
 
 ### <a name="assess"></a>アクセス 
 
-[SSMA for MySQL](https://aka.ms/ssmaformysql) を使用して評価を作成するには、次の手順を行います。 
+SQL Server Migration Assistant (SSMA) for MySQL を使用すると、データベース オブジェクトとデータを確認し、データベースの移行を評価できます。
+
+評価を作成するには、次の手順を行います。 
 
 1. SQL Server Migration Assistant for MySQL を開きます。 
-1. **[ファイル]** を選択し、 **[新しいプロジェクト]** を選択します。 プロジェクト名、プロジェクトを保存する場所、移行ターゲットを指定します。 **[Migrate to]\(移行先\)** オプションで **[SQL Server]** を選択します。 
+1. **[ファイル]** を選択し、 **[新しいプロジェクト]** を選択します。 
+1. プロジェクト名、プロジェクトを保存する場所、移行ターゲットを指定します。 **[Migrate to]** \(移行先\) オプションで **[SQL Server]** を選択します。
 
    ![[新しいプロジェクト]](./media/mysql-to-sql-server/new-project.png)
 
-1. **[Connect to MySQL]\(MySQL への接続\)** ダイアログ ボックスで接続の詳細を指定し、MySQL サーバーに接続します。 
+1. **[Connect to MySQL]** \(MySQL への接続\) ダイアログ ボックスで接続の詳細を指定し、お使いの MySQL サーバーに接続します。
 
    ![mysql への接続](./media/mysql-to-sql-server/connect-to-mysql.png)
 
-1. **MySQL メタデータ エクスプローラー** で MySQL スキーマを右クリックし、 **[レポートの作成]** を選択します。 または、一番上の行のナビゲーション バーから **[レポートの作成]** を選択することもできます。 
+1. 次のように、移行する MySQL データベースを選択します。
+
+   ![移行する MySQL データベースを選択する](./media/mysql-to-sql-server/select-database.png)
+
+1. **MySQL メタデータ エクスプローラー** で MySQL データベースを右クリックし、 **[レポートの作成]** を選択します。 または、一番上の行のナビゲーション バーから **[レポートの作成]** を選択することもできます。
 
    ![レポートの作成](./media/mysql-to-sql-server/create-report.png)
 
-1. 変換の統計情報、エラー、警告を含む HTML レポートを確認します。 このレポートを分析して、変換の問題とその解決策について把握します。 
+1. HTML レポートを確認し、変換の統計情報とエラーまたは警告を把握します。 また、Excel でレポートを開き、MySQL オブジェクトのインベントリとスキーマ変換の実行に必要な作業量を確認することもできます。 レポートの既定の場所は、SSMAProjects 内のレポート フォルダーです。 
 
-   このレポートには、最初の画面で選択した SSMA プロジェクトのフォルダーからもアクセスできます。 上記の例では、report.xml ファイルを次の場所から見つけます。
-
-   `drive:\Users\<username>\Documents\SSMAProjects\MySQLMigration\report\report_2016_11_12T02_47_55\`
- 
-   これを Excel で開き、MySQL オブジェクトのインベントリとスキーマ変換の実行に必要な作業を把握します。
-
+   例: `drive:\Users\<username>\Documents\SSMAProjects\MySQLMigration\report\report_2016_11_12T02_47_55\` 
+   
    ![変換レポート](./media/mysql-to-sql-server/conversion-report.png)
 
 ### <a name="validate-type-mappings"></a>型マッピングの検証
@@ -68,7 +72,7 @@ MySQL データベースを SQL Server に移行するには、以下が必要�
 
 1. メニューから **[ツール]** を選択します。 
 1. **[プロジェクトの設定]** を選択します。 
-1. **[Type mappings]\(型のマッピング\)** タブを選択します。 
+1. **[Type mappings]** \(型マッピング\) タブを選択します。
 
    ![型マッピング](./media/mysql-to-sql-server/type-mappings.png)
 
@@ -86,26 +90,28 @@ SSMA の変換設定の詳細については、[プロジェクトの設定](../
 スキーマを変換するには、次の手順を行います。
 
 1. (省略可能) 動的またはアドホックのクエリを変換するには、ノードを右クリックし、 **[ステートメントの追加]** を選択します。 
-1. 一番上の行のナビゲーション バーで **[SQL Server への接続]** を選択し、SQL Server の詳細を指定します。 既存のデータベースへの接続を選択することも、新しい名前を指定することもできます。後者の場合、データベースはターゲット サーバー上に作成されます。
+1. 一番上の行のナビゲーション バーから **[SQL Server への接続]** を選択します。 
+     1. お使いの SQL Server インスタンス用に接続詳細を入力します。 
+     1. ドロップダウンから自分のターゲット データベースを選択するか、新しい名前を指定します。これにより、データベースはターゲット サーバー上に作成されます。 
+     1. 認証の詳細を指定します。 
+     1. **[接続]** を選択します。
 
    ![SQL に接続する](./media/mysql-to-sql-server/connect-to-sql-server.png)
 
-1. **MySQL メタデータ エクスプローラー** で MySQL スキーマを右クリックし、 **[スキーマの変換]** を選択します。 または、一番上の行のナビゲーション バーから **[スキーマの変換]** を選択することもできます。 
+1. **MySQL メタデータ エクスプローラー** で MySQL データベースを右クリックし、 **[スキーマの変換]** を選択します。 または、一番上の行のナビゲーション バーから **[スキーマの変換]** を選択することもできます。
 
    ![スキーマの変換](./media/mysql-to-sql-server/convert-schema.png)
 
-1. スキーマの構造を比較および確認して、潜在的な問題を特定します。 
-
-   変換されたオブジェクトを元のオブジェクトと比較する: 
+1. 変換が完了したら、次のように、変換されたオブジェクトと元のオブジェクトを比較および確認して、潜在的な問題を特定し、推奨事項に基づいてそれらを対処します。
 
    ![オブジェクトの比較と確認](./media/mysql-to-sql-server/table-comparison.png)
 
-   変換されたビューと元のビューを比較する: 
+   次のように、変換された Transact-SQL テキストを元のコードと比較し、推奨事項を確認します。
 
    ![変換されたコードの比較と確認](./media/mysql-to-sql-server/procedure-comparison.png)
    
-   
-   **[ファイル]** メニューから **[プロジェクトの保存]** を選択します。 これにより、スキーマを SQL Server に発行する前に、ソースとターゲットのスキーマをオフラインで評価し、修復を実行する機会が得られます。
+1. [出力] ペインの **[結果の確認]** を選択し、 **[エラー一覧]** ペインでエラーを確認します。 
+1. オフライン スキーマ修復の演習のために、プロジェクトをローカルに保存します。 **[ファイル]** メニューから **[プロジェクトの保存]** を選択します。 これにより、スキーマを SQL Server に発行する前に、ソースとターゲットのスキーマをオフラインで評価し、修復を実行する機会が得られます。
 
 詳細については、「[MySQL データベースの変換](../../../ssma/mysql/converting-mysql-databases-mysqltosql.md)」を参照してください。
 
@@ -130,25 +136,25 @@ SSMA の変換設定の詳細については、[プロジェクトの設定](../
 > [!IMPORTANT]  
 > 使用されているエンジンがサーバー側のデータ移行エンジンである場合、データを移行する前に、SSMA を実行しているコンピューターに SSMA for MySQL Extension Pack と MySQL プロバイダーをインストールする必要があります。 SQL Server エージェント サービスも実行されている必要があります。 拡張機能パックをインストールする方法の詳細については、「[SQL Server での SSMA コンポーネントのインストール (MySQL から SQL)](../../../ssma/mysql/installing-ssma-components-on-sql-server-mysqltosql.md)」を参照してください  
 
-スキーマを発行し、データを移行するには、次の手順に従います。 
+自分のスキーマを発行し、データを移行するには、次の手順を行います。 
 
-1. **SQL Server メタデータ エクスプローラー** でデータベースを右クリックし、 **[データベースとの同期]** を選択します。  この操作により、MySQL スキーマが SQL Server インスタンスに発行されます。
+1. スキーマを発行する: **SQL Server メタデータ エクスプローラー** でデータベースを右クリックし、 **[データベースとの同期]** を選択します。  この操作により、MySQL データベースが SQL Server インスタンスに発行されます。
 
    ![データベースと同期する](./media/mysql-to-sql-server/synchronize-database.png)
 
-   データベースとの同期を確認する:
+   自分のソース プロジェクトと自分のターゲット間のマッピングを確認します。
 
    ![データベースと同期する - 確認](./media/mysql-to-sql-server/synchronize-database-review.png)
 
-1. **MySQL メタデータ エクスプローラー** で MySQL スキーマを右クリックし、 **[データの移行]** を選択します。  または、一番上の行のナビゲーション バーから **[データの移行]** を選択することもできます。 
+1. データを移行する: **MySQL メタデータ エクスプローラー** で、移行するデータベースまたはオブジェクトを右クリックし、 **[データの移行]** を選択します。 または、一番上の行のナビゲーション バーから **[データの移行]** を選択することもできます。 データベース全体のデータを移行するには、データベース名の横にあるチェック ボックスをオンにします。 個々のテーブルからデータを移行するには、データベースを展開し、[テーブル] を展開して、テーブルの横にあるチェック ボックスをオンにします。 個々のテーブルのデータを除外するには、次のチェック ボックスをオフにします。
 
    ![データの移行](./media/mysql-to-sql-server/migrate-data.png)
 
-1. 移行が完了したら、**データ移行レポート** を表示します。 
+1. 移行が完了したら、**データ移行** レポートを表示します。 
 
    ![データ移行レポート](./media/mysql-to-sql-server/migration-report.png)
 
-1. SQL Server Management Studio (SSMS) を使用して SQL Server インスタンスのデータとスキーマを確認し、移行を検証します。
+1. [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) を使用し、お使いの SQL Server インスタンスに接続し、データとスキーマを確認して移行を検証します。 
 
    ![SSMA で検証する](./media/mysql-to-sql-server/validate-in-ssms.png)
 
@@ -179,14 +185,14 @@ SSMA の変換設定の詳細については、[プロジェクトの設定](../
 
 移行後フェーズは、データの精度の問題を調整するため、完全性を確認するため、およびワークロードのパフォーマンスの問題に対処するために非常に重要です。
 
-> [!NOTE] 
-> これらの問題と、それらを軽減するための具体的な手順に関する追加の詳細については、「[移行後の検証および最適化ガイド](https://docs.microsoft.com/sql/relational-databases/post-migration-validation-and-optimization-guide)」を参照してください。
+> [!Note]
+> これらの問題と、それらを軽減するための具体的な手順に関する追加の詳細については、「[移行後の検証および最適化ガイド](../../../relational-databases/post-migration-validation-and-optimization-guide.md)」を参照してください。
 
 ## <a name="migration-assets"></a>移行資産 
 
 この移行シナリオを完了するための追加のサポートについては、次のリソースを参照してください。これらは、実際の移行プロジェクトの取り組みをサポートするために開発されました。
 
-| タイトルとリンク                    | 説明            |
+| タイトルとリンク                    | Description            |
 | ----------------------------- | ---------------------- |
 | [データ ワークロード評価モデルとツール](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool) | このツールを使用すると、特定のワークロードに対して、推奨される "最適な" ターゲット プラットフォーム、クラウドの準備状況、アプリケーションとデータベースの修復レベルがわかります。 シンプルなワンクリックの計算とレポート生成機能があり、自動化された均一なターゲット プラットフォームの決定プロセスが用意されているので、大規模な資産評価の促進に非常に役立ちます。                |
 

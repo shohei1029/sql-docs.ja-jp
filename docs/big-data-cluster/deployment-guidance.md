@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d97c5e9b8c508387298cf00a8fbbe96ded1a2eea
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9ca8eff773bff7900a1228665d65d911b52d5a8f
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100047152"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551484"
 ---
 # <a name="how-to-deploy-big-data-clusters-2019-on-kubernetes"></a>Kubernetes 上に [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]を展開する方法
 
@@ -436,4 +436,5 @@ Sql: ready                                                                      
 
 - [ビッグ データ クラスターの展開設定を構成する](deployment-custom-configuration.md)
 - [SQL Server ビッグ データ クラスターのオフライン展開を実行する](deploy-offline.md)
-- [ワークショップ: Microsoft [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] アーキテクチャ](https://github.com/Microsoft/sqlworkshops/tree/master/sqlserver2019bigdataclusters)
+- [ワークショップ: Microsoft [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] アーキテクチャ](https://github.com/microsoft/sqlworkshops-bdc)
+- [ビッグ データ クラスターに関する FAQ](big-data-cluster-faq.yml)  

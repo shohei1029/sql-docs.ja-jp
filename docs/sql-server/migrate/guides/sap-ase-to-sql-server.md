@@ -10,19 +10,19 @@ ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: a549b0e28da092bc1320f621c29307772fc5d69b
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: 89a33b91af02393fef62189d076a17eea46ffa29
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104611034"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103779"
 ---
 # <a name="migration-guide-sap-ase-to-sql-server"></a>移行ガイド: SAP ASE から SQL Server
 [!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
 
 このガイドでは、SQL Server Migration Assistant for SAP ASE を使用して、SAP ASE データベースを SQL Server に移行する方法について説明します。
 
-その他のシナリオについては、[データベース移行ガイド](https://datamigration.microsoft.com/)を参照してください。
+その他の移行ガイドについては、[データベースの移行](https://docs.microsoft.com/data-migration)に関するページを参照してください。 
 
 ## <a name="prerequisites"></a>前提条件 
 
@@ -30,6 +30,7 @@ SAP SE データベースを SQL Server に移行するには、以下が必要�
 
 - ソース環境がサポートされていることを確認する。 
 - [SQL Server Migration Assistant for SAP Adaptive Server Enterprise (以前の SAP Sybase ASE)](https://www.microsoft.com/download/details.aspx?id=54256). 
+- ソースとターゲットの両方への接続と、十分なアクセス許可。 
 
 ## <a name="pre-migration"></a>移行前
 
@@ -37,18 +38,18 @@ SAP SE データベースを SQL Server に移行するには、以下が必要�
 
 ### <a name="assess"></a>アクセス
 
-[SQL Server Migration Assistant (SSMA) for SAP Adaptive Server Enterprise (以前の SAP Sybase ASE)](https://www.microsoft.com/download/details.aspx?id=54256) を使用して、データベース オブジェクトとデータを確認し、データベースの移行の評価を行った上で、Sybase データベース オブジェクトを SQL Server に移行した後、データを SQL Server に移行します。 詳細については、「[SQL Server Migration Assistant for Sybase (SybaseToSQL)](../../../ssma/sybase/sql-server-migration-assistant-for-sybase-sybasetosql.md)」を参照してください。
+SQL Server Migration Assistant (SSMA) for SAP ASE を使用して、データベース オブジェクトとデータを確認し、データベースの移行の評価を行った上で、Sybase データベース オブジェクトを SQL Server に移行した後、データを SQL Server に移行します。 詳細については、「[SQL Server Migration Assistant for Sybase (SybaseToSQL)](../../../ssma/sybase/sql-server-migration-assistant-for-sybase-sybasetosql.md)」を参照してください。
 
 評価を作成するには、次の手順を行います。 
 
-1. **SSMA for Sybase** を開きます。 
+1. [SQL Server Migration Assistant (SSMA) for SAP ASE](https://www.microsoft.com/download/details.aspx?id=54256) を開きます。 
 1. **[ファイル]** を選択し、 **[新しいプロジェクト]** を選択します。 
 1. プロジェクト名とプロジェクトを保存する場所を指定し、ドロップダウンから移行ターゲットとして SQL Server を選択します。 **[OK]** を選択します。
 1. **[Sybase への接続]** ダイアログ ボックスで、SAP 接続の詳細の値を入力します。 
 1. 移行する SAP データベースを右クリックし、 **[レポートの作成]** を選択します。 これにより、HTML レポートが生成されます。
 1. HTML レポートを確認し、変換の統計情報とエラーまたは警告を把握します。 また、Excel でレポートを開き、SAP ASE オブジェクトのインベントリとスキーマ変換の実行に必要な作業を確認することもできます。 レポートの既定の場所は、SSMAProjects 内のレポート フォルダーです。
 
-   (例: `drive:\<username>\Documents\SSMAProjects\MyDB2Migration\report\report_<date>`)。 
+   (例: `drive:\<username>\Documents\SSMAProjects\MySAPMigration\report\report_<date>`)。 
 
 
 ### <a name="validate-type-mappings"></a>型マッピングの検証
@@ -62,7 +63,7 @@ SAP SE データベースを SQL Server に移行するには、以下が必要�
 
 1. (省略可能) 動的またはアドホックのクエリを変換するには、ノードを右クリックし、 **[ステートメントの追加]** を選択します。 
 1. 一番上の行のナビゲーション バーで **[SQL Server への接続]** を選択し、SQL Server の詳細を指定します。 既存のデータベースへの接続を選択することも、新しい名前を指定することもできます。後者の場合、データベースはターゲット サーバー上に作成されます。
-1. **Sybase メタデータ エクスプローラー** で SAP ASE スキーマを右クリックし、 **[スキーマの変換]** を選択します。 または、一番上の行のナビゲーション バーから **[スキーマの変換]** を選択することもできます。 
+1. **SAP ASE メタデータ エクスプローラー** で、移行するデータベースまたはオブジェクトを右クリックし、 **[データの移行]** を選択します。 または、一番上の行のナビゲーション バーから **[データの移行]** を選択することもできます。 データベース全体のデータを移行するには、データベース名の横にあるチェック ボックスをオンにします。 個々のテーブルからデータを移行するには、データベースを展開し、[テーブル] を展開して、テーブルの横にあるチェック ボックスをオンにします。 個々のテーブルのデータを除外するには、次のチェック ボックスをオフにします。 
 1. スキーマの構造を比較および確認して、潜在的な問題を特定します。 
 
    スキーマの変換後、オフライン スキーマ修復の演習用にこのプロジェクトをローカルに保存できます。 **[ファイル]** メニューから **[プロジェクトの保存]** を選択します。 これにより、スキーマを SQL Server に発行する前に、ソースとターゲットのスキーマをオフラインで評価し、修復を実行する機会が得られます。
@@ -70,16 +71,16 @@ SAP SE データベースを SQL Server に移行するには、以下が必要�
 詳細については、[スキーマの変換](../../../ssma/sybase/converting-sybase-ase-database-objects-sybasetosql.md)に関する記事を参照してください
 
 
-## <a name="migrate"></a>移行 
+## <a name="migrate"></a>Migrate 
 
 必要な前提条件を満たし、**移行前** 段階に関連するタスクを完了すると、スキーマとデータの移行を実行する準備が整います。
 
-スキーマを発行し、データを移行するには、次の手順に従います。 
+自分のスキーマを発行し、データを移行するには、次の手順を行います。 
 
-1. **SQL Server メタデータ エクスプローラー** でデータベースを右クリックし、 **[データベースとの同期]** を選択します。  この操作により、SAP ASE スキーマが SQL Server インスタンスに発行されます。
-1. **SAP ASE メタデータ エクスプローラー** で SAP ASE スキーマを右クリックし、 **[データの移行]** を選択します。  または、一番上の行のナビゲーション バーから **[データの移行]** を選択することもできます。  
-1. 移行が完了したら、**データ移行レポート** を表示します。 
-1. SQL Server Management Studio (SSMS) を使用して SQL Server インスタンスのデータとスキーマを確認し、移行を検証します。
+1. スキーマを発行する: **SQL Server メタデータ エクスプローラー** でデータベースを右クリックし、 **[データベースとの同期]** を選択します。  この操作により、SAP ASE スキーマが SQL Server インスタンスに発行されます。
+1. データを移行する: **SAP ASE メタデータ エクスプローラー** で、移行するデータベースまたはオブジェクトを右クリックし、 **[データの移行]** を選択します。 または、一番上の行のナビゲーション バーから **[データの移行]** を選択することもできます。 データベース全体のデータを移行するには、データベース名の横にあるチェック ボックスをオンにします。 個々のテーブルからデータを移行するには、データベースを展開し、[テーブル] を展開して、テーブルの横にあるチェック ボックスをオンにします。 個々のテーブルのデータを除外するには、次のチェック ボックスをオフにします。
+1. 移行が完了したら、**データ移行** レポートを表示します。 
+1. [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) を使用してお使いの SQL Server インスタンスに接続し、データとスキーマを確認して移行を検証します。 
 
 
 ## <a name="post-migration"></a>移行後 
@@ -106,8 +107,8 @@ SAP SE データベースを SQL Server に移行するには、以下が必要�
 
 移行後フェーズは、データの精度の問題を調整するため、完全性を確認するため、およびワークロードのパフォーマンスの問題に対処するために非常に重要です。
 
-> [!NOTE]
-> これらの問題と、それらを軽減するための具体的な手順に関する追加の詳細については、「[移行後の検証および最適化ガイド](/sql/relational-databases/post-migration-validation-and-optimization-guide)」を参照してください。
+> [!Note]
+> これらの問題と、それらを軽減するための具体的な手順に関する追加の詳細については、「[移行後の検証および最適化ガイド](../../../relational-databases/post-migration-validation-and-optimization-guide.md)」を参照してください。
 
 
 ## <a name="migration-assets"></a>移行資産
@@ -121,7 +122,7 @@ SAP SE データベースを SQL Server に移行するには、以下が必要�
 > [!NOTE]
 > これらのリソースは、Azure Data Group エンジニアリング チームがスポンサーである Data Migration Jumpstart Program (DM Jumpstart) の一部として開発されました。 DM Jumpstart の中核となるのは、複雑な最新化のブロックを解除して加速し、データ プラットフォームを Microsoft の Azure Data プラットフォームに移行する機会を獲得することです。 組織が DM Jumpstart への参加に関心があると思われる場合は、アカウント チームに連絡し、申請を提出するよう依頼してください。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - Azure データベース移行ガイドとその内容の概要については、ビデオ「[データ移行ガイドの使い方](https://azure.microsoft.com/resources/videos/how-to-use-the-azure-database-migration-guide/)」を参照してください。
 

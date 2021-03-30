@@ -24,12 +24,12 @@ ms.assetid: 8b8b3b57-fd46-44de-9a4e-e3a8e3999c1e
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: 287e3c0abfc083607b96598da5e83cd5ab0b58dd
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: 0eab287319fdfa263cbf5cba44546ab3b792bdad
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/19/2021
-ms.locfileid: "104611172"
+ms.locfileid: "104673902"
 ---
 # <a name="service-broker"></a>Service Broker
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -86,7 +86,7 @@ FROM ExpenseQueue;
   キューからのすべてのメッセージを処理したら、[END CONVERSATION](../../t-sql/statements/end-conversation-transact-sql.md) Transact-SQL ステートメントを使用してメッセージ交換を終了する必要があります。
 
 ## <a name="where-is-the-documentation-for-service-broker"></a>Service Broker のドキュメントの格納場所  
- [!INCLUDE[ssSB](../../includes/sssb-md.md)] のリファレンス ドキュメントは [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のドキュメントに含まれています。 リファレンス ドキュメントには次のセクションがあります。  
+ [!INCLUDE[ssSB](../../includes/sssb-md.md)] のリファレンス ドキュメントは [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のドキュメントに含まれています。 リファレンス ドキュメントには次のセクションがあります。  
   
 -   CREATE、ALTER、および DROP ステートメントの[データ定義言語 &#40;DDL&#41; ステートメント &#40;Transact-SQL&#41;](../../t-sql/statements/statements.md)  
   
@@ -98,7 +98,7 @@ FROM ExpenseQueue;
   
 -   [ssbdiagnose ユーティリティ &#40;Service Broker&#41;](../../tools/ssbdiagnose/ssbdiagnose-utility-service-broker.md)  
   
- [の概念、開発作業、および管理作業については、](/previous-versions/sql/sql-server-2008-r2/bb522893(v=sql.105)) 以前に公開されたドキュメント [!INCLUDE[ssSB](../../includes/sssb-md.md)] を参照してください。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] は [!INCLUDE[ssSB](../../includes/sssb-md.md)] においてわずかな変更しか加えられていないため、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]用のドキュメントは作成されていません。  
+ [の概念、開発作業、および管理作業については、](/previous-versions/sql/sql-server-2008-r2/bb522893(v=sql.105)) 以前に公開されたドキュメント [!INCLUDE[ssSB](../../includes/sssb-md.md)] を参照してください。 このドキュメントは、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の最新バージョンの [!INCLUDE[ssSB](../../includes/sssb-md.md)] ではわずかにしか変更されていないため、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] 用のドキュメントは作成されていません。  
   
 ## <a name="whats-new-in-service-broker"></a>Service Broker の新機能  
 

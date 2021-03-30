@@ -32,12 +32,12 @@ ms.assetid: c724d9cc-7b1f-4c71-bdf5-08bc52b33afc
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: eafd796b87af4165427eff70bfd05fbc8214a221
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 594cf2cf8893891deeca89f1f56c76ee1b946caf
+ms.sourcegitcommit: 2f971c85d87623c0aed1612406130d840e7bdb2e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104749992"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105744528"
 ---
 # <a name="current_timestamp-transact-sql"></a>CURRENT_TIMESTAMP (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "104749992"
 この関数は、現在のデータベース システム タイムスタンプを **datetime** 値として、データベースのタイム ゾーン オフセットなしで返します。 `CURRENT_TIMESTAMP` は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスが実行されているコンピューターのオペレーティング システムからこの値を派生します。
   
 > [!NOTE]  
->  `SYSDATETIME` と `SYSUTCDATE` の場合、1 秒未満の秒の有効桁数で測定され、`GETDATE` や `GETUTCDATE` より精度が高くなります。 `SYSDATETIMEOFFSET` 関数には、システムのタイム ゾーン オフセットが含まれます。 日付と時刻のあらゆる型の変数に `SYSDATETIME`、`SYSUTCDATE`、`SYSDATETIMEOFFSET` を割り当てることができます。  
+>  `SYSDATETIME` と `SYSUTCDATE` の場合、1 秒未満の秒の有効桁数で測定され、`GETDATE` や `GETUTCDATE` より精度が高くなります。 `SYSDATETIMEOFFSET` 関数には、システムのタイム ゾーン オフセットが含まれます。 日付と時刻のあらゆる型の変数に `SYSDATETIME`、`SYSUTCDATETIME`、`SYSDATETIMEOFFSET` を割り当てることができます。  
   
 この関数には、等価な ANSI SQL [GETDATE](../../t-sql/functions/getdate-transact-sql.md)です。
   
