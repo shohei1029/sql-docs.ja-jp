@@ -15,12 +15,12 @@ ms.assetid: d502548d-ece6-4a42-9ded-2157d33e3d21
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: e382a0936293dedc55c1804251fbb95550936311
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: b09cb3e540dd66b524829f4e0374ef22b4532dc4
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104611160"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633133"
 ---
 # <a name="wsfc-cluster-service-is-offline"></a>WSFC クラスター サービスはオフライン
 
@@ -28,12 +28,10 @@ ms.locfileid: "104611160"
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|WSFC クラスターの状態|  
-|**問題点**|WSFC クラスター サービスはオフラインです。|  
-|**カテゴリ**|**重大**|  
-|**ファセット**|SQL Server のインスタンス|  
+- **ポリシー名**: WSFC クラスターの状態
+- **問題**: WSFC クラスター サービスがオフラインです。
+- **カテゴリ**: **クリティカル**
+- **ファセット**: SQL Server のインスタンス  
   
 ## <a name="description"></a>説明  
  このポリシーは、Windows Server フェールオーバー クラスター (WSFC) の状態をチェックします。 WSFC クラスターがオフラインであるか、強制されたクォーラムの状態である場合、ポリシーは異常な状態で、アラートが発生します。 このクラスター内でホストされているすべての可用性グループはオフラインであるか、またはディザスター リカバリー アクションが必要です。  

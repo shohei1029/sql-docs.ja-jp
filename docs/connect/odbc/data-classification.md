@@ -1,6 +1,6 @@
 ---
-description: Microsoft ODBC Driver for SQL Server でのデータ分類の使用
-title: Microsoft ODBC Driver for SQL Server でのデータ分類の使用 | Microsoft Docs
+description: ODBC ドライバーでデータ分類を使用する方法、およびデータ保護ポリシーを ODBC アプリケーションに組み込む方法について説明します。
+title: データ分類 ODBC ドライバーの使用
 ms.custom: ''
 ms.date: 07/26/2018
 ms.prod: sql
@@ -14,17 +14,19 @@ ms.assetid: f78b81ed-5214-43ec-a600-9bfe51c5745a
 author: v-makouz
 ms.author: v-makouz
 manager: kenvh
-ms.openlocfilehash: 3b97e6407f541657acee2b15097d3fbb877854a9
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: f940b688e015a9e9e32ac5b8e7953c9eed098052
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837416"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633147"
 ---
 # <a name="data-classification"></a>データ分類
+
 [!INCLUDE[Driver_ODBC_Download](../../includes/driver_odbc_download.md)]
 
 ## <a name="overview"></a>概要
+
 機密データを管理するために、SQL Server と Azure SQL Server では、クライアント アプリケーションがさまざまな種類の機密データ (健康、財務など) をデータ保護ポリシーに沿って処理できるようにする、機密度メタデータをデータベース列に提供する機能が導入されました。
 
 分類を列に割り当てる方法の詳細については、「[SQL データの検出と分類](../../relational-databases/security/sql-data-discovery-and-classification.md)」を参照してください。
@@ -32,9 +34,10 @@ ms.locfileid: "101837416"
 Microsoft ODBC Driver 17.2 では、このメタデータを、SQL_CA_SS_DATA_CLASSIFICATION フィールド識別子を使用して SQLGetDescField を介して取得できます。
 
 ## <a name="format"></a>Format
+
 SQLGetDescField の構文は次のとおりです。
 
-```  
+```cpp
 SQLRETURN SQLGetDescField(  
      SQLHDESC        DescriptorHandle,  
      SQLSMALLINT     RecNumber,  
@@ -43,6 +46,7 @@ SQLRETURN SQLGetDescField(
      SQLINTEGER      BufferLength,  
      SQLINTEGER *    StringLengthPtr);  
 ```
+
 *DescriptorHandle*  
  [入力] IRD (実装行記述子) ハンドル。 SQL_ATTR_IMP_ROW_DESC ステートメント属性を使用して SQLGetStmtAttr を呼び出すことによって取得できます
   
@@ -59,10 +63,10 @@ SQLRETURN SQLGetDescField(
  [入力] 出力バッファーの長さ (バイト単位)
 
  *StringLengthPtr* [出力] *ValuePtr* で返すことができるバイト数の合計を返すバッファーへのポインター。
- 
+
 > [!NOTE]
 > バッファーのサイズが不明な場合、*ValuePtr* を NULL として指定して SQLGetDescField を呼び出し、*StringLengthPtr* の値を調べることによって判断できます。
- 
+
 データ分類情報を使用できない場合、"*記述子フィールドが正しくない*" ことを示すエラーが返されます。
 
 SQLGetDescField の呼び出しが成功すると、*ValuePtr* によってポイントされたバッファーに次のデータが含まれます。
@@ -88,11 +92,10 @@ s - *`sensitivitylabels`* 配列内のインデックス。ラベルが付けら
 
 t - *`informationtypes`* 配列内のインデックス。ラベルが付けられていない場合は `FF FF`
 
-
 <br><br>
 データの形式は、次の擬似構造体として表現できます。
 
-```
+```cpp
 struct IDnamePair {
  BYTE nameLen;
  USHORT name[nameLen];
@@ -116,11 +119,11 @@ struct {
 } columnClassification[nColumns];
 ```
 
-
 ## <a name="code-sample"></a>コード サンプル
+
 データ分類メタデータの読み取り方法を示すテスト アプリケーション。 Windows では、`cl /MD dataclassification.c /I (directory of msodbcsql.h) /link odbc32.lib` を使用してコンパイルし、接続文字列および (分類された列を返す) SQL クエリをパラメーターとして指定して実行できます。
 
-```
+```cpp
 #ifdef _WIN32
 #include <windows.h>
 #endif
@@ -245,22 +248,23 @@ int main(int argc, char **argv)
 ```
 
 ## <a name="supported-version"></a><a name="bkmk-version"></a>サポートされているバージョン
-Microsoft ODBC Driver 17.2 では、`FieldIdentifier` が `SQL_CA_SS_DATA_CLASSIFICATION` (1237) に設定されている場合、`SQLGetDescField` を使用してデータの分類情報を取得できます。 
+
+Microsoft ODBC Driver 17.2 では、`FieldIdentifier` が `SQL_CA_SS_DATA_CLASSIFICATION` (1237) に設定されている場合、`SQLGetDescField` を使用してデータの分類情報を取得できます。
 
 Microsoft ODBC Driver 17.4.1.1 からは、サーバーでサポートされているデータ分類のバージョンを、`SQL_CA_SS_DATA_CLASSIFICATION_VERSION` (1238) フィールド識別子を使用して `SQLGetDescField` を介して取得できるようになりました。 17.4.1.1 では、サポートされているデータ分類のバージョンは "2" に設定されています。
 
- 
+17.4.2.1 以降、データ分類の既定バージョンは、"1" に設定され、ドライバーから SQL Server にサポート対象として報告されるバージョンとなります。 新しい接続属性 `SQL_COPT_SS_DATACLASSIFICATION_VERSION` (1400) を使用すると、アプリケーションで、サポートされているデータ分類のバージョンを "1" からサポート対象の最大バージョンにまで変更できます。
 
-17.4.2.1 から、データ分類の既定バージョンが導入されました。これは "1" に設定され、バージョン ドライバーが SQL Server に対してサポート対象として報告します。 新しい接続属性 `SQL_COPT_SS_DATACLASSIFICATION_VERSION` (1400) を使用すると、アプリケーションで、サポートされているデータ分類のバージョンを "1" からサポート対象の最大バージョンにまで変更できます。  
-
-例: 
+例:
 
 バージョンを設定するには、この呼び出しを、SQLConnect または SQLDriverConnect の呼び出しの直前に行う必要があります。
-```
+
+```cpp
 ret = SQLSetConnectAttr(dbc, SQL_COPT_SS_DATACLASSIFICATION_VERSION, (SQLPOINTER)2, SQL_IS_INTEGER);
 ```
 
-現在サポートされているデータ分類のバージョンの値は、SQLGetConnectAttr 呼び出しを使用して取得できます。 
-```
+現在サポートされているデータ分類のバージョンの値は、SQLGetConnectAttr 呼び出しを使用して取得できます。
+
+```cpp
 ret = SQLGetConnectAttr(dbc, SQL_COPT_SS_DATACLASSIFICATION_VERSION, (SQLPOINTER)&dataClassVersion, SQL_IS_INTEGER, 0);
 ```

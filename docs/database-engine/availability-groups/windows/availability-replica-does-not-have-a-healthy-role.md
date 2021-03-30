@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: ebb2c9f4-2097-4688-b4fb-8f0571047317
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 1f74f004d65f4fb5191ab562142204898fc3453d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 099e87b069377555de07b591ff889cc1ca4e11b6
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100343848"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633097"
 ---
 # <a name="availability-replica-does-not-have-a-healthy-role-for-an-always-on-availability-group"></a>Always On 可用性グループの可用性レプリカに正常なロールがない
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|可用性レプリカのロールの状態|  
-|**問題点**|可用性レプリカに正常なロールがありません。|  
-|**カテゴリ**|**重大**|  
-|**ファセット**|可用性レプリカ|  
+- **ポリシー名**: 可用性レプリカのロールの状態
+- **問題**: 可用性レプリカに正常なロールがありません。
+- **カテゴリ**: **クリティカル**
+- **ファセット**: 可用性レプリカ  
   
 ## <a name="description"></a>説明  
  このポリシーは、可用性レプリカのロールの状態をチェックします。 可用性レプリカのロールがプライマリでもセカンダリでもない場合、ポリシーは異常な状態です。 それ以外の場合、ポリシーは正常な状態です。  

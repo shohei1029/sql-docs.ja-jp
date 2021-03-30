@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: 3db6a569-e942-4321-a0dd-c4ab002087c8
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 8e4d4441faac8600bcf8fd0d2d8aed333fbf8f6b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 6acc37f3976ed9a728aae899eb6178dc29d4de54
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100352617"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633369"
 ---
 # <a name="some-availability-replicas-are-not-synchronizing-data"></a>一部の可用性レプリカでデータが同期されない
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|可用性レプリカのデータ同期状態|  
-|**問題点**|一部の可用性レプリカでデータが同期されません。|  
-|**カテゴリ**|**警告**|  
-|**ファセット**|可用性グループ|  
+- **ポリシー名**: 可用性レプリカのデータ同期状態
+- **問題**: 一部の可用性レプリカでデータが同期されません。
+- **カテゴリ**: **警告**
+- **ファセット**: 可用性グループ  
   
 ## <a name="description"></a>説明  
  このポリシーは、可用性グループのすべての可用性レプリカのデータ同期状態をロール アップし、可用性レプリカの同期が稼働しているかどうかを確認します。 可用性レプリカのデータ同期状態が NOT SYNCHRONIZING の場合、ポリシーは通常とは異なる状態です。  

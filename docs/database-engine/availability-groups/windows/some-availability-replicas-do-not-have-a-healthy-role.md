@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: 7ec5b337-7201-4a66-a541-7560f8b18784
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 6d435503c6e2fa2eb39da46ef7d93ca163f9cbfc
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a0ae6fbe590ad7fd048d8be94f2af7ab1a16e368
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100352599"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633391"
 ---
 # <a name="some-availability-replicas-do-not-have-a-healthy-role"></a>いくつかの可用性レプリカが、正常なロールを持っていません
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|可用性レプリカのロールの状態|  
-|**問題点**|一部の可用性レプリカに正常なロールがありません。|  
-|**カテゴリ**|**警告**|  
-|**ファセット**|可用性グループ|  
+- **ポリシー名**: 可用性レプリカのロールの状態
+- **問題**: いくつかの可用性レプリカが、正常なロールを持っていません。
+- **カテゴリ**: **警告**
+- **ファセット**: 可用性グループ  
   
 ## <a name="description"></a>説明  
  このポリシーは、すべての可用性レプリカの接続状態をロール アップし、正常なロールに属していない可用性レプリカがないか確認します。 可用性レプリカがプライマリでもセカンダリでもない場合、ポリシーは通常とは異なる状態です。 それ以外の場合、ポリシーは正常な状態です。  

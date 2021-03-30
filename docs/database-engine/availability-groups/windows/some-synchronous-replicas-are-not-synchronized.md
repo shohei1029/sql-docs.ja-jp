@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: e58ed56e-4c30-42e6-a9fc-a8c401620e02
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 41a4535f1acbf9d871a83011e50fea2ecd700404
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b9070e88373e689cd753e1d378d55e1501715c5c
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100352589"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633342"
 ---
 # <a name="some-synchronous-replicas-are-not-synchronized"></a>いくつかの同期のレプリカが同期されていません
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|同期レプリカのデータの同期状態|  
-|**問題点**|一部の同期レプリカが同期されていません。|  
-|**カテゴリ**|**警告**|  
-|**ファセット**|可用性グループ|  
+- **ポリシー名**: 同期レプリカのデータの同期状態
+- **問題**: いくつかの同期のレプリカが同期されていません。
+- **カテゴリ**: **警告**
+- **ファセット**: 可用性グループ  
   
 ## <a name="description"></a>説明  
  このポリシーは、すべての可用性レプリカのデータ同期状態をロール アップし、期待される状態とは異なる可用性レプリカがないかどうかを確認します。 非同期レプリカが SYNCHRONIZING 状態ではない場合、および同期レプリカが SYNCHRONIZED 状態ではない場合、ポリシーは異常な状態です。 それ以外の場合、ポリシーは正常な状態です。  

@@ -1,6 +1,6 @@
 ---
-title: SqlClient ドライバーの概要 | Microsoft Docs
-description: Microsoft SqlClient Data Provider for SQL Server の概要です。
+title: SqlClient ドライバーの概要
+description: Microsoft SqlClient Data Provider for SQL Server の概要と、.NET アプリケーション用 ADO.NET プロバイダーとしてのその役割について説明します。
 ms.custom: ''
 ms.date: 06/15/2019
 ms.prod: sql
@@ -11,24 +11,24 @@ ms.assetid: 5e467fce-7237-4678-bafa-a16f32323d0c
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-kaywon
-ms.openlocfilehash: 8f08b90ef1c379e9f8c671610a5d26cbcc7af8aa
-ms.sourcegitcommit: 0c0e4ab90655dde3e34ebc08487493e621f25dda
+ms.openlocfilehash: acc9867a4a9be8b9927472b1abe913979b84e809
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442711"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633241"
 ---
 # <a name="overview-of-the-sqlclient-driver"></a>SqlClient ドライバーの概要
 
 [!INCLUDE[Driver_ADONET_Download](../../includes/driver_adonet_download.md)]
 
- Microsoft SqlClient Data Provider for SQL Server は、データベースへの接続、コマンドの実行、および結果の取得に使用される .NET Framework および .NET Core データ プロバイダーです。
+Microsoft SqlClient Data Provider for SQL Server は、.NET Framework および .NET Core データ プロバイダーです。 データベースへの接続、コマンドの実行、および結果の取得を行う場合に使用されます。
 
- このセクションの記事では、SqlClient ドライバーの概要について説明します。
+このセクションの記事では、SqlClient ドライバーの概要について説明します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-|トピック|説明|
+|[アーティクル]|説明|
 |-----------|-----------------|
 |[Microsoft.Data.SqlClient 名前空間の概要](introduction-microsoft-data-sqlclient-namespace.md)|Microsoft.Data.SqlClient 名前空間の概要ページ。|
 |[Microsoft SqlClient Data Provider for SQL Server をダウンロードする](download-microsoft-sqlclient-data-provider.md)|ADO.NET および Microsoft SqlClient Data Provider for SQL Server のダウンロード ページ。|
@@ -39,4 +39,6 @@ ms.locfileid: "96442711"
 |[追加の SqlClient ドライバー情報の検索](find-additional-sqlclient-driver-information.md)|ドライバーに関する有用な情報を含むページ。|
 
 ## <a name="next-steps"></a>次のステップ
- [SqlClient ドライバー GitHub リポジトリ](https://github.com/dotnet/SqlClient) [.NET API ブラウザー](/dotnet/api/)
+
+- [SqlClient ドライバー GitHub リポジトリ](//github.com/dotnet/SqlClient)
+- [.NET API ブラウザー](/dotnet/api/)

@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: 89f95d15-33c6-4768-bccd-9dbf8c4f49a9
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 61324c4a7afe1b1353d51ff1a32233203efa285e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 248ddc08e52362d6b0d0df90ccf407e95f580fd4
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100344621"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633374"
 ---
 # <a name="data-synchronization-state-of-some-availability-database-is-not-healthy"></a>一部の可用性データベースのデータ同期状態が正常ではない
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|可用性レプリカのデータの同期状態|  
-|**問題点**|一部の可用性データベースのデータ同期状態が正常ではありません。|  
-|**カテゴリ**|**警告**|  
-|**ファセット**|可用性レプリカ|  
+- **ポリシー名**: 可用性レプリカのデータの同期状態
+- **問題**: 一部の可用性データベースのデータ同期状態が正常ではありません。
+- **カテゴリ**: **警告**
+- **ファセット**: 可用性レプリカ  
   
 ## <a name="description"></a>説明  
  このポリシーは、可用性データベース ("データベース レプリカ" とも呼ばれます) のデータの同期状態をチェックします。 データの同期状態が NOT SYNCHRONIZING である (同期コミット データベース レプリカでは、状態が SYNCHRONIZED 以外である) 場合、ポリシーは異常な状態です。   

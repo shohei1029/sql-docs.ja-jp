@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: aea808be-6f0f-40c2-9aa2-a2a435ec6443
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 6826e3db8016d7c1ad5ed2d28d273cfc831a8c1a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 437cb9b10ff7c9eedd80d814a8e0a8fa8834409b
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100352627"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633362"
 ---
 # <a name="some-availability-replicas-are-disconnected"></a>いくつかの可用性レプリカが切断されている
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|可用性レプリカの接続状態|  
-|**問題点**|一部の可用性レプリカの接続が解除されます。|  
-|**カテゴリ**|**警告**|  
-|**ファセット**|可用性グループ|  
+- **ポリシー名**: 可用性レプリカの接続状態
+- **問題**: いくつかの可用性レプリカが切断されています。
+- **カテゴリ**: **警告**
+- **ファセット**: 可用性グループ  
   
 ## <a name="description"></a>説明  
  このポリシーは、すべての可用性レプリカの接続状態をロール アップし、DISCONENCTED 状態の可用性レプリカがないか確認します。 DISCONNECTED の可用性レプリカが存在する場合、ポリシーは異常な状態です。 それ以外の場合、ポリシーは正常な状態です。  

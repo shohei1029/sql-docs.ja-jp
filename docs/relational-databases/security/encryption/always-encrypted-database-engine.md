@@ -17,12 +17,12 @@ ms.assetid: 54757c91-615b-468f-814b-87e5376a960f
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 523cd4e58ad340dfaa8751868eccb5e593c67a74
-ms.sourcegitcommit: 5dcbe4abbe2339292961370c1d8ca3affa625f72
+ms.openlocfilehash: cfda09e184933ae537cdf3b4c6430e6d6d4b20fc
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99536381"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633152"
 ---
 # <a name="always-encrypted"></a>Always Encrypted
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -71,7 +71,7 @@ ms.locfileid: "99536381"
 ## <a name="remarks"></a>解説
 
 暗号化および復号化は、クライアント ドライバーを介して実行されます。 つまり、Always Encrypted を使用する場合、サーバー側でのみ発生する一部のアクションは動作しないことを意味します。 このようなアクションには以下のものが含まれます (ただし、これらだけではありません)。 
-- UPDATE、BULK INSERT (T-SQL)、SELECT INTO、INSERT..SELECT を使用して、1 つの列から別の列にデータをコピーすること。 
+- UPDATE、BULK INSERT (T-SQL)、SELECT INTO、INSERT..SELECT を使用して、ある列から別の列にデータをコピーすること。 
 - トリガー、テンポラル テーブル、スパース列、フルテキスト、インメモリ OLTP、および変更データ キャプチャ (CDC)。 
 
 
@@ -217,7 +217,7 @@ Always Encrypted の構成の詳細については、以下を参照してくだ
   
 |シナリオ|<code>ALTER ANY COLUMN MASTER KEY</code>|<code>ALTER ANY COLUMN ENCRYPTION KEY</code>|<code>VIEW ANY COLUMN MASTER KEY DEFINITION</code>|<code>VIEW ANY COLUMN ENCRYPTION KEY DEFINITION</code>|  
 |--------------|-----------------------------------|---------------------------------------|---------------------------------------------|-------------------------------------------------|  
-|キー管理 (データベース内のキーの作成/変更/確認)|X|X|X|X|  
+|キー管理 (データベース内のキーの作成/変更/確認)|X|x|x|X|  
 |暗号化された列のクエリ|||X|X|  
   
  **重要な注意点:**  

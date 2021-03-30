@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 451181b8-11e6-4d01-b547-9ac5aada8238
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: bfb200c1b29f15489f8500ccb02d5bf066bf6937
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: f1f9b735e55d90cac60332adfe42756216915b88
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575224"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633192"
 ---
 # <a name="download-microsoft-jdbc-driver-for-sql-server"></a>Microsoft SQL Server 用 JDBC Driver のダウンロード
 
@@ -23,7 +23,7 @@ Microsoft JDBC Driver for SQL Server は Type 4 JDBC Driver であり、Java Pla
 
 ## <a name="download"></a>ダウンロード
 
-最新の一般提供 (GA) バージョンはバージョン 9.2 です。 Java 8、11、15 がサポートされています。 それ以前の Java ランタイムを実行する必要がある場合、[Java と JDBC の仕様のサポート表](microsoft-jdbc-driver-for-sql-server-support-matrix.md#java-and-jdbc-specification-support)を見て、サポートされているドライバー バージョンの中で利用できるものがあるか確認してください。 Microsoft は Java 接続のサポートの向上を継続的に進めています。 そのため、最新バージョンの Microsoft JDBC ドライバーを使用することを強くおすすめします。
+最新の一般提供 (GA) バージョンはバージョン 9.2 です。 Java 8、11、15 がサポートされています。 それ以前の Java ランタイムを使用する必要がある場合は、[Java と JDBC の仕様のサポート表](microsoft-jdbc-driver-for-sql-server-support-matrix.md#java-and-jdbc-specification-support)を見て、サポートされているドライバー バージョンの中で利用できるものがあるか確認してください。 Microsoft は Java 接続のサポートの向上を継続的に進めています。 そのため、最新バージョンの Microsoft JDBC ドライバーを使用することを強くおすすめします。
 
 **[![ダウンロード](../../ssms/media/download-icon.png) Microsoft JDBC Driver 9.2 for SQL Server (zip) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2155948)**  
 **[![ダウンロード](../../ssms/media/download-icon.png) Microsoft JDBC Driver 9.2 for SQL Server (tar.gz) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2155949)**  

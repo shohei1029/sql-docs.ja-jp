@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: 10817e5e-75fa-42dd-baa2-359bea3ad051
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 39c9f6852fd1a1cc15a014b67ee693a3cb315787
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b2e5f53d4bd9b544227781d9afdda4a2d46bc4b1
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100344500"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633121"
 ---
 # <a name="secondary-database-is-not-joined"></a>セカンダリ データベースが参加していない
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|可用性データベースの参加状態|  
-|**問題点**|セカンダリ データベースが参加していません。|  
-|**カテゴリ**|**警告**|  
-|**ファセット**|可用性データベース|  
+- **ポリシー名**: 可用性データベースの参加状態
+- **問題**: セカンダリ データベースが参加していません。
+- **カテゴリ**: **警告**
+- **ファセット**: 可用性データベース  
   
 ## <a name="description"></a>説明  
  このポリシーは、セカンダリ データベース ("セカンダリ データベース レプリカ" とも呼ばれます) の参加状態をチェックします。 データセット レプリカが参加していない場合、ポリシーは通常とは異なる状態です。 それ以外の場合、ポリシーは正常な状態です。  

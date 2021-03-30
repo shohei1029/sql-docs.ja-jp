@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: 9c0d10b1-9e12-430c-83b9-ca2bd0a3afc4
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: d80170723101e1e78e70d06f91653e4592b3560d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 2165e226e8b599aed5e1ecbf95c68eda3d86278a
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100343824"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633082"
 ---
 # <a name="availability-replica-is-not-joined-to-an-always-on-availability-group"></a>可用性レプリカが Always On 可用性グループに参加していない
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|可用性レプリカの参加状態|  
-|**問題点**|可用性レプリカが参加していません。|  
-|**カテゴリ**|**警告**|  
-|**ファセット**|可用性レプリカ|  
+- **ポリシー名**: 可用性レプリカの結合状態
+- **問題**: 可用性レプリカが参加していません。
+- **カテゴリ**: **警告**
+- **ファセット**: 可用性レプリカ  
   
 ## <a name="description"></a>説明  
  このポリシーは、可用性レプリカの参加状態をチェックします。 可用性レプリカが可用性グループに追加されていても、適切に参加していない場合、ポリシーは異常な状態です。 それ以外の場合、ポリシーは正常な状態です。  

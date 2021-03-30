@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: 1a2162d3-54fb-4356-b349-effbdc15a5a4
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 371a4e1e76cfeb79eeb83f2dabd159927e044008
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 71324a6bfc03bbb75979391ac22bd0381938b54f
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100343881"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633124"
 ---
 # <a name="availability-replica-is-disconnected-within-an-always-on-availability-group"></a>Always On 可用性グループ内で可用性レプリカの参加が解除されている
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>はじめに  
   
-|||  
-|-|-|  
-|**ポリシー名**|可用性レプリカの接続状態|  
-|**問題点**|可用性レプリカの接続が解除されます。|  
-|**カテゴリ**|**重大**|  
-|**ファセット**|可用性レプリカ|  
+- **ポリシー名**: 可用性レプリカの接続状態
+- **問題**: 可用性レプリカが切断されています。
+- **カテゴリ**: **クリティカル**
+- **ファセット**: 可用性レプリカ  
   
 ## <a name="description"></a>説明  
  このポリシーは、可用性レプリカ間の接続状態を確認します。 可用性レプリカ間の接続状態が DISCONNECTED の場合、ポリシーは通常とは異なる状態です。 それ以外の場合、ポリシーは正常な状態です。  
