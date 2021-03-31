@@ -20,12 +20,12 @@ ms.assetid: bbaf1445-b8a2-4ebf-babe-17d8cf20b037
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: b84f700ab19b940d8aa742be94dc2c3ab3726507
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: debdeffa2409642c01f9abdc502a897d6ea3dac3
+ms.sourcegitcommit: 2f971c85d87623c0aed1612406130d840e7bdb2e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353047"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105744458"
 ---
 # <a name="rename-a-computer-that-hosts-a-stand-alone-instance-of-sql-server"></a>SQL Server のスタンドアロン インスタンスをホストするコンピューターの名前変更
 
@@ -39,7 +39,7 @@ ms.locfileid: "100353047"
   
  名前変更のプロセスを開始する前に、次の情報を確認します。  
   
--   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] フェールオーバー クラスターに含まれている場合、コンピューターの名前変更のプロセスは、スタンドアロン インスタンスをホストするコンピューターとは異なります。  
+-   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] フェールオーバー クラスターに含まれている場合、コンピューターの名前変更のプロセスは、スタンドアロン インスタンスをホストするコンピューターとは異なります。 詳細については、「[SQL Server のフェールオーバー クラスター インスタンスの名前変更](../../sql-server/failover-clusters/install/rename-a-sql-server-failover-cluster-instance.md)」を参照してください。
   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] レプリケーションでログ配布を使用する場合を除き、レプリケーションに関連するコンピューターの名前は変更できません。 プライマリ コンピューターが完全に存在しなくなった場合は、ログ配布のセカンダリ コンピューターの名前を変更できます。 詳細については、[ログ配布とレプリケーション &#40;SQL Server&#41;](../../database-engine/log-shipping/log-shipping-and-replication-sql-server.md) を参照してください。  
   

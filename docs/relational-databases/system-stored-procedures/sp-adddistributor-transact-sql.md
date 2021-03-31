@@ -2,7 +2,7 @@
 description: sp_adddistributor (Transact-sql)
 title: sp_adddistributor (Transact-sql) |Microsoft Docs
 ms.custom: ''
-ms.date: 06/09/2020
+ms.date: 03/29/2021
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 35415502-68d0-40f6-993c-180e50004f1e
 author: mashamsft
 ms.author: mathoma
-ms.openlocfilehash: 2e84824fec7a45fcfea24a2d97ced622b2147f34
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: a6a47480afbb16cd37bd260ac20c97d2b532165a
+ms.sourcegitcommit: 851f47e27512651f809540b77bfbd09e6ddb5362
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99182806"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937803"
 ---
 # <a name="sp_adddistributor-transact-sql"></a>sp_adddistributor (Transact-sql)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -45,8 +45,13 @@ sp_adddistributor [ @distributor= ] 'distributor'
 ## <a name="arguments"></a>引数  
 `[ @distributor = ] 'distributor'` ディストリビューションサーバーの名前を指定します。 *ディストリビューター* は **sysname**,、既定値はありません。 このパラメーターは、リモート ディストリビューターを設定する場合にのみ使用します。 このメソッドは、ディストリビューターのプロパティのエントリを msdb. に追加します。 **MSdistributor** テーブル。  
 
+<!--SQL Server 2019 on Linux-->
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
+
 > [!NOTE]
-> サーバー名はとして指定でき `<Hostname>,<PortNumber>` ます。 SQL Server が Linux または Windows でカスタムポートを使用して展開され、browser サービスが無効になっている場合は、接続のポート番号を指定する必要があります。
+> サーバー名はとして指定でき `<Hostname>,<PortNumber>` ます。 SQL Server が Linux または Windows でカスタムポートを使用して展開され、browser サービスが無効になっている場合は、接続のポート番号を指定する必要があります。 リモートディストリビューターにカスタムポート番号を使用するのは、SQL Server 2019 にのみ適用されます。
+
+::: moniker-end
 
 `[ @heartbeat_interval = ] heartbeat_interval` エージェントが進行状況メッセージをログに記録しなくてもよい最大時間を分単位で指定します。 *heartbeat_interval* は **int**,、既定値は10分です。 この間隔で実行され、実行されているレプリケーションエージェントの状態を確認する SQL Server エージェントジョブが作成されます。  
   

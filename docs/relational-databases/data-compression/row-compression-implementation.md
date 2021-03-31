@@ -1,8 +1,8 @@
 ---
-title: 行の圧縮の実装 | Microsoft Docs
+title: 「行の圧縮の実装」
 description: データに必要なストレージ空間の計画を支援するため、SQL Server データベース エンジンで行の圧縮を実装するしくみについて説明します。
 ms.custom: ''
-ms.date: 06/30/2016
+ms.date: 03/27/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -11,16 +11,15 @@ ms.topic: conceptual
 helpviewer_keywords:
 - compression [SQL Server], row
 - row compression [Database Engine]
-ms.assetid: dcd97ac1-1c85-4142-9594-9182e62f6832
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ad9f8a8552c534a0397db6cb32b17cbd3fb7cd71
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: f216ae5de400f377dd247ecbc8a671d9f3faf397
+ms.sourcegitcommit: 2f971c85d87623c0aed1612406130d840e7bdb2e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97485484"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105744479"
 ---
 # <a name="row-compression-implementation"></a>「行の圧縮の実装」
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -47,8 +46,8 @@ ms.locfileid: "97485484"
 |**smallint**|はい|値が 1 バイトに収まる場合は、1 バイトしか使用されません。|  
 |**int**|はい|必要なバイトのみを使用します。 たとえば、値を 1 バイトに格納できる場合、ストレージでは 1 バイトしか消費されません。|  
 |**bigint**|はい|必要なバイトのみを使用します。 たとえば、値を 1 バイトに格納できる場合、ストレージでは 1 バイトしか消費されません。|  
-|**decimal**|はい|このストレージは、vardecimal ストレージ形式とまったく同じです。|  
-|**numeric**|はい|このストレージは、vardecimal ストレージ形式とまったく同じです。|  
+|**decimal**|はい|指定された有効桁数に関係なく、必要なバイトのみが使用されます。 たとえば、値を 3 バイトに格納できる場合、ストレージでは 3 バイトしか消費されません。 ストレージの占有領域は、vardecimal の保存形式とまったく同じです。|  
+|**numeric**|はい|指定された有効桁数に関係なく、必要なバイトのみが使用されます。 たとえば、値を 3 バイトに格納できる場合、ストレージでは 3 バイトしか消費されません。 ストレージの占有領域は、vardecimal の保存形式とまったく同じです。|  
 |**bit**|はい|メタデータのオーバーヘッドにより、これは 4 ビットになります。|  
 |**smallmoney**|はい|4 バイト整数を使用して、整数データ表現を使用します。 通貨値には 10,000 が乗算され、その結果の整数値は、小数点以下桁数をすべて削除して格納されます。 この型では、整数型と同様にストレージを最適化します。|  
 |**money**|はい|8 バイト整数を使用して、整数データ表現を使用します。 通貨値には 10,000 が乗算され、その結果の整数値は、小数点以下桁数をすべて削除して格納されます。 この型の範囲は、 **smallmoney** より大きくなります。 この型では、整数型と同様にストレージを最適化します。|  
