@@ -91,7 +91,7 @@ items:
                 items:
                   - name: マスター インスタンス
                     href: big-data-cluster/deployment-high-availability.md
-                  - name: HDFS のノード名と Spark
+                  - name: HDFS 名前ノードと Spark
                     href: big-data-cluster/deployment-high-availability-hdfs-spark.md
               - name: Kubernetes クラスター
                 items:

@@ -20,12 +20,12 @@ ms.assetid: f28e3dea-24e6-4a81-877b-02ec4c7e36b9
 author: AndreasWolter
 ms.author: anwolter
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ea48dc9d5b0905ad10d98ccb349054421f296606
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 3f6253702d6ee8d7bc8b341921a6e8141dadd335
+ms.sourcegitcommit: 851f47e27512651f809540b77bfbd09e6ddb5362
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104748112"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937851"
 ---
 # <a name="permissions-database-engine"></a>権限 (データベース エンジン)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -35,10 +35,10 @@ ms.locfileid: "104748112"
 [!INCLUDE[ssSQLv15_md](../../includes/sssql19-md.md)] の権限の合計数 は 248 です。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] は 254 の権限を公開します。 ほとんどの権限はすべてのプラットフォームに適用されますがが、一部は適用されません。 たとえば、サーバー レベルの権限は [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] に対して付与することができず、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] で意味を成すのは、いくつかの権限のみです。
 新しい権限が、新しいリリースで徐々に導入されています。 [!INCLUDE [sssql17-md](../../includes/sssql17-md.md)] は 238 の権限を公開します。 [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] は 230 の権限を公開します。 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] は 219 の権限を公開します。 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] は 214 の権限を公開します。 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] は 195 の権限を公開します。 [sys.fn_builtin_permissions](../../relational-databases/system-functions/sys-fn-builtin-permissions-transact-sql.md) トピックでは、最近のバージョンでどの権限が新しいかが明確に記載されています。
 
-権限を理解したら、 [GRANT](../../t-sql/statements/grant-transact-sql.md)、 [REVOKE](../../t-sql/statements/revoke-transact-sql.md)、および [DENY](../../t-sql/statements/deny-transact-sql.md) ステートメントを使用してサーバー レベルの権限をログインとデータベース レベルの権限ユーザーに付与します。 たとえば次のようになります。   
+権限を理解したら、 [GRANT](../../t-sql/statements/grant-transact-sql.md)、 [REVOKE](../../t-sql/statements/revoke-transact-sql.md)、および [DENY](../../t-sql/statements/deny-transact-sql.md) ステートメントを使用してサーバー レベルの権限をログインまたはサーバー ロールとデータベース レベルの権限ユーザーまたはデータベース ロールに付与します。 たとえば次のようになります。   
 ```sql
-GRANT SELECT ON OBJECT::HumanResources.Employee TO Larry;
-REVOKE SELECT ON OBJECT::HumanResources.Employee TO Larry;
+GRANT SELECT ON SCHEMA::HumanResources TO role_HumanResourcesDept;
+REVOKE SELECT ON SCHEMA::HumanResources TO role_HumanResourcesDept;
 ```   
 権限システムの計画のヒントについては、「 [データベース エンジンの権限の概要](../../relational-databases/security/authentication-access/getting-started-with-database-engine-permissions.md)」を参照してください。
   
@@ -409,7 +409,8 @@ REVOKE SELECT ON OBJECT::HumanResources.Employee TO Larry;
 4.  その **セキュリティ コンテキスト** 用に、 **権限領域** に対して許可または拒否された権限をすべて収集します。 権限は、GRANT、GRANT WITH GRANT、または DENY として明示的に指定される場合と、暗黙権限または包含権限の GRANT または DENY である場合があります。 たとえば、スキーマに対する CONTROL 権限を使用した場合、テーブルに対する CONTROL 権限も暗黙的に適用されます。 また、テーブルに対して CONTROL 権限を使用した場合、SELECT 権限も暗黙的に適用されます。 したがって、スキーマに対する CONTROL 権限が許可された場合、テーブルに対する SELECT 権限も許可されます。 テーブルに対する CONTROL 権限が拒否された場合、テーブルに対する SELECT 権限も拒否されます。  
   
     > [!NOTE]  
-    >  列レベルの権限の GRANT により、オブジェクト レベルの DENY がオーバーライドされます。  
+    >  列レベルの権限の GRANT により、オブジェクト レベルの DENY がオーバーライドされます。
+    >  詳細については、「[DENY オブジェクト権限 &#40;Transact-SQL&#41;](../../t-sql/statements/deny-object-permissions-transact-sql.md)」を参照してください。
   
 5.  **必要な権限** を識別します。  
   
