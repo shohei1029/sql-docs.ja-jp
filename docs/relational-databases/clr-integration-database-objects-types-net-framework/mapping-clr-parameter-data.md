@@ -26,20 +26,19 @@ helpviewer_keywords:
 ms.assetid: 89b43ee9-b9ad-4281-a4bf-c7c8d116daa2
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: bed0d2f1b133d3d155c3afd59a86652f010316ea
-ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
+ms.openlocfilehash: bffc04b0015e6d9634aae15fff4e4312d9cc213b
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99250635"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981002"
 ---
 # <a name="mapping-clr-parameter-data"></a>CLR パラメーター データのマッピング
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   次の表は、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] SqlTypes 名前空間のの共通言語ランタイム (CLR) に相当するデータ型 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と、それらのネイティブ CLR に .NET Framework 相当するものを示して [!INCLUDE[msCoName](../../includes/msconame-md.md)] います。  
   
-||||  
-|-|-|-|  
 |**SQL Server のデータ型**|型 (System.Data.SqlTypes または Microsoft.SqlServer.Types)|**CLR データ型 (.NET Framework)**|  
+|-|-|-|  
 |**bigint**|**SqlInt64**|**Int64、Nullable\<Int64>**|  
 |**[バイナリ]**|**SqlBytes、Sqlbytes**|**Byte[]**|  
 |**bit**|**SqlBoolean**|**ブール型、Null 値を許容\<Boolean>**|  
@@ -108,12 +107,11 @@ AS EXTERNAL NAME TestStoredProc.StoredProcedures.PriceSum
   
  ただし、out パラメーターにより自動的にすべての CLR データ型を同等な [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データ型に変換できるとは限りません。 次の表に、これらの例外を示します。  
   
-|||  
-|-|-|  
 |**CLR データ型 (SQL Server)**|**SQL Server のデータ型**|  
-|**10 進数**|smallmoney|  
+|-|-|  
+|**Decimal**|smallmoney|  
 |**SqlMoney**|smallmoney|  
-|**10 進数**|money|  
+|**Decimal**|money|  
 |**DateTime**|smalldatetime|  
 |**SQLDateTime**|smalldatetime|  
   

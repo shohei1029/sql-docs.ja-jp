@@ -14,12 +14,12 @@ ms.assetid: babba19f-e67b-450c-b0e6-523a0f9d23ab
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 648a38bdfac4ae281eb7acfd8d00fe7b1f0a486e
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 600369d0c35630cd31ab3e4d4f1de89b299e052c
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104752262"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054769"
 ---
 # <a name="ibcpsession2bcpsetbulkmode-native-client-ole-db-provider"></a>IBCPSession2:: BCPSetBulkMode (Native Client OLE DB Provider)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -58,7 +58,7 @@ HRESULT BCPSetBulkMode (
 ## <a name="returns"></a>戻り値  
  IBCPSession2::BCPSetBulkMode では、次のいずれかを返すことができます。  
   
-|||  
+|値|説明|  
 |-|-|  
 |**S_OK**|メソッドが成功しました。|  
 |**E_FAIL**|プロバイダー固有のエラーが発生しました。詳細を確認するには、ISQLServerErrorInfo インターフェイスを使用してください。|  

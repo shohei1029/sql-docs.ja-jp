@@ -18,12 +18,12 @@ ms.assetid: 58911798-1d60-4f28-87ab-2def2bfc3de7
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: = azuresqldb-current
-ms.openlocfilehash: f10f318ebba5627957f1555b5979e8993f6f5e02
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: af2de4a8fdb5aadc2b11b2057239b27749384e9e
+ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98093904"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106177103"
 ---
 # <a name="sysgeo_replication_links-azure-sql-database"></a>sys.geo_replication_links (Azure SQL Database)
 
@@ -45,7 +45,8 @@ ms.locfileid: "98093904"
 |role_desc|**nvarchar (256)**|PRIMARY<br /><br /> SECONDARY|  
 |secondary_allow_connections|**tinyint**|セカンダリ型。次のいずれかになります。<br /><br /> 0 = いいえ。 セカンダリデータベースには、フェールオーバーまでアクセスできません。<br /><br /> 1 = ReadOnly。 セカンダリデータベースは、ApplicationIntent = ReadOnly のクライアント接続のみにアクセスできます。<br /><br /> 2 = すべて。 セカンダリデータベースには、任意のクライアント接続からアクセスできます。|  
 |secondary_allow_connections _desc|**nvarchar (256)**|いいえ<br /><br /> All<br /><br /> 読み取り専用|  
-  
+|percent_copied|**int**|シード処理の進行状況 (パーセント)|
+
 ## <a name="permissions"></a>アクセス許可
 
 このビューは、サーバーレベルプリンシパルログインの **master** データベースでのみ使用できます。  

@@ -2658,7 +2658,7 @@
           href: ../connect/jdbc/securing-connection-strings.md
         - name: ユーザー入力の検証
           href: ../connect/jdbc/validating-user-input.md
-        - name: アプリケーション セキュリティ
+        - name: アプリケーションのセキュリティ
           href: ../connect/jdbc/application-security.md
         - name: 暗号化の使用
           href: ../connect/jdbc/using-ssl-encryption.md

@@ -8,12 +8,12 @@ ms.prod: sql
 ms.technology: release-landing
 ms.author: mikeray
 author: MikeRayMSFT
-ms.openlocfilehash: 0efc4dc49b04467f0caeb882e24900d7479a42cd
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3cc1b9306227842fd28f80aa2aba42c81f53ea84
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338063"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054875"
 ---
 # <a name="sql-server-managing-partners"></a>SQL Server 管理のパートナー
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -22,8 +22,8 @@ SQL Server サービスを管理するためのツールを、業界をリード
 ## <a name="our-management-partners"></a>Microsoft の管理パートナー
 
 | Partner | 説明 | リンク |
-| --- | --- | --- | --- |
-|![idera][1] |**IDERA**<br>SQL コンプライアンス マネージャーは SQL Server に対してどのユーザーが何を、いつ、どのように行ったかを表示する包括的な監査ソリューションで、規制とデータ セキュリティの要件への準拠に役立ちます。<br><br>[システム要件][idera_requirements]|<!--[Marketplace][idera_marketplace]<br>-->[Web サイト][idera_website]<br>[Twitter][idera_twitter]<br>[ビデオ][idera_youtube] | |
+| --- | --- | --- |
+|![idera][1] |**IDERA**<br>SQL コンプライアンス マネージャーは SQL Server に対してどのユーザーが何を、いつ、どのように行ったかを表示する包括的な監査ソリューションで、規制とデータ セキュリティの要件への準拠に役立ちます。<br><br>[システム要件][idera_requirements]|<!--[Marketplace][idera_marketplace]<br>-->[Web サイト][idera_website]<br>[Twitter][idera_twitter]<br>[ビデオ][idera_youtube] |
 
 ## <a name="next-steps"></a>次のステップ
 その他のパートナーについて詳しくは、[高可用性とディザスター リカバリーのパートナー][hadr_partners]、[管理パートナー][monitor_partners]、[開発パートナー][dev_partners]に関するページをご覧ください。

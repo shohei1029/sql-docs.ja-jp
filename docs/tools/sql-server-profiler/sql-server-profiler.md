@@ -11,12 +11,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 05/01/2020
-ms.openlocfilehash: 6208c880dd234a0e6a62f61e6f6ae87567213c12
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 19d31aff6c79badb1f9728325fad4377dee246be
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100354455"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054589"
 ---
 # <a name="sql-server-profiler"></a>SQL Server プロファイラー
 
@@ -47,9 +47,8 @@ ms.locfileid: "100354455"
 
 以下の表に、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] でトレース データのキャプチャおよび再生を行うために使用が推奨される機能を示します。
 
-||||
-|-|-|-|
 |**機能\対象のワークロード**|**リレーショナル エンジン**|**Analysis Services**|  
+|-|-|-|
 |**トレースのキャプチャ**|[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] の [拡張イベント](../../relational-databases/extended-events/extended-events.md)のグラフィカル ユーザー インターフェイス|[!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)]|  
 |**トレースの再生**|[分散再生](../distributed-replay/sql-server-distributed-replay.md)|[!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)]|
 

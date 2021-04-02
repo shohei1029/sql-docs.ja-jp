@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 59a6db8f-2db6-4071-9005-928a7231de92
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 60a23edbcbad344ab3bf42286944f7c72acb8f92
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 657e0b85cfb89c9a8fadf889624b75e0b064952f
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100015179"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106053965"
 ---
 # <a name="refresh-from-database-mysqltosql"></a>データベースからの更新 (MySQLToSQL)
 [ **データベースから更新** ] ダイアログボックスでは、MySQL データベースから更新するオブジェクトを選択できます。 ダイアログボックス内の行は、メタデータの状態に基づいて色分けされています。  
@@ -32,11 +32,10 @@ ms.locfileid: "100015179"
   
 [ **データベースから更新** ] ダイアログボックスにアクセスするには、MySQL メタデータエクスプローラーでオブジェクトを右クリックし、[ **データベースから更新**] をクリックします。  
   
-## <a name="options"></a>オプション  
+## <a name="options"></a>Options  
   
-|||  
-|-|-|  
 |**用語**|**定義**|  
+|-|-|  
 |**折りたたみ (-)**|すべてのオブジェクトグループを折りたたむと、個々のオブジェクトが非表示になります。|  
 |**展開 (+)**|[すべてのオブジェクトグループ] を展開して、個々のオブジェクトを表示します。|  
 |**同じオブジェクトの非表示/表示**|MySQL データベースと SSMA のオブジェクトメタデータが同じである場合、リストのオブジェクトを非表示にします。|  

@@ -29,12 +29,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: ''
 ms.date: 07/20/2020
-ms.openlocfilehash: 216e0a9a40466267ab7c7cd5baaef18d9c3e9c38
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3aa88190da864de508fce9602ee250035b5602f9
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100341565"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981035"
 ---
 # <a name="server-configuration-options-sql-server"></a>サーバー構成オプション (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -154,7 +154,7 @@ ms.locfileid: "100341565"
 | [two digit year cutoff](../../database-engine/configure-windows/configure-the-two-digit-year-cutoff-server-configuration-option.md) (A) | 1753 | 9999 | 2049 |
 | [user connections](../../database-engine/configure-windows/configure-the-user-connections-server-configuration-option.md) (A、RR、SC) | 0 | 32767 | 0 |
 | [user options](../../database-engine/configure-windows/configure-the-user-options-server-configuration-option.md) | 0 | 32767 | 0 |
-| [xp_cmdshell](../../database-engine/configure-windows/xp-cmdshell-server-configuration-option.md) (A) | 0 | 1 | 0 |  |
+| [xp_cmdshell](../../database-engine/configure-windows/xp-cmdshell-server-configuration-option.md) (A) | 0 | 1 | 0 |
 
 ## <a name="see-also"></a>関連項目
  [sp_configure &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md) [RECONFIGURE &#40;Transact-SQL&#41;](../../t-sql/language-elements/reconfigure-transact-sql.md) [DBCC FREEPROCCACHE &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-freeproccache-transact-sql.md)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
 monikerRange: '>=sql-server-2016 <=sql-server-2016'
-ms.openlocfilehash: 36b68809377492e3643ebc7c60e0b2111d52f638
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bf701e1ccdff887f7861c934d59bff9c09be66b6
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484244"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054644"
 ---
 # <a name="install-the-first-report-server-in-sharepoint-mode"></a>SharePoint モードでの最初のレポート サーバーのインストール
 
@@ -41,7 +41,7 @@ ms.locfileid: "97484244"
  > [!NOTE]
  > SharePoint 2016 については、Excel Services が Office Online Server に移動したため、シングル サーバー配置では使用できません。 Office Online Server は、別のサーバーに配置する必要があります。 詳細については、「 [Office Online Server overview (Office Online Server の概要)](https://technet.microsoft.com/library/jj219437\(v=office.16\).aspx) 」と「 [Configure Excel Online administrative settings (Excel Online の管理設定の構成)](https://technet.microsoft.com/library/jj219698\(v=office.16\).aspx)」をご覧ください。
   
-|||  
+|コンポーネント|説明|  
 |-|-|  
 |**(1)**|SharePoint サービス: SQL Server をインストールすると、インストールされます。 1 つ以上の Reporting Services サービス アプリケーションを作成できます。|  
 |**(2)**|SharePoint 製品用 Reporting Services アドインは、SharePoint サーバーにユーザー インターフェイス コンポーネントを提供します。|  

@@ -20,12 +20,12 @@ ms.assetid: 44fadbee-b5fe-40c0-af8a-11a1eecf6cb7
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 23647aad9cbd2e4dbad4437d88a9e44d7a4810e0
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 43c2b37911de66c4002056e8e3e9ddd34843c41c
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104739632"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054721"
 ---
 # <a name="transaction-locking-and-row-versioning-guide"></a>トランザクションのロックおよび行のバージョン管理ガイド
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -521,9 +521,9 @@ GO
   
 <a name="lock_compat_table"></a> 次の表に、最も一般的に使用されるロック モードの互換性を示します。  
   
-||既に許可されているモード||||||  
+|既に許可されているモード|**IS**|**S**|**U**|**IX**|**SIX**|**X**|
 |------|---------------------------|------|------|------|------|------|  
-|**要求されたモード**|**IS**|**S**|**U**|**IX**|**SIX**|**X**|  
+|**要求されたモード**|
 |**インテント共有 (IS)**|はい|はい|はい|はい|はい|いいえ|  
 |**共有 (S)**|はい|はい|はい|いいえ|いいえ|いいえ|  
 |**更新 (U)**|はい|はい|いいえ|いいえ|いいえ|いいえ|  
@@ -564,9 +564,9 @@ GO
   
  各キー範囲ロック モードには、重なり合うキーと範囲に対して取得されるロックが、どのロックと互換性があるかを示す互換性マトリックスがあります。  
   
-||既に許可されているモード|||||||  
+|既に許可されているモード|**S**|**U**|**X**|**RangeS-S**|**RangeS-U**|**RangeI-N**|**RangeX-X**|
 |------|---------------------------|------|------|------|------|------|------|  
-|**要求されたモード**|**S**|**U**|**X**|**RangeS-S**|**RangeS-U**|**RangeI-N**|**RangeX-X**|  
+|**要求されたモード**  
 |**共有 (S)**|はい|はい|いいえ|はい|はい|はい|いいえ|  
 |**更新 (U)**|はい|いいえ|いいえ|はい|いいえ|はい|いいえ|  
 |**排他 (X)**|いいえ|いいえ|いいえ|いいえ|いいえ|はい|いいえ|  

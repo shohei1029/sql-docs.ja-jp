@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 7dd79a6a-e066-4028-a385-1d40f31056f8
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 51646edb5b2937d04d4915e2a7d4a66327343a6c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d75ea560e7e3d186013664ee89e66b956e0405fa
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345710"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105980963"
 ---
 # <a name="file-system-task"></a>ファイル システム タスク
 
@@ -136,7 +136,7 @@ ms.locfileid: "100345710"
  **[IsSourcePathVariable]**  
  対象になるパスを変数に格納するかどうかを示します。 このプロパティのオプションを次の表に示します。  
   
-|値||  
+|値|説明|  
 |-----------|-|  
 |**True**|対象になるパスは変数に格納されます。 この値を選択すると、動的オプション **[SourceVariable]** が表示されます。|  
 |**False**|対象になるパスは、ファイル接続マネージャーで指定されます。 この値を選択すると、動的オプション **[DestinationVariable]** が表示されます。|  

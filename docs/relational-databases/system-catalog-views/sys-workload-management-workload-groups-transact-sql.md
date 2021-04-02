@@ -13,12 +13,12 @@ dev_langs:
 author: ronortloff
 ms.author: rortloff
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: 0a8f145be38259f5f3a600cb7a270ccf193b4672
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: edafbe186daf36f04e7c3a4c8f634512d97da26d
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104747752"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054699"
 ---
 # <a name="sysworkload_management_workload_groups-transact-sql"></a>sys.workload_management_workload_groups (Transact-sql)
 
@@ -30,7 +30,7 @@ ms.locfileid: "104747752"
 |-----------------|---------------|-----------------|-----------|
 |group_id|**int**|ワークロード グループの一意の ID。 NULL 値は許可されません。||
 |name|**sysname**|ワークロードグループの名前。 インスタンスに対して一意である必要があります。  NULL 値は許可されません。||
-|importance|**nvarchar(128)**|は、このワークロードグループ内の要求の相対的な重要度であり、共有リソースの複数のワークロードグループにまたがっています。 NULL 値は許可されません。|low、below_normal、normal (既定)、above_normal、high||
+|importance|**nvarchar(128)**|は、このワークロードグループ内の要求の相対的な重要度であり、共有リソースの複数のワークロードグループにまたがっています。 NULL 値は許可されません。|low、below_normal、normal (既定)、above_normal、high|
 |min_percentage_resource|**tinyint**|ワークロードグループ内の要求に対して確保されるリソースの量。 リソースは、他のワークロードグループと共有されません。 NULL 値は許可されません。||
 |cap_percentage_resource|**tinyint**|ワークロードグループ内の要求に対するリソース割り当ての割合 (%)。 指定されたレベルに割り当てられるリソースの最大数を制限します。 value の許容範囲は 1 ～ 100 です。||
 |request_min_resource_grant_percent|**decimal (5, 2)**|要求に割り当てられるリソースの最小量を指定します。 値の許容範囲は 0.75 ~ 100 です。||

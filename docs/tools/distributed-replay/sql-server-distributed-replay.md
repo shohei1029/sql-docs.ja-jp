@@ -10,12 +10,12 @@ ms.author: maghan
 ms.reviewer: mikeray
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: ac77b9ead15eb4171dbcaee38235a9f934aaa172
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 6ce83864f327cbfb3c0e923a7122d04c5e662b0c
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837787"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054579"
 ---
 # <a name="sql-server-distributed-replay"></a>SQL Server Distributed Replay
 
@@ -67,10 +67,11 @@ Distributed Replay の管理ツール、コントローラー、およびクラ�
 ## <a name="distributed-replay-tasks"></a>Distributed Replay のタスク
 
 |タスクの説明|トピック|  
-|----------------------|-----------|  
+|----------------------|-----------|
 | Distributed Replay を構成する方法について説明します。 | [分散再生の構成](../../tools/distributed-replay/configure-distributed-replay.md) |
 | 入力トレース データを準備する方法について説明します。 | [入力トレース データの準備](../../tools/distributed-replay/prepare-the-input-trace-data.md) |
-| トレース データを再生する方法について説明します。 |[トレース データの再生](../../tools/distributed-replay/replay-trace-data.md) | | Distributed Replay トレース データの結果を確認する方法について説明します。 |[再生結果の確認](../../tools/distributed-replay/review-the-replay-results.md)|
+| トレース データを再生する方法について説明します。 |[トレース データの再生](../../tools/distributed-replay/replay-trace-data.md) | 
+| Distributed Replay トレース データの結果を確認する方法について説明します。 |[再生結果の確認](../../tools/distributed-replay/review-the-replay-results.md)|
 | 管理ツールを使用して、コントローラー上の操作を開始、監視、取り消す方法について説明します。 | [管理ツール コマンド ライン オプション &#40;Distributed Replay Utility&#41;](../../tools/distributed-replay/administration-tool-command-line-options-distributed-replay-utility.md) |
 
 ## <a name="see-also"></a>参照

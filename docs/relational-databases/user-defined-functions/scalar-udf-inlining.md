@@ -2,7 +2,7 @@
 title: Microsoft SQL Server でのスカラー UDF のインライン化 | Microsoft Docs
 description: SQL Server (SQL Server 2019 以降) 内でスカラー UDF を呼び出すスカラー UDF インライン化機能を使用すると、クエリのパフォーマンスが向上します。
 ms.custom: ''
-ms.date: 08/04/2020
+ms.date: 03/30/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -14,13 +14,13 @@ helpviewer_keywords: ''
 ms.assetid: ''
 author: s-r-k
 ms.author: karam
-monikerRange: = azuresqldb-current || >= sql-server-ver15
-ms.openlocfilehash: 5e2dd566b0c5842636619c8331bfc88378dc4f84
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 57c9c28cafeb7e55183a3d95194480c62f279e11
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350864"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981218"
 ---
 # <a name="scalar-udf-inlining"></a>スカラー UDF のインライン化
 

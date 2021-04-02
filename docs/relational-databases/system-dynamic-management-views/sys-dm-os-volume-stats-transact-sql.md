@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: fa1c58ad-8487-42ad-956c-983f2229025f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: a34af15094cdd70833c16b2e3b3bfa1ce0ca4fca
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: feec80838dbb911b4cc551ba2c260e9d8eea9fd3
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99235960"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054605"
 ---
 # <a name="sysdm_os_volume_stats-transact-sql"></a>sys.dm_os_volume_stats (Transact-sql)
 [!INCLUDE[tsql-appliesto-2008R2SP1-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-2008R2sp1-xxxx-xxxx-xxx-md.md)]
@@ -48,9 +48,8 @@ sys.dm_os_volume_stats (database_id, file_id)
   
 ## <a name="table-returned"></a>返されるテーブル  
   
-||||  
-|-|-|-|  
 |**列**|**データの種類**|**説明**|  
+|-|-|-|  
 |**database_id**|**int**|データベースの ID です。 null にすることはできません。|  
 |**file_id**|**int**|ファイルの ID。 null にすることはできません。|  
 |**volume_mount_point**|**nvarchar(512)**|ボリュームがルートとするマウント ポイント。 は空の文字列を返すことができます。 Linux オペレーティングシステムでは null を返します。|  
@@ -64,9 +63,9 @@ sys.dm_os_volume_stats (database_id, file_id)
 |**supports_sparse_files**|**tinyint**|ボリュームがスパースファイルをサポートするかどうかを示します。  Windows では null にすることはできず、Linux オペレーティングシステムでは null を返します。|  
 |**is_read_only**|**tinyint**|ボリュームが現在読み取り専用としてマークされているかどうかを示します。 null にすることはできません。|  
 |**is_compressed**|**tinyint**|このボリュームが現在圧縮されているかどうかを示します。 Windows では null にすることはできず、Linux オペレーティングシステムでは null を返します。|  
-|**incurs_seek_penalty**|**tinyint**|このボリュームをサポートしているストレージの種類を示します。 指定できる値は次のとおりです。<br /><br />0: 通常、記憶装置が PMM または SSD の場合、このボリュームに対するシークペナルティはありません。<br /><br />1: 通常、記憶装置が HDD の場合、このボリュームのシークペナルティ<br /><br />2: ボリュームが UNC パスまたはマウントされた共有にある場合、記憶域の種類を特定できません<br /><br />NULL: ストレージの種類を Linux オペレーティングシステムで特定できません<br /><br />**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (以降 [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] )|  
+|**incurs_seek_penalty**|**tinyint**|このボリュームをサポートしているストレージの種類を示します。 次のいずれかの値になります。<br /><br />0: 通常、記憶装置が PMM または SSD の場合、このボリュームに対するシークペナルティはありません。<br /><br />1: 通常、記憶装置が HDD の場合、このボリュームのシークペナルティ<br /><br />2: ボリュームが UNC パスまたはマウントされた共有にある場合、記憶域の種類を特定できません<br /><br />NULL: ストレージの種類を Linux オペレーティングシステムで特定できません<br /><br />**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (以降 [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] )|  
   
-## <a name="security"></a>セキュリティ  
+## <a name="security"></a>Security  
   
 ### <a name="permissions"></a>アクセス許可  
  `VIEW SERVER STATE` 権限が必要です。  

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: ed1ef012-fa14-4ba5-bafe-d1527ba065b3
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: f1a233cdd69f069ae425de644dfe8b6d1475dd86
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 1b68c2b2f86633db9cbc5c35746c8113530491f3
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85774402"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054650"
 ---
 # <a name="options-in-the-back-up-database-task-for-maintenance-plan"></a>メンテナンス プラン用のデータベースのバックアップ タスクのオプション
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -87,7 +87,7 @@ ms.locfileid: "85774402"
  自動的に作成されたデータベース ファイルを格納するフォルダーを指定します。  
   
  **[バックアップ ファイルの拡張子]**  
- バックアップ ファイルに使用する拡張子を指定します。 既定値は **.bak**です。  
+ バックアップ ファイルに使用する拡張子を指定します。 既定値は **.bak** です。  
   
  **[バックアップの整合性を検証する]**  
  バックアップ セットが完全で、すべてのボリュームが読み取り可能であることを検証します。  
@@ -98,7 +98,7 @@ ms.locfileid: "85774402"
  **[バックアップの圧縮の設定]**  
  [!INCLUDE[ssEnterpriseEd10](../../includes/ssenterpriseed10-md.md)] (またはそれ以降のバージョン) で、 [バックアップの圧縮](../../relational-databases/backup-restore/backup-compression-sql-server.md) の値を次の中から 1 つ選択します。  
   
-|||  
+|値|説明|  
 |-|-|  
 |**[既定のサーバー設定を使用する]**|オンにすると、サーバー レベルの既定値が使用されます。<br /><br /> この既定値は、 **backup compression default** サーバー構成オプションで設定されます。 このオプションの現在の設定を表示する方法については、「 [backup compression default サーバー構成オプションの表示または構成](../../database-engine/configure-windows/view-or-configure-the-backup-compression-default-server-configuration-option.md)」を参照してください。|  
 |**[バックアップを圧縮する]**|オンにすると、サーバー レベルの既定値に関係なく、バックアップが圧縮されます。<br /><br /> **\*\* 重要 \*\*** 既定の設定では、圧縮によって CPU 使用率が著しく増加し、圧縮処理によって CPU がさらに消費されるために、同時に実行される操作が悪影響を受ける場合があります。 このため、 [リソース ガバナー](../../relational-databases/resource-governor/resource-governor.md)によって CPU 使用率が制限されるセッションでは、優先度の低い圧縮バックアップを作成することができます。 詳細については、「 [リソース ガバナーを使用してバックアップの圧縮による CPU 使用率を制限する方法 &#40;Transact-SQL&#41;](../../relational-databases/backup-restore/use-resource-governor-to-limit-cpu-usage-by-backup-compression-transact-sql.md)」を参照してください。|  

@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5db96c7a21d5aef96615823ee275486e6f921686
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: d79a2b7617d195e8140945c23c5bdb7284cb0077
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104744362"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054681"
 ---
 # <a name="columnstore-indexes---what39s-new"></a>列ストア インデックス - 新機能
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "104744362"
 |非クラスター化列ストア インデックスの定義では、フィルター適用条件の使用をサポートする|||はい|はい|はい|はい|はい|  
 |`CREATE TABLE` および `ALTER TABLE` での列ストア インデックスの圧縮遅延オプション|||はい|はい|はい|はい|はい|
 |列ストア インデックスは保存されない計算列を使用できる||||はい|はい|||   
-|組ムーバーのバックグラウンド マージ サポート||||||はい|はい|はい|
+|組ムーバーのバックグラウンド マージ サポート|||||はい|はい|はい|
   
  <sup>1</sup> 読み取り専用の非クラスター化列ストア インデックスを作成するには、読み取り専用ファイル グループにインデックスを格納します。  
  

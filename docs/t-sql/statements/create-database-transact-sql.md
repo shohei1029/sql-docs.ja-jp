@@ -37,12 +37,12 @@ ms.assetid: 29ddac46-7a0f-4151-bd94-75c1908c89f8
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-current||=azuresqldb-mi-current||=azure-sqldw-latest||>=aps-pdw-2016'
-ms.openlocfilehash: 509e4fc7445371c57d0fed7208d556e53aa18fe8
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d89869b8584e9df8959daf3c1745e19295a2a2cd
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100063037"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054826"
 ---
 # <a name="create-database"></a>CREATE DATABASE
 
@@ -1013,7 +1013,7 @@ MAXSIZE: データベースの最大サイズを指定します。 MAXSIZE は�
 |500 GB|該当なし|該当なし|√|√ (D)|√|
 |750 GB|該当なし|該当なし|√|√|√|
 |1024 GB|該当なし|該当なし|√|√|√ (D)|
-|1024 GB から 4096 GB (256 GB ずつ増分)* |該当なし|該当なし|該当なし|N/A|√|√|
+|1024 GB から 4096 GB (256 GB ずつ増分)* |該当なし|なし|なし|該当なし|√|
 
 \* P11 と P15 では 1024 GB を既定のサイズとして MAXSIZE が 4 TB まで許可されます。 P11 と P15 では、追加料金なしで付属のストレージを 4 TB まで使用できます。 次の地域の Premium レベルでは、現在 1 TB を超える MAXSIZE を使用できます: 米国東部 2、米国西部、US Gov バージニア、西ヨーロッパ、ドイツ中部、東南アジア、東日本、オーストラリア東部、カナダ中部、カナダ東部。 DTU モデルのリソースの制限事項に関する詳細については、[DTU リソースの制限](/azure/sql-database/sql-database-dtu-resource-limits)に関する記事を参照してください。
 

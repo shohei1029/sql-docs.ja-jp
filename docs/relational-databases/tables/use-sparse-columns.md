@@ -16,12 +16,12 @@ ms.assetid: ea7ddb87-f50b-46b6-9f5a-acab222a2ede
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e8e5fd6a1e7d6a67295dcbce634bbff5761caff7
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 99d49f328c727c89ad235b01c36ec1c241faedf5
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104755802"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054373"
 ---
 # <a name="use-sparse-columns"></a>スパース列の使用
 
@@ -62,12 +62,14 @@ ms.locfileid: "104755802"
   
  次のデータ型は SPARSE と指定できません。  
   
-|||  
-|-|-|  
-|**geography**|**text**|  
-|**geometry**|**timestamp**|  
-|**image**|**ユーザー定義データ型**|  
-|**ntext**||  
+:::row:::
+   :::column span="":::
+      **geography**<br>      **geometry**<br>      **image**<br>      **ntext**
+   :::column-end:::
+   :::column span="":::
+      **text**  <br>      **timestamp**  <br>      **ユーザー定義データ型**
+   :::column-end:::
+:::row-end:::
   
 ## <a name="estimated-space-savings-by-data-type"></a>領域を節約するためのデータ型別推定値  
  スパース列は、同一データが SPARSE とマークされていない場合に比べて、NULL 以外の値により多くのストレージ領域を必要とします。 次の表は、各データ型の使用領域を示したものです。 **NULL の比率** 列は、正味 40% の領域を節約するために必要な NULL データの割合を示します。  

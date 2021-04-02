@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.assetid: 0d033492-5ec3-473a-8de1-821894ec9518
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: f75e2602e7a4e39e71b234866e9b202675106b04
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 7addc2a0ea8daff272787ea1bb050b5c4ee8c6be
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100070227"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054141"
 ---
 # <a name="global-settings-logging--mysqltosql"></a>グローバル設定 (ログ) (MySQLToSQL)
 [ **グローバル設定** ] ダイアログボックスを使用して、ssma のログ設定を指定します。 通常、これらの設定を変更するのは、製品サポートを使用する場合のみです。  
   
 このダイアログボックスにアクセスするには、[ **ツール** ] メニューの [ **グローバル設定** ] を選択し、左側のウィンドウの下部にある [ **ログ記録** ] ボタンをクリックします。  
   
-## <a name="options"></a>オプション  
+## <a name="options"></a>Options  
 **メッセージレベル**  
 [ **メッセージレベル**] では、次のオプションを使用できます。  
   
@@ -42,10 +42,10 @@ ms.locfileid: "100070227"
   
 [ **メッセージレベル**] の各オプションについて、ssma の次のいずれかのログ記録レベルを構成します。  
   
-|||  
+|Level|説明|  
 |-|-|  
 |**致命的なエラー**|致命的なエラーメッセージのみをログに書き込みます。|  
-|**エラー**|エラーメッセージと致命的なエラーメッセージをログに書き込みます。|  
+|**Error**|エラーメッセージと致命的なエラーメッセージをログに書き込みます。|  
 |**警告**|警告、エラー、および致命的なエラーメッセージをログに書き込みます。|  
 |**情報**|情報、警告、エラー、および致命的なエラーメッセージをログに書き込みます。|  
 |**デバッグ**|デバッグメッセージを含むすべてのメッセージをログに書き込みます。|  

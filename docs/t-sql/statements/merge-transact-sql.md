@@ -26,12 +26,12 @@ ms.assetid: c17996d6-56a6-482f-80d8-086a3423eecc
 author: XiaoyuMSFT
 ms.author: XiaoyuL
 monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 ||  azure-sqldw-latest
-ms.openlocfilehash: d3e84becfc081c57a915601b40c312e76926ad68
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 21dc7173c6404f8082dd96e654ccbebee6f6ff39
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104755412"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054845"
 ---
 # <a name="merge-transact-sql"></a>MERGE (Transact-SQL)
 
@@ -245,7 +245,7 @@ DEFAULT VALUES
 >|-----------------|---------------|-----------------|-----------|  
 >|**WHEN MATCHED**| すべての分散タイプ |すべての分散タイプ||  
 >|**NOT MATCHED BY TARGET**|HASH |すべての分散タイプ|UPDATE/DELETE FROM…JOIN を使用して、2 つのテーブルを同期します。 |
->|**NOT MATCHED BY SOURCE**|すべての分散タイプ|すべての分散タイプ|||  
+>|**NOT MATCHED BY SOURCE**|すべての分散タイプ|すべての分散タイプ||  
 
 >[!IMPORTANT]
 > プレビュー機能はテストのみを目的としているため、運用インスタンスや運用データでは使用しないでください。 また、データが重要な場合は、テスト データのコピーも保持してください。

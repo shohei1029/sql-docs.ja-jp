@@ -80,7 +80,7 @@ sp_addpullsubscription [ @publisher= ] 'publisher'
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または **1** (失敗)  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>解説  
  **sp_addpullsubscription** は、スナップショットレプリケーションおよびトランザクションレプリケーションで使用します。  
   
 > [!IMPORTANT]  

@@ -21,21 +21,20 @@ ms.assetid: 997c3278-3630-47f6-ada3-190b6c16ce0e
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 6bf5af9a39fe646b23c51298378140d45a41526e
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: f1779f8b039fac4763623704f9e8ea1d1529a49d
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837742"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054345"
 ---
 # <a name="sysdm_db_fts_index_physical_stats-transact-sql"></a>sys.dm_db_fts_index_physical_stats (Transact-sql)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
 
   フルテキストインデックスまたはセマンティックインデックスが関連付けられている各テーブルのフルテキストインデックスまたはセマンティックインデックスごとに1行の値を返します。  
   
-||||  
-|-|-|-|  
 |**列名**|**Type**|**説明**|  
+|-|-|-|  
 |**object_id**|INT|インデックスを含むテーブルのオブジェクト ID。|  
 |**fulltext_index_page_count**|**bigint**|インデックスページ数における抽出の論理サイズ。|  
 |**keyphrase_index_page_count**|**bigint**|インデックスページ数における抽出の論理サイズ。|  

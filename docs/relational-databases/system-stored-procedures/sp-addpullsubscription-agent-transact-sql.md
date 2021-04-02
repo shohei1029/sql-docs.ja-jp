@@ -239,7 +239,7 @@ sp_addpullsubscription_agent [ @publisher = ] 'publisher'
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または **1** (失敗)  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>解説  
  **sp_addpullsubscription_agent** は、スナップショットレプリケーションおよびトランザクションレプリケーションで使用します。  
   
 ## <a name="example"></a>例  

@@ -10,16 +10,22 @@ ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: 1451a0b0-6713-4d0c-954f-ea3d8fce1d31
 ms.author: alexiva
-ms.openlocfilehash: 138cb90558bfb73d0b9e0cd3ba75a7a41fc84229
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: e84ab2f4fe9e19d08a8728bd8ca985561497252d
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186458"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981048"
 ---
 # <a name="whats-new-in-ssma-for-mysql-mysqltosql"></a>SSMA for MySQL の新機能 (MySqlToSql)
 
 この記事では、各リリースでの MySQL 変更の SQL Server Migration Assistant (SSMA) を示します。
+
+## <a name="ssma-v818"></a>SSMA v 8.18
+
+SSMA for MySQL の v 8.18 リリースには、次の変更が含まれています。
+
+* わずかなパフォーマンス向上とバグ修正
 
 ## <a name="ssma-v817"></a>SSMA v 8.17
 

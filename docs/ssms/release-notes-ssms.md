@@ -11,12 +11,12 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 12/17/2020
-ms.openlocfilehash: 050447d6f1f9f13f04b01dec82e1b50ca6efbc69
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9b3fd88dea4a7260938b21ccfac8b5120c1345bb
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100354813"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054682"
 ---
 # <a name="release-notes-for-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のリリース ノート
 
@@ -306,7 +306,7 @@ SSMS 18.7 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | New Item | 詳細 | 回避策 |
 |----------|---------|------------|
 | SSMS 全般 | ダイアグラム デザインに既存のダイアグラムを破損させる既知のバグがあります。 たとえば、SSMS 17.9.1 でダイアグラム デザインを作成してから、SSMS 18.x でそれを更新/保存し、さらに後で 17.9.1 でそれを開こうとします。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37992649)を参照してください。 | 該当なし |
-| SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | 該当なし ||
+| SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | 該当なし |
 | SMO/スクリプト作成 | SMO を使用した SSMS 拡張機能は、新しい SMO v160 を対象として再コンパイルする必要があります。 | 該当なし |
 | Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 対応策 : | フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 |
 
@@ -615,7 +615,7 @@ SSMS 18.7 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 
 | New Item | 詳細 |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| アクセシビリティ | エージェント ジョブ UI のユーザー補助が改善されました。 |'
+| アクセシビリティ | エージェント ジョブ UI のユーザー補助が改善されました。 |
 | アクセシビリティ | [Stretch Monitor]\(ストレッチ モニター\) ページに *[自動更新]* ボタンのアクセス可能な名前が追加され、どのボタンがオンの状態であるかだけでなく、そのボタンを押すことによる影響がユーザーにわかるインテリジェントなアクセス可能な名前も追加され、ユーザー補助が改善されました。 |
 | ADS 統合| ADS 登録サーバーの使用にあたり発生する恐れのある SSMS のクラッシュを修正しました。|
 | データベース デザイナー | Latin1_General_100_BIN2_UTF8 照合順序に対するサポートが追加されました (SQL Server 2019 CTP3.0 で使用できます)。 |
@@ -811,7 +811,7 @@ SSMS 18.7 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |DB のバックアップ/復元/アタッチ/デタッチ|SSMS で有効な復元プランを見つけられない問題、または最適ではない復元プランが見つかることがある問題を修正しました。 詳細については、[https://feedback.azure.com/forums/908035-sql-server/suggestions/32897752](https://feedback.azure.com/forums/908035-sql-server/suggestions/32897752) を参照してください。 |
 |DB のバックアップ/復元/アタッチ/デタッチ|"データベースのアタッチ" ウィザードで名前が変更されたセカンダリ ファイルが表示されない問題を修正しました。 現在は、ファイルが表示され、そのファイルについてのコメント ("見つかりません" など) が追加されています。 詳細については、[https://feedback.azure.com/forums/908035/suggestions/32897434](https://feedback.azure.com/forums/908035/suggestions/32897434) を参照してください。 |
 |データベース コピー ウィザード|スクリプトの生成/転送/データベース コピー ウィザードでインメモリ テーブルを使用してテーブルを作成しようとすると、ansi_padding on が強制されません。|
-|データベース コピー ウィザード|SQL Server 2017 および SQL Server 2019 のデータベース転送タスク/データベース コピー ウィザードは壊れています。|""
+|データベース コピー ウィザード|SQL Server 2017 および SQL Server 2019 のデータベース転送タスク/データベース コピー ウィザードは壊れています。|
 |データベース コピー ウィザード|スクリプトの生成/転送/データベース コピー ウィザードでは、関連付けられている外部データ ソースが作成される前に、テーブルの作成がスクリプト化されます。|
 |接続ダイアログ|Del キーを押して、以前のユーザー名リストからユーザー名を削除できるようになりました。 詳細については、「[Allow deletion of users from SSMS login window](https://feedback.azure.com/forums/908035/suggestions/32897632)」 (SSMS ログイン ウィンドウからのユーザーの削除を許可する) を参照してください。|
 |DAC インポート ウィザード|Azure Active Directory (Azure AD) を使用して接続すると、DAC インポート ウィザードが動作しない問題を修正しました。|

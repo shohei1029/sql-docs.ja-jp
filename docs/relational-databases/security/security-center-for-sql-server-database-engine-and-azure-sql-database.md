@@ -19,12 +19,12 @@ ms.assetid: dfb39d16-722a-4734-94bb-98e61e014ee7
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 799f00bfd7ddf0763212cefb00d8fea72a7dce27
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 150e6732855b0e7c1b1e98eb34b0ebb3662633ad
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104739922"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981066"
 ---
 # <a name="security-center-for-sql-server-database-engine-and-azure-sql-database"></a>SQL Server データベース エンジンと Azure SQL Database のセキュリティ センター
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "104739922"
   
 ##  <a name="authentication-who-are-you"></a><a name="Who"></a> 認証:ユーザーはだれか  
   
-|||  
+|機能|Link|  
 |-|-|  
 |**だれが認証したか**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Windows 認証<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png":::  Azure Active Directory|だれが認証したか (Windows または [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)])<br /><br /> [認証モードの選択](../../relational-databases/security/choose-an-authentication-mode.md)<br /><br /> [Azure Active Directory の認証を使用して、SQL データベースに接続します。](/azure/azure-sql/database/authentication-aad-overview)|  
 |**どこで認証されたか**<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: マスター データベース:ログインと DB ユーザー<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: ユーザー データベース:包含 DB ユーザー|マスター データベースでの認証 (ログインとデータベース ユーザー)<br /><br /> [SQL Server ログインの作成](../../relational-databases/security/authentication-access/create-a-login.md)<br /><br /> [Azure SQL Database におけるデータベースとログインの管理](/previous-versions/azure/ee336235(v=azure.100))<br /><br /> [データベース ユーザーの作成](../../relational-databases/security/authentication-access/create-a-database-user.md)<br /><br /> <br /><br /> ユーザー データベースでの認証<br /><br /> [包含データベース ユーザー - データベースの可搬性を確保する](../../relational-databases/security/contained-database-users-making-your-database-portable.md)|  
@@ -45,7 +45,7 @@ ms.locfileid: "104739922"
   
 ##  <a name="authorization-what-can-you-do"></a><a name="What"></a> 認可:何を実行できるか  
   
-|||  
+|機能|Link|  
 |-|-|  
 |**権限の許可、取り消し、および拒否**<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: セキュリティ保護可能なクラス<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: 詳細なサーバーのアクセス許可<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: 詳細なデータベースのアクセス許可|[権限の階層 &#40;データベース エンジン&#41;](../../relational-databases/security/permissions-hierarchy-database-engine.md)<br /><br /> [アクセス許可](../../relational-databases/security/permissions-database-engine.md)<br /><br /> [セキュリティ保護可能](../../relational-databases/security/securables.md)<br /><br /> [データベース エンジンの権限の概要](../../relational-databases/security/authentication-access/getting-started-with-database-engine-permissions.md)|  
 |**ロールによるセキュリティ**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: サーバー レベルのロール<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: データベース レベルのロール|[サーバーレベルのロール](../../relational-databases/security/authentication-access/server-level-roles.md)<br /><br /> [データベース レベルのロール](../../relational-databases/security/authentication-access/database-level-roles.md)|  
@@ -53,7 +53,7 @@ ms.locfileid: "104739922"
   
 ##  <a name="encryption-storing-secret-data"></a><a name="Encrypt"></a> 暗号化:秘密データの格納  
   
-|||  
+|機能|Link|  
 |-|-|  
 |**ファイルの暗号化**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: BitLocker 暗号化 (ドライブ レベル)<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: NTFS 暗号化 (フォルダー レベル)<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Transparent Data Encryption (ファイル レベル)<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: バックアップの暗号化 (ファイル レベル)|[BitLocker (ドライブ レベル)](https://support.microsoft.com/kb/2855131)<br /><br /> [NTFS 暗号化 (フォルダー レベル)](/previous-versions/tn-archive/dd163562(v=technet.10))<br /><br /> [透過的なデータ暗号化 (ファイル レベル)](../../relational-databases/security/encryption/transparent-data-encryption.md)<br /><br /> [バックアップの暗号化 (ファイル レベル)](../../relational-databases/backup-restore/backup-encryption.md)|  
 |**ソースの暗号化**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: 拡張キー管理モジュール<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Azure Key Vault に格納されたキー<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Always Encrypted|[拡張キー管理モジュール](../../relational-databases/security/encryption/extensible-key-management-ekm.md)<br /><br /> [Azure キー コンテナーに格納されたキー](../../relational-databases/security/encryption/extensible-key-management-using-azure-key-vault-sql-server.md)<br /><br /> [常に暗号化](../../relational-databases/security/encryption/always-encrypted-database-engine.md)|  
@@ -61,14 +61,14 @@ ms.locfileid: "104739922"
   
 ##  <a name="connection-security-restricting-and-securing"></a><a name="Connect"></a> 接続のセキュリティ:制限と保護  
   
-|||  
+|機能|Link|  
 |-|-|  
 |**ファイアウォールによる防御**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Windows ファイアウォールの設定<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png"::: Azure サービスのファイアウォール設定<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png"::: データベース ファイアウォールの設定|[データベース エンジン アクセスを有効にするための Windows ファイアウォールを構成する](../../database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access.md)<br /><br /> [Azure SQL データベースのファイアウォール設定](../../relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database.md)<br /><br /> [Azure サービスのファイアウォール設定](../../relational-databases/system-stored-procedures/sp-set-firewall-rule-azure-sql-database.md)|  
 |**転送中のデータの暗号化**<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: 強制 SSL 接続<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: SSL 接続 (オプション)|[データベース エンジンへの暗号化接続の有効化](../../database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md)<br /><br /> [データベース エンジンへの暗号化接続の有効化](../../database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md)、[ネットワーク セキュリティ](/azure/sql-database/sql-database-security-best-practice#network-security) <br /><br /> [Microsoft SQL Server の TLS 1.2 サポート](https://support.microsoft.com/kb/3135244)|  
   
 ##  <a name="auditing-recording-access"></a><a name="Audit"></a> 監査:アクセスの記録  
   
-|||  
+|機能|Link|  
 |-|-|  
 |**自動監査**<br /><br /> :::image type="icon" source="../../relational-databases/performance/media/security-center-sqlserver.png"::: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Audit (Server と DB レベル)<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png"::: [!INCLUDE[ssSDS](../../includes/sssds-md.md)] Audit (データベース レベル)<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png"::: 脅威の検出| <br /><br /> [SQL Server Audit &#40;Database Engine&#41;](../../relational-databases/security/auditing/sql-server-audit-database-engine.md)<br /><br /> [SQL データベースの監査](/azure/azure-sql/database/auditing-overview)<br /><br /> [SQL Database の Advanced Threat Protection の概要](/azure/azure-sql/database/threat-detection-configure) <br /><br /> [SQL データベースの脆弱性評価](/azure/sql-database/sql-vulnerability-assessment) |  
 |**カスタム監査**<br /><br /> :::image type="icon" source="../../relational-databases/performance/media/security-center-both.png"::: のトリガー|カスタム監査の実装:[DDL Triggers](../../relational-databases/triggers/ddl-triggers.md) と [DML Triggers](../../relational-databases/triggers/dml-triggers.md)の作成|  

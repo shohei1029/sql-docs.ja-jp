@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 89fddca5-bd96-4128-9072-5348d1b6e02c
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 99635d5c2b863f3c4b958ab0e5ff7beb128fe5c8
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+ms.openlocfilehash: 08b7e179ef18fa8d1c1c9a804c3b37cf13a8ac1f
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86458914"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054813"
 ---
 # <a name="text-based-query-designer-user-interface-report-builder"></a>テキストベースのクエリ デザイナーのユーザー インターフェイス (レポート ビルダー)
   デザイン時に、データ ソースでサポートされているクエリ言語でクエリを指定し、クエリを実行し、結果を表示するには、テキスト ベースのクエリ デザイナーを使用します。 複数の [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメント、カスタム データ処理拡張機能のクエリまたはコマンド構文、および式としてのクエリを指定できます。 テキスト ベースのクエリ デザイナーはクエリを前処理せず、あらゆる種類のクエリ構文に対応できるため、これは多くの種類のデータ ソースで既定のクエリ デザイナー ツールになっています。  
@@ -78,7 +78,7 @@ SELECT Name FROM Person.ContactType
 |結果|クエリの結果を表示します。 クエリを実行するには、任意のペインで右クリックして、 **[実行]** をクリックするか、ツール バーの **[実行]** ボタンをクリックします。|  
   
 #### <a name="example"></a>例  
- 次のクエリでは、 **uspGetWhereUsedProductID**という AdventureWorks2014 のストアド プロシージャを呼び出します。 クエリを実行する場合は、製品 ID 番号パラメーターの値を入力する必要があります。  
+ 次のクエリでは、 **uspGetWhereUsedProductID** という AdventureWorks2014 のストアド プロシージャを呼び出します。 クエリを実行する場合は、製品 ID 番号パラメーターの値を入力する必要があります。  
   
 ```  
 uspGetWhereUsedProductID  
@@ -86,7 +86,7 @@ uspGetWhereUsedProductID
   
  **[実行]** ( **!** ) ボタンをクリックします。 クエリ パラメーターの入力画面が表示されたら、次の表にある値を入力します。  
   
-|||  
+|パラメーター|値|  
 |-|-|  
 |*\@StartProductID*|820|  
 |*\@CheckDate*|20010115|  

@@ -10,23 +10,22 @@ ms.topic: conceptual
 ms.assetid: 5525d989-024c-402d-9e84-faa4721cc5b9
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 3b132af2d42f22ebcda82eae8e3649fd45026595
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 32245be97f30f790622de513d1120d82fc6b4070
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100069137"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054755"
 ---
 # <a name="assessment-report-mysqltosql"></a>評価レポート (MySQLToSQL)
 [評価レポート] ウィンドウには、データベースオブジェクトを構文に変換した結果が表示され [!INCLUDE[tsql](../../includes/tsql-md.md)] ます。また、移行プロジェクトの複雑さとコストを見積もるのにも役立ちます。  
   
 評価レポートにアクセスするには、ソースメタデータエクスプローラーで変換するオブジェクトを選択し、[ **スキーマ**] を右クリックして、[ **レポートの作成**] を選択します。  
   
-## <a name="options"></a>オプション  
+## <a name="options"></a>Options  
   
-|||  
-|-|-|  
 |**用語**|**定義**|  
+|-|-|  
 |**変換の統計情報**|ステートメントの種類別の変換の統計情報を表示します。 このペインは、スキーマなどのグループオブジェクト、または左側のウィンドウでコードのないオブジェクトが選択されている場合に表示されます。|  
 |**オブジェクト (カテゴリ別)**|オブジェクトの数をカテゴリ別に表示します。 このペインは、スキーマなどのグループオブジェクト、または左側のウィンドウでコードのないオブジェクトが選択されている場合にのみ表示されます。|  
 |**統計**|選択したオブジェクトの変換の統計情報を表示します。 このペインは、コードを持つ個々のオブジェクトが左側のウィンドウで選択されている場合にのみ表示されます。 このペインを表示するには、[**ソース**] ペインのすぐ上にある [**統計**] を展開する必要がある場合があります。|  

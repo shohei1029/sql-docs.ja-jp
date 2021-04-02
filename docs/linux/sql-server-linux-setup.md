@@ -10,12 +10,12 @@ ms.prod: sql
 ms.custom: sqlfreshmay19
 ms.technology: linux
 ms.assetid: 565156c3-7256-4e63-aaf0-884522ef2a52
-ms.openlocfilehash: 01417fa9f7f790229e073964133396f87f144d45
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: 856cfc6549e3a79fdfe8ee9d5fb750d12058df95
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102465165"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105980995"
 ---
 # <a name="installation-guidance-for-sql-server-on-linux"></a>SQL Server on Linux のインストール ガイド
 
@@ -70,7 +70,7 @@ Microsoft では、OpenShift と Kubernetes の使用による SQL Server コン
 
 SQL Server には、Linux に対する次のシステム要件があります。
 
-|||
+||要件|
 |-----|-----|
 | **[メモリ]** | 2 GB |
 | **ファイル システム** | **XFS** または **EXT4** (**BTRFS** などの他のファイル システムはサポートされていません) |

@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 301204b2-140d-4495-98ed-021a9b5025f5
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 767eee967df1f5c505448f8539e6ca081b90176c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 6dca7abfb1cccbea021a2ee7650b78079ca3f777
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100341698"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054885"
 ---
 # <a name="performance-center-for-sql-server-database-engine-and-azure-sql-database"></a>SQL Server データベース エンジンと Azure SQL Database のパフォーマンス センター
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "100341698"
 ## <a name="configuration-options-for-performance"></a>パフォーマンスの構成オプション  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] レベルのさまざまな構成オプションを使用してデータベース エンジンのパフォーマンスを制御できます。 [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]、これらの最適化のすべてではありませんがほとんどが自動的に行われます。  
   
-|||  
+|Options|説明|  
 |-|-|  
 |**ディスク構成オプション**|:::image type="icon" source="../../relational-databases/performance/media/security-center-sqlserver.png"::: [ディスクのストライピングと RAID](https://technet.microsoft.com/library/ms190764\(v=sql.105\).aspx)|  
 |**データとログ ファイルの構成オプション**|:::image type="icon" source="../../relational-databases/performance/media/security-center-sqlserver.png"::: [別々のドライブへのデータ ファイルとログ ファイルの配置](../../relational-databases/policy-based-management/place-data-and-log-files-on-separate-drives.md)<br />:::image type="icon" source="../../relational-databases/performance/media/security-center-sqlserver.png"::: [データ ファイルとログ ファイルの既定の場所の表示または変更 &#40;SQL Server Management Studio&#41;](../../database-engine/configure-windows/view-or-change-the-default-locations-for-data-and-log-files.md)|  
@@ -56,7 +56,7 @@ ms.locfileid: "100341698"
 
 ## <a name="query-performance-options"></a>クエリ パフォーマンス オプション  
   
-|||  
+|オプション|説明|  
 |-|-|  
 |:::image type="icon" source="../../relational-databases/performance/media/security-center-both.png"::: **[インデックス](../../relational-databases/indexes/indexes.md)**|[インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)<br />[インデックスの FILL FACTOR の指定](../../relational-databases/indexes/specify-fill-factor-for-an-index.md)<br />[並列インデックス操作の構成](../../relational-databases/indexes/configure-parallel-index-operations.md)<br />[インデックスの SORT_IN_TEMPDB オプション](../../relational-databases/indexes/sort-in-tempdb-option-for-indexes.md)<br />[フルテキスト インデックスのパフォーマンスの向上](../../relational-databases/search/improve-the-performance-of-full-text-indexes.md)<br />[min memory per query サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-min-memory-per-query-server-configuration-option.md)<br />[index create memory サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-index-create-memory-server-configuration-option.md)|  
 |:::image type="icon" source="../../relational-databases/performance/media/security-center-both.png"::: **[パーティション テーブルとパーティション インデックス](../../relational-databases/partitions/partitioned-tables-and-indexes.md)**|[パーティション分割の利点](../partitions/partitioned-tables-and-indexes.md)|  

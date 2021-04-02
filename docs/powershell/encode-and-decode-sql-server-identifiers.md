@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: matteot, drskwier
 ms.custom: ''
 ms.date: 10/14/2020
-ms.openlocfilehash: 13b32a62791aaa932311223f4f648d8006eb33e7
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 46eb3f29ce21aada716458d554dd329b1bd10dff
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101838043"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981188"
 ---
 # <a name="encode-and-decode-sql-server-identifiers"></a>SQL Server 識別子のエンコードとデコード
 
@@ -32,9 +32,8 @@ Windows PowerShell パス名でサポートされない文字は、" **%** xx" �
 
 **Encode-Sqlname** コマンドレットと **Decode-Sqlname** コマンドレットでエンコードまたはデコードできるのは、SQL Server の区切られた識別子ではサポートされるものの PowerShell パスではサポートされない文字のみです。 **Encode-SqlName** によってエンコードされ、**Decode-SqlName** によってデコードされる文字を次に示します。
 
-|||||||||||||
-|-|-|-|-|-|-|-|-|-|-|-|-|
 |**文字**|\ |/|:|%|\<|>|*|?|[|]|&#124;|  
+|-|-|-|-|-|-|-|-|-|-|-|-|
 |**16 進エンコード**|%5C|%2F|%3A|%25|%3C|%3E|%2A|%3F|%5B|%5D|%7C|
 
 ## <a name="encoding-an-identifier"></a>識別子のエンコード  

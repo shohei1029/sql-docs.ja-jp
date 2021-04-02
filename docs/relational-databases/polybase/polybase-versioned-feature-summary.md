@@ -10,12 +10,12 @@ author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0ce732ab5e7f920f19a47537419242b637cda91c
-ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
+ms.openlocfilehash: a7741d5966007fdadbc3d96e659e967085fc7734
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105103759"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054142"
 ---
 # <a name="polybase-features-and-limitations"></a>PolyBase の機能と制限事項
 
@@ -64,8 +64,8 @@ PolyBase の主な機能と、これらの機能を利用できる製品を一�
 - `GREATEST`
 - `LEAST`
 - `PARSE`
-
-`FORMAT` および `TRIM` 構文のプッシュダウン サポートは、[!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] CU10 で導入されました。
+- `FORMAT` 
+- `TRIM`
 
 詳細については、「[PolyBase でのプッシュダウン計算](polybase-pushdown-computation.md)」を参照してください。
 

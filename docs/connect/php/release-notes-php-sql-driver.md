@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 91cca3d2-ba99-4a6d-b0de-beb9699cb3f8
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: c6960778fcbd7eb707b50e18ce4a0c70e477ff28
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: a225c2fae4b20ad75666415e4315ec12c7f7aab9
+ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575239"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106176960"
 ---
 # <a name="release-notes-for-the-microsoft-drivers-for-php-for-sql-server"></a>Microsoft SQL Server 用 Drivers for PHP のリリース ノート
 
@@ -70,6 +70,8 @@ Thanks a lot.  2019-03-28  (DevO= 1467988)
 
 <sup>1</sup> このリリースには ODBC Driver 17.4.2 以降が必要です。 これがないと、属性の設定に失敗したことに関する警告が示されます。 この警告は、古い ODBC ドライバーの使用時に抑制されることがあります。 SQLSRV を使用する場合は、「[方法: SQLSRV ドライバーを使用してエラーおよび警告処理を構成する](./how-to-configure-error-and-warning-handling-using-the-sqlsrv-driver.md)」を参照してください。 PDO_SQLSRV を使用する場合、警告は既定で抑制されますが、ログに記録することはできます。 詳細については、「[アクティビティのログ記録](./logging-activity.md)」を確認してください。
 
+## <a name="previous-releases"></a>以前のリリース
+
 ## <a name="581"></a>5.8.1
 
 このリリースは、Linux と macOS にのみ適用されます。
@@ -119,8 +121,6 @@ Thanks a lot.  2019-03-28  (DevO= 1467988)
 | &nbsp; | &nbsp; |
 
 <sup>1</sup> Alpine Linux サポートは、バージョン 5.8 の試験段階です。
-
-## <a name="previous-releases"></a>以前のリリース
 
 ## <a name="561"></a>5.6.1
 

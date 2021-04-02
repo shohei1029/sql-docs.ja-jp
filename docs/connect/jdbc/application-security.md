@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 940879b4-aa0f-41ce-a369-6cfc0e78e01d
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 03f20db06095da4c805a349c8be2b1a70afc71d4
-ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
+ms.openlocfilehash: f4785c39dc1d3fa9921a7191c9c3d338c7a655c2
+ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105633273"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106177019"
 ---
 # <a name="application-security"></a>アプリケーションのセキュリティ
 

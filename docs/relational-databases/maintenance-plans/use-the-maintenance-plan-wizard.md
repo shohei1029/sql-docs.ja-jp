@@ -35,12 +35,12 @@ helpviewer_keywords:
 ms.assetid: db65c726-9892-480c-873b-3af29afcee44
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 68c3ff265fbf1bf56fb2d7f0ba42aa6f76dd72b2
-ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
+ms.openlocfilehash: 17c548cfc0133a9f08987e06dc4ffd2be4a930a9
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98766249"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054659"
 ---
 # <a name="use-the-maintenance-plan-wizard"></a>メンテナンス プラン ウィザードの使用
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -417,7 +417,7 @@ ms.locfileid: "98766249"
      **[バックアップの圧縮の設定]**  ボックスの一覧  
      [!INCLUDE[ssEnterpriseEd10](../../includes/ssenterpriseed10-md.md)] (またはそれ以降のバージョン) で、 [バックアップの圧縮](../../relational-databases/backup-restore/backup-compression-sql-server.md) の値を次の中から 1 つ選択します。  
   
-    |||  
+    |値|説明|  
     |-|-|  
     |**[既定のサーバー設定を使用する]**|オンにすると、サーバー レベルの既定値が使用されます。 この既定値は、 **backup compression default** サーバー構成オプションで設定されます。 このオプションの現在の設定を表示する方法については、「 [backup compression default サーバー構成オプションの表示または構成](../../database-engine/configure-windows/view-or-configure-the-backup-compression-default-server-configuration-option.md)」を参照してください。|  
     |**[バックアップを圧縮する]**|オンにすると、サーバー レベルの既定値に関係なく、バックアップが圧縮されます。<br /><br /> **\*\* 重要 \*\*** 既定の設定では、圧縮によって CPU 使用率が著しく増加し、圧縮処理によって CPU がさらに消費されるために、同時に実行される操作が悪影響を受ける場合があります。 このため、リソース ガバナーによって CPU 使用率が制限されるセッションで、優先度の低い圧縮バックアップを作成することができます。 詳細については、「 [リソース ガバナーを使用してバックアップの圧縮による CPU 使用率を制限する方法 &#40;Transact-SQL&#41;](../../relational-databases/backup-restore/use-resource-governor-to-limit-cpu-usage-by-backup-compression-transact-sql.md)」を参照してください。|  

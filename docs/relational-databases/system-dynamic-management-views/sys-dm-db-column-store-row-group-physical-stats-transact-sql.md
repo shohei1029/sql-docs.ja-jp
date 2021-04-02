@@ -21,12 +21,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 020cfa1e2f1f60064f21063e0766213ab44aaa25
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: 6345892c246c0ffc693a28e67833068c65243672
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102464841"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054714"
 ---
 # <a name="sysdm_db_column_store_row_group_physical_stats-transact-sql"></a>sys.dm_db_column_store_row_group_physical_stats (Transact-sql)
 
@@ -55,8 +55,8 @@ ms.locfileid: "102464841"
 |**transition_to_compressed_state_desc**|nvarchar(60)| 1-NOT_APPLICABLE-操作はデルタストアには適用されません。 または、にアップグレードする前に、行グループが圧縮されて [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] います。この場合、履歴は保持されません。<br /><br /> 2-INDEX_BUILD-インデックスの作成またはインデックスの再構築によって、行グループが圧縮されます。<br /><br /> 3-TUPLE_MOVER-バックグラウンドで実行されている組ムーバーが、行グループを圧縮します。 組ムーバーは、行グループが状態をオープンから終了に変更した後に発生します。<br /><br /> 4-REORG_NORMAL-再編成操作、ALTER INDEX...REORG は、終了した行グループをデルタストアから列ストアに移動しました。 これは、組ムーバーが行グループを移動するのに時間があった前に発生しました。<br /><br /> 5-REORG_FORCED-この行グループはデルタストアで開かれており、行をすべて保持する前に列ストアに強制されていました。<br /><br /> 6-BULKLOAD-一括読み込み操作では、デルタストアを使用せずに行グループを直接圧縮しました。<br /><br /> 7-MERGE-マージ操作では、1つ以上の行グループをこの行グループに統合し、列ストア圧縮を実行しました。|  
 |**has_vertipaq_optimization**|bit|VertiPaq の最適化では、より高い圧縮を実現するために、行グループ内の行の順序を再調整することによって列ストア圧縮が向上します。 ほとんどの場合、この最適化は自動的に行われます。 VertiPaq の最適化が使用されない場合は、次の2つのケースがあります。<br/>  a. デルタ行グループが列ストアに移動し、列ストアインデックスに1つ以上の非クラスター化インデックスがある場合、この例では、マッピングインデックスへの変更を最小限に抑えるために、VertiPaq の最適化がスキップされます。<br/> b. メモリ最適化テーブルの列ストアインデックスの場合。 <br /><br /> 0 = いいえ<br /><br /> 1 = はい|  
 |**generation**|bigint|この行グループに関連付けられている行グループの生成。|  
-|**created_time**|datetime2|この行グループが作成された時刻。<br /><br /> NULL-インメモリテーブルの列ストアインデックスの場合。|  
-|**closed_time**|datetime2|この行グループが終了した時刻。<br /><br /> NULL-インメモリテーブルの列ストアインデックスの場合。|  
+|**created_time**|datetime2|この行グループが作成された時刻。<br /><br /> NULL-インメモリテーブルの列ストアインデックスの場合。| 
+|**closed_time**|datetime2|この行グループが終了した時刻。<br /><br /> NULL-インメモリテーブルの列ストアインデックスの場合。| 
 | &nbsp; | &nbsp; | &nbsp; |
 
 ## <a name="results"></a>結果  

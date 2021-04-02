@@ -10,16 +10,22 @@ ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: 2be0cf8d-6dbe-443a-abbd-036249922205
 ms.author: alexiva
-ms.openlocfilehash: 4bae03f2283dae9256c89f2e89ae190e30bee0fb
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 4732f2ca968788cb59efd14d9410929f99d9423f
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186430"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105980896"
 ---
 # <a name="whats-new-in-ssma-for-sap-ase-sybasetosql"></a>SSMA for SAP ASE の新機能 (SybaseToSQL)
 
 この記事では、各リリースでの SAP ASE (旧称 SSMA for Sybase) の変更 (SSMA) の SQL Server Migration Assistant を示します。
+
+## <a name="ssma-v818"></a>SSMA v 8.18
+
+SSMA for SAP ASE の v 8.18 リリースには、次の変更が含まれています。
+
+* わずかなパフォーマンス向上とバグ修正
 
 ## <a name="ssma-v817"></a>SSMA v 8.17
 

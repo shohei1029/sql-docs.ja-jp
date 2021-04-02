@@ -10,16 +10,22 @@ ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: a24d3fc0-6911-4bfa-828a-197abf222e02
 ms.author: alexiva
-ms.openlocfilehash: b6d660d00b036c1bbc5008411a9f8e9a0bc77ea0
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 446d436a01a222c85e0e0e60083b973a7e16413c
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102185889"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981088"
 ---
 # <a name="whats-new-in-ssma-for-access-accesstosql"></a>SSMA for Access の新機能 (アクセス可能な Sql)
 
 この記事では、各リリースでのアクセス変更の SQL Server Migration Assistant (SSMA) を示します。
+
+## <a name="ssma-v818"></a>SSMA v 8.18
+
+SSMA for Access の v 8.18 リリースには、次の変更が含まれています。
+
+* わずかなパフォーマンス向上とバグ修正
 
 ## <a name="ssma-v817"></a>SSMA v 8.17
 

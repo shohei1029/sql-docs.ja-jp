@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9455c5b1-60ff-45fc-8599-cc3abbd6daf5
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 05f34ebf6652983dd1c8ea007e9ba68d47ef1d00
-ms.sourcegitcommit: 868c60aa3a76569faedd9b53187e6b3be4997cc9
+ms.openlocfilehash: ae2106f60c2ad7bb56b16879165e571a316852fe
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99835259"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981208"
 ---
 # <a name="catalogoperations-ssisdb-database"></a>catalog.operations (SSISDB データベース)
 
@@ -62,7 +62,7 @@ ms.locfileid: "99835259"
 |`202`|**stop_operation**<br /><br /> (ストアド プロシージャ)|プロジェクト ID|**NULL**|  
 |`300`|**validate_project**<br /><br /> (ストアド プロシージャ)|プロジェクト ID|プロジェクト名|  
 |`301`|**validate_package**<br /><br /> (ストアド プロシージャ)|プロジェクト ID|パッケージ名|  
-|`1000`|**configure_catalog**<br /><br /> (ストアド プロシージャ)|**NULL**|**NULL**||  
+|`1000`|**configure_catalog**<br /><br /> (ストアド プロシージャ)|**NULL**|**NULL**|
   
 ## <a name="permissions"></a>アクセス許可  
  このビューには、次の権限のいずれかが必要です。  

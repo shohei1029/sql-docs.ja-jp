@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: cb98d571-d1eb-467b-91f7-a6e091009672
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 39a95fbdfa80cb76e4b73f912ea38de1bc567906
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: c6aea495c249317b582a9ec0be543a6209261ab3
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99193095"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054555"
 ---
 # <a name="sp_removedbreplication-transact-sql"></a>sp_removedbreplication (Transact-SQL)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -46,7 +46,7 @@ sp_removedbreplication [ [ @dbname = ] 'dbname' ]
   
 `[ @type = ] type` データベースオブジェクトを削除するレプリケーションの種類を指定します。 *種類* は **nvarchar (5)** で、次のいずれかの値を指定できます。  
   
-|||  
+|値|説明|  
 |-|-|  
 |**さん**|トランザクション レプリケーション パブリッシング オブジェクトを削除。|  
 |**merge**|マージ レプリケーション パブリッシング オブジェクトを削除。|  
@@ -55,7 +55,7 @@ sp_removedbreplication [ [ @dbname = ] 'dbname' ]
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または **1** (失敗)  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  **sp_removedbreplication** は、すべての種類のレプリケーションで使用されます。  
   
  **sp_removedbreplication** は、復元する必要のあるレプリケーションオブジェクトを持たないレプリケートされたデータベースを復元する場合に便利です。  

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 2f76b1bf-96a2-4755-b76b-84e933220efc
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: ab443e48037add1cc507b71fe87fe7be7bcb43f9
-ms.sourcegitcommit: b2cc3f213042813af803ced37901c5c9d8016c24
+ms.openlocfilehash: 20d213cac8f3d3413266dc410b0d66879e771619
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81487245"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054185"
 ---
 # <a name="rsaccesseddenied---reporting-services-error"></a>rsAccessedDenied - Reporting Services エラー
   [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] エラー **rsAccessedDenied** は、操作を実行する権限がユーザーに与えられていない場合に発生します。 たとえば、レポートを開くためのロールが割り当てられていない場合や、必要な権限を使用してブラウザーを開かなかった場合などです。  
@@ -33,7 +33,7 @@ ms.locfileid: "81487245"
   
 ## <a name="details"></a>詳細  
   
-|||  
+|詳細|値|  
 |-|-|  
 |**製品名**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
 |**イベント ID**|rsAccessedDenied|  

@@ -19,12 +19,12 @@ ms.assetid: 33666f28-c370-47e2-a932-190316ed5f69
 author: pmasl
 ms.author: pelopes
 ms.reviewer: mikeray
-ms.openlocfilehash: c031c0794dc541d0363edb8e0c1102bc885882d4
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: d44731be44d6e3356b74ac2f856dbb8c38e2970c
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99196245"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054726"
 ---
 # <a name="sysdm_fts_semantic_similarity_population-transact-sql"></a>sys.dm_fts_semantic_similarity_population (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -33,9 +33,8 @@ ms.locfileid: "99196245"
   
  作成手順は抽出手順に従います。 類似性の抽出手順の詳細については、「 [sys.dm_fts_index_population &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-fts-index-population-transact-sql.md)」を参照してください。  
     
-||||  
-|-|-|-|  
 |**列名**|**Type**|**説明**|  
+|-|-|-|  
 |**database_id**|**int**|設定されているフルテキストインデックスを含むデータベースの ID。|  
 |**catalog_id**|**int**|フルテキスト インデックスを含む、フルテキスト カタログの ID。|  
 |**table_id**|**int**|フルテキストインデックスが設定されるテーブルの ID。|  
@@ -55,7 +54,7 @@ ms.locfileid: "99196245"
 ## <a name="metadata"></a>Metadata  
  セマンティックインデックス作成の状態の詳細については、クエリ [sys.dm_fts_index_population &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-fts-index-population-transact-sql.md)を参照してください。  
   
-## <a name="security"></a>セキュリティ  
+## <a name="security"></a>Security  
   
 ### <a name="permissions"></a>アクセス許可  
  サーバーに対する VIEW SERVER STATE 権限が必要です。  

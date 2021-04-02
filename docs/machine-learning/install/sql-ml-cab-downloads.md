@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 6268ceaae37016bae72a488170408312d25bf536
-ms.sourcegitcommit: 35cc65808d2a1769dea65c6ce7f9c2f69640968b
+ms.openlocfilehash: 69b58c918e66df2b7c1c2580acbf2c743d0aec9a
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105568928"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105980976"
 ---
 # <a name="cab-downloads-for-offline-installation-of-cumulative-updates-for-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の累積的な更新プログラムをオフラインでインストールするための CAB ダウンロード
 
@@ -77,7 +77,7 @@ CAB ファイルは、新しい順で一覧表示されます。 CAB ファイ�
 | | Python サーバー         | [SPS_9.4.7.25_1033.cab](https://go.microsoft.com/fwlink/?LinkId=2085685)   |  |
 |**最初のリリース** | | | |
 | | Microsoft R Open       | [SRO_3.5.2.125_1033.cab](https://go.microsoft.com/fwlink/?linkid=2085686)  |  |
-| | R Server               | [SRS_9.4.7.25_1033.cab](https://go.microsoft.com/fwlink/?linkid=2085792)|   |  |
+| | R Server               | [SRS_9.4.7.25_1033.cab](https://go.microsoft.com/fwlink/?linkid=2085792)|   |
 | | Microsoft Python Open  | [SPO_4.5.12.120_1033.cab](https://go.microsoft.com/fwlink/?linkid=2085793) |  |
 | | Python サーバー          | [SPS_9.4.7.25_1033.cab](https://go.microsoft.com/fwlink/?linkid=2085685)   |  |
 

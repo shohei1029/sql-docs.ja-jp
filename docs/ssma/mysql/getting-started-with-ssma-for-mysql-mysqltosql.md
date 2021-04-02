@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8ebfa061-be6f-4a07-923f-8dc832a82f70
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 9847b7a709fe64f3fcb7fca92ce1f8a4003843e5
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 6669410e8d0917560b430e2c1754871757bb7647
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100070257"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054086"
 ---
 # <a name="getting-started-with-ssma-for-mysql-mysqltosql"></a>SSMA for MySQL 入門 (MySQLToSQL)
 SQL Server Migration Assistant (SSMA) for MySQL を使用すると、MySQL データベーススキーマを SQL Server または Azure SQL Database に簡単に変換したり、結果のスキーマを SQL Server または Azure SQL Database にアップロードしたり、MySQL から SQL Server または Azure SQL Database にデータを移行したりすることができます。  
@@ -42,7 +42,7 @@ SSMA のインストールとライセンス供与が完了したら、SSMA を�
   
 2.  MySQL データベースに接続します。  
   
-3.  接続が成功すると、mysql スキーマが MySQL メタデータエクスプローラーに表示されます。 MySQL メタデータエクスプローラーで [オブジェクト] を右クリックして、SQL Server/Azure SQL Database への変換を評価するレポートの作成などのタスクを実行します。  
+3.  接続が成功すると、MySQL スキーマが MySQL メタデータ エクスプローラーに表示されます。 MySQL メタデータエクスプローラーで [オブジェクト] を右クリックして、SQL Server/Azure SQL Database への変換を評価するレポートの作成などのタスクを実行します。  
   
 また、ツールバーとメニューを使用して、これらのタスクを実行することもできます。  
   
@@ -95,9 +95,8 @@ SSMA には、[プロジェクト] ツールバーと [移行] ツールバー�
 ### <a name="migration-toolbar"></a>移行ツールバー  
 次の表は、移行ツールバーのコマンドを示しています。  
   
-|||  
+|**ボタン**|**Function**|  
 |-|-|  
-|**Button**|**Function**|  
 |**レポートの作成**|選択した MySQL オブジェクトを SQL Server オブジェクトまたは Azure SQL Database オブジェクトに変換し、変換が成功したかどうかを示すレポートを作成します。<br /><br />MySQL メタデータエクスプローラーでオブジェクトが選択されていない場合、このコマンドは無効になります。|  
 |**スキーマの変換**|選択した MySQL オブジェクトを SQL Server または Azure SQL Database オブジェクトに変換します。<br /><br />MySQL メタデータエクスプローラーでオブジェクトが選択されていない場合、このコマンドは無効になります。|  
 |**データの移行**|MySQL データベースから SQL Server または Azure SQL Database にデータを移行します。 このコマンドを実行する前に、MySQL スキーマを SQL Server または Azure SQL Database スキーマに変換し、オブジェクトを SQL Server または Azure SQL Database に読み込む必要があります。<br /><br />MySQL メタデータエクスプローラーでオブジェクトが選択されていない場合、このコマンドは無効になります。|  
@@ -106,9 +105,8 @@ SSMA には、[プロジェクト] ツールバーと [移行] ツールバー�
 ### <a name="menus"></a>メニュー  
 SSMA メニューを次の表に示します。  
   
-|||  
-|-|-|  
 |**Menu**|**説明**|  
+|-|-|  
 |**ファイル**|プロジェクトを操作したり、MySQL に接続したり、SQL Server または Azure SQL Database に接続したりするためのコマンドが含まれています。|  
 |**編集**|詳細ページ内のテキストを検索して操作するためのコマンドが含まれています。 [ **ブックマークの管理** ] ダイアログを開くには、[編集] メニューの [ブックマークの管理] をクリックします。 ダイアログには、既存のブックマークの一覧が表示されます。 ダイアログの右側にあるボタンを使用して、ブックマークを管理できます。|  
 |**表示**|**メタデータエクスプローラーの同期** コマンドを含みます。 これにより、MySQL メタデータエクスプローラーと SQL Server または Azure SQL Database メタデータエクスプローラー間でオブジェクトが同期されます。 には、 **出力** ペインおよび **エラー一覧** ウィンドウの表示と非表示を切り替えるコマンドと、レイアウトで管理するオプション **レイアウト** も含まれています。|  

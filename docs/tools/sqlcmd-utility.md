@@ -28,12 +28,12 @@ ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 02/24/2021
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
-ms.openlocfilehash: 928936a4b4ad6524e4d0817b94696353cb8427e9
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: ad1d3e98d45dc0395da92ee331e48b3fbfc161e6
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186601"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054787"
 ---
 # <a name="sqlcmd-utility"></a>sqlcmd ユーティリティ
 
@@ -200,7 +200,7 @@ sqlcmd
 - **Azure Active Directory 統合**
 
    Azure Active Directory 統合認証の場合、ユーザー名とパスワードなしで **-G** オプションを指定します。
-   *AAD 統合認証には、[Microsoft ODBC Driver 17 for SQL Server](../connect/odbc/download-odbc-driver-for-sql-server.md) バージョン 17.6.1 以降と、適切に[構成された Kerberos 環境](../connect/odbc/linux-mac/using-integrated-authentication.md)が必要です。*
+   *AAD 統合認証には、[Microsoft ODBC Driver 17 for SQL Server](../connect/odbc/download-odbc-driver-for-sql-server.md) バージョン 17.6.1 以降と、適切に [構成された Kerberos 環境](../connect/odbc/linux-mac/using-integrated-authentication.md)が必要です。*
 
     ```cmd
     Sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -G
@@ -614,17 +614,78 @@ sqlcmd
 ## <a name="sqlcmd-commands"></a>sqlcmd コマンド  
  **sqlcmd** では、Transact-SQL ステートメントの他に次のコマンドも使用できます。  
   
-|||  
-|-|-|  
-|**GO** [*count*]|**:List**|  
-|**[:]** **RESET**|**:Error**|  
-|**[:]** **ED**|**:Out**|  
-|[**:**] **!!**|**:Perftrace**|  
-|**[:]** **QUIT**|**:Connect**|  
-|**[:]** **EXIT**|**:On Error**|  
-|**:r**|**:Help**|  
-|**:ServerList**|**:XML** [**ON** &#124; **OFF**]|  
-|**:Setvar**|**:Listvar**|  
+:::row:::
+   :::column span="":::
+      **GO** [*count*]
+   :::column-end:::
+   :::column span="":::
+      **:List**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      **[:]** **RESET**
+   :::column-end:::
+   :::column span="":::
+      **:Error**  
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      **[:]** **ED**
+   :::column-end:::
+   :::column span="":::
+      **:Out**  
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [**:**] **!!**
+   :::column-end:::
+   :::column span="":::
+      **:Perftrace**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      **[:]** **QUIT**
+   :::column-end:::
+   :::column span="":::
+      **:Connect**  
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      **[:]** **EXIT**
+   :::column-end:::
+   :::column span="":::
+      **:On Error**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      **:r**
+   :::column-end:::
+   :::column span="":::
+      **:Help**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      **:ServerList**
+   :::column-end:::
+   :::column span="":::
+      **:XML** [**ON** &#124; **OFF**]
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      **:Setvar**
+   :::column-end:::
+   :::column span="":::
+      **:Listvar** 
+   :::column-end:::
+:::row-end:::
   
  **sqlcmd** コマンドを使用するときは、次の点に注意してください。  
   

@@ -21,12 +21,12 @@ ms.assetid: 012aab95-8888-4f35-9ea3-b5dff6e3f60f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 35439ff7ac5806225969378c88eaa6fde92df896
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 449c4d2ca5a101d17c84b414ffc119dbdb0fa476
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839521"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054735"
 ---
 # <a name="sysdm_os_buffer_descriptors-transact-sql"></a>sys.dm_os_buffer_descriptors (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -49,9 +49,9 @@ ms.locfileid: "101839521"
 |free_space_in_bytes|**int**|ページの使用可能な空き領域のサイズ (バイト単位)。 NULL 値が許可されます。|  
 |is_modified|**bit**|1 = ディスクからの読み取り後にページが変更されました。 NULL 値が許可されます。|  
 |numa_node|**int**|バッファーの Nonuniform Memory Access ノード。 NULL 値が許可されます。|  
-|read_microsec|**bigint**|バッファーにページを読み込むために必要な実際の時間 (マイクロ秒単位)。 この数値は、バッファーが再利用されるとリセットされます。 NULL 値が許可されます。|  
-|is_in_bpool_extension|**bit**|1 = ページはバッファープール拡張機能に含まれています。 NULL 値が許可されます。|  
-|pdw_node_id|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。|  
+|read_microsec|**bigint**|バッファーにページを読み込むために必要な実際の時間 (マイクロ秒単位)。 この数値は、バッファーが再利用されるとリセットされます。 NULL 値が許可されます。| 
+|is_in_bpool_extension|**bit**|1 = ページはバッファープール拡張機能に含まれています。 NULL 値が許可されます。| 
+|pdw_node_id|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。| 
   
 ## <a name="permissions"></a>アクセス許可  
 
@@ -61,7 +61,7 @@ SQL Database Basic、S0、S1 のサービス目標、およびエラスティッ
 ## <a name="remarks"></a>解説  
  sys.dm_os_buffer_descriptors によって、リソースデータベースによって使用されているページが返されます。 sys.dm_os_buffer_descriptors では、無料または盗難にあったページ、または読み取り時にエラーが発生したページに関する情報は返されません。  
   
-|差出人|終了|On|Relationship|  
+|ソース|終了|On|リレーションシップ|  
 |----------|--------|--------|------------------|  
 |sys.dm_os_buffer_descriptors|sys.databases|database_id|多対一|  
 |sys.dm_os_buffer_descriptors|\<userdb>.sys.allocation_units|allocation_unit_id|多対一|  

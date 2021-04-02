@@ -20,12 +20,12 @@ ms.assetid: 32e95614-ed88-4068-8c37-1e21544717bc
 author: pmasl
 ms.author: pelopes
 ms.reviewer: mikeray
-ms.openlocfilehash: ec9f9811504ed9c58c8a37510a46a1857540584f
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 9a2cf710611007080c9b00932b59141553151131
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99193864"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054673"
 ---
 # <a name="sysfulltext_semantic_language_statistics_database-transact-sql"></a>sys.fulltext_semantic_language_statistics_database (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,9 +35,8 @@ ms.locfileid: "99193864"
  このビューに対してクエリを実行すると、セマンティック処理に必要なセマンティック言語統計コンポーネントについて調べることができます。  
    
   
-||||  
-|-|-|-|  
 |**列名**|**Type**|**説明**|  
+|-|-|-|  
 |**database_id**|**int**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンス内で一意のデータベースの ID です。|  
 |**register_date**|**datetime**|データベースがセマンティック処理用に登録された日付。|  
 |**registered_by**|**int**|セマンティック処理のためにデータベースを登録したサーバープリンシパルの ID。|  
@@ -49,7 +48,7 @@ ms.locfileid: "99193864"
 ## <a name="metadata"></a>Metadata  
  セマンティックインデックス作成でサポートされている言語の詳細については、カタログビューに対してクエリを実行 [sys.fulltext_semantic_languages &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-fulltext-semantic-languages-transact-sql.md)を参照してください。  
   
-## <a name="security"></a>セキュリティ  
+## <a name="security"></a>Security  
   
 ### <a name="permissions"></a>アクセス許可  
  カタログ ビューでのメタデータの表示が、ユーザーが所有しているかそのユーザーが権限を許可されている、セキュリティ保護可能なメタデータに制限されます。  
