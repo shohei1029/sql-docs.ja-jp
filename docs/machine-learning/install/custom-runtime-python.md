@@ -7,15 +7,15 @@ ms.date: 02/08/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
-ms.custom: seo-lt-2019
+ms.custom: contperf-fy21q3
 zone_pivot_groups: sqlml-platforms
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
-ms.openlocfilehash: 23f1bac7674002178602c0d8fa844531ea4f1a8b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 22ba1ff16d22582be39e7b48a297e9dc65f9f554
+ms.sourcegitcommit: e4b71e5d432a29b6c76ea457b00aa0abd4b6c77f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100072938"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106273474"
 ---
 # <a name="install-a-python-custom-runtime-for-sql-server"></a>SQL Server 用の Python カスタム ランタイムをインストールする
 [!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]

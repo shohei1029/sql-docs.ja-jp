@@ -7,15 +7,15 @@ ms.date: 03/16/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
-ms.custom: seo-lt-2019
+ms.custom: contperf-fy21q3
 zone_pivot_groups: sqlml-platforms
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
-ms.openlocfilehash: 5130a45eafbc9fa7b5fb684686fe9e0ea15c649b
-ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
+ms.openlocfilehash: b6262e5ac3d7090516c1a62661583a64bb6ccbc9
+ms.sourcegitcommit: e4b71e5d432a29b6c76ea457b00aa0abd4b6c77f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104833765"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106273473"
 ---
 # <a name="install-an-r-custom-runtime-for-sql-server"></a>SQL Server 用の R カスタム ランタイムをインストールする
 

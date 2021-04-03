@@ -2,7 +2,7 @@
 description: Always On 可用性グループの動的管理ビュー-関数
 title: Always On 可用性グループの動的管理ビュー-Functions |Microsoft Docs
 ms.custom: ''
-ms.date: 03/16/2017
+ms.date: 03/01/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 17a77e24-d8b8-4f8a-8a7c-05d6c5d32d96
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: f62418f1c73ec9a9b1dada52c4c021bc24cc9568
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: 6ae0f7d12c08e7553c9e1d8cae6fc6417467aba2
+ms.sourcegitcommit: 14f2051d329b69a7b5ff7bce1d136cf7f25bb219
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100352878"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106232199"
 ---
 # <a name="always-on-availability-groups-dynamic-management-views---functions"></a>Always On 可用性グループの動的管理ビュー-関数
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,6 +34,8 @@ ms.locfileid: "100352878"
         [sys.dm_hadr_ag_threads](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-ag-threads-transact-sql.md)
 
         [sys.dm_hadr_auto_page_repair](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-auto-page-repair-transact-sql.md)
+
+        [sys.dm_hadr_automatic_seeding](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-automatic-seeding.md)
 
         [sys.dm_hadr_availability_group_states](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-availability-group-states-transact-sql.md)
 
@@ -60,6 +62,8 @@ ms.locfileid: "100352878"
         [sys.dm_hadr_instance_node_map](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-instance-node-map-transact-sql.md)
 
         [sys.dm_hadr_name_id_map](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-name-id-map-transact-sql.md)
+
+        [sys.dm_hadr_physical_seeding_stats](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-physical-seeding-stats.md)
 
         [sys.dm_tcp_listener_states](../../relational-databases/system-dynamic-management-views/sys-dm-tcp-listener-states-transact-sql.md)
 

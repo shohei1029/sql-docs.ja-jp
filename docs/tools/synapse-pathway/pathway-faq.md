@@ -9,12 +9,12 @@ ms.prod: sql
 ms.technology: tools-other
 monikerRange: =azure-sqldw-latest
 ms.custom: template-overview
-ms.openlocfilehash: e97425f682a3f6b9f2f4e955d8476d40d6cf4312
-ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
+ms.openlocfilehash: a23ca1052e2a82afd6277a2fc308d72fa600aaf1
+ms.sourcegitcommit: e4b71e5d432a29b6c76ea457b00aa0abd4b6c77f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102770523"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106273487"
 ---
 # <a name="azure-synapse-pathway-preview-faq"></a>Azure Synapse Pathway プレビューに関する FAQ
 [!INCLUDE [Azure Synapse Analytics](../../includes/applies-to-version/asa.md)]
@@ -65,15 +65,8 @@ A. ローカル環境で Synapse Pathway を実行できるため、Microsoft �
 
 A. 現在、Azure Synapse Pathway は **プレビュー** 段階にあります。   Synapse Pathway のサポートは、Microsoft サポート チャネルを通じてご利用いただけます。 チケットは、Azure portal または Standard (通常はオンプレミスのサポート) ポータルで提出することができます。
 
-
 > [!NOTE] 
 > 他の Azure サービスと同様に、すべてのプレビュー サービスは、SLA が適用されないだけで、サポートの対象にはなります。
-
-<!-- ### Troubleshooting and optimization
-
-#### Q. Why do I see slow performance while running the code conversion?
-
-#### Q. Translation of errors or unexpected results? -->
 
 ## <a name="next-steps"></a>次のステップ
 
