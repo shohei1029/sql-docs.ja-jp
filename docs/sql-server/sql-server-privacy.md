@@ -11,12 +11,12 @@ f1_keywords: ''
 helpviewer_keywords: ''
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 1821ebdd7c52d306a34be98f6e506de24c31539e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a5bfbb367ef9df5af3a651da28ac6655870b324a
+ms.sourcegitcommit: f1a571b6ce02a39c385ad32508ceff23475ed9f5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100341671"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106377439"
 ---
 # <a name="sql-server-privacy-supplement"></a>SQL Server のプライバシーの補足情報
 
@@ -31,7 +31,7 @@ ms.locfileid: "100341671"
 - SQL Server Data Tools (SSDT)
 - Azure Data Studio
 - Data Migration Assistant
-- SQL Server Migration Assistant
+- [SQL Server Migration Assistant](../ssma/ssma-diagnostic-data-collection.md)
 - MS-SQL の拡張機能
 
 *許可される使用シナリオ* の定義。 この記事のコンテキストでは、Microsoft は、"許可される使用シナリオ" を Microsoft によって開始されたアクションまたはアクティビティとして定義します。
