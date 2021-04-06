@@ -7,13 +7,13 @@ ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: report-server
 ms.topic: conceptual
-ms.date: 03/09/2021
-ms.openlocfilehash: 8d56f26c6661587cb13ff2962221a4a41c7da2ba
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.date: 03/23/2021
+ms.openlocfilehash: 3c1122a98c4f0abe38db739040d617ed5f27ecf0
+ms.sourcegitcommit: ab0c654d924eeb5647e47444abb59d934345b205
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622678"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106450173"
 ---
 # <a name="configure-a-report-server-on-a-network-load-balancing-cluster"></a>ネットワーク負荷分散クラスターにおけるレポート サーバーの構成
 
@@ -62,7 +62,7 @@ NLB クラスターでスケールアウト配置を運用するには、ユー�
     次の例は、取得する必要がある値を示しています。 例を構成ファイルにコピーしないでください。このキーの値は有効ではありません。  
   
     ```xml
-    <machineKey ValidationKey="123455555" DecryptionKey="678999999" Validation="SHA1" Decryption="AES"/>  
+    <machineKey validationKey="123455555" decryptionKey="678999999" validation="SHA1" decryption="AES"/>  
     ```  
   
 2. Report Server 用の Web.config ファイルを開き、生成した <`machineKey`> 要素を <`system.web`> セクションに貼り付けます。 既定では、Web.config ファイルは、\Program Files\Microsoft SQL Server\MSRS13.MSSQLSERVER\Reporting Services\Reportserver\Web.config にあります。  

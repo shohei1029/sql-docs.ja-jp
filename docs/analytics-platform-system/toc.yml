@@ -123,6 +123,8 @@
       href: ./transparent-data-encryption.md
     - name: 証明書のプロビジョニング
       href: ./provision-certificate.md
+    - name: ドメインの信頼を構成する
+      href: ./configure-domain-trusts.md
 - name: アプライアンスの管理タスク
   href: ./appliance-management-tasks.md
   items:
