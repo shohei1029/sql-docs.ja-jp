@@ -69,8 +69,8 @@ WHERE MATCH(Person1-(Friends)->Person2)
 AND Person1.Name = 'John';
 ```   
  
-### <a name="fully-integrated-in-ssnoversion-engine"></a>エンジンに完全に統合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 
-グラフ拡張機能は、エンジンに完全に統合されてい [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 同じストレージエンジン、メタデータ、クエリプロセッサなどを使用して、グラフデータを格納し、クエリを実行します。 1つのクエリで、グラフとリレーショナルデータにまたがるクエリを実行します。 グラフ機能と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、列ストア、HA、R サービスなどの他のテクノロジとの組み合わせSQL graph データベースでは、で使用できるすべてのセキュリティ機能とコンプライアンス機能もサポートさ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] れています。
+### [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エンジンに完全に統合 
+グラフ拡張機能は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エンジンに完全に統合されています。 同じストレージエンジン、メタデータ、クエリプロセッサなどを使用して、グラフデータを格納し、クエリを実行します。 1つのクエリで、グラフとリレーショナルデータにまたがるクエリを実行します。 グラフ機能と、列ストア、HA、R サービスなどの他の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] テクノロジとの組み合わせ可能です。SQL グラフデータベースでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で使用できるすべてのセキュリティ機能とコンプライアンス機能もサポートされています。
  
 ### <a name="tooling-and-ecosystem"></a>ツールとエコシステム
 
